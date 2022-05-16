@@ -19,7 +19,7 @@ Displays randomly quotes from a pre-prepared repository. JSON-file is currently 
 
 **Contatc with me**
 <div id="badges">
-<a href='' target='_blank' title="Telegram">
+<a href='https://t.me/degtiarev' target='_blank' title="Telegram">
   <img src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white">
 </a>
 <a href='mailto:&#109;&#97;&#105;&#108;&#116;&#111;&#58;%6d%61%69%6c%40%6c%65%67%6d%6f%2e%72%75' target='_blank' title="Gmail">
