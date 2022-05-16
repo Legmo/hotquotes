@@ -19,7 +19,13 @@ Displays randomly quotes from a pre-prepared repository. JSON-file is currently 
 
 **Contatc with me**
 <div id="badges">
-  <a href='' target='_blank' title="Telegram">https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white</a>
-<a href='mailto:&#109;&#97;&#105;&#108;&#116;&#111;&#58;%6d%61%69%6c%40%6c%65%67%6d%6f%2e%72%75' target='_blank' title="Gmail">https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white</a>
-<a href='https://www.linkedin.com/in/futuroid/' target='_blank' title="LinkedIn">https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white</a>
+<a href='' target='_blank' title="Telegram">
+  <img src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white">
+</a>
+<a href='mailto:&#109;&#97;&#105;&#108;&#116;&#111;&#58;%6d%61%69%6c%40%6c%65%67%6d%6f%2e%72%75' target='_blank' title="Gmail">
+  <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white">
+</a>
+<a href='https://www.linkedin.com/in/futuroid/' target='_blank' title="LinkedIn">
+  <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white">
+</a>
 </div>
