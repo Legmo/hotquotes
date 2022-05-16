@@ -13,8 +13,8 @@ Displays randomly quotes from a pre-prepared repository. JSON-file is currently 
 <br>
 
 **Commands**
-- npm start - Runs the app in development mode. Hot reload in browser (port:3000) included.
-- npm run build - Builds the app for production to the build folder.
+- `npm start` - Runs the app in development mode. Hot reload in browser (port:3000) included.
+- `npm run build` - Builds the app for production to the build folder.
 <br>
 
 **Contatc with me**
