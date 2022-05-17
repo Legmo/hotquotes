@@ -17,7 +17,7 @@ Displays randomly quotes from a pre-prepared storage. JSON-file is currently use
 - `npm run build` - Builds the app for production to the build folder.
 <br>
 
-**Contatc with me**
+**Contact with developers**
 <div id="badges">
 <a href='https://t.me/degtiarev' target='_blank' title="Telegram">
   <img src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white">
