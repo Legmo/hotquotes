@@ -7,7 +7,7 @@ JSON-file is currently used as storage, a database is planned in the future.<br>
 <br>
 Also in the future, it is planned to allow users to add their own quotes (public or for private use), create personal collections of quotes, etc.
 
-**Technology stack**
+## Technology stack
 - [React JS](https://reactjs.org)
 - [Redux](https://redux.js.org)
 - [Create React App](https://www.npmjs.com/package/create-react-app)
@@ -15,14 +15,12 @@ Also in the future, it is planned to allow users to add their own quotes (public
 - [Webpack Dev Server](https://github.com/webpack/webpack-dev-server)
 - [Bootstrap](https://getbootstrap.com/)
 - [Font Awesome](https://fontawesome.com/)
-<br>
 
-**Commands**
+## Commands
 - `npm start` - Runs the app in development mode. Hot reload in browser (port:3000) included.
 - `npm run build` - Builds the app for production to the build folder.
-<br>
 
-**Contact with developers**
+## Contact with developers
 <div id="badges">
 <a href='https://t.me/degtiarev' target='_blank' title="Telegram">
   <img src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white">
