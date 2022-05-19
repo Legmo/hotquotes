@@ -1,3 +1,9 @@
+<style>
+mark {
+    color:red;
+}
+</style>
+
 # <span style="color:#fe0036">Hot</span> <span style="color:#0079fe">Quotes</span>
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
@@ -7,7 +13,7 @@ JSON-file is currently used as storage, a database is planned in the future.<br>
 <br>
 Also in the future, it is planned to allow users to add their own quotes (public or for private use), create personal collections of quotes, etc.
 
-<span style="color:blue">some *blue* text</span>.
+<mark>some *blue* text</mark>.
 
 
 ## Technology stack
