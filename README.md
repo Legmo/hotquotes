@@ -1,4 +1,16 @@
-# <span style="color:#fe0036">Hot</span> <span style="color:#0079fe">Quotes</span>
+<style>
+.heading1 {
+    color: red;
+    font-weight:700;
+    font-size: 35px;
+}
+.heading2 {
+    color: blue;
+    font-weight:700;
+    font-size: 30px;
+}
+</style>
+# <span style="color:#fe0036">Hot</span> <span style="color:#0079fe">Quotes</span> {#identifier .heading1}
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 Single page application based on React JS & Redux.<br> 
