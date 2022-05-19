@@ -7,6 +7,9 @@ JSON-file is currently used as storage, a database is planned in the future.<br>
 <br>
 Also in the future, it is planned to allow users to add their own quotes (public or for private use), create personal collections of quotes, etc.
 
+<span style="color:blue">some *blue* text</span>.
+
+
 ## Technology stack
 - [React JS](https://reactjs.org)
 - [Redux](https://redux.js.org)
