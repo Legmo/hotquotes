@@ -6,10 +6,12 @@ Displays randomly quotes from a pre-prepared storage. JSON-file is currently use
 
 **Technology stack**
 - [React JS](https://reactjs.org)
+- [Redux](https://redux.js.org)
 - [Create React App](https://www.npmjs.com/package/create-react-app)
-- [Bootstrap](https://getbootstrap.com/)
 - [WebPack](https://webpack.js.org/)
 - [Webpack Dev Server](https://github.com/webpack/webpack-dev-server)
+- [Bootstrap](https://getbootstrap.com/)
+- [Font Awesome](https://fontawesome.com/)
 <br>
 
 **Commands**
