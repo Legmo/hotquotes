@@ -1,4 +1,4 @@
-# Hot <span style="color:red">Quotes</span>
+# \<span style="color:#fe0036">\Hot</span> <span style="color:#0079fe">Quotes</span>
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 Single page application based on React JS & Redux.<br> 
