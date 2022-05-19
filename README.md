@@ -2,7 +2,7 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 Single page application based on React JS & Redux.<br> 
-Displays randomly quotes from a pre-prepared storage. Each quote can be assigned the following data: author, source, tag (or several tags)<br>
+Displays randomly quotes from a pre-prepared storage. Each quote can be assigned the following data: author, source, tag (or several tags).<br>
 JSON-file is currently used as storage, a database is planned in the future.<br>
 <br>
 Also in the future, it is planned to allow users to add their own quotes (public or for private use), create personal collections of quotes, etc.
