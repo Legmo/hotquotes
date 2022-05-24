@@ -15,8 +15,6 @@ The following is a set of guidelines for contributing to HotQuotes project. Thes
 * [Do you intend to add a new feature or change an existing one?]()
 * [Do you have questions about the source code?]()
 * [Styleguides](#styleguides)
-* []()
-
 
 
 ## I don't want to read this whole thing I just have a question!
@@ -36,7 +34,7 @@ The following is a set of guidelines for contributing to HotQuotes project. Thes
 
 ## Did you write a patch that fixes a bug? ##
 
-* Open a new GitHub (pull request)[https://github.com/Legmo/hotquotes/pulls] with the patch.
+* Open a new GitHub [pull request](https://github.com/Legmo/hotquotes/pulls) with the patch.
 
 * Ensure the PR description clearly describes the problem and solution. Include the relevant issue number if applicable.
 
