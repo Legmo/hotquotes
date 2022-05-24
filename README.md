@@ -11,6 +11,8 @@ It is planned in the future to allow users to add their own quotes (public or fo
 - [React JS](https://reactjs.org)
 - [Redux](https://redux.js.org)
 - [Create React App](https://www.npmjs.com/package/create-react-app)
+- [React Router DOM](https://github.com/remix-run/react-router#readme)
+- [Bootstrap](https://getbootstrap.com/)
 - [WebPack](https://webpack.js.org/)
 - [Webpack Dev Server](https://github.com/webpack/webpack-dev-server)
 - [Bootstrap](https://getbootstrap.com/)
