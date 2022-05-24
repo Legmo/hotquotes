@@ -58,7 +58,7 @@ The following is a set of guidelines for contributing to HotQuotes project. Thes
 ## Styleguides ##
 * We indent using two spaces (soft tabs)
 * We use ES6 JS syntax (arrow functions, template strings, let, const, etc.)
-* This section will be updated as work progresses. In the near future, we plan to add the ESLint configuration file to the repository.
+* This section will be updated as work progresses. In the near future, we plan to (add the 'ES Lint' configuration file)[https://github.com/Legmo/hotquotes/issues/29] to the repository.
 <br>
 
 ## Issue and Pull Request Labels ##
