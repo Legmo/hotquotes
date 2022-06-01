@@ -129,6 +129,8 @@ The following is a set of guidelines for contributing to HotQuotes project. Thes
 
 ## Issue and Pull Request Labels ##
 * You can see the list of labels (here)[https://github.com/Legmo/hotquotes/labels]
+<br>
+<br>
 
 Thanks!
 
