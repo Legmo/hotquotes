@@ -56,7 +56,7 @@ The following is a set of guidelines for contributing to HotQuotes project. Thes
 <br>
 
 ## Styleguide ##
-* We use (ESLint)[https://eslint.org], [ESLint plugin React](https://github.com/jsx-eslint/eslint-plugin-react) and [ESLint plugin JSX A11y](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/). See the ['ESLint' configuration file](https://github.com/Legmo/hotquotes/issues/29) in repository.
+* We use (ESLint)[https://eslint.org], [ESLint plugin React](https://github.com/jsx-eslint/eslint-plugin-react) and [ESLint plugin JSX A11y](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/). See the ['ESLint' configuration file]([https://github.com/Legmo/hotquotes/issues/29](https://github.com/Legmo/hotquotes/blob/master/.eslintrc.json)) in repository.
 * * We use all ECMAScript 6 features (arrow functions, template strings, let, const, etc.) We also use all opportunity the most recently supported version of ECMAScript syntax.
 * We indent using two spaces (soft tabs)
 * Require `super()` calls in constructors. [ESLint documentation](https://eslint.org/docs/rules/constructor-super)
