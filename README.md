@@ -64,7 +64,7 @@ You can test working version of our site here [www...](link to demo site).
 
 ## Contributing
 If you have a desire to join the development — we will be happy to accept you into our team!<br>
-Details can be found in the [Contributing section](https://github.com/Legmo/hotquotes/edit/master/CONTRIBUTING.md).<br>
+Details can be found in the [Contributing section](https://github.com/Legmo/hotquotes/blob/master/CONTRIBUTING.md).<br>
 You can also ask the necessary questions in the [Discussions section](https://github.com/Legmo/hotquotes/discussions) or send a private message to the [developers](#contact-with-developers).
 <br>
 <br>
@@ -151,7 +151,7 @@ You can test working version of our site here [www...](link to demo site).
 
 ## Хочу помочь в разработке
 Если вы хотите присоединиться к разработке — мы будем рады принять вас в команду!<br>
-Подробности можно найти в разделе [Contributing](https://github.com/Legmo/hotquotes/edit/master/CONTRIBUTING.md).<br>
+Подробности можно найти в разделе [Contributing](https://github.com/Legmo/hotquotes/blob/master/CONTRIBUTING.md).<br>
 Также вы можете задать вопросы в разделе [Discussions](https://github.com/Legmo/hotquotes/discussions) или отправить личное сообщение [разработчикам](#контакты-разработчиков).
 <br>
 <br>
