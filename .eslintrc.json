@@ -12,19 +12,16 @@
     }
   },
   "extends": [
-//	https://eslint.org/docs/rules/  
+//	https://eslint.org/docs/rules/
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:jsx-a11y/recommended"
-//    ,"react-app"
-//    ,"airbnb"
-
-//    this one has not been used yet
-//    "eslint:all"
   ],
-
+  "plugins": [
+    "react"
+  ],
   "rules": {
-//  https://eslint.org/docs/rules/semi  
+//  https://eslint.org/docs/rules/semi
 //	"semi": 0, //Disable semicolon error
     "semi": "error",
 // https://eslint.org/docs/rules/no-multi-spaces
@@ -36,7 +33,7 @@
         }
       }
     ],
-//  https://eslint.org/docs/rules/key-spacing	
+//  https://eslint.org/docs/rules/key-spacing
     "key-spacing": [
       "error",
       {
