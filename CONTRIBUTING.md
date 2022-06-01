@@ -12,9 +12,9 @@ The following is a set of guidelines for contributing to HotQuotes project. Thes
 ## Table Of Contents
 * [I don't want to read this whole thing, I just have a question!](#i-dont-want-to-read-this-whole-thing-i-just-have-a-question)
 * [Did you find a bug](#did-you-find-a-bug)
-* [Did you write a patch that fixes a bug?](#did-you-find-a-bug?)
-* [Do you intend to add a new feature or change an existing one?](#do-you-intend-to-add-a-new-feature-or-change-an-existing-one?)
-* [Do you have questions about the source code?](#do-you-have-questions-about-the-source-code?)
+* [Did you write a patch that fixes a bug?](#did-you-find-a-bug)
+* [Do you intend to add a new feature or change an existing one?](#do-you-intend-to-add-a-new-feature-or-change-an-existing-one)
+* [Do you have questions about the source code?](#do-you-have-questions-about-the-source-code)
 * [Styleguides](#styleguides)
 * [Issue and Pull Request Labels](#issue-and-pull-request-labels)
 <br>
