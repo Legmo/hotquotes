@@ -13,7 +13,9 @@
   },
   "extends": [
 //	https://eslint.org/docs/rules/  
-    "eslint:recommended"
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:jsx-a11y/recommended"
 //    ,"react-app"
 //    ,"airbnb"
 
