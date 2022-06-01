@@ -15,7 +15,7 @@ The following is a set of guidelines for contributing to HotQuotes project. Thes
 * [Did you write a patch that fixes a bug?](#did-you-find-a-bug)
 * [Do you intend to add a new feature or change an existing one?](#do-you-intend-to-add-a-new-feature-or-change-an-existing-one)
 * [Do you have questions about the source code?](#do-you-have-questions-about-the-source-code)
-* [Styleguides](#styleguides)
+* [Styleguide](#styleguide)
 * [Issue and Pull Request Labels](#issue-and-pull-request-labels)
 <br>
 
@@ -55,7 +55,7 @@ The following is a set of guidelines for contributing to HotQuotes project. Thes
    * <a href='&#109;&#97;&#105;&#108;&#116;&#111;&#58;%6d%61%69%6c%40%6c%65%67%6d%6f%2e%72%75' target='_blank' title="Gmail">Gmail</a>
 <br>
 
-## Styleguides ##
+## Styleguide ##
 * We use (ESLint)[https://eslint.org], [ESLint plugin React](https://github.com/jsx-eslint/eslint-plugin-react) and [ESLint plugin JSX A11y](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/). See the ['ESLint' configuration file](https://github.com/Legmo/hotquotes/issues/29) in repository.
 * * We use all ECMAScript 6 features (arrow functions, template strings, let, const, etc.) We also use all opportunity the most recently supported version of ECMAScript syntax.
 * We indent using two spaces (soft tabs)
