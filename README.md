@@ -148,7 +148,7 @@ You can test working version of our site here [www...](link to demo site).
 ## Хочу помочь в разработке
 Если вы хотите присоедениться к разработке — мы будем рады принять вас в команду!<br>
 Подробности можно найти в разделе [Contributing](https://github.com/Legmo/hotquotes/edit/master/CONTRIBUTING.md).<br>
-Также вы можете задать вопросы в разделе [Discussions section](https://github.com/Legmo/hotquotes/discussions) или отправить личное сообщение [разработчикам](#контакты-разработчиков).
+Также вы можете задать вопросы в разделе [Обсуждения](https://github.com/Legmo/hotquotes/discussions) или отправить личное сообщение [разработчикам](#контакты-разработчиков).
 <br>
 <br>
 
