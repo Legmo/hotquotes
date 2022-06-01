@@ -1,0 +1,53 @@
+{
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true
+  },
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "extends": [
+//	https://eslint.org/docs/rules/  
+    "eslint:recommended"
+//    ,"react-app"
+//    ,"airbnb"
+
+//    this one has not been used yet
+//    "eslint:all"
+  ],
+
+  "rules": {
+//  https://eslint.org/docs/rules/semi  
+//	"semi": 0, //Disable semicolon error
+    "semi": "error",
+// https://eslint.org/docs/rules/no-multi-spaces
+	"no-multi-spaces": [
+      "warn",
+      {
+        "exceptions": {
+          "VariableDeclarator": true
+        }
+      }
+    ],
+//  https://eslint.org/docs/rules/key-spacing	
+    "key-spacing": [
+      "error",
+      {
+        "align": {
+//          "beforeColon": true,
+//          "afterColon": true,
+          "on": "value"
+        }
+      }
+    ],
+    "react/jsx-equals-spacing": "warn", // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-equals-spacing.md
+    "react/prop-types": "warn", // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prop-types.md
+    "jsx-a11y/label-has-for": "warn", // https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/label-has-for.md
+    "linebreak-style": "off" // Does not work correctly on Windows.
+  }
+}
