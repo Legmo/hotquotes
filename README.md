@@ -15,7 +15,7 @@ It is planned in the future to allow users to add their own quotes (public or fo
 * [Getting Started](#getting-started)
 * [Contributing](#contributing)
 * [Contact with developers](#contact-with-developers)
-* [Russian section / По-русски](#russian-section)
+* [Russian section / По-русски](#по-русски)
 <br>
 
 ## Technology stack
@@ -85,7 +85,7 @@ You can also ask the necessary questions in the [Discussions section](https://gi
 ***
 <br>
 
-## Russian section
+## По-русски
 
 Одностраничное веб-приложение на основе React JS & Redux.<br> 
 Отображает случайную цитату из заранее подготовленного файла-хранилища. Каждая цитата может сопровождаться следующими данными: автор, источник, один или несколько тэгов.<br>
