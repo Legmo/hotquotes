@@ -115,6 +115,7 @@ You can also ask the necessary questions in the [Discussions section](https://gi
 - <img src="https://github.com/devicons/devicon/blob/master/icons/webpack/webpack-original.svg" title="WebPack Dev Server" alt="WebPack Dev Server" width="20" height="20"/>&nbsp;[Webpack Dev Server](https://github.com/webpack/webpack-dev-server)
 - <img src="https://github.com/devicons/devicon/blob/master/icons/bootstrap/bootstrap-original.svg" title="Bootstrap" alt="Bootstrap" width="20" height="20"/>&nbsp;[Bootstrap](https://getbootstrap.com/)
 - <img src="http://legmo.ru/GitHub/awesome_font_icon.svg" title="Font Awesome" alt="Font Awesome" width="20" height="20"/>&nbsp;[Font Awesome](https://fontawesome.com/)
+- <img src="https://github.com/devicons/devicon/blob/master/icons/eslint/eslint-original.svg" title="ES Lint" alt="ES Lint" width="20" height="20"/>&nbsp;[ES Lint](https://eslint.org/)
 - <img src="https://github.com/devicons/devicon/blob/master/icons/javascript/javascript-plain.svg" title="JavaScript" alt="JavaScript" width="20" height="20"/>&nbsp;[JavaScript ES6](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 - <img src="https://github.com/devicons/devicon/blob/master/icons/html5/html5-original.svg" title="HTML" alt="HTML" width="20" height="20"/>&nbsp;[HTML](https://www.w3.org/html/)
 - <img src="https://github.com/devicons/devicon/blob/master/icons/css3/css3-original.svg" title="CSS" alt="CSS" width="20" height="20"/>&nbsp;[CSS](https://www.w3.org/Style/CSS/Overview.en.html)
@@ -147,7 +148,7 @@ You can test working version of our site here [www...](link to demo site).
 -->
 
 ## Хочу помочь в разработке
-Если вы хотите присоедениться к разработке — мы будем рады принять вас в команду!<br>
+Если вы хотите присоединиться к разработке — мы будем рады принять вас в команду!<br>
 Подробности можно найти в разделе [Contributing](https://github.com/Legmo/hotquotes/edit/master/CONTRIBUTING.md).<br>
 Также вы можете задать вопросы в разделе [Discussions](https://github.com/Legmo/hotquotes/discussions) или отправить личное сообщение [разработчикам](#контакты-разработчиков).
 <br>
