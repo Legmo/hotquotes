@@ -1,5 +1,5 @@
 # <span style="color:#fe0036">Hot</span> <span style="color:#0079fe">Quotes</span>
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg "License: GPL v3")](https://www.gnu.org/licenses/gpl-3.0)
 
 Single page application based on React JS & Redux.<br> 
 Displays randomly quotes from a pre-prepared storage. Each quote can be assigned the following data: author, source, tag (or several tags).<br>
