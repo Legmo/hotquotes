@@ -126,7 +126,7 @@ You can also ask the necessary questions in the [Discussions section](https://gi
 <img src="http://legmo.ru/GitHub/Screenshot.jpg" title="Скриншот страницы" alt="Скриншот страницы" />
 <br>
 
-## С чего начать
+## С чего начать?
 Вам потребуется [Node.js](https://nodejs.org/en) для работы с этим проектом.<br>
 Скачайте репозиторий и выполните следующие консольные команды в папке локального проекта:
 - `npm i` — скачать и установить модули Node.js.
