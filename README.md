@@ -5,7 +5,7 @@ Single page application based on React JS & Redux.<br>
 Displays randomly quotes from a pre-prepared storage. Each quote can be assigned the following data: author, source, tag (or several tags).<br>
 JSON-file is currently used as storage, a database is planned in the future.<br>
 <br>
-It is planned in the future to allow users to add their own quotes (public or for private use), create personal quotes collections, share quotes etc.
+It is planned in the future to allow users to add their own quotes (public or for private use), create personal quotes collections, share quotes etc. More detailed plans for the development of the project can be found in our [Wiki](https://github.com/Legmo/hotquotes/wiki).
 <br>
 <br>
 
@@ -93,7 +93,7 @@ You can also ask the necessary questions in the [Discussions section](https://gi
 Отображает случайную цитату из заранее подготовленного файла-хранилища. Каждая цитата может сопровождаться следующими данными: автор, источник, один или несколько тэгов.<br>
 В качестве хранилища цитат используется JSON-файл. В будущем планируется использование базы данных.<br>
 <br>
-Также планируются: разрешение пользователям на добавление собственных цитат (публичных или только для личного просмотра), создание персональных подборок цитат, возможность делиться цитатами и многое другое.
+Также планируются: разрешение пользователям на добавление собственных цитат (публичных или только для личного просмотра), создание персональных подборок цитат, возможность делиться цитатами и многое другое. Более подробные планы развития проекта можно найти в разделе [Wiki](https://github.com/Legmo/hotquotes/wiki).
 <br>
 <br>
 
