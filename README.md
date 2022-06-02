@@ -27,9 +27,6 @@ It is planned in the future to allow users to add their own quotes (public or fo
 - <img src="https://github.com/devicons/devicon/blob/master/icons/npm/npm-original-wordmark.svg" title="React Router" alt="React Router" width="20" height="20"/>&nbsp;[React Router](https://github.com/remix-run/react-router#readme)
 - <img src="https://github.com/devicons/devicon/blob/master/icons/webpack/webpack-original.svg" title="WebPack" alt="WebPack" width="20" height="20"/>&nbsp;[WebPack](https://webpack.js.org/)
 - <img src="https://github.com/devicons/devicon/blob/master/icons/webpack/webpack-original.svg" title="WebPack Dev Server" alt="WebPack Dev Server" width="20" height="20"/>&nbsp;[Webpack Dev Server](https://github.com/webpack/webpack-dev-server)
-<!--
-- <img src="https://github.com/devicons/devicon/blob/master/icons/bootstrap/bootstrap-original.svg" title="Bootstrap" alt="Bootstrap" width="20" height="20"/>&nbsp;[Bootstrap](https://getbootstrap.com/)
--->
 - <img src="http://legmo.ru/GitHub/awesome_font_icon.svg" title="Font Awesome" alt="Font Awesome" width="20" height="20"/>&nbsp;[Font Awesome](https://fontawesome.com/)
 - <img src="https://github.com/devicons/devicon/blob/master/icons/eslint/eslint-original.svg" title="ES Lint" alt="ES Lint" width="20" height="20"/>&nbsp;[ES Lint](https://eslint.org/)
 - <img src="https://github.com/gilbarbara/logos/blob/master/logos/prettier.svg" title="Prettier" alt="Prettier" width="20" height="20">&nbsp;[Prettier](https://prettier.io/)
@@ -40,6 +37,9 @@ It is planned in the future to allow users to add their own quotes (public or fo
 - <img src="https://github.com/devicons/devicon/blob/master/icons/html5/html5-original.svg" title="HTML" alt="HTML" width="20" height="20"/>&nbsp;[HTML](https://www.w3.org/html/)
 - <img src="https://github.com/devicons/devicon/blob/master/icons/css3/css3-original.svg" title="CSS" alt="CSS" width="20" height="20"/>&nbsp;[CSS](https://www.w3.org/Style/CSS/Overview.en.html)
 - <img src="https://github.com/devicons/devicon/blob/master/icons/sass/sass-original.svg" title="SASS" alt="SASS" width="20" height="20"/>&nbsp;[SASS](https://sass-lang.com/)
+<!--
+- <img src="https://github.com/devicons/devicon/blob/master/icons/bootstrap/bootstrap-original.svg" title="Bootstrap" alt="Bootstrap" width="20" height="20"/>&nbsp;[Bootstrap](https://getbootstrap.com/)
+-->
 <br>
 
 ## Screenshot
@@ -118,7 +118,6 @@ You can also ask the necessary questions in the [Discussions section](https://gi
 - <img src="https://github.com/devicons/devicon/blob/master/icons/npm/npm-original-wordmark.svg" title="React Router" alt="React Router" width="20" height="20"/>&nbsp;[React Router](https://github.com/remix-run/react-router#readme)
 - <img src="https://github.com/devicons/devicon/blob/master/icons/webpack/webpack-original.svg" title="WebPack" alt="WebPack" width="20" height="20"/>&nbsp;[WebPack](https://webpack.js.org/)
 - <img src="https://github.com/devicons/devicon/blob/master/icons/webpack/webpack-original.svg" title="WebPack Dev Server" alt="WebPack Dev Server" width="20" height="20"/>&nbsp;[Webpack Dev Server](https://github.com/webpack/webpack-dev-server)
-<!--- <img src="https://github.com/devicons/devicon/blob/master/icons/bootstrap/bootstrap-original.svg" title="Bootstrap" alt="Bootstrap" width="20" height="20"/>&nbsp;[Bootstrap](https://getbootstrap.com/)-->
 - <img src="http://legmo.ru/GitHub/awesome_font_icon.svg" title="Font Awesome" alt="Font Awesome" width="20" height="20"/>&nbsp;[Font Awesome](https://fontawesome.com/)
 - <img src="https://github.com/devicons/devicon/blob/master/icons/eslint/eslint-original.svg" title="ES Lint" alt="ES Lint" width="20" height="20"/>&nbsp;[ES Lint](https://eslint.org/)
 - <img src="https://github.com/gilbarbara/logos/blob/master/logos/prettier.svg" title="Prettier" alt="Prettier" width="20" height="20">&nbsp;[Prettier](https://prettier.io/)
@@ -129,6 +128,9 @@ You can also ask the necessary questions in the [Discussions section](https://gi
 - <img src="https://github.com/devicons/devicon/blob/master/icons/html5/html5-original.svg" title="HTML" alt="HTML" width="20" height="20"/>&nbsp;[HTML](https://www.w3.org/html/)
 - <img src="https://github.com/devicons/devicon/blob/master/icons/css3/css3-original.svg" title="CSS" alt="CSS" width="20" height="20"/>&nbsp;[CSS](https://www.w3.org/Style/CSS/Overview.en.html)
 - <img src="https://github.com/devicons/devicon/blob/master/icons/sass/sass-original.svg" title="SASS" alt="SASS" width="20" height="20"/>&nbsp;[SASS](https://sass-lang.com/)
+<!--
+- <img src="https://github.com/devicons/devicon/blob/master/icons/bootstrap/bootstrap-original.svg" title="Bootstrap" alt="Bootstrap" width="20" height="20"/>&nbsp;[Bootstrap](https://getbootstrap.com/)
+-->
 <br>
 
 ## Скриншот
