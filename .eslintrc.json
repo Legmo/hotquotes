@@ -18,7 +18,9 @@
     "plugin:jsx-a11y/recommended"
   ],
   "plugins": [
-    "react"
+    "react",
+    "react",
+    "prettier"
   ],
   "rules": {
 //  https://eslint.org/docs/rules/semi
