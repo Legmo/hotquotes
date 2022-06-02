@@ -59,7 +59,7 @@ The following is a set of guidelines for contributing to HotQuotes project. Thes
 * Technology
   * We use [ESLint](https://eslint.org), [ESLint plugin React](https://github.com/jsx-eslint/eslint-plugin-react) and [ESLint plugin JSX A11y](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/). See the ['ESLint' configuration file](https://github.com/Legmo/hotquotes/blob/master/.eslintrc.json) in repository.
   * We also use [Prettier](https://prettier.io). See the [Prettier configuration file](https://github.com/Legmo/hotquotes/blob/master/.prettierrc.json)
-  * We use Git hooks, Husky & lint-staged for automation of linting & code formatting. 
+  * We use Git hooks, [Husky](https://github.com/typicode/husky) & [lint-staged](https://github.com/okonet/lint-staged) for automation of linting & code formatting. 
 * General issues
   * We use all ECMAScript 6 features (arrow functions, template strings, let, const, etc.) We also use all opportunity the most recently supported version of ECMAScript syntax.
   * We indent using two spaces (soft tabs)
