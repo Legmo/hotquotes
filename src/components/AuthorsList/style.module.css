@@ -1,0 +1,10 @@
+.list {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.list_item {
+  list-style: none;
+  display: block;
+  /*cursor: pointer;*/
+}

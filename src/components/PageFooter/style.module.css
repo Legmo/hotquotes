@@ -1,0 +1,28 @@
+.footer {
+/*  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: block;
+  width: 100%;*/
+  padding: 20px 50px 20px;
+
+  /*border-top: 1px solid #eaeaea;*/
+  height: 70px; /*See at App/Style.module.css - .footer-pusher*/
+}
+nav {
+  /*width: 100%;*/
+  float: right;
+  max-width: 1140px;
+}
+nav a {
+  color: #c8c8c8;
+  display: inline-block;
+  text-decoration: none;
+  /*border-bottom: 1px solid #dcdcdc;*/
+  transition: all 0.5s ease-out;
+}
+nav a:hover {
+  color: black;
+  /*border-bottom-color: transparent;*/
+  transition: all 0.5s ease-out;
+}
