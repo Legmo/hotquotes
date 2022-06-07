@@ -1,0 +1,6 @@
+.nav_parent  {
+}
+.nav_parent a.active {
+  color: black !important;
+  cursor: default;
+}

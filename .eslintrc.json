@@ -37,7 +37,7 @@
     ],
 //  https://eslint.org/docs/rules/key-spacing
     "key-spacing": [
-      "error",
+      "warn",
       {
         "align": {
 //          "beforeColon": true,
