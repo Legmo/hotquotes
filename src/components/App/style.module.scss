@@ -1,0 +1,48 @@
+$primary-color: blue;
+
+html {
+  height: 100%;
+  position: relative;
+
+  min-height: 100vh;
+}
+body {
+  margin: 0;
+  padding: 50px 40px 0;
+}
+
+.content {
+  min-height: calc(100vh - 50px);
+  margin: 0 auto -70px;  /*See at PageFooter/Style.module.css - .footer*/
+}
+.container {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: auto 13rem; /*todo: extract width of column to constant*/
+}
+
+.footer_pusher {
+  height: 120px;  /*See at PageFooter/Style.module.css - .footer*/
+}
+
+h5 {
+  margin-bottom: 10px;
+}
+button {
+  background-color: transparent;
+  transition: all 0.5s ease-out;
+  position: relative;
+  z-index: 11;
+}
+button:hover {
+  background-color: #f0f0f0;
+  transition: all 0.5s ease-out;
+}
+button .fa-sync {
+  color: #888888;
+  transition: all 0.5s ease-out;
+}
+button:hover .fa-sync {
+  color: #262b47;
+  transition: all 0.5s ease-out;
+}

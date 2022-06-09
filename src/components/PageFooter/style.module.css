@@ -4,7 +4,10 @@
   right: 0;
   display: block;
   width: 100%;*/
-  padding: 20px 50px 20px;
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: auto 13rem; /*todo: extract width of column to constant*/
+
 
   /*border-top: 1px solid #eaeaea;*/
   height: 70px; /*See at App/Style.module.css - .footer-pusher*/
