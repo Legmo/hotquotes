@@ -16,7 +16,7 @@ const Sidebar = (props) => {
   }, []);
   const categoryListUniq = reduceToUniq(categoryListReduce);
 
-  //Вынести эту логику в компонент. Какой? AuthorsList ?
+  //todo: Вынести эту логику в компонент. Какой? AuthorsList ?
   const authorsListFull = state.quotes_base.map(function (quote) {
     return quote.author;
   });
@@ -34,6 +34,12 @@ const Sidebar = (props) => {
       <div>
         <h5>Авторы</h5>
         <AuthorsList filter="none" authors={authorsListUniq} />
+      </div>
+      <div>
+        <p className={style.info}>
+          Здесь будут отображаться выбранные категории и авторы с возможностью
+          удаления + счётчик подходящих цитат
+        </p>
       </div>
     </aside>
   );
