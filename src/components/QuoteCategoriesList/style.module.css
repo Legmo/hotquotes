@@ -3,9 +3,13 @@
   padding: 0;
   overflow: hidden;
   display: grid;
+  grid-auto-columns: min-content;
+  grid-auto-flow: column;
+  column-gap: 10px;
 }
 .list_item {
   list-style: none;
   display: block;
+  color: gray;
   /*cursor: pointer;*/
 }
