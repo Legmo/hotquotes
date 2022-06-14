@@ -30,6 +30,6 @@ let mapDispatchToProps = (dispatch) => {
   };
 };
 
-const Sidebar_Container = connect(mapStateToProps, mapDispatchToProps)(Sidebar);
+const SidebarContainer = connect(mapStateToProps, mapDispatchToProps)(Sidebar);
 
-export default Sidebar_Container;
+export default SidebarContainer;
