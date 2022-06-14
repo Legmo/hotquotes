@@ -1,6 +1,6 @@
 import React from 'react';
 import QuoteCard from '../QuoteCard';
-import Sidebar_Container from '../Sidebar/Container';
+import SidebarContainer from '../Sidebar/Container';
 import RefreshBlock from '../RefreshBlock';
 import Footer from '../PageFooter';
 import style from './style.module.scss';
@@ -25,25 +25,20 @@ const App = () => {
 
   return (
     <>
-      <main>
-        <div className={style.content}>
-          <div className={style.container}>
-            <section className={style.mainContent}>
-              <QuoteCard store={tmp_store} />
-              <RefreshBlock />
-              <div className="d-block text-center mt-2">
-                {/*<CategoriesList categories={categoryListUniq}/>*/}
-              </div>
-            </section>
+      <main className={style.content}>
+        <section>
+          <QuoteCard store={tmp_store} />
+          <RefreshBlock />
+          <div>{/*<CategoriesList categories={categoryListUniq}/>*/}</div>
+        </section>
 
-            {/*              <Routes>
-                  <Route path="/index" render={page_index} />
-                  <Route path="/add_quote" render={page_addQuote} />
-                </Routes>*/}
-            <Sidebar_Container />
-          </div>
-          <div className={style.footer_pusher}></div>
-        </div>
+        {/*
+          <Routes>
+            <Route path="/index" render={page_index} />
+            <Route path="/add_quote" render={page_addQuote} />
+          </Routes>
+        */}
+        <SidebarContainer />
       </main>
       <Footer />
     </>

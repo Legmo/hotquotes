@@ -1,0 +1,11 @@
+.navList  {
+  display: grid;
+  column-gap: 10px;
+  grid-auto-columns: max-content;
+  grid-auto-flow: column;
+}
+.navList a.active {
+  color: black !important;
+  cursor: default;
+}
+.navItem {}

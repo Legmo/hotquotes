@@ -1,7 +1,5 @@
 import React from 'react';
-// import ReactDOM from 'react-dom';
 import { createRoot } from 'react-dom/client';
-// import { StrictMode } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './redux/redux-store';
@@ -11,7 +9,6 @@ import reportWebVitals from './reportWebVitals';
 
 const container = document.getElementById('root');
 const root = createRoot(container);
-// const root = createRoot(container).render(<App />);
 
 let rerenderAllTree = () => {
   root.render(
@@ -22,17 +19,6 @@ let rerenderAllTree = () => {
     </BrowserRouter>
   );
 };
-
-/*let rerenderAllTree = () => {
-  ReactDOM.render(
-    <BrowserRouter>
-      <Provider store={store}>
-        <App />
-      </Provider>
-    </BrowserRouter>,
-    document.getElementById('root')
-  );
-};*/
 
 rerenderAllTree(store.getState());
 

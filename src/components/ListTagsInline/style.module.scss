@@ -1,0 +1,15 @@
+.list {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: grid;
+  grid-auto-columns: min-content;
+  grid-auto-flow: column;
+  column-gap: 10px;
+}
+.listInline {}
+.listItem {
+  list-style: none;
+  color: gray;
+  /*cursor: pointer;*/
+}
