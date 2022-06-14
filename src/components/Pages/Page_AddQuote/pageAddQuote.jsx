@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './style.module.css';
+import style from './style.module.scss';
 
 let Page_AddQuote = (props) => {
   let addNewQuote = () => {
@@ -28,7 +28,7 @@ let Page_AddQuote = (props) => {
         value={props.newQuoteText}
         onChange={onQuoteChanged}
         placeholder="Цитата"
-        className={style.input_text + ' d-block mb-3 col-12 p-3'}
+        className={style.input + ' ' + style.inputText}
         rows="10"
       />
 
@@ -36,27 +36,29 @@ let Page_AddQuote = (props) => {
         value={props.newAuthorText}
         onChange={onAuthorChanged}
         placeholder="Автор"
-        className={style.input_author + ' d-block mb-3 col-12 p-1'}
+        className={style.input + ' ' + style.inputAuthor}
         rows="1"
       />
       <textarea
         value={props.newTitleText}
         onChange={onTitleChanged}
         placeholder="Источник (название произведение)"
-        className={style.input_title + ' d-block mb-3 col-12 p-1'}
+        className={style.input + ' ' + style.inputTitle}
         rows="1"
       />
       <textarea
         value={props.newTagText}
         onChange={onNewTagChanged}
         placeholder="Новые тэги (через запятую)"
-        className={style.input_new_tag + ' d-block mb-3 col-12 p-1'}
+        className={
+          style.input + ' ' + style.inputNewTag + ' d-block mb-3 col-12 p-1'
+        }
         rows="1"
       />
 
       <select
         multiple
-        className={style.input_tags}
+        className={style.input + ' ' + style.select + ' ' + style.inputTags}
         // ref={}
         // value={state.}
         // onChange={}

@@ -1,6 +1,6 @@
 /* Сравниваем два значения */
 export let compareValues = (a, b) => {
-  if (+(a) == +(b)) {
+  if (+a == +b) {
     return true;
   }
   return false;
@@ -18,15 +18,15 @@ export let findDoubles = (array, v) => {
 
 /* Удаляем из массива объекты-дубли */
 export let reduceToUniq = (arr) => {
-  var arrResult = [];
-  var arrId = [];
-  for (var i = 0; i < arr.length; i++) {
-    if (!(findDoubles(arrId, arr[i].id))) {
+  let arrResult = [];
+  let arrId = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (!findDoubles(arrId, arr[i].id)) {
       arrId.push(arr[i].id);
 
       arrResult[i] = {
         name: arr[i].name,
-        id:   arr[i].id
+        id: arr[i].id,
       };
     }
   }

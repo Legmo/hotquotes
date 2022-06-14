@@ -1,45 +1,57 @@
 import React from 'react';
-import CategoriesList from '../CategoriesList';
-import AuthorsList from '../AuthorsList';
 import style from './style.module.css';
 import { reduceToUniq } from '../../helpers';
+import ListSidebar from '../ListSidebar';
+import FiltersActive from '../FiltersActive';
 
 const Sidebar = (props) => {
-  let state = props.quotes;
+  let quotesBase = props.quotes.quotes_base;
 
-  //Вынести эту логику в компонент. Какой? СategoryList ?
-  const categoryListFull = state.quotes_base.map(function (quote) {
-    return quote.category;
-  });
-  const categoryListReduce = categoryListFull.reduce(function (flat, current) {
-    return flat.concat(current);
-  }, []);
-  const categoryListUniq = reduceToUniq(categoryListReduce);
+  //todo: Вынести эту логику в компонент, который будет готовить информацию из базы данных
+  const dataReducer = (key) => {
+    return quotesBase.map((quote) => quote[key]);
+  };
+  const listTagsFull = dataReducer('category');
+  const listAuthorsFull = dataReducer('author');
 
-  //todo: Вынести эту логику в компонент. Какой? AuthorsList ?
-  const authorsListFull = state.quotes_base.map(function (quote) {
-    return quote.author;
-  });
-  const authorsListReduce = authorsListFull.reduce(function (flat, current) {
-    return flat.concat(current);
-  }, []);
-  const authorsListUniq = reduceToUniq(authorsListReduce);
+  const listTagsReduce = listTagsFull.reduce(
+    (flat, current) => flat.concat(current),
+    []
+  );
+  const listAuthorsReduce = listAuthorsFull.reduce(
+    (flat, current) => flat.concat(current),
+    []
+  );
 
+  const listTags = reduceToUniq(listTagsReduce);
+  const listAuthors = reduceToUniq(listAuthorsReduce);
+
+  // todo: возможно стоит сделать функцию/компонент для генерация sidebar. Подумать
   return (
-    <aside className={style.sidebarContent + ' sidebar col-md-2 text-right'}>
+    <aside className={style.sidebar}>
+      <section className={style.sectionTags}>
+        <h2 className={style.titleSidebar}>Категории</h2>
+        <ListSidebar
+          filter="none"
+          listItems={listTags}
+          listName="Tags"
+          title="Добавить в фильтры"
+        />
+      </section>
+      <section className={style.sectionAuthors}>
+        <h2 className={style.titleSidebar}>Авторы</h2>
+        <ListSidebar
+          filter="none"
+          listItems={listAuthors}
+          listName="Authors"
+          title="Добавить в фильтры"
+        />
+      </section>
       <div>
-        <h5>Категории</h5>
-        <CategoriesList categories={categoryListUniq} />
-      </div>
-      <div>
-        <h5>Авторы</h5>
-        <AuthorsList filter="none" authors={authorsListUniq} />
-      </div>
-      <div>
-        <p className={style.info}>
-          Здесь будут отображаться выбранные категории и авторы с возможностью
-          удаления + счётчик подходящих цитат
-        </p>
+        <section className={style.sectionTags}>
+          <h2 className={style.titleSidebar}>Активные фильтры</h2>
+          <FiltersActive filtersList={''} />
+        </section>
       </div>
     </aside>
   );
