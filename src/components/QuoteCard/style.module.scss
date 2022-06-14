@@ -1,16 +1,41 @@
-.blockquote {
-  margin: 0;
+.blockquoteContainer {
   display: grid;
   row-gap: 20px;
 }
+.blockquote {
+  margin: 0;
+  font-size: 1.5rem;
+  quotes: "«" "»" "„" "“";
+  position: relative;
+  //text-indent: -0.45em;
+
+  &::before,
+  &::after {
+    display: inline-block;
+    font-size: 2.2rem;
+  }
+  &::before {
+    content: "\201E";
+    left: -25px;
+    position: absolute;
+    line-height: 0.5;
+  }
+  &::after {
+    content: "\201C";
+    line-height: 0;
+    position: relative;
+    top: 7px;
+    left: 3px;
+  }
+}
 
 .cardText {
-  font-size: 1.5rem;
 }
 
 .blockquoteFooter {
-  display: grid;
-  row-gap: 3px;
+  //display: grid;
+  //row-gap: 3px;
 }
 
-.quoteSource {}
+.author {}
+.source {}
