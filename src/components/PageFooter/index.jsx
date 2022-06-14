@@ -12,7 +12,7 @@ const Footer = () => {
       {/*<Navigation />*/}
       <div></div>
       {/* todo: <div></div> = заглушка вместо <Navigation /> */}
-      <nav>
+      <address>
         <a
           href="&#109;&#97;i&#108;&#116;o&#58;mail&#64;&#108;%&#54;5%67&#37;6Do&#46;%&#55;2&#117;"
           title={'Написать разработчику'}
@@ -20,7 +20,7 @@ const Footer = () => {
         >
           {iconMail}
         </a>
-      </nav>
+      </address>
     </footer>
   );
 };
