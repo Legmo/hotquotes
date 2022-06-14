@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 
 const Navigation = () => {
   return (
-    <div className={style.navList}>
+    <ul className={style.navList}>
       <NavLink
         to="/index"
         className={style.navItem}
@@ -19,7 +19,7 @@ const Navigation = () => {
       >
         Добавить цитату
       </NavLink>
-    </div>
+    </ul>
   );
 };
 
