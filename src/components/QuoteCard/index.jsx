@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import QuoteCategoriesList from '../QuoteCategoriesList/index';
-import style from './style.module.css';
+import style from './style.module.scss';
+import ListTagsInline from '../ListTagsInline';
 
-//We need to move this function to helpers.js (or not?)
+//todo: We need to move this function to helpers.js (or not?)
 Array.prototype.rand = function () {
   return this[Math.floor(Math.random() * this.length)];
 };
@@ -28,12 +28,12 @@ class QuoteCard extends Component {
       <blockquote className={style.blockquote}>
         <section className={style.cardText}>{quote.text}</section>
         <footer className={style.blockquoteFooter}>
-          <span className="quote-source">
+          <span className={style.quoteSource}>
             {quote.author[0].name}
             &nbsp;
             {quote.title !== '' ? <span>«{quote.title}»</span> : <span></span>}
           </span>
-          <QuoteCategoriesList categories={quote.category} inline="yes" />
+          <ListTagsInline listItems={quote.category} />
         </footer>
       </blockquote>
     );
