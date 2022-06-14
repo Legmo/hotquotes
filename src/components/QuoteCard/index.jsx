@@ -25,17 +25,20 @@ class QuoteCard extends Component {
   render() {
     const quote = this.state.quote;
     return (
-      <blockquote className={style.blockquote}>
-        <section className={style.cardText}>{quote.text}</section>
-        <footer className={style.blockquoteFooter}>
-          <span className={style.quoteSource}>
-            {quote.author[0].name}
-            &nbsp;
-            {quote.title !== '' ? <span>«{quote.title}»</span> : <span></span>}
-          </span>
+      <figure className={style.blockquoteContainer}>
+        <blockquote className={style.blockquote}>{quote.text}</blockquote>
+        <figcaption className={style.blockquoteFooter}>
+          <span className={style.author}>{quote.author[0].name}</span>{' '}
+          <cite className={style.source}>
+            {quote.title !== '' ? (
+              <span>, «{quote.title}»</span>
+            ) : (
+              <span></span>
+            )}
+          </cite>
           <ListTagsInline listItems={quote.category} />
-        </footer>
-      </blockquote>
+        </figcaption>
+      </figure>
     );
   }
 }
