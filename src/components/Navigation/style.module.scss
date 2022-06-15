@@ -1,11 +1,15 @@
+@import '../variables.scss';
+
 .navList  {
   display: grid;
   column-gap: 10px;
   grid-auto-columns: max-content;
   grid-auto-flow: column;
+  .navItem {}
+  a{
+    &.active {
+      color: $color-black-text;
+      cursor: default;
+    }
+  }
 }
-.navList a.active {
-  color: black !important;
-  cursor: default;
-}
-.navItem {}

@@ -1,33 +1,21 @@
 @import '../variables.scss';
 
 html {
-  height: 100%;
   position: relative;
-  min-height: 100vh;
+  color: $color-black-text;
+  font-size: $font-size-basic;
+  line-height: $line-height-basic;
 }
 body {
   margin: 0;
-  padding: 50px 40px 0;
-  color: $color-black-text;
+  padding: 0 40px;
 }
-.content {
-  min-height: calc(100vh - 50px);
-  margin: 0 auto -70px;  /*See at PageFooter/Style.module.css - .footer*/
+// Don't forget about #root in public/default.css
+.main {
+  padding-top: 50px;
+  margin: 0 auto;
   display: grid;
-  gap: 1.25rem;
-  grid-template-columns: auto 13rem; /*todo: extract width of column to constant*/
-}
-button {
-  background-color: transparent;
-  position: relative;
-  z-index: 11;
-  border: none;
-  svg {
-    color: #333;
-    transition: $transition-basic;
-  }
-  &:hover svg {
-    color: $color-blue-primary;
-    transition: $transition-basic;
-  }
+  width: 100%;
+  gap: 20px;
+  grid-template-columns: auto $sidebar-width;
 }
