@@ -3,6 +3,7 @@ import style from './style.module.scss';
 import { reduceToUniq } from '../../helpers';
 import ListSidebar from '../ListSidebar';
 import FiltersActive from '../FiltersActive';
+import PropTypes from 'prop-types';
 
 const Sidebar = (props) => {
   let quotesBase = props.quotes.quotes_base;
@@ -55,6 +56,11 @@ const Sidebar = (props) => {
       </div>
     </aside>
   );
+};
+
+Sidebar.propTypes = {
+  quotes: PropTypes.object,
+  quotes_base: PropTypes.array,
 };
 
 export default Sidebar;

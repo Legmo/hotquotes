@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import style from './style.module.scss';
 import ListTagsInline from '../ListTagsInline';
 
@@ -21,7 +22,6 @@ class QuoteCard extends Component {
       quote: this.props.store.getState().quotes.quotes_base.rand(),
     });
   }
-
   render() {
     const quote = this.state.quote;
     return (
@@ -45,5 +45,12 @@ class QuoteCard extends Component {
     );
   }
 }
+
+QuoteCard.propTypes = {
+  store: PropTypes.shape({
+    getState: PropTypes.func,
+  }),
+  listItems: PropTypes.string,
+};
 
 export default QuoteCard;
