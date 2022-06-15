@@ -1,6 +1,7 @@
 import React from 'react';
 import style from './style.module.scss';
 import ListSidebar from '../ListSidebar';
+import PropTypes from 'prop-types';
 
 const FiltersActive = (props) => {
   //todo: Здесь будут отображаться выбранные категории и авторы с возможностью удаления + счётчик подходящих цитат
@@ -16,6 +17,10 @@ const FiltersActive = (props) => {
   ) : (
     <p className={style.filtersInfo}>Ни один фильтр не выбран.</p>
   );
+};
+
+FiltersActive.propTypes = {
+  filtersList: PropTypes.string,
 };
 
 export default FiltersActive;
