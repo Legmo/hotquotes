@@ -1,5 +1,7 @@
+@import '../variables.scss';
+
 .filtersInfo {
-  font-size: 0.7rem;
-  color: silver;
+  font-size: $font-size-s;
+  color: $color-gray-light;
   font-weight: lighter;
 }

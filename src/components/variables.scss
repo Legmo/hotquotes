@@ -1,7 +1,18 @@
 //Colors
 $color-black-text: #333;
-$color-blue-primary: #0079fe;
-$color-red-primary: #fe0036;
+$color-blue: #0079fe; //color from logo
+$color-red: #fe0036; //color from logo
+$color-gray: #808080FF; //gray
+$color-gray-light: #C0C0C0FF; //silver
+
+//Font
+$font-size-xxxl: 2.2rem;
+$font-size-xxl: 1.5rem;
+$font-size-xl: 1.125rem;
+$font-size-basic: 1rem;
+$font-size-s: 0.7rem;
+$line-height-basic: 1.2;
 
 //Other
+$sidebar-width: 13rem;
 $transition-basic: all 0.5s ease-out;

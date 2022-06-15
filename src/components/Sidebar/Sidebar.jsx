@@ -29,7 +29,7 @@ const Sidebar = (props) => {
   // todo: возможно стоит сделать функцию/компонент для генерация sidebar. Подумать
   return (
     <aside className={style.sidebar}>
-      <section className={style.sectionTags}>
+      <section className={style.sectionSidebar + ' ' + style.sectionTags}>
         <h2 className={style.titleSidebar}>Категории</h2>
         <ListSidebar
           filter="none"
@@ -38,7 +38,7 @@ const Sidebar = (props) => {
           title="Добавить в фильтры"
         />
       </section>
-      <section className={style.sectionAuthors}>
+      <section className={style.sectionSidebar + ' ' + style.sectionAuthors}>
         <h2 className={style.titleSidebar}>Авторы</h2>
         <ListSidebar
           filter="none"
@@ -48,7 +48,7 @@ const Sidebar = (props) => {
         />
       </section>
       <div>
-        <section className={style.sectionTags}>
+        <section className={style.sectionSidebar + ' ' + style.sectionTags}>
           <h2 className={style.titleSidebar}>Активные фильтры</h2>
           <FiltersActive filtersList={''} />
         </section>
