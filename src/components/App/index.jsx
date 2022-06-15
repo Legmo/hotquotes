@@ -25,11 +25,10 @@ const App = () => {
 
   return (
     <>
-      <main className={style.content}>
+      <main className={style.main}>
         <section>
           <QuoteCard store={tmp_store} />
           <RefreshBlock />
-          <div>{/*<CategoriesList categories={categoryListUniq}/>*/}</div>
         </section>
 
         {/*

@@ -1,41 +1,43 @@
+@import '../variables.scss';
+
 .blockquoteContainer {
   display: grid;
   row-gap: 20px;
+  margin-top: 0;
 }
 .blockquote {
   margin: 0;
-  font-size: 1.5rem;
+  font-size: $font-size-xxl;
   quotes: "«" "»" "„" "“";
   position: relative;
-  //text-indent: -0.45em;
 
   &::before,
   &::after {
-    display: inline-block;
-    font-size: 2.2rem;
+    font-size: $font-size-xxxl;
   }
   &::before {
     content: "\201E";
-    left: -25px;
     position: absolute;
+    left: -25px;
     line-height: 0.5;
   }
   &::after {
     content: "\201C";
-    line-height: 0;
     position: relative;
     top: 7px;
     left: 3px;
+    line-height: 0;
   }
 }
-
+.blockquoteFooter {
+  display: grid;
+  row-gap: 3px;
+  .authorAndSource {
+    .author {}
+    .source {
+      font-style: normal;
+    }
+  }
+}
 .cardText {
 }
-
-.blockquoteFooter {
-  //display: grid;
-  //row-gap: 3px;
-}
-
-.author {}
-.source {}
