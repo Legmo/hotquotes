@@ -38,6 +38,7 @@ class QuoteCard extends Component {
               )}
             </cite>
           </span>
+
           <ListTagsInline listItems={quote.category} />
         </figcaption>
       </figure>
