@@ -1,6 +1,6 @@
 import React from 'react';
 import style from './style.module.scss';
-import { reduceToUniq } from '../../helpers';
+import Helpers from '../helpers';
 import ListSidebar from '../ListSidebar';
 import FiltersActive from '../FiltersActive';
 import PropTypes from 'prop-types';
@@ -24,8 +24,8 @@ const Sidebar = (props) => {
     []
   );
 
-  const listTags = reduceToUniq(listTagsReduce);
-  const listAuthors = reduceToUniq(listAuthorsReduce);
+  const listTags = Helpers.reduceToUniq(listTagsReduce);
+  const listAuthors = Helpers.reduceToUniq(listAuthorsReduce);
 
   // todo: возможно стоит сделать функцию/компонент для генерация sidebar. Подумать
   return (
