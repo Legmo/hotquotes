@@ -21,16 +21,14 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint --debug src/",
-    "lint-fix": "eslint --debug src/ --fix"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged --relative"
-    }
+    "lint-fix": "eslint --debug src/ --fix",
+    "prepare": "husky install"
   },
   "lint-staged": {
-    "*.{js,ts}": [
-      "eslint --fix"
+    "*.{js,jsx,ts,tsx,css,scss,html}": [
+      "eslint --fix",
+      "npm run build",
+      "git add"
     ]
   },
   "eslintConfig": {
@@ -58,9 +56,8 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.30.0",
     "husky": "^8.0.1",
-    "lint-staged": "^13.0.0",
+    "lint-staged": "^13.0.2",
     "lodash": "^4.17.21",
-    "prettier": "2.6.2",
     "prop-types": "^15.8.1",
     "react-redux": "^8.0.2",
     "redux": "^4.2.0",

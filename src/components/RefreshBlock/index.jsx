@@ -1,8 +1,8 @@
 import React from 'react';
 import style from './style.module.scss';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSync } from '@fortawesome/free-solid-svg-icons';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faSync} from '@fortawesome/free-solid-svg-icons';
 
 const iconSync = <FontAwesomeIcon icon={faSync} size="1x" />;
 

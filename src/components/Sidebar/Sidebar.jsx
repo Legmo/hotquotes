@@ -1,6 +1,6 @@
 import React from 'react';
 import style from './style.module.scss';
-import { reduceToUniq } from '../../helpers';
+import Helpers from '../helpers';
 import ListSidebar from '../ListSidebar';
 import FiltersActive from '../FiltersActive';
 import PropTypes from 'prop-types';
@@ -24,8 +24,8 @@ const Sidebar = (props) => {
     []
   );
 
-  const listTags = reduceToUniq(listTagsReduce);
-  const listAuthors = reduceToUniq(listAuthorsReduce);
+  const listTags = Helpers.reduceToUniq(listTagsReduce);
+  const listAuthors = Helpers.reduceToUniq(listAuthorsReduce);
 
   // todo: возможно стоит сделать функцию/компонент для генерация sidebar. Подумать
   return (
@@ -33,19 +33,19 @@ const Sidebar = (props) => {
       <section className={style.sectionSidebar + ' ' + style.sectionTags}>
         <h2 className={style.titleSidebar}>Категории</h2>
         <ListSidebar
-          filter="none"
+          filter='none'
           listItems={listTags}
-          listName="Tags"
-          title="Добавить в фильтры"
+          listName='Tags'
+          title='Добавить в фильтры'
         />
       </section>
       <section className={style.sectionSidebar + ' ' + style.sectionAuthors}>
         <h2 className={style.titleSidebar}>Авторы</h2>
         <ListSidebar
-          filter="none"
+          filter='none'
           listItems={listAuthors}
-          listName="Authors"
-          title="Добавить в фильтры"
+          listName='Authors'
+          title='Добавить в фильтры'
         />
       </section>
       <div>
@@ -59,8 +59,8 @@ const Sidebar = (props) => {
 };
 
 Sidebar.propTypes = {
-  quotes: PropTypes.object,
-  quotes_base: PropTypes.array,
+  quotes:      PropTypes.object,
+  quotes_base: PropTypes.array
 };
 
 export default Sidebar;
