@@ -31,7 +31,6 @@ It is planned in the future to allow users to add their own quotes (public or fo
 - <img src="https://lodash.com/assets/img/lodash.svg" title="Lodash" alt="Lodash" width="20" height="20">&nbsp;[Lodash](https://lodash.com/assets/img/lodash.svg)
 - <img src="http://legmo.ru/GitHub/awesome_font_icon.svg" title="Font Awesome" alt="Font Awesome" width="20" height="20"/>&nbsp;[Font Awesome](https://fontawesome.com/)
 - <img src="https://github.com/devicons/devicon/blob/master/icons/eslint/eslint-original.svg" title="ES Lint" alt="ES Lint" width="20" height="20"/>&nbsp;[ES Lint](https://eslint.org/)
-- <img src="https://github.com/gilbarbara/logos/blob/master/logos/prettier.svg" title="Prettier" alt="Prettier" width="20" height="20">&nbsp;[Prettier](https://prettier.io/)
 - 🐶&nbsp;[Husky](https://github.com/typicode/husky)
 - <img src="https://github.com/devicons/devicon/blob/master/icons/npm/npm-original-wordmark.svg" title="Lint-staged" alt="Lint-staged" width="20" height="20">&nbsp;[Lint-staged](https://github.com/okonet/lint-staged) 
 - <img src="https://github.com/devicons/devicon/blob/master/icons/javascript/javascript-plain.svg" title="JavaScript" alt="JavaScript" width="20" height="20"/>&nbsp;[JavaScript ES6](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
@@ -40,6 +39,7 @@ It is planned in the future to allow users to add their own quotes (public or fo
 - <img src="https://github.com/devicons/devicon/blob/master/icons/html5/html5-original.svg" title="HTML" alt="HTML" width="20" height="20"/>&nbsp;[HTML](https://www.w3.org/html/)
 - <img src="https://github.com/devicons/devicon/blob/master/icons/css3/css3-original.svg" title="CSS" alt="CSS" width="20" height="20"/>&nbsp;[CSS](https://www.w3.org/Style/CSS/Overview.en.html)
 - <img src="https://github.com/devicons/devicon/blob/master/icons/sass/sass-original.svg" title="SASS" alt="SASS" width="20" height="20"/>&nbsp;[SASS](https://sass-lang.com/)
+- <!-- <img src="https://github.com/gilbarbara/logos/blob/master/logos/prettier.svg" title="Prettier-miscellaneous" alt="Prettier-miscellaneous" width="20" height="20">&nbsp;[Prettier-miscellaneous](https://github.com/arijs/prettier-miscellaneous)-->
 <!--
 - <img src="https://github.com/devicons/devicon/blob/master/icons/bootstrap/bootstrap-original.svg" title="Bootstrap" alt="Bootstrap" width="20" height="20"/>&nbsp;[Bootstrap](https://getbootstrap.com/)
 -->
@@ -125,7 +125,6 @@ You can also ask the necessary questions in the [Discussions section](https://gi
 - <img src="https://lodash.com/assets/img/lodash.svg" title="Lodash" alt="Lodash" width="20" height="20">&nbsp;[Lodash](https://lodash.com/assets/img/lodash.svg)
 - <img src="http://legmo.ru/GitHub/awesome_font_icon.svg" title="Font Awesome" alt="Font Awesome" width="20" height="20"/>&nbsp;[Font Awesome](https://fontawesome.com/)
 - <img src="https://github.com/devicons/devicon/blob/master/icons/eslint/eslint-original.svg" title="ES Lint" alt="ES Lint" width="20" height="20"/>&nbsp;[ES Lint](https://eslint.org/)
-- <img src="https://github.com/gilbarbara/logos/blob/master/logos/prettier.svg" title="Prettier" alt="Prettier" width="20" height="20">&nbsp;[Prettier](https://prettier.io/)
 - 🐶&nbsp;[Husky](https://github.com/typicode/husky)
 - <img src="https://github.com/devicons/devicon/blob/master/icons/npm/npm-original-wordmark.svg" title="Lint-staged" alt="Lint-staged" width="20" height="20">&nbsp;[Lint-staged](https://github.com/okonet/lint-staged) 
 - <img src="https://github.com/devicons/devicon/blob/master/icons/javascript/javascript-plain.svg" title="JavaScript" alt="JavaScript" width="20" height="20"/>&nbsp;[JavaScript ES6](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
@@ -134,6 +133,7 @@ You can also ask the necessary questions in the [Discussions section](https://gi
 - <img src="https://github.com/devicons/devicon/blob/master/icons/html5/html5-original.svg" title="HTML" alt="HTML" width="20" height="20"/>&nbsp;[HTML](https://www.w3.org/html/)
 - <img src="https://github.com/devicons/devicon/blob/master/icons/css3/css3-original.svg" title="CSS" alt="CSS" width="20" height="20"/>&nbsp;[CSS](https://www.w3.org/Style/CSS/Overview.en.html)
 - <img src="https://github.com/devicons/devicon/blob/master/icons/sass/sass-original.svg" title="SASS" alt="SASS" width="20" height="20"/>&nbsp;[SASS](https://sass-lang.com/)
+- <!-- <img src="https://github.com/gilbarbara/logos/blob/master/logos/prettier.svg" title="Prettier-miscellaneous" alt="Prettier-miscellaneous" width="20" height="20">&nbsp;[Prettier-miscellaneous](https://github.com/arijs/prettier-miscellaneous)-->
 <!--
 - <img src="https://github.com/devicons/devicon/blob/master/icons/bootstrap/bootstrap-original.svg" title="Bootstrap" alt="Bootstrap" width="20" height="20"/>&nbsp;[Bootstrap](https://getbootstrap.com/)
 -->
