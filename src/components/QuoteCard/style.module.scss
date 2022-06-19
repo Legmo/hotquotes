@@ -8,7 +8,7 @@
 .blockquote {
   margin: 0;
   font-size: $font-size-xxl;
-  quotes: "«" "»" "„" "“";
+  quotes: '«' '»' '„' '“';
   position: relative;
 
   &::before,
@@ -16,13 +16,13 @@
     font-size: $font-size-xxxl;
   }
   &::before {
-    content: "\201E";
+    content: '\201E';
     position: absolute;
     left: -25px;
     line-height: 0.5;
   }
   &::after {
-    content: "\201C";
+    content: '\201C';
     position: relative;
     top: 7px;
     left: 3px;
@@ -33,7 +33,8 @@
   display: grid;
   row-gap: 3px;
   .authorAndSource {
-    .author {}
+    .author {
+    }
     .source {
       font-style: normal;
     }

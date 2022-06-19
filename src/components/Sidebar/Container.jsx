@@ -5,7 +5,7 @@ import {
   updateNewAuthorTextCreator,
   updateNewTagTextCreator,
 } from '../../redux/reducer-quotes';
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 
 let mapStateToProps = (state) => {
   return {
