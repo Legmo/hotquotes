@@ -35,10 +35,9 @@
     "key-spacing": [
       "warn",
       {
-        "align": {
-          "afterColon": true,
-          "on": "value"
-        }
+        "afterColon": true,
+        "align": "value"
+
       }
     ],
     "react/jsx-equals-spacing": "warn",
