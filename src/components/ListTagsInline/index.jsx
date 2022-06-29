@@ -14,8 +14,8 @@ const ListTagsInline = (props) => {
 
 ListTagsInline.propTypes = {
   listItems: PropTypes.array,
-  id: PropTypes.number,
-  name: PropTypes.string,
+  id:        PropTypes.number,
+  name:      PropTypes.string,
 };
 
 export default ListTagsInline;

@@ -59,7 +59,7 @@ const Sidebar = (props) => {
 };
 
 Sidebar.propTypes = {
-  quotes: PropTypes.object,
+  quotes:      PropTypes.object,
   quotes_base: PropTypes.array,
 };
 

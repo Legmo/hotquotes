@@ -12,7 +12,7 @@
     }
   },
   "extends": [
-//	https://eslint.org/docs/rules/
+    //	https://eslint.org/docs/rules/
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:jsx-a11y/recommended"
@@ -23,11 +23,11 @@
     "prettier"
   ],
   "rules": {
-//  https://eslint.org/docs/rules/semi
-//	"semi": 0, //Disable semicolon error
+    //  https://eslint.org/docs/rules/semi
+    //	"semi": 0, //Disable semicolon error
     "semi": "error",
-// https://eslint.org/docs/rules/no-multi-spaces
-	"no-multi-spaces": [
+    // https://eslint.org/docs/rules/no-multi-spaces
+    "no-multi-spaces": [
       "warn",
       {
         "exceptions": {
@@ -35,20 +35,22 @@
         }
       }
     ],
-//  https://eslint.org/docs/rules/key-spacing
+    //  https://eslint.org/docs/rules/key-spacing
     "key-spacing": [
       "warn",
       {
-        "align": {
-//          "beforeColon": true,
-//          "afterColon": true,
-          "on": "value"
-        }
+        "afterColon": true,
+        "align": "value"
+
       }
     ],
-    "react/jsx-equals-spacing": "warn", // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-equals-spacing.md
-    "react/prop-types": "warn", // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prop-types.md
-    "jsx-a11y/label-has-for": "warn", // https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/label-has-for.md
-    "linebreak-style": "off" // Does not work correctly on Windows.
+    "react/jsx-equals-spacing": "warn",
+    // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-equals-spacing.md
+    "react/prop-types": "warn",
+    // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prop-types.md
+    "jsx-a11y/label-has-for": "warn",
+    // https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/label-has-for.md
+    "linebreak-style": "off"
+    // Does not work correctly on Windows.
   }
 }

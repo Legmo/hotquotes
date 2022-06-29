@@ -4,7 +4,7 @@ import reducerUsers from './reducer-users';
 
 let reducers = combineReducers({
   quotes: reducerQuotes,
-  users: reducerUsers,
+  users:  reducerUsers,
 });
 
 let store = createStore(reducers);

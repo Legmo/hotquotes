@@ -1,22 +1,14 @@
-/* Сравниваем два значения */
-export let compareValues = (a, b) => {
-  if (+a == +b) {
-    return true;
-  }
-  return false;
-};
-
-/* Проверяем массив - встречается ли в нём этот элемент */
-export let findDoubles = (array, v) => {
-  for (var i = 0; i < array.length; i++) {
-    if (compareValues(array[i], v)) {
+/* Check array to see if it contains this element */
+export let findDoubles = (array, value) => {
+  for (let i = 0; i < array.length; i++) {
+    if (+array[i] == +value) {
       return true;
     }
   }
   return false;
 };
 
-/* Удаляем из массива объекты-дубли */
+/* Remove duplicate objects from an array */
 export let reduceToUniq = (arr) => {
   let arrResult = [];
   let arrId = [];
@@ -26,9 +18,14 @@ export let reduceToUniq = (arr) => {
 
       arrResult[i] = {
         name: arr[i].name,
-        id: arr[i].id,
+        id:   arr[i].id,
       };
     }
   }
   return arrResult;
+};
+
+/* Return a random array element */
+export let getRandomArrayElement = (array) => {
+  return array[Math.floor(Math.random() * array.length)];
 };
