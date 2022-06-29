@@ -12,8 +12,8 @@ const App = () => {
       <main className={style.main}>
         <section>
           <Routes>
-            <Route path="/" element={<QuoteCardContainer />} />
-            <Route path="/add_quote" element={<Page_AddQuote_Container />} />
+            <Route path='/' element={<QuoteCardContainer />} />
+            <Route path='/add_quote' element={<Page_AddQuote_Container />} />
           </Routes>
         </section>
         <SidebarContainer />
