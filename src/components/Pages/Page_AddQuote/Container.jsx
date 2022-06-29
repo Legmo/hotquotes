@@ -1,4 +1,4 @@
-import Page_AddQuote from './pageAddQuote';
+import Page_AddQuote from './PageAddQuote';
 import {
   addQuoteCreator,
   updateNewQuoteTextCreator,
@@ -6,7 +6,7 @@ import {
   updateNewTitleTextCreator,
   updateNewTagTextCreator,
 } from '../../../redux/reducer-quotes';
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 
 let mapStateToProps = (state) => {
   return {

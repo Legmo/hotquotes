@@ -18,10 +18,10 @@ const ListSidebar = (props) => {
 
 ListSidebar.propTypes = {
   listItems: PropTypes.array,
-  id: PropTypes.number,
-  title: PropTypes.string,
-  name: PropTypes.string,
-  listName: PropTypes.string,
+  id:        PropTypes.number,
+  title:     PropTypes.string,
+  name:      PropTypes.string,
+  listName:  PropTypes.string,
 };
 
 export default ListSidebar;

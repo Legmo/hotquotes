@@ -33,19 +33,19 @@ const Sidebar = (props) => {
       <section className={style.sectionSidebar + ' ' + style.sectionTags}>
         <h2 className={style.titleSidebar}>Категории</h2>
         <ListSidebar
-          filter="none"
+          filter='none'
           listItems={listTags}
-          listName="Tags"
-          title="Добавить в фильтры"
+          listName='Tags'
+          title='Добавить в фильтры'
         />
       </section>
       <section className={style.sectionSidebar + ' ' + style.sectionAuthors}>
         <h2 className={style.titleSidebar}>Авторы</h2>
         <ListSidebar
-          filter="none"
+          filter='none'
           listItems={listAuthors}
-          listName="Authors"
-          title="Добавить в фильтры"
+          listName='Authors'
+          title='Добавить в фильтры'
         />
       </section>
       <div>
@@ -59,8 +59,8 @@ const Sidebar = (props) => {
 };
 
 Sidebar.propTypes = {
-  quotes: PropTypes.object,
-  quotes_base: PropTypes.array,
+  quotes:      PropTypes.object,
+  quotes_base: PropTypes.array
 };
 
 export default Sidebar;
