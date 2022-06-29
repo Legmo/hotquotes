@@ -1,4 +1,4 @@
-import Page_AddQuote from './pageAddQuote';
+import Page_AddQuote from './PageAddQuote';
 import {
   addQuoteCreator,
   updateNewQuoteTextCreator,
