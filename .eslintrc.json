@@ -32,21 +32,40 @@
       }
     ],
     //  https://eslint.org/docs/rules/key-spacing
+    "quotes": [
+      "warn",
+      "single",
+      {
+        "avoidEscape": true
+      }
+    ],
+    "jsx-quotes" : [
+      "warn",
+      "prefer-single"
+    ],
     "key-spacing": [
       "warn",
       {
         "afterColon": true,
         "align": "value"
-
       }
     ],
-    "react/jsx-equals-spacing": "warn",
-    // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-equals-spacing.md
+    "space-infix-ops": [
+      "warn",
+      {
+        "int32Hint": false
+      }
+    ],
+    // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-equals-spacing.md,
+    "react/jsx-equals-spacing": [
+      "warn",
+      "always"
+    ],
+    // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prop-types.md,
     "react/prop-types": "warn",
-    // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prop-types.md
+    // https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/label-has-for.md,
     "jsx-a11y/label-has-for": "warn",
-    // https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/label-has-for.md
+    // Does not work correctly on Windows.,
     "linebreak-style": "off"
-    // Does not work correctly on Windows.
   }
 }
