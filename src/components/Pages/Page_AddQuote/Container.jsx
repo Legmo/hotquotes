@@ -10,10 +10,10 @@ import {connect} from 'react-redux';
 
 let mapStateToProps = (state) => {
   return {
-    newQuoteText: state.quotes.newQuoteText,
+    newQuoteText:  state.quotes.newQuoteText,
     newAuthorText: state.quotes.newAuthorText,
-    newTitleText: state.quotes.newTitleText,
-    newTagText: state.quotes.newTagText,
+    newTitleText:  state.quotes.newTitleText,
+    newTagText:    state.quotes.newTagText,
   };
 };
 
