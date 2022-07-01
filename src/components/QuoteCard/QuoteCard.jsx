@@ -24,12 +24,12 @@ class QuoteCard extends Component {
     const quote = this.state.quote;
     return (
       <>
-        <figure className={style.blockquoteContainer}>
-          <blockquote className={style.blockquote}>{quote.text}</blockquote>
-          <figcaption className={style.blockquoteFooter}>
-            <span className={style.authorAndSource}>
-              <span className={style.author}>{quote.author[0].name}</span>{' '}
-              <cite className={style.source}>
+        <figure className = {style.blockquoteContainer}>
+          <blockquote className = {style.blockquote}>{quote.text}</blockquote>
+          <figcaption className = {style.blockquoteFooter}>
+            <span className = {style.authorAndSource}>
+              <span className = {style.author}>{quote.author[0].name}</span>{' '}
+              <cite className = {style.source}>
                 {quote.title !== '' ? (
                   <span>, «{quote.title}»</span>
                 ) : (
@@ -37,7 +37,7 @@ class QuoteCard extends Component {
                 )}
               </cite>
             </span>
-            <ListTagsInline listItems={quote.category} />
+            <ListTagsInline listItems = {quote.category} />
           </figcaption>
         </figure>
 
