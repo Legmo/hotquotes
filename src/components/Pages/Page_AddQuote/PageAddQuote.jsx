@@ -1,5 +1,6 @@
 import React from 'react';
 import style from './style.module.scss';
+import PropTypes from 'prop-types';
 
 let Page_AddQuote = (props) => {
   let addNewQuote = () => {
@@ -54,7 +55,6 @@ let Page_AddQuote = (props) => {
         }
         rows = '1'
       />
-
       <select
         multiple
         className = {style.input + ' ' + style.select + ' ' + style.inputTags}
@@ -75,6 +75,18 @@ let Page_AddQuote = (props) => {
       <button onClick = {addNewQuote}>Добавить цитату</button>
     </div>
   );
+};
+
+Page_AddQuote.propTypes = {
+  addQuote:            PropTypes.func,
+  updateNewQuoteText:  PropTypes.func,
+  updateNewAuthorText: PropTypes.func,
+  updateNewTitleText:  PropTypes.func,
+  updateNewTagText:    PropTypes.func,
+  newQuoteText:        PropTypes.string,
+  newAuthorText:       PropTypes.string,
+  newTitleText:        PropTypes.string,
+  newTagText:          PropTypes.array,
 };
 
 export default Page_AddQuote;
