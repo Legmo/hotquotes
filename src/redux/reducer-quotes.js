@@ -1,130 +1,71 @@
-const ADD_QUOTE = 'ADD-QUOTE';
+/*todo: is it correct to put this logic into reducer?!*/
+import { UuidGenerator } from '../utils/uuidGenerator';
+
+const ADD_NEW_QUOTE = 'ADD-NEW-QUOTE';
 const UPDATE_NEW_QUOTE_TEXT = 'UPDATE-NEW-QUOTE-TEXT';
-const UPDATE_NEW_AUTHOR_TEXT = 'UPDATE-NEW-AUTHOR-TEXT';
-const UPDATE_NEW_TITLE_TEXT = 'UPDATE-NEW-TITLE-TEXT';
-const UPDATE_NEW_TAG_TEXT = 'UPDATE-NEW-TAG-TEXT';
+const UPDATE_NEW_SOURCE_TITLE_TEXT = 'UPDATE_NEW_SOURCE_TITLE_TEXT';
+const ADD_AUTHOR_ID = 'ADD_AUTHOR_ID';
+const ADD_TAG_ID = 'ADD_TAG_ID';
+
+const UuidGeneratorClass = new UuidGenerator;
 
 let initialState = {
-  quotes_base: [
+  quotesBase: [
     {
-      id:     '0',
-      date:   '2018-06-23T19:03:23.000Z',
-      author: [
-        {
-          name: 'Марк Аврелий',
-          id:   1,
-        },
-      ],
-      title:    '',
-      text:     'Делай, что должно, и будь что будет.',
-      category: [
-        {
-          name: 'девиз',
-          id:   2,
-        },
-        {
-          name: 'дух',
-          id:   3,
-        },
-        {
-          name: 'латынь',
-          id:   4,
-        },
-        {
-          name: 'нонконформизм',
-          id:   7,
-        },
+      quoteId:     '0181e85e-8e40-44eb-b7d0-81f9fc52f59d',
+      quoteDate:   '2018-06-23T19:03:23.000Z',
+      authorId:    '0181e85f-0d52-4f7d-a26e-4b6bed4c2a51',
+      sourceTitle: '',
+      quoteText:   'Делай, что должно, и будь что будет.',
+      tags:        [
+        '0181e85f-5bc3-4095-b36c-192e63e19c4b',
+        '0181e85f-f190-41af-a665-6f7718d17972',
+        '0181e860-1cfb-49c0-8df5-654b24fc6f48',
+        '0181e860-46a1-48af-869b-0a135d69830b'
       ],
     },
     {
-      id:     '1',
-      date:   '2018-06-23T15:03:23.000Z',
-      author: [
-        {
-          name: 'Хань Сян-Цзы',
-          id:   2,
-        },
-      ],
-      title:    '',
-      text:     'Всё, что важно, не бывает срочно. Всё, что срочно - только суета.',
-      category: [
-        {
-          name: 'дух',
-          id:   3,
-        },
-        {
-          name: 'Китай',
-          id:   1,
-        },
-        {
-          name: 'психология',
-          id:   8,
-        },
+      quoteId:     '0181e860-694f-4f75-aa63-6944f541ea8c',
+      quoteDate:   '2018-06-23T15:03:23.000Z',
+      authorId:    '0181e860-e9e3-4eaa-b5ee-ca9e46033e00',
+      sourceTitle: '',
+      quoteText:   'Всё, что важно, не бывает срочно. Всё, что срочно - только суета.',
+      tags:        [
+        '0181e85f-f190-41af-a665-6f7718d17972',
+        '0181e861-3cd7-48d1-b8f9-93b1a246d840',
+        '0181e861-63c2-4c44-8e8f-0c9979430f4e'
       ],
     },
     {
-      id:     '2',
-      date:   '2018-06-23T18:03:23.000Z',
-      author: [
-        {
-          name: 'Шаво Одаджян',
-          id:   3,
-        },
-      ],
-      title:    '',
-      text:     'Помните: будьте свободны в своих мыслях и оставайтесь опасными!',
-      category: [
-        {
-          name: 'дух',
-          id:   3,
-        },
-        {
-          name: 'музыка',
-          id:   6,
-        },
-        {
-          name: 'нонконформизм',
-          id:   7,
-        },
+      quoteId:     '0181e861-8807-482c-9b3c-ec64ab9291ba',
+      quoteDate:   '2018-06-23T18:03:23.000Z',
+      authorId:    '0181e861-b72e-4994-8ced-0f1b6be25566',
+      sourceTitle: '',
+      quoteText:   'Помните: будьте свободны в своих мыслях и оставайтесь опасными!',
+      tags:        [
+        '0181e85f-f190-41af-a665-6f7718d17972',
+        '0181e862-0dfc-4db9-be19-4960b0ab2042',
+        '0181e860-46a1-48af-869b-0a135d69830b'
       ],
     },
     {
-      id:     '3',
-      date:   '2018-06-23T11:03:23.000Z',
-      author: [
-        {
-          name: 'Фрэнк Заппа',
-          id:   4,
-        },
-      ],
-      title:    '',
-      text:     'Если ты всегда слушал папу с мамой, школьных учителей, священников и какого-то дядьку в телевизоре, а теперь из-за этого ведешь скучную и несчастную жизнь - то, парень, ты этого заслуживаешь.',
-      category: [
-        {
-          name: 'дух',
-          id:   3,
-        },
-        {
-          name: 'музыка',
-          id:   6,
-        },
-        {
-          name: 'нонконформизм',
-          id:   7,
-        },
+      quoteId:     '0181e87c-21e0-4257-a8a1-6b10b42c1a5b',
+      quoteDate:   '2018-06-23T11:03:23.000Z',
+      authorId:    '0181e87c-514d-46f8-af06-babc17876276',
+      sourceTitle: '',
+      quoteText:   'Если ты всегда слушал папу с мамой, школьных учителей, священников и какого-то дядьку в телевизоре, а теперь из-за этого ведешь скучную и несчастную жизнь - то, парень, ты этого заслуживаешь.',
+      tags:        [
+        '0181e85f-f190-41af-a665-6f7718d17972',
+        '0181e862-0dfc-4db9-be19-4960b0ab2042',
+        '0181e860-46a1-48af-869b-0a135d69830b'
       ],
     },
     {
-      id:     '4',
-      date:   '2018-06-23T11:03:23.000Z',
-      author: [
-        {
-          name: 'Фрэнк Хэрберт',
-          id:   5,
-        },
-      ],
-      title: 'Дюна',
-      text:
+      quoteId:     '0181e87d-743c-41ad-835a-193870c79112',
+      quoteDate:   '2018-06-23T11:03:23.000Z',
+      authorId:    '0181e87d-a40c-4fc8-b1e1-79790914f08d',
+      sourceTitle: 'Дюна',
+      quoteText:
         'Я не должен бояться.\n' +
         'Страх — убийца разума.\n' +
         'Страх — это маленькая смерть, влекущая за собой полное уничтожение.\n' +
@@ -133,82 +74,66 @@ let initialState = {
         'И, когда он уйдет, я обращу свой внутренний взор на его путь.\n' +
         'Там, где был страх, не будет ничего.\n' +
         'Останусь лишь я.',
-      category: [
-        {
-          name: 'дух',
-          id:   3,
-        },
-        {
-          name: 'литература',
-          id:   5,
-        },
-        {
-          name: 'нонконформизм',
-          id:   7,
-        },
+      tags: [
+        '0181e85f-f190-41af-a665-6f7718d17972',
+        '0181e87d-fe3a-4e02-86d2-9d3453dc7d9d',
+        '0181e860-46a1-48af-869b-0a135d69830b'
       ],
     },
   ],
-  newQuoteText:  '',
-  newAuthorText: '',
-  newTitleText:  '',
-  newTagText:    '',
+  newQuoteDate:       '',
+  newAuthorId:        '',
+  newSourceTitleText: '',
+  newQuoteText:       '',
+  newQuoteTags:       [],
 };
 
 const quotesReducer = (state = initialState, action) => {
-  let stateCopy = {...state}; //todo: глубокое копирование. Lodash?
-  stateCopy.quotes_base = [...state.quotes_base]; //todo: Надо ли копировать массив? А вложенные объекты? Глубокое копирование? Lodash?
-  stateCopy.newQuoteText = {...state.newQuoteText};
-  stateCopy.newAuthorText = {...state.newAuthorText};
-  stateCopy.newTitleText = {...state.newTitleText};
-  stateCopy.newTagText = {...state.newTagText};
+  let stateCopy = {...state};
   let newElement = {
-    id:     '5', //todo: генерировать id
-    date:   '2019-03-23T15:03:23.000Z', //todo: генерировать дату
-    author: [
-      {
-        name: stateCopy.newAuthorText,
-        id:   99999, //todo: генерировать id
-      },
-    ],
-    title:    stateCopy.newTitleText,
-    text:     stateCopy.newQuoteText,
-    category: [
-      {
-        name: stateCopy.newTagText,
-        id:   99999, //todo: генерировать id
-      },
-    ],
+    quoteId:     UuidGeneratorClass.generate(),
+    quoteDate:   new Date().toISOString(), //todo: проверить, совпадают ли форматы создаваемых дат и уже существующих в базе
+    authorId:    stateCopy.newAuthorId,
+    sourceTitle: stateCopy.newSourceTitleText,
+    quoteText:   stateCopy.newQuoteText,
+    tags:        stateCopy.newQuoteTags,
   };
+
   switch (action.type) {
-    case ADD_QUOTE:
-      stateCopy.quotes_base.push(newElement);
+    case ADD_NEW_QUOTE:
+      stateCopy.quotesBase = [...state.quotesBase];// todo: глубокое копирование. Lodash?
+      //todo - вызывать здесь изменение newElement.authorId
+      //todo - вызывать здесь изменение newElement.tags
+      stateCopy.quotesBase.push(newElement);
       stateCopy.newQuoteText = '';
-      stateCopy.newAuthorText = '';
-      stateCopy.newTitleText = '';
-      stateCopy.newTagText = '';
+      stateCopy.newAuthorName = '';
+      stateCopy.newSourceTitleText = '';
       console.log(newElement);
       return stateCopy;
     case UPDATE_NEW_QUOTE_TEXT:
+      newElement.quoteText = action.newText;
       stateCopy.newQuoteText = action.newText;
       return stateCopy;
-    case UPDATE_NEW_AUTHOR_TEXT:
-      stateCopy.newAuthorText = action.newAuthor;
+    case UPDATE_NEW_SOURCE_TITLE_TEXT:
+      newElement.sourceTitle = action.newTitle;
+      stateCopy.newSourceTitleText = action.newTitle;
       return stateCopy;
-    case UPDATE_NEW_TITLE_TEXT:
-      stateCopy.newTitleText = action.newTitle;
+    case ADD_AUTHOR_ID:
+      newElement.authorId = action.newAuthorId;
+      stateCopy.newAuthorId = action.newAuthorId;
       return stateCopy;
-    case UPDATE_NEW_TAG_TEXT:
-      stateCopy.newTagText = action.newTag;
+    case ADD_TAG_ID:
+      newElement.tags.push(action.newTagId);
+      stateCopy.newQuoteTags.push(action.newTagId);
       return stateCopy;
     default:
-      return stateCopy;
+      return state;
   }
 };
 
 //ActionCreator's
 export const addQuoteCreator = () => ({
-  type: ADD_QUOTE,
+  type: ADD_NEW_QUOTE,
 });
 
 export const updateNewQuoteTextCreator = (text) => ({
@@ -216,19 +141,19 @@ export const updateNewQuoteTextCreator = (text) => ({
   newText: text,
 });
 
-export const updateNewAuthorTextCreator = (text) => ({
-  type:      UPDATE_NEW_AUTHOR_TEXT,
-  newAuthor: text,
-});
-
 export const updateNewTitleTextCreator = (text) => ({
-  type:     UPDATE_NEW_TITLE_TEXT,
+  type:     UPDATE_NEW_SOURCE_TITLE_TEXT,
   newTitle: text,
 });
 
-export const updateNewTagTextCreator = (text) => ({
-  type:   UPDATE_NEW_TAG_TEXT,
-  newTag: text,
+export const addAuthorCreator = (text) => ({
+  type:        ADD_AUTHOR_ID,
+  newAuthorId: text,
+});
+
+export const addTagCreator = (text) => ({
+  type:     ADD_TAG_ID,
+  newTagId: text,
 });
 
 export default quotesReducer;

@@ -15,9 +15,10 @@
     //	https://eslint.org/docs/rules/
     "eslint:recommended",
     "plugin:react/recommended",
-    "plugin:jsx-a11y/recommended"
+    "plugin:jsx-a11y/recommended",
+    "plugin:@typescript-eslint/recommended"
   ],
-  "plugins": ["react", "react", "prettier"],
+  "plugins": ["react", "react", "prettier", "@typescript-eslint"],
   "rules": {
     //  https://eslint.org/docs/rules/semi
     //	"semi": 0, //Disable semicolon error

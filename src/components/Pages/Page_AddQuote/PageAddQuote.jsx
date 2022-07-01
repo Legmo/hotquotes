@@ -1,5 +1,6 @@
 import React from 'react';
 import style from './style.module.scss';
+import PropTypes from 'prop-types';
 
 let Page_AddQuote = (props) => {
   let addNewQuote = () => {
@@ -9,9 +10,13 @@ let Page_AddQuote = (props) => {
     let text = event.target.value;
     props.updateNewQuoteText(text);
   };
-  let onAuthorChanged = (event) => {
+  let newAuthorNameChanged = (event) => {
     let text = event.target.value;
-    props.updateNewAuthorText(text);
+    props.updateNewAuthorName(text);
+  };
+  let newAuthorSurnameChanged = (event) => {
+    let text = event.target.value;
+    props.updateNewAuthorSurname(text);
   };
   let onTitleChanged = (event) => {
     let text = event.target.value;
@@ -32,9 +37,16 @@ let Page_AddQuote = (props) => {
         rows = '10'
       />
       <textarea
-        value = {props.newAuthorText}
-        onChange = {onAuthorChanged}
-        placeholder = 'Автор'
+        value = {props.NewAuthorName}
+        onChange = {newAuthorNameChanged}
+        placeholder = 'Имя автора'
+        className = {style.input + ' ' + style.inputAuthor}
+        rows = '1'
+      />
+      <textarea
+        value = {props.NewAuthorSurname}
+        onChange = {newAuthorSurnameChanged}
+        placeholder = 'Фамилия автора'
         className = {style.input + ' ' + style.inputAuthor}
         rows = '1'
       />
@@ -54,7 +66,6 @@ let Page_AddQuote = (props) => {
         }
         rows = '1'
       />
-
       <select
         multiple
         className = {style.input + ' ' + style.select + ' ' + style.inputTags}
@@ -75,6 +86,20 @@ let Page_AddQuote = (props) => {
       <button onClick = {addNewQuote}>Добавить цитату</button>
     </div>
   );
+};
+
+Page_AddQuote.propTypes = {
+  addQuote:               PropTypes.func,
+  updateNewQuoteText:     PropTypes.func,
+  updateNewAuthorName:    PropTypes.func,
+  updateNewAuthorSurname: PropTypes.func,
+  updateNewTitleText:     PropTypes.func,
+  updateNewTagText:       PropTypes.func,
+  newQuoteText:           PropTypes.string,
+  NewAuthorName:          PropTypes.string,
+  NewAuthorSurname:       PropTypes.string,
+  newTitleText:           PropTypes.string,
+  newTagText:             PropTypes.array,
 };
 
 export default Page_AddQuote;

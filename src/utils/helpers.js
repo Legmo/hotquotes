@@ -29,3 +29,13 @@ export let reduceToUniq = (arr) => {
 export let getRandomArrayElement = (array) => {
   return array[Math.floor(Math.random() * array.length)];
 };
+
+/* Find array element by */
+export let findElementByValue = (array, value) => {
+  let quoteAuthorObject = null;
+  array.map((object) => {
+    if (Object.values(object).includes(value)) {
+      quoteAuthorObject = object;
+    }});
+  return quoteAuthorObject;
+};

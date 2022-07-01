@@ -2,16 +2,21 @@ import Page_AddQuote from './PageAddQuote';
 import {
   addQuoteCreator,
   updateNewQuoteTextCreator,
-  updateNewAuthorTextCreator,
   updateNewTitleTextCreator,
-  updateNewTagTextCreator,
 } from '../../../redux/reducer-quotes';
+import {
+  addNewTagTextCreator
+} from '../../../redux/reducer-tags';
+import {
+  updateNewAuthorNameCreator,
+  updateNewAuthorSurnameCreator
+} from '../../../redux/reducer-authors';
 import {connect} from 'react-redux';
 
 let mapStateToProps = (state) => {
   return {
     newQuoteText:  state.quotes.newQuoteText,
-    newAuthorText: state.quotes.newAuthorText,
+    NewAuthorName: state.quotes.NewAuthorName,
     newTitleText:  state.quotes.newTitleText,
     newTagText:    state.quotes.newTagText,
   };
@@ -25,14 +30,17 @@ let mapDispatchToProps = (dispatch) => {
     updateNewQuoteText: (text) => {
       dispatch(updateNewQuoteTextCreator(text));
     },
-    updateNewAuthorText: (text) => {
-      dispatch(updateNewAuthorTextCreator(text));
+    updateNewAuthorName: (text) => {
+      dispatch(updateNewAuthorNameCreator(text));
+    },
+    updateNewAuthorSurname: (text) => {
+      dispatch(updateNewAuthorSurnameCreator(text));
     },
     updateNewTitleText: (text) => {
       dispatch(updateNewTitleTextCreator(text));
     },
     updateNewTagText: (text) => {
-      dispatch(updateNewTagTextCreator(text));
+      dispatch(addNewTagTextCreator(text));
     },
   };
 };
