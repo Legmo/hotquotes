@@ -39,7 +39,9 @@ It is planned in the future to allow users to add their own quotes (public or fo
 - <img src="https://github.com/devicons/devicon/blob/master/icons/html5/html5-original.svg" title="HTML" alt="HTML" width="20" height="20"/>&nbsp;[HTML](https://www.w3.org/html/)
 - <img src="https://github.com/devicons/devicon/blob/master/icons/css3/css3-original.svg" title="CSS" alt="CSS" width="20" height="20"/>&nbsp;[CSS](https://www.w3.org/Style/CSS/Overview.en.html)
 - <img src="https://github.com/devicons/devicon/blob/master/icons/sass/sass-original.svg" title="SASS" alt="SASS" width="20" height="20"/>&nbsp;[SASS](https://sass-lang.com/)
-- <!-- <img src="https://github.com/gilbarbara/logos/blob/master/logos/prettier.svg" title="Prettier-miscellaneous" alt="Prettier-miscellaneous" width="20" height="20">&nbsp;[Prettier-miscellaneous](https://github.com/arijs/prettier-miscellaneous)-->
+<!-- 
+- <img src="https://github.com/gilbarbara/logos/blob/master/logos/prettier.svg" title="Prettier-miscellaneous" alt="Prettier-miscellaneous" width="20" height="20" />&nbsp;[Prettier-miscellaneous](https://github.com/arijs/prettier-miscellaneous)
+-->
 <!--
 - <img src="https://github.com/devicons/devicon/blob/master/icons/bootstrap/bootstrap-original.svg" title="Bootstrap" alt="Bootstrap" width="20" height="20"/>&nbsp;[Bootstrap](https://getbootstrap.com/)
 -->
@@ -133,7 +135,9 @@ You can also ask the necessary questions in the [Discussions section](https://gi
 - <img src="https://github.com/devicons/devicon/blob/master/icons/html5/html5-original.svg" title="HTML" alt="HTML" width="20" height="20"/>&nbsp;[HTML](https://www.w3.org/html/)
 - <img src="https://github.com/devicons/devicon/blob/master/icons/css3/css3-original.svg" title="CSS" alt="CSS" width="20" height="20"/>&nbsp;[CSS](https://www.w3.org/Style/CSS/Overview.en.html)
 - <img src="https://github.com/devicons/devicon/blob/master/icons/sass/sass-original.svg" title="SASS" alt="SASS" width="20" height="20"/>&nbsp;[SASS](https://sass-lang.com/)
-- <!-- <img src="https://github.com/gilbarbara/logos/blob/master/logos/prettier.svg" title="Prettier-miscellaneous" alt="Prettier-miscellaneous" width="20" height="20">&nbsp;[Prettier-miscellaneous](https://github.com/arijs/prettier-miscellaneous)-->
+<!-- 
+- <img src="https://github.com/gilbarbara/logos/blob/master/logos/prettier.svg" title="Prettier-miscellaneous" alt="Prettier-miscellaneous" width="20" height="20" />&nbsp;[Prettier-miscellaneous](https://github.com/arijs/prettier-miscellaneous)
+-->
 <!--
 - <img src="https://github.com/devicons/devicon/blob/master/icons/bootstrap/bootstrap-original.svg" title="Bootstrap" alt="Bootstrap" width="20" height="20"/>&nbsp;[Bootstrap](https://getbootstrap.com/)
 -->
