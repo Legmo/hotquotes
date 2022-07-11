@@ -3,11 +3,17 @@ import style from './style.module.scss';
 import PropTypes from 'prop-types';
 
 const ListSidebar = (props) => {
-  const Items = props.listItems.map((props) => (
-    <li key = {props.id} className = {style.listItem} title = {props.title}>
-      {props.name}
-    </li>
-  ));
+  const Items = props.listItems.map((props) => {
+    /*    <li key = {props.id} className = {style.listItem} title = {props.title}>
+     {props.name}
+     </li>*/
+    return (
+      <li key = {props} className = {style.listItem}>
+        {props}
+      </li>
+    );
+  }
+);
   const listClassName = 'list' + props.listName;
 
   return (

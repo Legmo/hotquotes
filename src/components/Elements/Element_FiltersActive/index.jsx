@@ -1,6 +1,6 @@
 import React from 'react';
 import style from './style.module.scss';
-import ListSidebar from '../ListSidebar';
+import ListSidebar from '../Element_ListSidebar';
 import PropTypes from 'prop-types';
 
 const FiltersActive = (props) => {

@@ -1,19 +1,25 @@
 import React from 'react';
 import style from './style.module.scss';
-import { reduceToUniq } from '../../helpers';
-import ListSidebar from '../ListSidebar';
-import FiltersActive from '../FiltersActive';
+import ListSidebar from '../Element_ListSidebar';
+import FiltersActive from '../Element_FiltersActive';
 import PropTypes from 'prop-types';
+// import { reduceToUniq } from '../../../utils/helpers';
 
 const Sidebar = (props) => {
-  let quotesBase = props.quotes.quotes_base;
 
   //todo: Вынести эту логику в компонент, который будет готовить информацию из базы данных
-  const dataReducer = (key) => {
+  /*
+  const dataReducerByKey = (key) => {
     return quotesBase.map((quote) => quote[key]);
   };
-  const listTagsFull = dataReducer('category');
+  const dataReducer = (array) => {
+    return quotesBase.map((quote) => quote[key]);
+  };
   const listAuthorsFull = dataReducer('author');
+  */
+  
+  const listTagsFull = props.authors.authorsBase.map((authorObject) => authorObject.name + ' ' + authorObject.surname);
+  const listAuthorsFull = props.tags.tagsBase.map((tagObject) => tagObject.name);
 
   const listTagsReduce = listTagsFull.reduce(
     (flat, current) => flat.concat(current),
@@ -24,9 +30,6 @@ const Sidebar = (props) => {
     []
   );
 
-  const listTags = reduceToUniq(listTagsReduce);
-  const listAuthors = reduceToUniq(listAuthorsReduce);
-
   // todo: возможно стоит сделать функцию/компонент для генерация sidebar. Подумать
   return (
     <aside className = {style.sidebar}>
@@ -34,7 +37,7 @@ const Sidebar = (props) => {
         <h2 className = {style.titleSidebar}>Категории</h2>
         <ListSidebar
           filter = 'none'
-          listItems = {listTags}
+          listItems = {listTagsReduce}
           listName = 'Tags'
           title = 'Добавить в фильтры'
         />
@@ -43,7 +46,7 @@ const Sidebar = (props) => {
         <h2 className = {style.titleSidebar}>Авторы</h2>
         <ListSidebar
           filter = 'none'
-          listItems = {listAuthors}
+          listItems = {listAuthorsReduce}
           listName = 'Authors'
           title = 'Добавить в фильтры'
         />
@@ -59,8 +62,10 @@ const Sidebar = (props) => {
 };
 
 Sidebar.propTypes = {
-  quotes:      PropTypes.object,
-  quotes_base: PropTypes.array
+  authors:     PropTypes.array,
+  authorsBase: PropTypes.array,
+  tags:        PropTypes.array,
+  tagsBase:    PropTypes.array,
 };
 
 export default Sidebar;

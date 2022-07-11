@@ -1,7 +1,7 @@
 import React from 'react';
-import QuoteCardContainer from '../QuoteCard/Container';
-import SidebarContainer from '../Sidebar/Container';
-import Footer from '../PageFooter';
+import QuoteCardContainer from '../Elements/Element_QuoteCard/Container';
+import SidebarContainer from '../Elements/Element_Sidebar/Container';
+import Footer from '../Elements/Element_PageFooter';
 import style from './style.module.scss';
 import { Route, Routes } from 'react-router-dom';
 import Page_AddQuote_Container from '../Pages/Page_AddQuote/Container';
