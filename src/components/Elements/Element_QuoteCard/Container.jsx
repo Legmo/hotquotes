@@ -3,15 +3,14 @@ import QuoteCard from './QuoteCard';
 
 const mapStateToProps = (state) => {
   return {
-    //todo Прокидывать не весь store, а нужную ветку
-    quotes: state.quotes,
+    quotes:  state.quotes.quotesBase,
+    tags:    state.tags.tagsBase,
+    authors: state.authors.authorsBase,
   };
 };
 
 const mapDispatchToProps = () => {
-  return {
-    //todo Прописать нужные dispatch
-  };
+  return {};
 };
 
 const QuoteCardContainer = connect(

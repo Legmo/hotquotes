@@ -2,14 +2,17 @@ import Sidebar from './Sidebar';
 import {
   addQuoteCreator,
   updateNewQuoteTextCreator,
-  updateNewAuthorTextCreator,
-  updateNewTagTextCreator,
-} from '../../redux/reducer-quotes';
+  addAuthorCreator
+} from '../../../redux/reducer-quotes';
+import {
+  addNewTagTextCreator
+} from '../../../redux/reducer-tags';
 import {connect} from 'react-redux';
 
 let mapStateToProps = (state) => {
   return {
-    quotes: state.quotes,
+    authors: state.authors,
+    tags:    state.tags,
   };
 };
 
@@ -21,11 +24,14 @@ let mapDispatchToProps = (dispatch) => {
     updateNewQuoteText: (text) => {
       dispatch(updateNewQuoteTextCreator(text));
     },
-    updateNewAuthorText: (text) => {
-      dispatch(updateNewAuthorTextCreator(text));
+    addAuthor: (text) => {
+      dispatch(addAuthorCreator(text));
+    },
+    updateNewAuthorName: (text) => {
+      dispatch(addAuthorCreator(text));
     },
     updateNewTagText: (text) => {
-      dispatch(updateNewTagTextCreator(text));
+      dispatch(addNewTagTextCreator(text));
     },
   };
 };

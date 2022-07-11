@@ -58,7 +58,7 @@ Download the project and run the following console commands in the local project
 <br>
 
 <!--## Demo site
-You can test working version of our site here [www...](link to demo site).
+You can test working version of our site here [quotes.legmo.ru](http://quotes.legmo.ru/).
 <br>
 -->
 
@@ -151,13 +151,13 @@ You can also ask the necessary questions in the [Discussions section](https://gi
 - `npm run build` — запустить приложение в продакшен-режиме. См. папку «public».
 <br>
 
-<!--## Demo site
-You can test working version of our site here [www...](link to demo site).
+<!--## Демо-сайт
+Работающая версия сайта находится по адресу [quotes.legmo.ru](http://quotes.legmo.ru/).
 <br>
 -->
 
 <!-- 
-## Developers
+## Разработчики
 - [Name](link to GitHub profile)
 - [Name](link to GitHub profile)
 <br>
