@@ -20,7 +20,7 @@ const FiltersActive = (props) => {
 };
 
 FiltersActive.propTypes = {
-  filtersList: PropTypes.string,
+  filtersList: PropTypes.array,
 };
 
 export default FiltersActive;
