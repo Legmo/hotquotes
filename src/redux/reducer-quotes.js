@@ -89,43 +89,58 @@ let initialState = {
 };
 
 const quotesReducer = (state = initialState, action) => {
-  let stateCopy = {...state};
   let newElement = {
     quoteId:     UuidGeneratorClass.generate(),
     quoteDate:   new Date().toISOString(), //todo: проверить, совпадают ли форматы создаваемых дат и уже существующих в базе
-    authorId:    stateCopy.newAuthorId,
-    sourceTitle: stateCopy.newSourceTitleText,
-    quoteText:   stateCopy.newQuoteText,
-    tags:        stateCopy.newQuoteTags,
+    authorId:    state.newAuthorId,
+    sourceTitle: state.newSourceTitleText,
+    quoteText:   state.newQuoteText,
+    tags:        state.newQuoteTags,
   };
 
   switch (action.type) {
+    //todo - вызывать здесь изменение newElement.authorId
+    //todo - вызывать здесь изменение newElement.tags
     case ADD_NEW_QUOTE:
-      stateCopy.quotesBase = [...state.quotesBase];// todo: глубокое копирование. Lodash?
-      //todo - вызывать здесь изменение newElement.authorId
-      //todo - вызывать здесь изменение newElement.tags
-      stateCopy.quotesBase.push(newElement);
-      stateCopy.newQuoteText = '';
-      stateCopy.newAuthorName = '';
-      stateCopy.newSourceTitleText = '';
-      console.log(newElement);
-      return stateCopy;
+      return {
+        ...state,
+        quotesBase: [
+          ...state.quotesBase,
+          newElement
+        ],
+        newQuoteDate:       '',
+        newAuthorId:        '',
+        newSourceTitleText: '',
+        newQuoteText:       '',
+        newQuoteTags:       [],
+      };
     case UPDATE_NEW_QUOTE_TEXT:
       newElement.quoteText = action.newText;
-      stateCopy.newQuoteText = action.newText;
-      return stateCopy;
+      return {
+        ...state,
+        newQuoteText: action.newText
+      };
     case UPDATE_NEW_SOURCE_TITLE_TEXT:
       newElement.sourceTitle = action.newTitle;
-      stateCopy.newSourceTitleText = action.newTitle;
-      return stateCopy;
+      return {
+        ...state,
+        newSourceTitleText: action.newTitle
+      };
     case ADD_AUTHOR_ID:
       newElement.authorId = action.newAuthorId;
-      stateCopy.newAuthorId = action.newAuthorId;
-      return stateCopy;
+      return {
+        ...state,
+        newAuthorId: action.newAuthorId
+      };
     case ADD_TAG_ID:
       newElement.tags.push(action.newTagId);
-      stateCopy.newQuoteTags.push(action.newTagId);
-      return stateCopy;
+      return {
+        ...state,
+        newQuoteTags: [
+          ...state.newQuoteTags,
+          action.newTagId
+        ]
+      };
     default:
       return state;
   }
