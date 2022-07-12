@@ -40,28 +40,37 @@ let initialState = {
 };
 
 const authorsReducer = (state = initialState, action) => {
-  let stateCopy = {...state};
   let newElement = {
-    name:    stateCopy.newAuthorName,
-    surname: stateCopy.newAuthorSurname,
-    id:      UuidGeneratorClass.generate(), 
+    name:    state.newAuthorName,
+    surname: state.newAuthorSurname,
+    id:      UuidGeneratorClass.generate(),
   };
 
   switch (action.type) {
     case ADD_NEW_AUTHOR:
-      stateCopy.authorsBase.push(newElement);
-      stateCopy.newAuthorName = '';
+      newElement.name = '';
       newElement.surname = '';
-      console.log('New Author: ', newElement);
-      return stateCopy;
+      return {
+        ...state,
+        authorsBase: [
+          ...state.authorsBase,
+          newElement
+        ],
+        newAuthorName:    '',
+        newAuthorSurname: ''
+      };
     case UPDATE_NEW_AUTHOR_NAME:
-      stateCopy.newAuthorName = action.newAuthorName;
       newElement.name = action.newAuthorName;
-      return stateCopy;
+      return {
+        ...state,
+        newAuthorName: action.newAuthorName,
+      };
     case UPDATE_NEW_AUTHOR_SURNAME:
-      stateCopy.newAuthorSurname = action.newAuthorSurname;
       newElement.surname = action.newAuthorSurname;
-      return stateCopy;
+      return {
+        ...state,
+        newAuthorSurname: action.newAuthorSurname,
+      };
     default:
       return state;
   }

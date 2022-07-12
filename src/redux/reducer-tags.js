@@ -44,18 +44,21 @@ let initialState = {
 };
 
 const tagsReducer = (state = initialState, action) => {
-  let stateCopy = {...state};
   let newElement = {
-    name: stateCopy.newTagName,
+    name: state.newTagName,
     id:   UuidGeneratorClass.generate(),
   };
 
   switch (action.type) {
     case ADD_NEW_TAG:
-      newElement = action.newTagName;
-      stateCopy.tagsBase.push(newElement);
-      console.log('New tag: ', newElement);
-      return stateCopy;
+      newElement.name = action.newTagName;
+      return {
+        ...state,
+        tagsBase: [
+          ...state.tagsBase,
+          newElement
+        ]
+      };
     default:
       return state;
   }
