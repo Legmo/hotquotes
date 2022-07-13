@@ -2,8 +2,8 @@
 import { UuidGenerator } from '../utils/uuidGenerator';
 
 const ADD_NEW_QUOTE = 'ADD-NEW-QUOTE';
-const UPDATE_NEW_QUOTE_TEXT = 'UPDATE-NEW-QUOTE-TEXT';
-const UPDATE_NEW_SOURCE_TITLE_TEXT = 'UPDATE_NEW_SOURCE_TITLE_TEXT';
+const UPDATE_NEW_QUOTE_TEXT = 'UPDATE_NEW_QUOTE_TEXT';
+const UPDATE_NEW_SOURCE_TITLE = 'UPDATE_NEW_SOURCE_TITLE';
 const ADD_AUTHOR_ID = 'ADD_AUTHOR_ID';
 const ADD_TAG_ID = 'ADD_TAG_ID';
 
@@ -12,8 +12,8 @@ const UuidGeneratorClass = new UuidGenerator;
 let initialState = {
   quotesBase: [
     {
-      quoteId:     '0181e85e-8e40-44eb-b7d0-81f9fc52f59d',
-      quoteDate:   '2018-06-23T19:03:23.000Z',
+      id:          '0181e85e-8e40-44eb-b7d0-81f9fc52f59d',
+      date:        '2018-06-23T19:03:23.000Z',
       authorId:    '0181e85f-0d52-4f7d-a26e-4b6bed4c2a51',
       sourceTitle: '',
       quoteText:   'Делай, что должно, и будь что будет.',
@@ -25,8 +25,8 @@ let initialState = {
       ],
     },
     {
-      quoteId:     '0181e860-694f-4f75-aa63-6944f541ea8c',
-      quoteDate:   '2018-06-23T15:03:23.000Z',
+      id:          '0181e860-694f-4f75-aa63-6944f541ea8c',
+      date:        '2018-06-23T15:03:23.000Z',
       authorId:    '0181e860-e9e3-4eaa-b5ee-ca9e46033e00',
       sourceTitle: '',
       quoteText:   'Всё, что важно, не бывает срочно. Всё, что срочно - только суета.',
@@ -37,8 +37,8 @@ let initialState = {
       ],
     },
     {
-      quoteId:     '0181e861-8807-482c-9b3c-ec64ab9291ba',
-      quoteDate:   '2018-06-23T18:03:23.000Z',
+      id:          '0181e861-8807-482c-9b3c-ec64ab9291ba',
+      date:        '2018-06-23T18:03:23.000Z',
       authorId:    '0181e861-b72e-4994-8ced-0f1b6be25566',
       sourceTitle: '',
       quoteText:   'Помните: будьте свободны в своих мыслях и оставайтесь опасными!',
@@ -49,8 +49,8 @@ let initialState = {
       ],
     },
     {
-      quoteId:     '0181e87c-21e0-4257-a8a1-6b10b42c1a5b',
-      quoteDate:   '2018-06-23T11:03:23.000Z',
+      id:          '0181e87c-21e0-4257-a8a1-6b10b42c1a5b',
+      date:        '2018-06-23T11:03:23.000Z',
       authorId:    '0181e87c-514d-46f8-af06-babc17876276',
       sourceTitle: '',
       quoteText:   'Если ты всегда слушал папу с мамой, школьных учителей, священников и какого-то дядьку в телевизоре, а теперь из-за этого ведешь скучную и несчастную жизнь - то, парень, ты этого заслуживаешь.',
@@ -61,8 +61,8 @@ let initialState = {
       ],
     },
     {
-      quoteId:     '0181e87d-743c-41ad-835a-193870c79112',
-      quoteDate:   '2018-06-23T11:03:23.000Z',
+      id:          '0181e87d-743c-41ad-835a-193870c79112',
+      date:        '2018-06-23T11:03:23.000Z',
       authorId:    '0181e87d-a40c-4fc8-b1e1-79790914f08d',
       sourceTitle: 'Дюна',
       quoteText:
@@ -90,8 +90,8 @@ let initialState = {
 
 const quotesReducer = (state = initialState, action) => {
   let newElement = {
-    quoteId:     UuidGeneratorClass.generate(),
-    quoteDate:   new Date().toISOString(), //todo: проверить, совпадают ли форматы создаваемых дат и уже существующих в базе
+    id:          UuidGeneratorClass.generate(),
+    date:        new Date().toISOString(), //todo: проверить, совпадают ли форматы создаваемых дат и уже существующих в базе
     authorId:    state.newAuthorId,
     sourceTitle: state.newSourceTitleText,
     quoteText:   state.newQuoteText,
@@ -120,7 +120,7 @@ const quotesReducer = (state = initialState, action) => {
         ...state,
         newQuoteText: action.newText
       };
-    case UPDATE_NEW_SOURCE_TITLE_TEXT:
+    case UPDATE_NEW_SOURCE_TITLE:
       newElement.sourceTitle = action.newTitle;
       return {
         ...state,
@@ -147,26 +147,26 @@ const quotesReducer = (state = initialState, action) => {
 };
 
 //ActionCreator's
-export const addQuoteCreator = () => ({
+export const addQuoteAC = () => ({
   type: ADD_NEW_QUOTE,
 });
 
-export const updateNewQuoteTextCreator = (text) => ({
+export const updateNewQuoteTextAC = (text) => ({
   type:    UPDATE_NEW_QUOTE_TEXT,
   newText: text,
 });
 
-export const updateNewTitleTextCreator = (text) => ({
-  type:     UPDATE_NEW_SOURCE_TITLE_TEXT,
+export const updateNewSourceTitleAC = (text) => ({
+  type:     UPDATE_NEW_SOURCE_TITLE,
   newTitle: text,
 });
 
-export const addAuthorCreator = (text) => ({
+export const addAuthorAC = (text) => ({
   type:        ADD_AUTHOR_ID,
   newAuthorId: text,
 });
 
-export const addTagCreator = (text) => ({
+export const addTagAC = (text) => ({
   type:     ADD_TAG_ID,
   newTagId: text,
 });

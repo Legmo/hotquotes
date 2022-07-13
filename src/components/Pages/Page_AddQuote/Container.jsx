@@ -1,15 +1,15 @@
 import Page_AddQuote from './PageAddQuote';
 import {
-  addQuoteCreator,
-  updateNewQuoteTextCreator,
-  updateNewTitleTextCreator,
+  addQuoteAC,
+  updateNewQuoteTextAC,
+  updateNewSourceTitleAC,
 } from '../../../redux/reducer-quotes';
 import {
-  addNewTagTextCreator
+  addNewTagTextAC
 } from '../../../redux/reducer-tags';
 import {
-  updateNewAuthorNameCreator,
-  updateNewAuthorSurnameCreator
+  updateNewAuthorNameAC,
+  updateNewAuthorSurnameAC
 } from '../../../redux/reducer-authors';
 import {connect} from 'react-redux';
 
@@ -25,22 +25,22 @@ let mapStateToProps = (state) => {
 let mapDispatchToProps = (dispatch) => {
   return {
     addQuote: () => {
-      dispatch(addQuoteCreator());
+      dispatch(addQuoteAC());
     },
     updateNewQuoteText: (text) => {
-      dispatch(updateNewQuoteTextCreator(text));
+      dispatch(updateNewQuoteTextAC(text));
     },
     updateNewAuthorName: (text) => {
-      dispatch(updateNewAuthorNameCreator(text));
+      dispatch(updateNewAuthorNameAC(text));
     },
     updateNewAuthorSurname: (text) => {
-      dispatch(updateNewAuthorSurnameCreator(text));
+      dispatch(updateNewAuthorSurnameAC(text));
     },
     updateNewTitleText: (text) => {
-      dispatch(updateNewTitleTextCreator(text));
+      dispatch(updateNewSourceTitleAC(text));
     },
     updateNewTagText: (text) => {
-      dispatch(addNewTagTextCreator(text));
+      dispatch(addNewTagTextAC(text));
     },
   };
 };

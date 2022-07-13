@@ -10,29 +10,29 @@ const UuidGeneratorClass = new UuidGenerator;
 let initialState = {
   authorsBase: [
     {
+      id:      '0181e85f-0d52-4f7d-a26e-4b6bed4c2a51',
       name:    'Марк',
       surname: 'Аврелий',
-      id:      '0181e85f-0d52-4f7d-a26e-4b6bed4c2a51',
     },
     {
+      id:      '0181e860-e9e3-4eaa-b5ee-ca9e46033e00',
       name:    'Хань',
       surname: 'Сян-Цзы',
-      id:      '0181e860-e9e3-4eaa-b5ee-ca9e46033e00',
     },
     {
+      id:      '0181e861-b72e-4994-8ced-0f1b6be25566',
       name:    'Шаво',
       surname: 'Одаджян',
-      id:      '0181e861-b72e-4994-8ced-0f1b6be25566',
     },
     {
+      id:      '0181e87c-514d-46f8-af06-babc17876276',
       name:    'Фрэнк',
       surname: 'Заппа',
-      id:      '0181e87c-514d-46f8-af06-babc17876276',
     },
     {
+      id:      '0181e87d-a40c-4fc8-b1e1-79790914f08d',
       name:    'Фрэнк',
       surname: 'Хэрберт',
-      id:      '0181e87d-a40c-4fc8-b1e1-79790914f08d',
     },
   ],
   newAuthorName:    '',
@@ -77,18 +77,18 @@ const authorsReducer = (state = initialState, action) => {
 };
 
 //ActionCreator's
-export const updateNewAuthorNameCreator = (authorName) => ({
+export const addNewAuthorAC = () => ({
+  type: ADD_NEW_AUTHOR,
+});
+
+export const updateNewAuthorNameAC = (authorName) => ({
   type:          UPDATE_NEW_AUTHOR_NAME,
   newAuthorName: authorName,
 });
 
-export const updateNewAuthorSurnameCreator = (authorSurname) => ({
+export const updateNewAuthorSurnameAC = (authorSurname) => ({
   type:             UPDATE_NEW_AUTHOR_SURNAME,
   newAuthorSurname: authorSurname,
-});
-
-export const addNewAuthorCreator = () => ({
-  type: ADD_NEW_AUTHOR,
 });
 
 export default authorsReducer;
