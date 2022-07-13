@@ -32,7 +32,7 @@
         }
       }
     ],
-    //  https://eslint.org/docs/rules/key-spacing
+    // https://eslint.org/docs/rules/key-spacing
     "quotes": [
       "warn",
       "single",
@@ -57,6 +57,8 @@
         "int32Hint": false
       }
     ],
+    // https://eslint.org/docs/latest/rules/no-debugger
+    "no-debugger": "off", //todo : remove this rule before production!!!!!
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-equals-spacing.md,
     "react/jsx-equals-spacing": [
       "warn",
