@@ -7,7 +7,7 @@ import axios from 'axios';
 
 const Sidebar = (props) => {
   let basicUrl = "https://api.airtable.com/v0/appf6c9WBCs4A4Uq6/";
-  let apiKey = '';
+  let apiKey = ''; // Insert your API key here, for example 'keyABCDEFGHIJKLMN'
   axios.get(`${basicUrl}quotesBase?api_key=${apiKey}`).then(
     response => {
       response.data.records.map(quoteObject => {
