@@ -63,7 +63,7 @@ Download the project and run the following console commands in the local project
 - `npm start` — runs the app in development mode. Hot reload in browser (port:3000) included. Use «src» folder for making your edits.
 - `npm run build` — builds the app for production to the build folder «public».
 <br>
-- 
+
 **Create Database**<br>
 Now I use the free zero-code service [Airtable](https://airtable.com/) to work with the database. You can choose the solution you like. <br>
 The database is named 'HotQuotes' and consists of 3 tables:
@@ -104,6 +104,7 @@ The database is named 'HotQuotes' and consists of 3 tables:
   ```
 &nbsp;
 <br>
+
 **Enter API key**<br>
 enter your API key для доступа к базе данных into 'apiKey' variable. If you use [Airtable](https://airtable.com/), then you need to register and go to the [Account](https://airtable.com/account) page. The API key will be located in the API section.
 <br>
