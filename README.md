@@ -66,7 +66,7 @@ Download the project and run the following console commands in the local project
 
 **Create Database**<br>
 Now I use the free zero-code service [Airtable](https://airtable.com/) to work with the database. You can choose the solution you like. <br>
-The database is named 'HotQuotes' and consists of 3 tables:
+The database is named `HotQuotes` and consists of 3 tables:
   ```javascript
     quotesBase: [
       {
@@ -106,7 +106,7 @@ The database is named 'HotQuotes' and consists of 3 tables:
 <br>
 
 **Enter API key**<br>
-enter your API key для доступа к базе данных into 'apiKey' variable. If you use [Airtable](https://airtable.com/), then you need to register and go to the [Account](https://airtable.com/account) page. The API key will be located in the API section.
+enter your API key для доступа к базе данных into `apiKey` variable. If you use [Airtable](https://airtable.com/), then you need to register and go to the [Account](https://airtable.com/account) page. The API key will be located in the API section.
 <br>
 
 **Create Database**<br>
@@ -151,6 +151,7 @@ The database is named 'HotQuotes' and consists of 3 tables:
 <br>
 **Enter API key**<br>
 enter your API key для доступа к базе данных into 'apiKey' variable. If you use [Airtable](https://airtable.com/), then you need to register and go to the [Account](https://airtable.com/account) page. The API key will be located in the API section.
+<br>
 <br>
 
 <!--## Demo site
@@ -255,7 +256,7 @@ You can also ask the necessary questions in the [Discussions section](https://gi
 
 **Создание Базы данных** <br>
 Для работы с базой данных я использую бесплатный zero-code сервис [Airtable](https://airtable.com/). Вы можете выбрать решение которое вам нравится. <br>
-База данных имеет имя 'HotQuotes' и состоит из 3 таблиц:
+База данных имеет имя `HotQuotes` и состоит из 3 таблиц:
   ```javascript
     quotesBase: [
       {
@@ -294,7 +295,8 @@ You can also ask the necessary questions in the [Discussions section](https://gi
 &nbsp;
 <br>
 **Добавление API key**<br>
-Пропишите в переменную 'apiKey' ваш API key для доступа к базе данных. Если вы используете [Airtable](https://airtable.com/), то вам надо зарегистрироваться и зайти на страницу [Account](https://airtable.com/account). API key будет расположен в разделе API.
+Пропишите в переменную `apiKey` ваш API key для доступа к базе данных. Если вы используете [Airtable](https://airtable.com/), то вам надо зарегистрироваться и зайти на страницу [Account](https://airtable.com/account). API key будет расположен в разделе API.
+<br>
 <br>
 
 <!--## Демо-сайт
