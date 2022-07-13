@@ -3,7 +3,7 @@
 
 Single page application based on React JS & Redux.<br> 
 Displays randomly quotes from a pre-prepared storage. Each quote can be assigned the following data: author, source, tag (or several tags).<br>
-JSON-file is currently used as storage, a database is planned in the future.<br>
+[Airtable](https://airtable.com/) database is currently used as storage, special server is planned in the future.<br>
 <br>
 It is planned in the future to allow users to add their own quotes (public or for private use), create personal quotes collections, share quotes etc. More detailed plans for the development of the project can be found in our [Wiki](https://github.com/Legmo/hotquotes/wiki).
 <br>
@@ -28,7 +28,9 @@ It is planned in the future to allow users to add their own quotes (public or fo
 - <img src="https://github.com/devicons/devicon/blob/master/icons/npm/npm-original-wordmark.svg" title="React Router" alt="React Router" width="20" height="20"/>&nbsp;[React Router](https://github.com/remix-run/react-router#readme)
 - <img src="https://github.com/devicons/devicon/blob/master/icons/webpack/webpack-original.svg" title="WebPack" alt="WebPack" width="20" height="20"/>&nbsp;[WebPack](https://webpack.js.org/)
 - <img src="https://github.com/devicons/devicon/blob/master/icons/webpack/webpack-original.svg" title="WebPack Dev Server" alt="WebPack Dev Server" width="20" height="20"/>&nbsp;[Webpack Dev Server](https://github.com/webpack/webpack-dev-server)
-- <img src="https://lodash.com/assets/img/lodash.svg" title="Lodash" alt="Lodash" width="20" height="20">&nbsp;[Lodash](https://lodash.com/assets/img/lodash.svg)
+- <img src="http://legmo.ru/GitHub/axios_font_icon.svg" title="Axios" alt="Axios" width="20" height="10">&nbsp;[Axios](https://axios-http.com)
+- <img src="http://legmo.ru/GitHub/airtable_font_icon.svg" title="Airtable" alt="Airtable" width="20" height="20">&nbsp;[Airtable](https://airtable.com)
+- <img src="https://lodash.com/assets/img/lodash.svg" title="Lodash" alt="Lodash" width="20" height="20">&nbsp;[Lodash](https://lodash.com)
 - <img src="http://legmo.ru/GitHub/awesome_font_icon.svg" title="Font Awesome" alt="Font Awesome" width="20" height="20"/>&nbsp;[Font Awesome](https://fontawesome.com/)
 - <img src="https://github.com/devicons/devicon/blob/master/icons/eslint/eslint-original.svg" title="ES Lint" alt="ES Lint" width="20" height="20"/>&nbsp;[ES Lint](https://eslint.org/)
 - 🐶&nbsp;[Husky](https://github.com/typicode/husky)
@@ -52,11 +54,58 @@ It is planned in the future to allow users to add their own quotes (public or fo
 <br>
 
 ## Getting Started
-You will need [Node.js](https://nodejs.org/en) to work with this project.<br>
+You will need [Node.js](https://nodejs.org/en) to work with this project.
+<br>
+
+**Start application**<br>
 Download the project and run the following console commands in the local project folder:
 - `npm i` — download & install Node.js modules.
 - `npm start` — runs the app in development mode. Hot reload in browser (port:3000) included. Use «src» folder for making your edits.
 - `npm run build` — builds the app for production to the build folder «public».
+<br>
+
+**Create Database**<br>
+Now I use the free zero-code service [Airtable](https://airtable.com/) to work with the database. You can choose the solution you like. <br>
+The database is named 'HotQuotes' and consists of 3 tables:
+  ```javascript
+    quotesBase: [
+      {
+        id:          '0181e85e-8e40-44eb-b7d0-81f9fc52f59d',
+        date:        '2018-06-23T19:03:23.000Z',
+        authorId:    '0181e85f-0d52-4f7d-a26e-4b6bed4c2a51',
+        sourceTitle: 'Source title here',
+        quoteText:   'Do what you must and come what may.',
+        tags:        [
+          '0181e85f-5bc3-4095-b36c-192e63e19c4b',
+          '0181e85f-f190-41af-a665-6f7718d17972',
+        ],
+      },
+      {...}
+    ]
+  ```
+  ```javascript
+    authorsBase: [
+      {
+        id:      '0181e85f-0d52-4f7d-a26e-4b6bed4c2a51',
+        name:    'Mark',
+        surname: 'Aurelius',
+      },
+      {...}
+    ]
+  ```
+  ```javascript
+    tagsBase: [
+      {
+        id:   '0181e860-1cfb-49c0-8df5-654b24fc6f48',
+        name: 'latin',
+      },
+      {...}
+    ]
+  ```
+&nbsp;
+<br>
+**Enter API key**<br>
+enter your API key для доступа к базе данных into 'apiKey' variable. If you use [Airtable](https://airtable.com/), then you need to register and go to the [Account](https://airtable.com/account) page. The API key will be located in the API section.
 <br>
 
 <!--## Demo site
@@ -100,7 +149,7 @@ You can also ask the necessary questions in the [Discussions section](https://gi
 
 Одностраничное веб-приложение на основе React JS & Redux.<br> 
 Отображает случайную цитату из заранее подготовленного файла-хранилища. Каждая цитата может сопровождаться следующими данными: автор, источник, один или несколько тэгов.<br>
-В качестве хранилища цитат используется JSON-файл. В будущем планируется использование базы данных.<br>
+В качестве хранилища цитат используется база данных [Airtable](https://airtable.com/). В будущем планируется использование полноценного бэкенд-сервера.<br>
 <br>
 Также планируются: разрешение пользователям на добавление собственных цитат (публичных или только для личного просмотра), создание персональных подборок цитат, возможность делиться цитатами и многое другое. Более подробные планы развития проекта можно найти в разделе [Wiki](https://github.com/Legmo/hotquotes/wiki).
 <br>
@@ -124,11 +173,13 @@ You can also ask the necessary questions in the [Discussions section](https://gi
 - <img src="https://github.com/devicons/devicon/blob/master/icons/npm/npm-original-wordmark.svg" title="React Router" alt="React Router" width="20" height="20"/>&nbsp;[React Router](https://github.com/remix-run/react-router#readme)
 - <img src="https://github.com/devicons/devicon/blob/master/icons/webpack/webpack-original.svg" title="WebPack" alt="WebPack" width="20" height="20"/>&nbsp;[WebPack](https://webpack.js.org/)
 - <img src="https://github.com/devicons/devicon/blob/master/icons/webpack/webpack-original.svg" title="WebPack Dev Server" alt="WebPack Dev Server" width="20" height="20"/>&nbsp;[Webpack Dev Server](https://github.com/webpack/webpack-dev-server)
-- <img src="https://lodash.com/assets/img/lodash.svg" title="Lodash" alt="Lodash" width="20" height="20">&nbsp;[Lodash](https://lodash.com/assets/img/lodash.svg)
+- <img src="http://legmo.ru/GitHub/axios_font_icon.svg" title="Axios" alt="Axios" width="20" height="20">&nbsp;[Axios](https://axios-http.com)
+- <img src="http://legmo.ru/GitHub/airtable_font_icon.svg" title="Airtable" alt="Airtable" width="20" height="20">&nbsp;[Airtable](https://airtable.com)
+- <img src="https://lodash.com/assets/img/lodash.svg" title="Lodash" alt="Lodash" width="20" height="20">&nbsp;[Lodash](https://lodash.com)
 - <img src="http://legmo.ru/GitHub/awesome_font_icon.svg" title="Font Awesome" alt="Font Awesome" width="20" height="20"/>&nbsp;[Font Awesome](https://fontawesome.com/)
 - <img src="https://github.com/devicons/devicon/blob/master/icons/eslint/eslint-original.svg" title="ES Lint" alt="ES Lint" width="20" height="20"/>&nbsp;[ES Lint](https://eslint.org/)
 - 🐶&nbsp;[Husky](https://github.com/typicode/husky)
-- <img src="https://github.com/devicons/devicon/blob/master/icons/npm/npm-original-wordmark.svg" title="Lint-staged" alt="Lint-staged" width="20" height="20">&nbsp;[Lint-staged](https://github.com/okonet/lint-staged) 
+- <img src="https://github.com/devicons/devicon/blob/master/icons/npm/npm-original-wordmark.svg" title="Lint-staged" alt="Lint-staged" width="20" height="20">&nbsp;[Lint-staged](https://github.com/okonet/lint-staged)
 - <img src="https://github.com/devicons/devicon/blob/master/icons/javascript/javascript-plain.svg" title="JavaScript" alt="JavaScript" width="20" height="20"/>&nbsp;[JavaScript ES6](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 - <img src="https://github.com/Protectator/jsx-tsx-logos/blob/master/jsx-logo.svg" title="JSX" alt="JSX" width="20" height="20"/>&nbsp;[JSX](https://facebook.github.io/jsx/)
 - <img src="https://github.com/devicons/devicon/blob/master/icons/typescript/typescript-original.svg" title="TypeScript" alt="TypeScript" width="20" height="20"/>&nbsp;[TypeScript](https://www.typescriptlang.org/)
@@ -149,10 +200,56 @@ You can also ask the necessary questions in the [Discussions section](https://gi
 
 ## С чего начать?
 Вам потребуется [Node.js](https://nodejs.org/en) для работы с этим проектом.<br>
+
+**Запуск**<br>
 Скачайте репозиторий и выполните следующие консольные команды в папке локального проекта:
 - `npm i` — скачать и установить модули Node.js.
 - `npm start` — запустить приложение в режиме разработки. Поддерживается «горячая перезагрузка» в браузере (port:3000). Используйте папку «src» для ваших правок.
 - `npm run build` — собрать приложение в продакшен-режиме. См. папку «public».
+<br>
+
+**Создание Базы данных** <br>
+Для работы с базой данных я использую бесплатный zero-code сервис [Airtable](https://airtable.com/). Вы можете выбрать решение которое вам нравится. <br>
+База данных имеет имя 'HotQuotes' и состоит из 3 таблиц:
+  ```javascript
+    quotesBase: [
+      {
+        id:          '0181e85e-8e40-44eb-b7d0-81f9fc52f59d',
+        date:        '2018-06-23T19:03:23.000Z',
+        authorId:    '0181e85f-0d52-4f7d-a26e-4b6bed4c2a51',
+        sourceTitle: 'Название источника будет прописано здесь',
+        quoteText:   'Делай что должно и будь что будет.',
+        tags:        [
+          '0181e85f-5bc3-4095-b36c-192e63e19c4b',
+          '0181e85f-f190-41af-a665-6f7718d17972',
+        ],
+      },
+      {...}
+    ]
+  ```
+  ```javascript
+    authorsBase: [
+      {
+        id:      '0181e85f-0d52-4f7d-a26e-4b6bed4c2a51',
+        name:    'Марк',
+        surname: 'Аврелий',
+      },
+      {...}
+    ]
+  ```
+  ```javascript
+    tagsBase: [
+      {
+        id:   '0181e860-1cfb-49c0-8df5-654b24fc6f48',
+        name: 'латынь',
+      },
+      {...}
+    ]
+  ```
+&nbsp;
+<br>
+**Добавление API key**<br>
+Пропишите в переменную 'apiKey' ваш API key для доступа к базе данных. Если вы используете [Airtable](https://airtable.com/), то вам надо зарегистрироваться и зайти на страницу [Account](https://airtable.com/account). API key будет расположен в разделе API.
 <br>
 
 <!--## Демо-сайт

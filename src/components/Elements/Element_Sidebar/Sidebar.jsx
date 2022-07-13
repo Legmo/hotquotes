@@ -3,21 +3,19 @@ import style from './style.module.scss';
 import ListSidebar from '../Element_ListSidebar';
 import FiltersActive from '../Element_FiltersActive';
 import PropTypes from 'prop-types';
-// import { reduceToUniq } from '../../../utils/helpers';
+import axios from 'axios';
 
 const Sidebar = (props) => {
+  let basicUrl = "https://api.airtable.com/v0/appf6c9WBCs4A4Uq6/";
+  let apiKey = ''; // Insert your API key here, for example 'keyABCDEFGHIJKLMN'
+  axios.get(`${basicUrl}quotesBase?api_key=${apiKey}`).then(
+    response => {
+      response.data.records.map(quoteObject => {
+        console.log('Quote ', quoteObject.fields);
+      });
+    }
+  );
 
-  //todo: Вынести эту логику в компонент, который будет готовить информацию из базы данных
-  /*
-  const dataReducerByKey = (key) => {
-    return quotesBase.map((quote) => quote[key]);
-  };
-  const dataReducer = (array) => {
-    return quotesBase.map((quote) => quote[key]);
-  };
-  const listAuthorsFull = dataReducer('author');
-  */
-  
   const listTagsFull = props.authors.authorsBase.map((authorObject) => authorObject.name + ' ' + authorObject.surname);
   const listAuthorsFull = props.tags.tagsBase.map((tagObject) => tagObject.name);
 
@@ -62,9 +60,9 @@ const Sidebar = (props) => {
 };
 
 Sidebar.propTypes = {
-  authors:     PropTypes.array,
+  authors:     PropTypes.object,
   authorsBase: PropTypes.array,
-  tags:        PropTypes.array,
+  tags:        PropTypes.object,
   tagsBase:    PropTypes.array,
 };
 
