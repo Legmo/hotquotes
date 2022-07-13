@@ -63,6 +63,50 @@ Download the project and run the following console commands in the local project
 - `npm start` — runs the app in development mode. Hot reload in browser (port:3000) included. Use «src» folder for making your edits.
 - `npm run build` — builds the app for production to the build folder «public».
 <br>
+- 
+**Create Database**<br>
+Now I use the free zero-code service [Airtable](https://airtable.com/) to work with the database. You can choose the solution you like. <br>
+The database is named 'HotQuotes' and consists of 3 tables:
+  ```javascript
+    quotesBase: [
+      {
+        id:          '0181e85e-8e40-44eb-b7d0-81f9fc52f59d',
+        date:        '2018-06-23T19:03:23.000Z',
+        authorId:    '0181e85f-0d52-4f7d-a26e-4b6bed4c2a51',
+        sourceTitle: 'Source title here',
+        quoteText:   'Do what you must and come what may.',
+        tags:        [
+          '0181e85f-5bc3-4095-b36c-192e63e19c4b',
+          '0181e85f-f190-41af-a665-6f7718d17972',
+        ],
+      },
+      {...}
+    ]
+  ```
+  ```javascript
+    authorsBase: [
+      {
+        id:      '0181e85f-0d52-4f7d-a26e-4b6bed4c2a51',
+        name:    'Mark',
+        surname: 'Aurelius',
+      },
+      {...}
+    ]
+  ```
+  ```javascript
+    tagsBase: [
+      {
+        id:   '0181e860-1cfb-49c0-8df5-654b24fc6f48',
+        name: 'latin',
+      },
+      {...}
+    ]
+  ```
+&nbsp;
+<br>
+**Enter API key**<br>
+enter your API key для доступа к базе данных into 'apiKey' variable. If you use [Airtable](https://airtable.com/), then you need to register and go to the [Account](https://airtable.com/account) page. The API key will be located in the API section.
+<br>
 
 **Create Database**<br>
 Now I use the free zero-code service [Airtable](https://airtable.com/) to work with the database. You can choose the solution you like. <br>
