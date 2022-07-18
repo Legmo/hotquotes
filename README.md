@@ -65,17 +65,17 @@ Download the project and run the following console commands in the local project
 <br>
 
 **Create Database**<br>
-Now I use the free zero-code service [Airtable](https://airtable.com/) to work with the database. You can choose the solution you like. <br>
-The database is named `HotQuotes` and consists of 3 tables:
+You will also need a backend-server with a database. Now I use the free zero-code service [Airtable](https://airtable.com/) to work with the database. You can choose the solution you like. <br>
+The database is named `HotQuotes` and consists of 4 tables:
   ```javascript
-    quotesBase: [
+    quotes: [
       {
-        id:          '0181e85e-8e40-44eb-b7d0-81f9fc52f59d',
-        date:        '2018-06-23T19:03:23.000Z',
-        authorId:    '0181e85f-0d52-4f7d-a26e-4b6bed4c2a51',
-        sourceTitle: 'Source title here',
         quoteText:   'Do what you must and come what may.',
-        tags:        [
+        createdTime: '2018-06-23T19:03:23.000Z',
+        id:          '0181e85e-8e40-44eb-b7d0-81f9fc52f59d',
+        authorId:    ['0181e85f-0d52-4f7d-a26e-4b6bed4c2a51'],
+        sourceId:    '0273r930-1cfb-49c0-8df5-654b24lm5r33',
+        tagsId:      [
           '0181e85f-5bc3-4095-b36c-192e63e19c4b',
           '0181e85f-f190-41af-a665-6f7718d17972',
         ],
@@ -84,7 +84,7 @@ The database is named `HotQuotes` and consists of 3 tables:
     ]
   ```
   ```javascript
-    authorsBase: [
+    authors: [
       {
         id:      '0181e85f-0d52-4f7d-a26e-4b6bed4c2a51',
         name:    'Mark',
@@ -94,10 +94,19 @@ The database is named `HotQuotes` and consists of 3 tables:
     ]
   ```
   ```javascript
-    tagsBase: [
+    tags: [
       {
         id:   '0181e860-1cfb-49c0-8df5-654b24fc6f48',
-        name: 'latin',
+        title: 'latin',
+      },
+      {...}
+    ]
+  ```
+  ```javascript
+    sources: [
+      {
+        id:   '0273r930-1cfb-49c0-8df5-654b24lm5r33',
+        title: 'Some title',
       },
       {...}
     ]
@@ -211,17 +220,17 @@ You can also ask the necessary questions in the [Discussions section](https://gi
 <br>
 
 **Создание базы данных** <br>
-Для работы с базой данных я использую бесплатный zero-code сервис [Airtable](https://airtable.com/). Вы можете выбрать решение которое вам нравится. <br>
+Также вам понадобится backend-server с базой данных вашего приложения. Я использую бесплатный zero-code сервис [Airtable](https://airtable.com/). Вы можете выбрать решение которое вам нравится. <br>
 База данных имеет имя `HotQuotes` и состоит из 3 таблиц:
   ```javascript
     quotesBase: [
       {
-        id:          '0181e85e-8e40-44eb-b7d0-81f9fc52f59d',
-        date:        '2018-06-23T19:03:23.000Z',
-        authorId:    '0181e85f-0d52-4f7d-a26e-4b6bed4c2a51',
-        sourceTitle: 'Название источника будет прописано здесь',
         quoteText:   'Делай что должно и будь что будет.',
-        tags:        [
+        createdTime: '2018-06-23T19:03:23.000Z',
+        id:          '0181e85e-8e40-44eb-b7d0-81f9fc52f59d',
+        authorId:    ['0181e85f-0d52-4f7d-a26e-4b6bed4c2a51'],
+        sourceId:    '0273r930-1cfb-49c0-8df5-654b24lm5r33',
+        tagsId:      [
           '0181e85f-5bc3-4095-b36c-192e63e19c4b',
           '0181e85f-f190-41af-a665-6f7718d17972',
         ],
@@ -244,6 +253,15 @@ You can also ask the necessary questions in the [Discussions section](https://gi
       {
         id:   '0181e860-1cfb-49c0-8df5-654b24fc6f48',
         name: 'латынь',
+      },
+      {...}
+    ]
+  ```
+  ```javascript
+    sources: [
+      {
+        id:   '0273r930-1cfb-49c0-8df5-654b24lm5r33',
+        title: 'Какое-то название',
       },
       {...}
     ]
