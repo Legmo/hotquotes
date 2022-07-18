@@ -1,10 +1,5 @@
-/*todo: is it correct to put this logic into reducer?!*/
-// import { UuidGenerator } from '../utils/uuidGenerator';
-// const UuidGeneratorClass = new UuidGenerator;
-
 const SET_TAGS = 'SET_TAGS';
 const ADD_NEW_TAG = 'ADD_NEW_TAG';
-
 
 let initialState = {
   tags:       [],
@@ -14,7 +9,6 @@ let initialState = {
 const tagsReducer = (state = initialState, action) => {
   let newElement = {
     title: state.newTagName,
-    // id:   UuidGeneratorClass.generate(),
   };
 
   switch (action.type) {

@@ -11,6 +11,13 @@ let reducers = combineReducers({
   sources: sourcesReducer
 });
 
-let store = createStore(reducers);
+let store = createStore(
+  reducers,
+  /* Mozilla Redux DevTools add-on integration
+   * https://addons.mozilla.org/en-US/firefox/addon/reduxdevtools
+   * https://github.com/reduxjs/redux-devtools/tree/main/extension#installation
+   */
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 export default store;
