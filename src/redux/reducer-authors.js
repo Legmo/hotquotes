@@ -1,40 +1,15 @@
 /*todo: is it correct to put this logic into reducer?!*/
-import { UuidGenerator } from '../utils/uuidGenerator';
+// import { UuidGenerator } from '../utils/uuidGenerator';
+// const UuidGeneratorClass = new UuidGenerator;
 
 const ADD_NEW_AUTHOR = 'ADD_NEW_AUTHOR';
+const SET_AUTHORS = 'SET_AUTHORS';
 const UPDATE_NEW_AUTHOR_NAME = 'UPDATE_NEW_AUTHOR_NAME';
 const UPDATE_NEW_AUTHOR_SURNAME = 'UPDATE_NEW_AUTHOR_SURNAME';
 
-const UuidGeneratorClass = new UuidGenerator;
 
 let initialState = {
-  authorsBase: [
-    {
-      id:      '0181e85f-0d52-4f7d-a26e-4b6bed4c2a51',
-      name:    'Марк',
-      surname: 'Аврелий',
-    },
-    {
-      id:      '0181e860-e9e3-4eaa-b5ee-ca9e46033e00',
-      name:    'Хань',
-      surname: 'Сян-Цзы',
-    },
-    {
-      id:      '0181e861-b72e-4994-8ced-0f1b6be25566',
-      name:    'Шаво',
-      surname: 'Одаджян',
-    },
-    {
-      id:      '0181e87c-514d-46f8-af06-babc17876276',
-      name:    'Фрэнк',
-      surname: 'Заппа',
-    },
-    {
-      id:      '0181e87d-a40c-4fc8-b1e1-79790914f08d',
-      name:    'Фрэнк',
-      surname: 'Хэрберт',
-    },
-  ],
+  authors:          [],
   newAuthorName:    '',
   newAuthorSurname: '',
 };
@@ -43,7 +18,7 @@ const authorsReducer = (state = initialState, action) => {
   let newElement = {
     name:    state.newAuthorName,
     surname: state.newAuthorSurname,
-    id:      UuidGeneratorClass.generate(),
+    // id:      UuidGeneratorClass.generate(),
   };
 
   switch (action.type) {
@@ -52,9 +27,18 @@ const authorsReducer = (state = initialState, action) => {
       newElement.surname = '';
       return {
         ...state,
-        authorsBase: [
-          ...state.authorsBase,
+        authors: [
+          ...state.authors,
           newElement
+        ],
+        newAuthorName:    '',
+        newAuthorSurname: ''
+      };
+    case SET_AUTHORS:
+      return {
+        ...state,
+        authors: [
+          ...action.authorsArray
         ],
         newAuthorName:    '',
         newAuthorSurname: ''
@@ -79,6 +63,11 @@ const authorsReducer = (state = initialState, action) => {
 //ActionCreator's
 export const addNewAuthorAC = () => ({
   type: ADD_NEW_AUTHOR,
+});
+
+export const setAuthorsAC = (authorsArray) => ({
+  type:         SET_AUTHORS,
+  authorsArray: authorsArray,
 });
 
 export const updateNewAuthorNameAC = (authorName) => ({
