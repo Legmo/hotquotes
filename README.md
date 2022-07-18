@@ -73,7 +73,7 @@ The database is named `HotQuotes` and consists of 4 tables:
         quoteText:   'Do what you must and come what may.',
         createdTime: '2018-06-23T19:03:23.000Z',
         id:          '0181e85e-8e40-44eb-b7d0-81f9fc52f59d',
-        authorId:    ['0181e85f-0d52-4f7d-a26e-4b6bed4c2a51'],
+        authorsId:   ['0181e85f-0d52-4f7d-a26e-4b6bed4c2a51'],
         sourceId:    '0273r930-1cfb-49c0-8df5-654b24lm5r33',
         tagsId:      [
           '0181e85f-5bc3-4095-b36c-192e63e19c4b',
@@ -221,14 +221,14 @@ You can also ask the necessary questions in the [Discussions section](https://gi
 
 **Создание базы данных** <br>
 Также вам понадобится backend-server с базой данных вашего приложения. Я использую бесплатный zero-code сервис [Airtable](https://airtable.com/). Вы можете выбрать решение которое вам нравится. <br>
-База данных имеет имя `HotQuotes` и состоит из 3 таблиц:
+База данных имеет имя `HotQuotes` и состоит из 4 таблиц:
   ```javascript
     quotesBase: [
       {
         quoteText:   'Делай что должно и будь что будет.',
         createdTime: '2018-06-23T19:03:23.000Z',
         id:          '0181e85e-8e40-44eb-b7d0-81f9fc52f59d',
-        authorId:    ['0181e85f-0d52-4f7d-a26e-4b6bed4c2a51'],
+        authorsId:   ['0181e85f-0d52-4f7d-a26e-4b6bed4c2a51'],
         sourceId:    '0273r930-1cfb-49c0-8df5-654b24lm5r33',
         tagsId:      [
           '0181e85f-5bc3-4095-b36c-192e63e19c4b',

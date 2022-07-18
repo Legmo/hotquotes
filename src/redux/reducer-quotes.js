@@ -7,14 +7,14 @@ const ADD_NEW_QUOTE           = 'ADD_NEW_QUOTE';
 const SET_QUOTES              = 'SET_QUOTES';
 const UPDATE_NEW_QUOTE_TEXT   = 'UPDATE_NEW_QUOTE_TEXT';
 const UPDATE_NEW_SOURCE_TITLE = 'UPDATE_NEW_SOURCE_TITLE';
-const ADD_AUTHOR_ID           = 'ADD_AUTHOR_ID';
+const ADD_AUTHORS_ID           = 'ADD_AUTHORS_ID';
 const ADD_TAG_ID              = 'ADD_TAG_ID';
 
 let initialState = {
   quotes:              [],
   isQuotesLoaded:      false,
   newQuoteCreatedTime: '',
-  newAuthorId:         '',
+  newAuthorsId:        [],
   newSourceTitleText:  '',
   newQuoteText:        '',
   newQuoteTags:        [],
@@ -32,7 +32,7 @@ const quotesReducer = (state = initialState, action) => {
   let newElement = {
     // id:          UuidGeneratorClass.generate(),
     // createdTime: new Date().toISOString(),
-    authorId:    state.newAuthorId,
+    authorsId:   state.newAuthorsId,
     sourceTitle: state.newSourceTitleText,
     quoteText:   state.newQuoteText,
     tags:        state.newQuoteTags,
@@ -47,7 +47,7 @@ const quotesReducer = (state = initialState, action) => {
           ...action.quotesArray
         ],
         newQuoteDate:       '',
-        newAuthorId:        '',
+        newAuthorsId:       '',
         newSourceTitleText: '',
         newQuoteText:       '',
         newQuoteTags:       [],
@@ -60,7 +60,7 @@ const quotesReducer = (state = initialState, action) => {
           newElement
         ],
         newQuoteDate:       '',
-        newAuthorId:        '',
+        newAuthorsId:       '',
         newSourceTitleText: '',
         newQuoteText:       '',
         newQuoteTags:       [],
@@ -77,11 +77,11 @@ const quotesReducer = (state = initialState, action) => {
         ...state,
         newSourceTitleText: action.newTitle
       };
-    case ADD_AUTHOR_ID:
-      newElement.authorId = action.newAuthorId;
+    case ADD_AUTHORS_ID:
+      newElement.authorsId = action.newAuthorsId;
       return {
         ...state,
-        newAuthorId: action.newAuthorId
+        newAuthorsId: action.newAuthorsId
       };
     case ADD_TAG_ID:
       newElement.tags.push(action.newTagId);
@@ -118,9 +118,9 @@ export const updateNewSourceTitleAC = (text) => ({
   newTitle: text,
 });
 
-export const addAuthorAC = (text) => ({
-  type:        ADD_AUTHOR_ID,
-  newAuthorId: text,
+export const addAuthorsAC = (text) => ({
+  type:         ADD_AUTHORS_ID,
+  newAuthorsId: text,
 });
 
 export const addTagAC = (text) => ({
