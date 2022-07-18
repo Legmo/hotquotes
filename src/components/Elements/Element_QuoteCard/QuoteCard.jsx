@@ -7,6 +7,7 @@ import {
   getRandomArrayElement
 } from '../../../utils/helpers';
 import RefreshBlock from '../Element_RefreshBlock';
+import { getTable } from '../../../DataAccessLayer/axiosRequests';
 
 class QuoteCard extends Component {
   constructor(props) {
@@ -24,24 +25,28 @@ class QuoteCard extends Component {
 
   render() {
     const quote = this.state.quote;
+
+    let quoteSource;
+    const quoteSourceId = this.state.quote.sourceId;
+    quoteSourceId && (quoteSource = findElementByValue(this.props.sources, quoteSourceId));
+
     let author;
-    const authorsBase = this.props.authors;
     const authorId = this.state.quote.authorId;
+    authorId && (author = findElementByValue(this.props.authors, authorId));
+
     let tags;
-    const tagsBase = this.props.tags;
     const tagsIdArray = this.state.quote.tags;
-
-    author = findElementByValue(authorsBase, authorId);
-
-    tags = tagsIdArray.map(tagID => {
-      const tagObject = findElementByValue(tagsBase, tagID);
-      return tagObject.name;
-    });
-
+    tagsIdArray && (
+      tags = tagsIdArray.map(tagID => {
+        const tagObject = findElementByValue(this.props.tags, tagID);
+        return tagObject.name;
+      })
+    );
+    
     return (
       <>
         <figure className = {style.blockquoteContainer}>
-          <blockquote className = {style.blockquote}>{quote.quoteText}</blockquote>
+          <blockquote data-id = {quote.id} className = {style.blockquote}>{quote.quoteText}</blockquote>
           <figcaption className = {style.blockquoteFooter}>
             <span className = {style.authorAndSource}>
               <span className = {style.author}>
@@ -52,14 +57,12 @@ class QuoteCard extends Component {
                 )}
               </span>{' '}
               <cite className = {style.source}>
-                {quote.sourceTitle !== '' ? (
-                  <span>, «{quote.sourceTitle}»</span>
-                ) : (
-                  <span></span>
-                )}
+                {quoteSource && `<span>«${quoteSource}»</span>`}
               </cite>
             </span>
-            <ListTagsInline listItems = {tags} />
+            {
+              tags && <ListTagsInline listItems = {tags} />
+            }
           </figcaption>
         </figure>
 
@@ -74,7 +77,9 @@ QuoteCard.propTypes = {
   authors:   PropTypes.array,
   tags:      PropTypes.array,
   quotes:    PropTypes.array,
+  sources:   PropTypes.array,
   listItems: PropTypes.string,
+  setQuotes: PropTypes.func,
 };
 
 export default QuoteCard;

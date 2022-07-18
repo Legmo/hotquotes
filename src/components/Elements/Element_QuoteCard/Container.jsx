@@ -1,16 +1,22 @@
 import { connect } from 'react-redux';
 import QuoteCard from './QuoteCard';
+import { setQuotesAC } from '../../../redux/reducer-quotes';
 
 const mapStateToProps = (state) => {
   return {
-    quotes:  state.quotes.quotesBase,
-    tags:    state.tags.tagsBase,
-    authors: state.authors.authorsBase,
+    quotes:  state.quotes.quotes,
+    tags:    state.tags.tags,
+    authors: state.authors.authors,
+    sources: state.sources.sources,
   };
 };
 
-const mapDispatchToProps = () => {
-  return {};
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setQuotes: (quotesArray) => {
+      dispatch(setQuotesAC(quotesArray));
+    },
+  };
 };
 
 const QuoteCardContainer = connect(

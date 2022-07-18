@@ -106,51 +106,7 @@ The database is named `HotQuotes` and consists of 3 tables:
 <br>
 
 **Enter API key**<br>
-enter your API key для доступа к базе данных into `apiKey` variable. If you use [Airtable](https://airtable.com/), then you need to register and go to the [Account](https://airtable.com/account) page. The API key will be located in the API section.
-<br>
-
-**Create Database**<br>
-Now I use the free zero-code service [Airtable](https://airtable.com/) to work with the database. You can choose the solution you like. <br>
-The database is named 'HotQuotes' and consists of 3 tables:
-  ```javascript
-    quotesBase: [
-      {
-        id:          '0181e85e-8e40-44eb-b7d0-81f9fc52f59d',
-        date:        '2018-06-23T19:03:23.000Z',
-        authorId:    '0181e85f-0d52-4f7d-a26e-4b6bed4c2a51',
-        sourceTitle: 'Source title here',
-        quoteText:   'Do what you must and come what may.',
-        tags:        [
-          '0181e85f-5bc3-4095-b36c-192e63e19c4b',
-          '0181e85f-f190-41af-a665-6f7718d17972',
-        ],
-      },
-      {...}
-    ]
-  ```
-  ```javascript
-    authorsBase: [
-      {
-        id:      '0181e85f-0d52-4f7d-a26e-4b6bed4c2a51',
-        name:    'Mark',
-        surname: 'Aurelius',
-      },
-      {...}
-    ]
-  ```
-  ```javascript
-    tagsBase: [
-      {
-        id:   '0181e860-1cfb-49c0-8df5-654b24fc6f48',
-        name: 'latin',
-      },
-      {...}
-    ]
-  ```
-&nbsp;
-<br>
-**Enter API key**<br>
-enter your API key для доступа к базе данных into 'apiKey' variable. If you use [Airtable](https://airtable.com/), then you need to register and go to the [Account](https://airtable.com/account) page. The API key will be located in the API section.
+Enter your API key to access the database into `apiKey` variable. If you use [Airtable](https://airtable.com/), then you need to register on the site [Airtable](https://airtable.com/) and go to the [Account](https://airtable.com/account) page. The API key will be located in the API section.
 <br>
 <br>
 
@@ -254,7 +210,7 @@ You can also ask the necessary questions in the [Discussions section](https://gi
 - `npm run build` — собрать приложение в продакшен-режиме. См. папку «public».
 <br>
 
-**Создание Базы данных** <br>
+**Создание базы данных** <br>
 Для работы с базой данных я использую бесплатный zero-code сервис [Airtable](https://airtable.com/). Вы можете выбрать решение которое вам нравится. <br>
 База данных имеет имя `HotQuotes` и состоит из 3 таблиц:
   ```javascript
@@ -294,8 +250,8 @@ You can also ask the necessary questions in the [Discussions section](https://gi
   ```
 &nbsp;
 <br>
-**Добавление API key**<br>
-Пропишите в переменную `apiKey` ваш API key для доступа к базе данных. Если вы используете [Airtable](https://airtable.com/), то вам надо зарегистрироваться и зайти на страницу [Account](https://airtable.com/account). API key будет расположен в разделе API.
+**Добавление ключа API**<br>
+Пропишите в переменную `apiKey` ваш API key для доступа к базе данных. Если вы используете [Airtable](https://airtable.com/), то вам надо зарегистрироваться на сайте [Airtable](https://airtable.com/) и зайти на страницу [Account](https://airtable.com/account). API key будет расположен в разделе API.
 <br>
 <br>
 
