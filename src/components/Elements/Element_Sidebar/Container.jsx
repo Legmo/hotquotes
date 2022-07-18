@@ -1,7 +1,5 @@
 import Sidebar from './Sidebar';
 import {connect} from 'react-redux';
-import { setAuthorsAC } from '../../../redux/reducer-authors';
-import { setTagsAC } from '../../../redux/reducer-tags';
 
 let mapStateToProps = (state) => {
   return {
@@ -10,15 +8,8 @@ let mapStateToProps = (state) => {
   };
 };
 
-let mapDispatchToProps = (dispatch) => {
-  return {
-    setAuthors: (authorsArray) => {
-      dispatch(setAuthorsAC(authorsArray));
-    },
-    setTags: (tagsArray) => {
-      dispatch(setTagsAC(tagsArray));
-    },
-  };
+let mapDispatchToProps = () => {
+  return {};
 };
 
 const SidebarContainer = connect(mapStateToProps, mapDispatchToProps)(Sidebar);

@@ -31,6 +31,13 @@ const tagsObjPrepare = (object) => {
     id:          object.id,
   };
 };
+const sourcesObjPrepare = (object) => {
+  return {
+    title:       object.fields.title ? object.fields.title : null,
+    createdTime: object.createdTime,
+    id:          object.id,
+  };
+};
 
 //Data requests
 export let getTable = (tableName = 'quotes' ) => {
@@ -52,6 +59,11 @@ export let getTable = (tableName = 'quotes' ) => {
         case 'tags':
           finalArray = originalArray.map(object => {
             return tagsObjPrepare(object);
+          });
+          break;
+        case 'sources':
+          finalArray = originalArray.map(object => {
+            return sourcesObjPrepare(object);
           });
           break;
         default:

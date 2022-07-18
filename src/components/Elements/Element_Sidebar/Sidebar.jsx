@@ -3,26 +3,8 @@ import style from './style.module.scss';
 import ListSidebar from '../Element_ListSidebar';
 import FiltersActive from '../Element_FiltersActive';
 import PropTypes from 'prop-types';
-import { getTable } from '../../../DataAccessLayer/axiosRequests';
 
 const Sidebar = (props) => {
-
-  //todo: for testing
-  if(props.authors.authors.length === 0) {
-    getTable('authors').then (
-      response => {
-        props.setAuthors(response);
-      }
-    );
-  }
-  if(props.tags.tags.length === 0) {
-    getTable('tags').then (
-      response => {
-        props.setTags(response);
-      }
-    );
-  }
-
   const listAuthorsFull = props.authors.authors.map((authorObject) => authorObject.name + ' ' + authorObject.surname);
   const listTagsFull = props.tags.tags.map((tagObject) => tagObject.title);
 
@@ -35,7 +17,7 @@ const Sidebar = (props) => {
     []
   );
 
-  // todo: возможно стоит сделать функцию/компонент для генерация sidebar. Подумать
+  // todo: возможно стоит сделать функцию/компонент для генерации sections. Наследование? Подумать.
   return (
     <aside className = {style.sidebar}>
       <section className = {style.sectionSidebar + ' ' + style.sectionTags}>
@@ -68,10 +50,7 @@ const Sidebar = (props) => {
 
 Sidebar.propTypes = {
   authors:      PropTypes.object,
-  authorsArray: PropTypes.array,
   tags:         PropTypes.object,
-  tagsBase:     PropTypes.array,
-  setAuthors:   PropTypes.func,
 };
 
 export default Sidebar;
