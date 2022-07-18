@@ -56,10 +56,10 @@ class QuoteCard extends Component {
       }
 
       let author;
-      const authorId = quote.authorId[0]; //todo: change logic. There may be situations when there are several authors.
+      const authorsId = quote.authorsId[0]; //todo: change logic. There may be situations when there are several authors.
       const authorsBase = this.props.authors;
-      if (authorId && !lodash.isEmpty(authorsBase)) {
-        author = findElementByValue(authorsBase, authorId);
+      if (authorsId && !lodash.isEmpty(authorsBase)) {
+        author = findElementByValue(authorsBase, authorsId);
       }
 
       let tags;

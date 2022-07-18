@@ -10,7 +10,7 @@ const quotesObjPrepare = (object) => {
     quoteText:   object.fields.quoteText,
     createdTime: object.createdTime,
     id:          object.id,
-    authorId:    object.fields.authorId ? object.fields.authorId : null,
+    authorsId:    object.fields.authorsId ? object.fields.authorsId : null,
     sourceId:    object.fields.sourceId ? object.fields.sourceId : null,
     tagsId:      object.fields.tagsId ? [...object.fields.tagsId] : []
   };
