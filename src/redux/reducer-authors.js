@@ -1,7 +1,3 @@
-/*todo: is it correct to put this logic into reducer?!*/
-// import { UuidGenerator } from '../utils/uuidGenerator';
-// const UuidGeneratorClass = new UuidGenerator;
-
 const ADD_NEW_AUTHOR = 'ADD_NEW_AUTHOR';
 const SET_AUTHORS = 'SET_AUTHORS';
 const UPDATE_NEW_AUTHOR_NAME = 'UPDATE_NEW_AUTHOR_NAME';
