@@ -32,10 +32,10 @@ export let getRandomArrayElement = (array) => {
 
 /* Find array element by */
 export let findElementByValue = (array, value) => {
-  let quoteAuthorObject = null;
+  let resultObject = [];
   array.map((object) => {
     if (Object.values(object).includes(value)) {
-      quoteAuthorObject = object;
+      resultObject = object;
     }});
-  return quoteAuthorObject;
+  return resultObject;
 };

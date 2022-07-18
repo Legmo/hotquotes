@@ -1,12 +1,14 @@
 import { combineReducers, createStore } from 'redux';
-import reducerQuotes from './reducer-quotes';
-import reducerTags from './reducer-tags';
-import reducerAuthors from './reducer-authors';
+import quotesReducer from './reducer-quotes';
+import authorsReducer from './reducer-authors';
+import tagsReducer from './reducer-tags';
+import sourcesReducer from './reducer-sources';
 
 let reducers = combineReducers({
-  quotes:  reducerQuotes,
-  authors: reducerAuthors,
-  tags:    reducerTags
+  quotes:  quotesReducer,
+  authors: authorsReducer,
+  tags:    tagsReducer,
+  sources: sourcesReducer
 });
 
 let store = createStore(reducers);
