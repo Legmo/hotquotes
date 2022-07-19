@@ -1,0 +1,20 @@
+@import '../../variables';
+
+.pagerList {
+  list-style: none;
+  display: grid;
+  gap: 5px;
+  grid-auto-columns: min-content;
+  grid-auto-flow: column;
+  margin-top: 20px;
+  padding-left: 0;
+}
+.selected {
+  font-weight: bold;
+}
+.pagerButton {
+  border: none;
+  border-radius: 4px;
+}
+.pagerElement {
+}

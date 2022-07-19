@@ -1,23 +1,28 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import style from './style.module.scss';
-import ListTagsInline from '../Element_ListTagsInline';
 import {
   findElementByValue,
   getRandomArrayElement,
 } from '../../../utils/helpers';
-import RefreshBlock from '../Element_RefreshBlock';
-import { getTable } from '../../../DataAccessLayer/axiosRequests';
+import RefreshBlock from '../../Elements/Element_RefreshBlock';
+import {
+  getTable,
+  // getTableByPagination
+} from '../../../DataAccessLayer/axiosRequests';
 import lodash from 'lodash';
+import Element_QuoteCard from '../../Elements/Element_QuoteCard';
+// import style from './style.module.scss';
 
-class QuoteCard extends Component {
+class PageIndex extends Component {
   componentDidMount() {
     /*    this.setState({
      quote: getRandomArrayElement(this.props.quotes),
      });*/
 
+    // getTableByPagination('tags',4, 0);
+
     //todo: this logic for test only
-    //todo: we need to get all data here. Now we get Authors & Tags in <Sidebar /> - it is wrong
+    //todo: разобраться с получением данных Authors и Tags здесь и в Sidebar. В Sidebar их надо оставить, чтоб отображалаись для других страниц
     getTable('quotes').then((response) => {
       /*        this.state = {
          quote: response,
@@ -36,8 +41,8 @@ class QuoteCard extends Component {
   }
 
   render() {
+    //todo: change this logic
     if (!lodash.isEmpty(this.props.quotes)) {
-      //todo: change this logic
       // const quote = this.state.quote;
       const quote = getRandomArrayElement(this.props.quotes);
 
@@ -74,29 +79,7 @@ class QuoteCard extends Component {
 
       return (
         <>
-          <figure className = {style.blockquoteContainer}>
-            <blockquote data-id = {quote.id} className = {style.blockquote}>
-              {quote.quoteText}
-            </blockquote>
-            <figcaption className = {style.blockquoteFooter}>
-              <span className = {style.authorAndSource}>
-                <span className = {style.author}>
-                  {author && author.name && author.surname ? (
-                    <span>
-                      {author.name} {author.surname}
-                    </span>
-                  ) : (
-                    <span></span>
-                  )}
-                </span>{' '}
-                <cite className = {style.source}>
-                  {quoteSource && <span>«{quoteSource}»</span>}
-                </cite>
-              </span>
-              {tags && <ListTagsInline listItems = {tags} />}
-            </figcaption>
-          </figure>
-
+          <Element_QuoteCard quote = {quote} author = {author} tags = {tags} source = {quoteSource}/>
           <RefreshBlock />
         </>
       );
@@ -104,7 +87,7 @@ class QuoteCard extends Component {
   }
 }
 
-QuoteCard.propTypes = {
+PageIndex.propTypes = {
   authors:    PropTypes.array,
   tags:       PropTypes.array,
   quotes:     PropTypes.array,
@@ -116,4 +99,4 @@ QuoteCard.propTypes = {
   setSources: PropTypes.func,
 };
 
-export default QuoteCard;
+export default PageIndex;

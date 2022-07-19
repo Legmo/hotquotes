@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import QuoteCard from './QuoteCard';
+import PageIndex from './PageIndex';
 import { setQuotesAC } from '../../../redux/reducer-quotes';
 import { setAuthorsAC } from '../../../redux/reducer-authors';
 import { setSourcesAC } from '../../../redux/reducer-sources';
@@ -31,9 +31,9 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-const QuoteCardContainer = connect(
+const Page_Index_Container = connect(
   mapStateToProps,
   mapDispatchToProps
-)(QuoteCard);
+)(PageIndex);
 
-export default QuoteCardContainer;
+export default Page_Index_Container;

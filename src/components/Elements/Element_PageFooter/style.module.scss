@@ -6,18 +6,8 @@
   grid-template-columns: auto $sidebar-width;
   height: 70px;
 }
-nav {
-  a {
-    color: $color-gray-light;
-    display: inline-block;
-    text-decoration: none;
-    transition: $transition-basic;
-
-    &:hover {
-      color: $color-black-text;
-      transition: $transition-basic;
-    }
-  }
+.adressBlock {
+  padding-top: 18px; //todo: fix it
 }
 .linkIcon {
   cursor: default;
