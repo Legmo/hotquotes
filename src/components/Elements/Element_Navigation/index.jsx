@@ -6,7 +6,7 @@ const Navigation = () => {
   return (
     <ul className={style.navList}>
       <NavLink
-        to="/index"
+        to="/"
         className={style.navItem}
         activeclassname={style.active}
       >
@@ -18,6 +18,13 @@ const Navigation = () => {
         activeclassname={style.active}
       >
         Добавить цитату
+      </NavLink>
+      <NavLink
+        to="/tags"
+        className={style.navItem}
+        activeclassname={style.active}
+      >
+        Все категории
       </NavLink>
     </ul>
   );

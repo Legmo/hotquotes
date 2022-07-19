@@ -2,13 +2,12 @@ import React from 'react';
 import style from './style.module.scss';
 import PropTypes from 'prop-types';
 
-const ListSidebar = (props) => {
+const ListFull = (props) => {
   const Items = props.listItems.map((props) => {
     /*    <li key = {props.id} className = {style.listItem} title = {props.title}>
      {props.name}
      </li>*/
     return (
-      //todo: fix key!
       <li key = {props} className = {style.listItem}>
         {props}
       </li>
@@ -18,12 +17,11 @@ const ListSidebar = (props) => {
   const listClassName = 'list' + props.listName;
 
   return (
-    //todo: добавить внизу ссылку "Показать все". При клике открывается блок-аккордеон, с вертикальной прокруткой и буквами-заголовками, как в адресной книге
-    <ul className = {style.listSidebar + ' ' + style[listClassName]}>{Items}</ul>
+    <ul className = {style.listFull + ' ' + style[listClassName]}>{Items}</ul>
   );
 };
 
-ListSidebar.propTypes = {
+ListFull.propTypes = {
   listItems: PropTypes.array,
   id:        PropTypes.number,
   title:     PropTypes.string,
@@ -31,4 +29,4 @@ ListSidebar.propTypes = {
   listName:  PropTypes.string,
 };
 
-export default ListSidebar;
+export default ListFull;
