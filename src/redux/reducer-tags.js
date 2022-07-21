@@ -1,4 +1,5 @@
 const SET_TAGS = 'SET_TAGS';
+const SET_TAGS_IS_FETCHING         = 'SET_TAGS_IS_FETCHING';
 const SET_TAGS_BY_PAGINATION = 'SET_TAGS_BY_PAGINATION';
 const CHANGE_PAGE = 'CHANGE_PAGE';
 const ADD_NEW_TAG = 'ADD_NEW_TAG';
@@ -6,6 +7,7 @@ const ADD_NEW_TAG = 'ADD_NEW_TAG';
 let initialState = {
   tags:             [],
   newTagName:       '',
+  isFetching:       false,
   tagsByPagination: { 
     tags:       [],
     offset:     0,
@@ -56,6 +58,11 @@ const tagsReducer = (state = initialState, action) => {
           newElement
         ]
       };
+    case SET_TAGS_IS_FETCHING:
+      return {
+        ...state,
+        isFetching: action.isFetching,
+      };
     default:
       return state;
   }
@@ -78,6 +85,10 @@ export const changePage = (activePage) => ({
 export const addNewTagText = (tagName) => ({
   type:       ADD_NEW_TAG,
   newTagName: tagName,
+});
+export const setTagsIsFetching = (isFetching) => ({
+  type: SET_TAGS_IS_FETCHING,
+  isFetching
 });
 
 export default tagsReducer;

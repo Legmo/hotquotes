@@ -3,31 +3,32 @@ import style from './style.module.scss';
 
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faSync} from '@fortawesome/free-solid-svg-icons';
+import PropTypes from 'prop-types';
 
 const iconSync = <FontAwesomeIcon icon = {faSync} size = '1x' />;
-
-// todo: реализовать средствами React - без перезагрузки страницы. Скорее всего реализовать какую-то логику в методах жизненного цикла PageIndex  и прокинуть сюда callback?
-// todo: move this function to helpers?
 // todo: перенести в нижнюю четверть экрана по центру страницы. Чтоб при изменении цитаты кнопка почти всегда оставалась на месте (удобнее кликать)
 // todo: кроме иконки написать текст
 // todo: навесить горячую клавишу + написать подсказку о клавише возле кнопки
-function refresh() {
-  window.location.reload();
-}
 
-const RefreshBlock = () => {
+const RefreshBlock = (props) => {
+  let callback = props.callback ? props.callback : console.log('We need to send callback function via props into RefreshBlock component.');
+
   return (
     <div className = {style.refreshBlock}>
       <button
         className = {style.buttonIcon}
         alt = 'Хочу ещё!'
         title = 'Хочу ещё!'
-        onClick = {refresh}
+        onClick = {callback}
       >
         {iconSync}
       </button>
     </div>
   );
+};
+
+RefreshBlock.propTypes = {
+  callback: PropTypes.func,
 };
 
 export default RefreshBlock;

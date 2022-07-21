@@ -1,5 +1,13 @@
 import Sidebar from './Sidebar';
 import {connect} from 'react-redux';
+import {
+  setAuthors,
+  setAuthorsIsFetching
+} from '../../../redux/reducer-authors';
+import {
+  setTags,
+  setTagsIsFetching
+} from '../../../redux/reducer-tags';
 
 let mapStateToProps = (state) => {
   return {
@@ -8,6 +16,11 @@ let mapStateToProps = (state) => {
   };
 };
 
-const SidebarContainer = connect(mapStateToProps, {})(Sidebar);
+const SidebarContainer = connect(mapStateToProps, {
+  setAuthors,
+  setTags,
+  setAuthorsIsFetching,
+  setTagsIsFetching,
+})(Sidebar);
 
 export default SidebarContainer;
