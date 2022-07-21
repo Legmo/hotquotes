@@ -17,7 +17,6 @@ const RefreshBlock = (props) => {
     <div className = {style.refreshBlock}>
       <button
         className = {style.buttonIcon}
-        alt = 'Хочу ещё!'
         title = 'Хочу ещё!'
         onClick = {callback}
       >
