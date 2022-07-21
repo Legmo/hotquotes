@@ -1,16 +1,18 @@
 const ADD_QUOTE               = 'ADD_QUOTE';
 const SET_QUOTES              = 'SET_QUOTES';
+const SET_QUOTES_IS_FETCHING         = 'SET_QUOTES_IS_FETCHING';
 const UPDATE_NEW_QUOTE_TEXT   = 'UPDATE_NEW_QUOTE_TEXT';
 const UPDATE_NEW_SOURCE_TITLE = 'UPDATE_NEW_SOURCE_TITLE';
 
 let initialState = {
   quotes:              [],
-  isQuotesLoaded:      false,
   newQuoteCreatedTime: '',
   newAuthorsId:        [],
   newSourceTitleText:  '',
   newQuoteText:        '',
   newQuoteTags:        [],
+  isQuotesLoaded:      false,
+  isFetching:          false,
 };
 
 const quotesReducer = (state = initialState, action) => {
@@ -31,11 +33,8 @@ const quotesReducer = (state = initialState, action) => {
           ...state.quotes,
           ...action.quotesArray
         ],
-        newQuoteDate:       '',
-        newAuthorsId:       '',
-        newSourceTitleText: '',
-        newQuoteText:       '',
-        newQuoteTags:       [],
+        isQuotesLoaded: true,
+
       };
     case ADD_QUOTE:
       return {
@@ -49,6 +48,11 @@ const quotesReducer = (state = initialState, action) => {
         newSourceTitleText: '',
         newQuoteText:       '',
         newQuoteTags:       [],
+      };
+    case SET_QUOTES_IS_FETCHING:
+      return {
+        ...state,
+        isFetching: action.isFetching,
       };
     case UPDATE_NEW_QUOTE_TEXT:
       newElement.quoteText = action.newText;
@@ -82,6 +86,10 @@ export const updateNewQuoteText = (text) => ({
 export const updateNewSourceTitle = (text) => ({
   type:     UPDATE_NEW_SOURCE_TITLE,
   newTitle: text,
+});
+export const setQuotesIsFetching = (isFetching) => ({
+  type: SET_QUOTES_IS_FETCHING,
+  isFetching
 });
 
 export default quotesReducer;

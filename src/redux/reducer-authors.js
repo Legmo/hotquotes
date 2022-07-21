@@ -1,4 +1,5 @@
 const SET_AUTHORS = 'SET_AUTHORS';
+const SET_AUTHORS_IS_FETCHING         = 'SET_AUTHORS_IS_FETCHING';
 const UPDATE_NEW_AUTHOR_NAME = 'UPDATE_NEW_AUTHOR_NAME';
 const UPDATE_NEW_AUTHOR_SURNAME = 'UPDATE_NEW_AUTHOR_SURNAME';
 
@@ -6,6 +7,7 @@ let initialState = {
   authors:          [],
   newAuthorName:    '',
   newAuthorSurname: '',
+  isFetching:       false,
 };
 
 const authorsReducer = (state = initialState, action) => {
@@ -37,6 +39,11 @@ const authorsReducer = (state = initialState, action) => {
         ...state,
         newAuthorSurname: action.newAuthorSurname,
       };
+    case SET_AUTHORS_IS_FETCHING:
+      return {
+        ...state,
+        isFetching: action.isFetching,
+      };
     default:
       return state;
   }
@@ -54,6 +61,10 @@ export const updateNewAuthorName    = (authorName) => ({
 export const updateNewAuthorSurname = (authorSurname) => ({
   type:             UPDATE_NEW_AUTHOR_SURNAME,
   newAuthorSurname: authorSurname,
+});
+export const setAuthorsIsFetching = (isFetching) => ({
+  type: SET_AUTHORS_IS_FETCHING,
+  isFetching
 });
 
 export default authorsReducer;
