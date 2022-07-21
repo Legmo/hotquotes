@@ -4,7 +4,7 @@ import style from '../Page_Tags/style.module.scss';
 // import PropTypes from 'prop-types';
 // import style from './style.module.scss';
 
-let Page_AddQuote = () => {
+let PageAddQuote = () => {
   return (
     <>
       <h2 className = {style.title}>Добавить цитату</h2>
@@ -16,4 +16,4 @@ let Page_AddQuote = () => {
 /*Page_AddQuote.propTypes = {
 };*/
 
-export default Page_AddQuote;
+export default PageAddQuote;

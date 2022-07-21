@@ -2,7 +2,7 @@ import * as axios from 'axios';
 import PropTypes from 'prop-types';
 
 let basicUrl = 'https://api.airtable.com/v0/appf6c9WBCs4A4Uq6/';
-let apiKey = ''; // Insert your API key, for example 'keyABCDEFGHIJKLMN'
+let apiKey = process.env.REACT_APP_HOTQOUTES_AIRTABLE_API_KEY; // Insert your API key, for example 'keyABCDEFGHIJKLMN'
 
 //Preparing data from server for React & Redux
 const quotesObjPreparation = (object) => {

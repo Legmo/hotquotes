@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import style from './style.module.scss';
-import ListTagsInline from '../../Elements/Element_ListTagsInline';
+import TagsListInline from '../../Elements/Element_ListTagsInline';
 
 const FormAddQuote = (props) => {
   const quote = props.quote;
@@ -30,7 +30,7 @@ const FormAddQuote = (props) => {
               {quoteSource && <span>«{quoteSource}»</span>}
             </cite>
           </span>
-          {tags && <ListTagsInline listItems = {tags} />}
+          {tags && <TagsListInline listItems = {tags} />}
         </figcaption>
       </figure>
     </>
@@ -38,10 +38,11 @@ const FormAddQuote = (props) => {
 };
 
 FormAddQuote.propTypes = {
-  quote:  PropTypes.object,
-  author: PropTypes.object,
-  tags:   PropTypes.array,
-  source: PropTypes.string,
+  quote:       PropTypes.object,
+  author:      PropTypes.object,
+  tags:        PropTypes.array,
+  source:      PropTypes.string,
+  quoteSource: PropTypes.string,
 };
 
 export default FormAddQuote;

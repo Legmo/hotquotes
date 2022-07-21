@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import style from './style.module.scss';
-import ListTagsInline from '../../Elements/Element_ListTagsInline';
-import Page_AddQuote from '../../Pages/Page_AddQuote/PageAddQuote';
 
 const FormAddQuote = (props) => {
   let addNewQuote = () => {

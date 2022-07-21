@@ -49,8 +49,8 @@ const Sidebar = (props) => {
 };
 
 Sidebar.propTypes = {
-  authors:      PropTypes.object,
-  tags:         PropTypes.object,
+  authors: PropTypes.object,
+  tags:    PropTypes.object,
 };
 
 export default Sidebar;

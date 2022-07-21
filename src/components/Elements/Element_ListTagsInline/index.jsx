@@ -2,7 +2,7 @@ import React from 'react';
 import style from './style.module.scss';
 import PropTypes from 'prop-types';
 
-const ListTagsInline = (props) => {
+const TagsListInline = (props) => {
   const listTagsInline = props.listItems.map((props) => (
 /*    <li key = {props.id} className = {style.listItem} title = 'Добавить в фильтры'>
       {props.name}
@@ -15,10 +15,10 @@ const ListTagsInline = (props) => {
   return <ul className = {style.list}>{listTagsInline}</ul>;
 };
 
-ListTagsInline.propTypes = {
+TagsListInline.propTypes = {
   listItems: PropTypes.array,
   id:        PropTypes.number,
   name:      PropTypes.string
 };
 
-export default ListTagsInline;
+export default TagsListInline;
