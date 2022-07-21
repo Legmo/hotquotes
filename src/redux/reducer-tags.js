@@ -62,23 +62,20 @@ const tagsReducer = (state = initialState, action) => {
 };
 
 //ActionCreator's
-export const setTagsAC = (tagsArray) => ({
+export const setTags = (tagsArray) => ({
   type:      SET_TAGS,
   tagsArray: tagsArray,
 });
-
-export const setTagsByPaginationAC = (tagsArray, offset) => ({
+export const setTagsByPagination = (tagsArray, offset) => ({
   type:      SET_TAGS_BY_PAGINATION,
   offset:    offset,
   tagsArray: tagsArray,
 });
-
-export const changePageAC = (activePage) => ({
+export const changePage = (activePage) => ({
   type:       CHANGE_PAGE,
   activePage: activePage,
 });
-
-export const addNewTagTextAC = (tagName) => ({
+export const addNewTagText = (tagName) => ({
   type:       ADD_NEW_TAG,
   newTagName: tagName,
 });

@@ -1,7 +1,7 @@
-import Page_Tags from './PageTags';
+import PageTags from './PageTags';
 import {
-  setTagsByPaginationAC,
-  changePageAC
+  setTagsByPagination,
+  changePage
 } from '../../../redux/reducer-tags';
 import {connect} from 'react-redux';
 
@@ -14,20 +14,12 @@ let mapStateToProps = (state) => {
   };
 };
 
-let mapDispatchToProps = (dispatch) => {
-  return {
-    setTagsByPagination: (tagsArray, offset) => {
-      dispatch(setTagsByPaginationAC(tagsArray, offset));
-    },
-    changePage: (activePage) => {
-      dispatch(changePageAC(activePage));
-    },
-  };
-};
-
-const Page_Tags_Container = connect(
+const PageTagsContainer = connect(
   mapStateToProps,
-  mapDispatchToProps
-)(Page_Tags);
+  {
+    setTagsByPagination,
+    changePage
+  }
+)(PageTags);
 
-export default Page_Tags_Container;
+export default PageTagsContainer;

@@ -1,8 +1,6 @@
-const ADD_NEW_AUTHOR = 'ADD_NEW_AUTHOR';
 const SET_AUTHORS = 'SET_AUTHORS';
 const UPDATE_NEW_AUTHOR_NAME = 'UPDATE_NEW_AUTHOR_NAME';
 const UPDATE_NEW_AUTHOR_SURNAME = 'UPDATE_NEW_AUTHOR_SURNAME';
-
 
 let initialState = {
   authors:          [],
@@ -18,18 +16,6 @@ const authorsReducer = (state = initialState, action) => {
   };
 
   switch (action.type) {
-    case ADD_NEW_AUTHOR:
-      newElement.name = '';
-      newElement.surname = '';
-      return {
-        ...state,
-        authors: [
-          ...state.authors,
-          newElement
-        ],
-        newAuthorName:    '',
-        newAuthorSurname: ''
-      };
     case SET_AUTHORS:
       return {
         ...state,
@@ -57,21 +43,15 @@ const authorsReducer = (state = initialState, action) => {
 };
 
 //ActionCreator's
-export const addNewAuthorAC = () => ({
-  type: ADD_NEW_AUTHOR,
-});
-
-export const setAuthorsAC = (authorsArray) => ({
+export const setAuthors             = (authorsArray) => ({
   type:         SET_AUTHORS,
   authorsArray: authorsArray,
 });
-
-export const updateNewAuthorNameAC = (authorName) => ({
+export const updateNewAuthorName    = (authorName) => ({
   type:          UPDATE_NEW_AUTHOR_NAME,
   newAuthorName: authorName,
 });
-
-export const updateNewAuthorSurnameAC = (authorSurname) => ({
+export const updateNewAuthorSurname = (authorSurname) => ({
   type:             UPDATE_NEW_AUTHOR_SURNAME,
   newAuthorSurname: authorSurname,
 });

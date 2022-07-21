@@ -6,7 +6,7 @@ import { getTableByPagination } from '../../../DataAccessLayer/axiosRequests';
 import lodash from 'lodash';
 import Pager from '../../Elements/Element_Pager';
 
-class Page_Tags extends Component {
+class PageTags extends Component {
   componentDidMount() {
     getTableByPagination('tags', this.props.pageSize, this.props.offset)
       .then(response => {
@@ -61,7 +61,7 @@ class Page_Tags extends Component {
   }
 }
 
-Page_Tags.propTypes = {
+PageTags.propTypes = {
   tags:                PropTypes.array,
   setTagsByPagination: PropTypes.func,
   changePage:          PropTypes.func,
@@ -70,4 +70,4 @@ Page_Tags.propTypes = {
   offset:              PropTypes.oneOfType([PropTypes.string,PropTypes.number]),
 };
 
-export default Page_Tags;
+export default PageTags;

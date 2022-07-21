@@ -1,7 +1,6 @@
 import React from 'react';
 import style from './style.module.scss';
 import PropTypes from 'prop-types';
-import Page_Tags from '../../Pages/Page_Tags/PageTags';
 
 const Pager = (props) => {
   //todo: получать totalTagsCount каким-то образом с сервера! Видимо делать обычный запрос без пагинации и высчитывать. Обычный запрос выдаёт не более 100 за раз, учесть

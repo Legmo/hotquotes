@@ -1,17 +1,13 @@
-import Page_AddQuote from './PageAddQuote';
+import PageAddQuote from './PageAddQuote';
 import {connect} from 'react-redux';
 
 let mapStateToProps = () => {
   return {};
 };
 
-let mapDispatchToProps = () => {
-  return {};
-};
-
-const Page_AddQuote_Container = connect(
+const PageAddQuoteContainer = connect(
   mapStateToProps,
-  mapDispatchToProps
-)(Page_AddQuote);
+  {}
+)(PageAddQuote);
 
-export default Page_AddQuote_Container;
+export default PageAddQuoteContainer;
