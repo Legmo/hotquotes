@@ -14,6 +14,7 @@ const App = () => {
         <section>
           <Routes>
             <Route path = '/' element = {<PageIndexContainer />} />
+            <Route path = '/quote/:id' element = {<PageIndexContainer />} />
             <Route path = '/add_quote' element = {<PageAddQuoteContainer />} />
             <Route path = '/tags' element = {<PageTagsContainer />} />
           </Routes>

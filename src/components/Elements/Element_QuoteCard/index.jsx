@@ -31,6 +31,8 @@ const FormAddQuote = (props) => {
             </cite>
           </span>
           {tags && <TagsListInline listItems = {tags} />}
+
+
         </figcaption>
       </figure>
     </>

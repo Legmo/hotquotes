@@ -1,0 +1,19 @@
+@import '../../variables';
+
+.refreshBlock {
+  margin: 20px 0 0 35px;
+}
+.buttonIcon {
+  background-color: transparent;
+  position: relative;
+  z-index: 11;
+  border: none;
+  svg {
+    color: $color-black-text;
+    transition: $transition-basic;
+  }
+  &:hover svg {
+    color: $color-blue;
+    transition: $transition-basic;
+  }
+}
