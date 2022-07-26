@@ -4,7 +4,6 @@ import {
   findElementByValue,
   getRandomArrayElement,
 } from '../../../utils/helpers';
-import RefreshBlock from '../../Elements/Element_RefreshBlock';
 import {
   getTable,
   getTableById,
@@ -14,6 +13,7 @@ import lodash, { isEmpty } from 'lodash';
 import Element_QuoteCard from '../../Elements/Element_QuoteCard';
 import Preloader from '../../Elements/Element_Preloader';
 import Element_QuoteToolbar from '../../Elements/Element_QuoteToolbar';
+// import RefreshBlock from '../../Elements/Element_RefreshBlock';
 
 class PageIndex extends Component {
   componentDidMount() {
