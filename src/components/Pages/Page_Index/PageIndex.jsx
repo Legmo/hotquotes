@@ -7,11 +7,13 @@ import {
 import RefreshBlock from '../../Elements/Element_RefreshBlock';
 import {
   getTable,
+  getTableById,
   // getTableByPagination
 } from '../../../DataAccessLayer/axiosRequests';
-import lodash from 'lodash';
+import lodash, { isEmpty } from 'lodash';
 import Element_QuoteCard from '../../Elements/Element_QuoteCard';
 import Preloader from '../../Elements/Element_Preloader';
+import Element_QuoteToolbar from '../../Elements/Element_QuoteToolbar';
 
 class PageIndex extends Component {
   componentDidMount() {
@@ -19,10 +21,19 @@ class PageIndex extends Component {
     //todo: разобраться с получением данных Authors и Tags здесь и в Sidebar. В Sidebar их надо оставить, чтоб отображались для других страниц
 
     this.props.setQuotesIsFetching(true);
-    getTable('quotes').then((response) => {
-      this.props.setQuotes(response);
-      this.props.setQuotesIsFetching(false);
-    });
+    if (!isEmpty(this.props.params) && this.props.params.id) {
+      //todo: выдавать сообщение, если цитата с данным ID не найдена
+      getTableById('quotes', this.props.params.id).then((response) => {
+        this.props.setQuotes(response);
+        this.props.setQuotesIsFetching(false);
+      });
+    } else {
+      getTable('quotes').then((response) => {
+        this.props.setQuotes(response);
+        this.props.setQuotesIsFetching(false);
+      });
+    }
+
     getTable('sources').then((response) => {
       this.props.setSources(response);
     });
@@ -87,10 +98,12 @@ class PageIndex extends Component {
         return (
           <>
             <Element_QuoteCard quote = {quote} author = {author} tags = {tags} source = {quoteSource}/>
-            <RefreshBlock callback = {() => this.quoteReload()} />
-          {/*  todo: переделать bind. Использование стрелочной функции в render() создаёт новую функцию при каждой отрисовке компонента, что может нарушать оптимизации, использующие строгое сравнение для определения идентичности.
-           https://reactdev.ru/handbook/faq-functions/#bind-in-render
-          */}
+            {/*<RefreshBlock callback = {() => this.quoteReload()} />*/}
+            {/*  todo: переделать bind. Использование стрелочной функции в render() создаёт новую функцию при каждой отрисовке компонента, что может нарушать оптимизации, использующие строгое сравнение для определения идентичности.
+             https://reactdev.ru/handbook/faq-functions/#bind-in-render
+            */}
+
+            <Element_QuoteToolbar quoteId = {quote.id} refreshCallback = {() => this.quoteReload()} />
           </>
         );
       }
@@ -101,8 +114,10 @@ class PageIndex extends Component {
 PageIndex.propTypes = {
   authors:             PropTypes.array,
   tags:                PropTypes.array,
+  params:              PropTypes.object,
   quotes:              PropTypes.object,
   sources:             PropTypes.array,
+  id:                  PropTypes.string,
   listItems:           PropTypes.string,
   setQuotes:           PropTypes.func,
   setAuthors:          PropTypes.func,

@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import style from './style.module.scss';
 import TagsListInline from '../../Elements/Element_ListTagsInline';
+import ButtonCopyToClipboard from '../Element_ButtonCopyToClipboard';
 
 const FormAddQuote = (props) => {
   const quote = props.quote;
@@ -31,6 +32,8 @@ const FormAddQuote = (props) => {
             </cite>
           </span>
           {tags && <TagsListInline listItems = {tags} />}
+
+
         </figcaption>
       </figure>
     </>

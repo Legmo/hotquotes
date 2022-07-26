@@ -109,6 +109,35 @@ export let getTable = (tableName = 'quotes' ) => {
 );
 };
 
+//todo: разобраться с дублированием кода
+export let getTableById = (tableName = 'quotes', id) => {
+  return axios.get(`${basicUrl}${tableName}/${id}/?api_key=${apiKey}`).then(
+    (resolve) => {
+      let finalArray = [];
+      switch (tableName) {
+        case 'quotes':
+          finalArray = [
+            {
+              quoteText:   resolve.data.fields.quoteText,
+              createdTime: resolve.data.createdTime,
+              id:          resolve.data.id,
+              authorsId:   resolve.data.fields.authorsId ? resolve.data.fields.authorsId : null,
+              sourceId:    resolve.data.fields.sourceId ? resolve.data.fields.sourceId : null,
+              tagsId:      resolve.data.fields.tagsId ? [...resolve.data.fields.tagsId] : []
+            }
+          ];
+          break;
+        default:
+          return resolve.data;
+      }
+      return finalArray;
+    },
+    (error) => {
+      console.log('Get table by ID request error: ', error);
+    }
+  );
+};
+
 getTable.propTypes = {
   records: PropTypes.array,
 };
