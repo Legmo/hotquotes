@@ -1,0 +1,7 @@
+@import '../../variables';
+
+.toolbarWrapper {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 20px 20px; //todo: fix it!
+}
