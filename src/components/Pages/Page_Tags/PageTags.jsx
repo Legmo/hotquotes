@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import style from './style.module.scss';
 import PropTypes from 'prop-types';
 import ListFull from '../../Elements/Element_ListFull';
-import { getTableByPagination } from '../../../DataAccessLayer/axiosRequests';
+import { getTableByPagination } from '../../../DataAccessLayer/api';
 import lodash from 'lodash';
 import Pager from '../../Elements/Element_Pager';
 

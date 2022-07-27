@@ -3,7 +3,7 @@ import style from './style.module.scss';
 import ListSidebar from '../Element_ListSidebar/ListSidebar';
 import FiltersActive from '../Element_FiltersActive';
 import PropTypes from 'prop-types';
-import { getTable } from '../../../DataAccessLayer/axiosRequests';
+import { getTable } from '../../../DataAccessLayer/api';
 import Preloader from '../Element_Preloader';
 
 class Sidebar extends Component {

@@ -8,7 +8,7 @@ import {
   getTable,
   getTableById,
   // getTableByPagination
-} from '../../../DataAccessLayer/axiosRequests';
+} from '../../../DataAccessLayer/api';
 import lodash, { isEmpty } from 'lodash';
 import Element_QuoteCard from '../../Elements/Element_QuoteCard';
 import Preloader from '../../Elements/Element_Preloader';
