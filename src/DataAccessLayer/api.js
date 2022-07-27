@@ -1,8 +1,13 @@
 import * as axios from 'axios';
 import PropTypes from 'prop-types';
 
-let basicUrl = 'https://api.airtable.com/v0/appf6c9WBCs4A4Uq6/';
-let apiKey = process.env.REACT_APP_HOTQOUTES_AIRTABLE_API_KEY; // Insert your API key, for example 'keyABCDEFGHIJKLMN'
+const apiKey = process.env.REACT_APP_HOTQOUTES_AIRTABLE_API_KEY; // Insert your API key, for example 'keyABCDEFGHIJKLMN'
+const instance = axios.create({
+  baseURL: 'https://api.airtable.com/v0/appf6c9WBCs4A4Uq6/',
+  headers: {
+    'Authorization': `Bearer ${apiKey}`
+  }
+});
 
 //Preparing data from server for React & Redux
 const quotesObjPreparation = (object) => {
@@ -47,8 +52,8 @@ const sourcesObjPreparation = (object) => {
 };
 
 //Data requests
-export let getTableByPagination = (tableName = 'tags', pageSize = 10, offset = 0 ) => {
- return axios.get(`${basicUrl}${tableName}?pageSize=${pageSize}&offset=${offset}&api_key=${apiKey}`).then (
+export const getTableByPagination = (tableName = 'tags', pageSize = 10, offset = 0 ) => {
+ return instance.get(`${tableName}?pageSize=${pageSize}&offset=${offset}`).then (
    (resolve) => {
      const originalArray = resolve.data.records;
      let result = {
@@ -72,8 +77,8 @@ export let getTableByPagination = (tableName = 'tags', pageSize = 10, offset = 0
  );
 };
 
-export let getTable = (tableName = 'quotes' ) => {
-  return axios.get(`${basicUrl}${tableName}?api_key=${apiKey}`).then(
+export const getTable = (tableName = 'quotes' ) => {
+  return instance.get(`${tableName}`).then(
     (resolve) => {
       const originalArray = resolve.data.records;
       let finalArray = [];
@@ -110,8 +115,8 @@ export let getTable = (tableName = 'quotes' ) => {
 };
 
 //todo: разобраться с дублированием кода
-export let getTableById = (tableName = 'quotes', id) => {
-  return axios.get(`${basicUrl}${tableName}/${id}/?api_key=${apiKey}`).then(
+export const getTableById = (tableName = 'quotes', id) => {
+  return instance.get(`${tableName}/${id}`).then(
     (resolve) => {
       let finalArray = [];
       switch (tableName) {
