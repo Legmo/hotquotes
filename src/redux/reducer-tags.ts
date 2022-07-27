@@ -4,21 +4,38 @@ const SET_TAGS_BY_PAGINATION = 'SET_TAGS_BY_PAGINATION';
 const CHANGE_PAGE = 'CHANGE_PAGE';
 const ADD_NEW_TAG = 'ADD_NEW_TAG';
 
-let initialState = {
-  tags:             [],
-  newTagName:       '',
+type TagObjectType = {
+  createdTime: string | null,
+  id: string | null,
+  title: string
+}
+
+type TagsByPaginationObjectType = {
+  tags: Array<TagObjectType>,
+  offset: number,
+  activePage: number,
+  pageSize: number,
+};
+
+const initialState = {
+  tags:             [] as Array<TagObjectType>,
+  newTagName:       '' as string | null,
   isFetching:       false,
   tagsByPagination: { 
     tags:       [],
     offset:     0,
     activePage: 1,
     pageSize:   10,
-  },
+  } as TagsByPaginationObjectType,
 };
 
-const tagsReducer = (state = initialState, action) => {
-  let newElement = {
-    title: state.newTagName,
+export type InitialStateType = typeof initialState;
+
+const tagsReducer = (state = initialState, action:any):InitialStateType => {
+  const newElement = {
+    createdTime: null,
+    id:          null,
+    title:       state.newTagName as string,
   };
 
   switch (action.type) {
@@ -69,24 +86,49 @@ const tagsReducer = (state = initialState, action) => {
 };
 
 //ActionCreator's
-export const setTags = (tagsArray) => ({
+type SetTagsActionType = {
+  type: typeof SET_TAGS,
+  tagsArray: Array<TagObjectType>,
+};
+export const setTags = (tagsArray:Array<TagObjectType>):SetTagsActionType => ({
   type:      SET_TAGS,
   tagsArray: tagsArray,
 });
-export const setTagsByPagination = (tagsArray, offset) => ({
+
+type SetTagsByPaginationActionType = {
+  type: string,
+  offset: number,
+  tagsArray: Array<object>,
+}
+export const setTagsByPagination = (tagsArray:Array<object>, offset:number):SetTagsByPaginationActionType => ({
   type:      SET_TAGS_BY_PAGINATION,
   offset:    offset,
   tagsArray: tagsArray,
 });
-export const changePage = (activePage) => ({
+
+type ChangePageActionType = {
+  type: string,
+  activePage: number,
+}
+export const changePage = (activePage:any):ChangePageActionType => ({
   type:       CHANGE_PAGE,
   activePage: activePage,
 });
-export const addNewTagText = (tagName) => ({
+
+type AddNewTagTextActionType = {
+  type: string,
+  newTagName: string,
+}
+export const addNewTagText = (tagName:string):AddNewTagTextActionType => ({
   type:       ADD_NEW_TAG,
   newTagName: tagName,
 });
-export const setTagsIsFetching = (isFetching) => ({
+
+type SetTagsIsFetchingActionType = {
+  type: string,
+  isFetching: boolean
+}
+export const setTagsIsFetching = (isFetching:boolean):SetTagsIsFetchingActionType => ({
   type: SET_TAGS_IS_FETCHING,
   isFetching
 });
