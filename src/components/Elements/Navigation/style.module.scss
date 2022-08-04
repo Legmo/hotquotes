@@ -1,0 +1,23 @@
+@import '../../variables';
+
+.navList {
+  display: grid;
+  column-gap: 10px;
+  grid-auto-columns: max-content;
+  grid-auto-flow: column;
+  padding: 0;
+}
+.navItem {
+  color: $color-gray;
+  transition: $transition-basic;
+  &:hover {
+    color: $color-blue;
+    transition: $transition-basic;
+  }
+}
+
+.active {
+  color: $color-black-text;
+  cursor: default;
+  text-decoration: none;
+}
