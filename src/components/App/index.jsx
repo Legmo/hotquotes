@@ -1,11 +1,11 @@
 import React from 'react';
-import SidebarContainer from '../Elements/Element_Sidebar/Container';
-import Footer from '../Elements/Element_PageFooter';
+import SidebarContainer from '../Elements/Sidebar/Container';
+import Footer from '../Elements/Footer/Footer';
 import style from './style.module.scss';
 import { Route, Routes } from 'react-router-dom';
-import PageIndexContainer from '../Pages/Page_Index/Container';
-import PageTagsContainer from '../Pages/Page_Tags/Container';
-import PageAddQuoteContainer from '../Pages/Page_AddQuote/Container';
+import PageIndexContainer from '../Pages/Quote/Container';
+import PageTagsContainer from '../Pages/TagsList/Container';
+import PageAddQuoteContainer from '../Pages/AddQuote/Container';
 
 const App = () => {
   return (

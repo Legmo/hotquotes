@@ -1,0 +1,19 @@
+@import '../../variables';
+
+.footer {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: auto $sidebar-width;
+  height: 70px;
+}
+.addressBlock {
+  padding-top: 18px; //todo: fix it
+}
+.linkIcon {
+  cursor: default;
+  color: $color-gray-light;
+  &:hover {
+    color: $color-blue;
+    transition: $transition-basic;
+  }
+}

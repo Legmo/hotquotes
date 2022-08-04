@@ -1,51 +1,34 @@
+import { TagObjectType, TagsByPaginationObjectType } from '../types/types';
+
 const SET_TAGS = 'SET_TAGS';
 const SET_TAGS_IS_FETCHING         = 'SET_TAGS_IS_FETCHING';
 const SET_TAGS_BY_PAGINATION = 'SET_TAGS_BY_PAGINATION';
 const CHANGE_PAGE = 'CHANGE_PAGE';
-const ADD_NEW_TAG = 'ADD_NEW_TAG';
-
-type TagObjectType = {
-  createdTime: string | null,
-  id: string | null,
-  title: string
-}
-
-type TagsByPaginationObjectType = {
-  tags: Array<TagObjectType>,
-  offset: number,
-  activePage: number,
-  pageSize: number,
-};
+const ADD_TAG = 'ADD_TAG';
+const UPDATE_NEW_TAG_TEXT = 'UPDATE_NEW_TAG_TEXT';
 
 const initialState = {
   tags:             [] as Array<TagObjectType>,
-  newTagName:       '' as string | null,
-  isFetching:       false,
-  tagsByPagination: { 
+  newTag:           {} as TagObjectType,
+  tagsByPagination: {
     tags:       [],
-    offset:     0,
+    offset:     0 as number | string,
     activePage: 1,
     pageSize:   10,
   } as TagsByPaginationObjectType,
+  isFetching: false as boolean,
 };
 
-export type InitialStateType = typeof initialState;
+export type InitialTagsStateType = typeof initialState;
 
-const tagsReducer = (state = initialState, action:any):InitialStateType => {
-  const newElement = {
-    createdTime: null,
-    id:          null,
-    title:       state.newTagName as string,
-  };
-
+const tagsReducer = (state = initialState, action:ActionsTypes):InitialTagsStateType => {
   switch (action.type) {
     case SET_TAGS:
       return {
         ...state,
         tags: [
-          ...action.tagsArray
+          ...action.tagsArray,
         ],
-        newTagName: ''
       };
     case SET_TAGS_BY_PAGINATION:
       return {
@@ -53,7 +36,7 @@ const tagsReducer = (state = initialState, action:any):InitialStateType => {
         tagsByPagination: {
           ...state.tagsByPagination,
           tags: [
-            ...action.tagsArray
+            ...action.tagsArray,
           ],
           offset: action.offset,
         },
@@ -66,14 +49,26 @@ const tagsReducer = (state = initialState, action:any):InitialStateType => {
           activePage: action.activePage,
         },
       };
-    case ADD_NEW_TAG:
-      newElement.title = action.newTagName;
+    case UPDATE_NEW_TAG_TEXT:
+      return {
+        ...state,
+        newTag: {
+          ...state.newTag,
+          title: action.newTitleText,
+        },
+      };
+    case ADD_TAG:
       return {
         ...state,
         tags: [
           ...state.tags,
-          newElement
-        ]
+          state.newTag,
+        ],
+        newTag: {
+          title:       '',
+          createdTime: null,
+          id:          null,
+        }
       };
     case SET_TAGS_IS_FETCHING:
       return {
@@ -84,6 +79,14 @@ const tagsReducer = (state = initialState, action:any):InitialStateType => {
       return state;
   }
 };
+
+type ActionsTypes =
+  SetTagsActionType |
+  SetTagsByPaginationActionType |
+  ChangePageActionType |
+  AddNewTagActionType |
+  UpdateNewTagTextActionType |
+  SetTagsIsFetchingActionType;
 
 //ActionCreator's
 type SetTagsActionType = {
@@ -96,36 +99,43 @@ export const setTags = (tagsArray:Array<TagObjectType>):SetTagsActionType => ({
 });
 
 type SetTagsByPaginationActionType = {
-  type: string,
-  offset: number,
-  tagsArray: Array<object>,
+  type: typeof SET_TAGS_BY_PAGINATION,
+  offset: number | string,
+  tagsArray: Array<TagObjectType>,
 }
-export const setTagsByPagination = (tagsArray:Array<object>, offset:number):SetTagsByPaginationActionType => ({
+export const setTagsByPagination = (tagsArray:Array<TagObjectType>, offset: number | string):SetTagsByPaginationActionType => ({
   type:      SET_TAGS_BY_PAGINATION,
   offset:    offset,
   tagsArray: tagsArray,
 });
 
 type ChangePageActionType = {
-  type: string,
+  type: typeof CHANGE_PAGE,
   activePage: number,
 }
-export const changePage = (activePage:any):ChangePageActionType => ({
+export const changePage = (activePage:number):ChangePageActionType => ({
   type:       CHANGE_PAGE,
   activePage: activePage,
 });
 
-type AddNewTagTextActionType = {
-  type: string,
-  newTagName: string,
+type AddNewTagActionType = {
+  type: typeof ADD_TAG,
 }
-export const addNewTagText = (tagName:string):AddNewTagTextActionType => ({
-  type:       ADD_NEW_TAG,
-  newTagName: tagName,
+export const addTag = ():AddNewTagActionType => ({
+  type: ADD_TAG,
+});
+
+type UpdateNewTagTextActionType = {
+  type: typeof UPDATE_NEW_TAG_TEXT,
+  newTitleText: string,
+};
+export const updateNewTagText = (text:string):UpdateNewTagTextActionType => ({
+  type:         UPDATE_NEW_TAG_TEXT,
+  newTitleText: text,
 });
 
 type SetTagsIsFetchingActionType = {
-  type: string,
+  type: typeof SET_TAGS_IS_FETCHING,
   isFetching: boolean
 }
 export const setTagsIsFetching = (isFetching:boolean):SetTagsIsFetchingActionType => ({
