@@ -1,53 +1,59 @@
+import { AuthorObjectType } from '../types/types';
+
 const SET_AUTHORS = 'SET_AUTHORS';
+const ADD_AUTHOR = 'ADD_AUTHOR';
 const SET_AUTHORS_IS_FETCHING = 'SET_AUTHORS_IS_FETCHING';
 const UPDATE_NEW_AUTHOR_NAME = 'UPDATE_NEW_AUTHOR_NAME';
 const UPDATE_NEW_AUTHOR_SURNAME = 'UPDATE_NEW_AUTHOR_SURNAME';
 
-type AuthorObjectType = {
-  createdTime: string | null,
-  id: string | null,
-  name: string | null,
-  surname: string | null,
-}
-
 const initialState = {
-  authors:          [] as Array<AuthorObjectType>,
-  newAuthorName:    null as string | null,
-  newAuthorSurname: null as string | null,
-  isFetching:       false as boolean,
+  authors:    [] as Array<AuthorObjectType>,
+  newAuthor:  {} as AuthorObjectType,
+  isFetching: false as boolean,
 };
 
-export type InitialStateType = typeof initialState;
+export type InitialAuthorsStateType = typeof initialState;
 
-const authorsReducer = (state = initialState, action:any):InitialStateType => {
-  const newElement = {
-    createdTime: null,
-    id:          null,
-    name:        state.newAuthorName,
-    surname:     state.newAuthorSurname,
-  };
-
+const authorsReducer = (state = initialState, action:ActionsTypes):InitialAuthorsStateType => {
   switch (action.type) {
     case SET_AUTHORS:
       return {
         ...state,
         authors: [
-          ...action.authorsArray
+          ...action.authorsArray,
         ],
-        newAuthorName:    '',
-        newAuthorSurname: ''
       };
     case UPDATE_NEW_AUTHOR_NAME:
-      newElement.name = action.newAuthorName;
       return {
         ...state,
-        newAuthorName: action.newAuthorName,
+        newAuthor: {
+          ...state.newAuthor,
+          name: action.newAuthorName,
+        },
       };
     case UPDATE_NEW_AUTHOR_SURNAME:
-      newElement.surname = action.newAuthorSurname;
       return {
         ...state,
-        newAuthorSurname: action.newAuthorSurname,
+        newAuthor: {
+          ...state.newAuthor,
+          surname: action.newAuthorSurname,
+        },
+      };
+    case ADD_AUTHOR:
+      return {
+        ...state,
+        authors: [
+          ...state.authors,
+          state.newAuthor,
+        ],
+        newAuthor: {
+          id:          null,
+          createdTime: null,
+          name:        '',
+          surname:     '',
+          quotesId:    [],
+          sourcesId:   [],
+        },
       };
     case SET_AUTHORS_IS_FETCHING:
       return {
@@ -58,6 +64,13 @@ const authorsReducer = (state = initialState, action:any):InitialStateType => {
       return state;
   }
 };
+
+type ActionsTypes =
+  SetAuthorsActionType |
+  UpdateNewAuthorNameActionType |
+  UpdateNewAuthorSurnameActionType |
+  AddNewAuthorActionType |
+  SetAuthorsIsFetchingActionType;
 
 //ActionCreator's
 type SetAuthorsActionType = {
@@ -85,6 +98,13 @@ type UpdateNewAuthorSurnameActionType = {
 export const updateNewAuthorSurname = (authorSurname:string):UpdateNewAuthorSurnameActionType => ({
   type:             UPDATE_NEW_AUTHOR_SURNAME,
   newAuthorSurname: authorSurname,
+});
+
+type AddNewAuthorActionType = {
+  type: typeof ADD_AUTHOR,
+};
+export const addAuthor = ():AddNewAuthorActionType => ({
+  type: ADD_AUTHOR,
 });
 
 type SetAuthorsIsFetchingActionType = {
