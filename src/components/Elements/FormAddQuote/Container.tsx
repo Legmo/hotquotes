@@ -1,16 +1,9 @@
 import FormAddQuote from './FormAddQuote';
 import {connect} from 'react-redux';
-import {
-  addQuote,
-  updateNewQuoteText
-} from '../../../redux/reducer-quotes';
-import {
-  addAuthor,
-  updateNewAuthorName,
-  updateNewAuthorSurname
-} from '../../../redux/reducer-authors';
-import { addTag, updateNewTagText } from '../../../redux/reducer-tags';
-import { addSource, updateNewSourceText } from '../../../redux/reducer-sources';
+import { actionsQuotes } from '../../../redux/reducer-quotes';
+import { actionsAuthors } from '../../../redux/reducer-authors';
+import { actionsSources } from '../../../redux/reducer-sources';
+import { actionsTags } from '../../../redux/reducer-tags';
 import { AppStateType } from '../../../redux/redux-store';
 import { AuthorObjectType, QuoteObjectType, SourceObjectType, TagObjectType } from '../../../types/types';
 
@@ -23,6 +16,7 @@ type MapStatePropsType = {
 
 type MapDispatchPropsType = {
   addTag: () => void,
+  updateNewTagText: (newText: string) => void,
   addQuote: () => void,
   addAuthor: () => void,
   addSource: () => void,
@@ -30,10 +24,8 @@ type MapDispatchPropsType = {
   updateNewAuthorName: (newText: string) => void,
   updateNewAuthorSurname: (newText: string) => void,
   updateNewSourceText: (newText: string) => void,
-  updateNewTagText: (newText: string) => void,
 };
-
-type OwnPropsType = Record<string, never>; //todo: fix it
+type OwnPropsType = Record<string, never>;
 
 const mapStateToProps = (state:AppStateType):MapStatePropsType => {
   return {
@@ -47,15 +39,15 @@ const mapStateToProps = (state:AppStateType):MapStatePropsType => {
 
 //<TStateProps = {}, TDispatchProps = {}, TOwnProps = {}, State = DefaultState>
 const FormAddQuoteContainer = connect<MapStatePropsType, MapDispatchPropsType, OwnPropsType, AppStateType>(mapStateToProps, {
-  addTag,
-  addQuote,
-  addAuthor,
-  addSource,
-  updateNewQuoteText,
-  updateNewAuthorName,
-  updateNewAuthorSurname,
-  updateNewSourceText,
-  updateNewTagText,
+  addTag:                 actionsTags.addTag,
+  updateNewTagText:       actionsTags.updateNewTagText,
+  addQuote:               actionsQuotes.addQuote,
+  updateNewQuoteText:     actionsQuotes.updateNewQuoteText,
+  addAuthor:              actionsAuthors.addAuthor,
+  updateNewAuthorName:    actionsAuthors.updateNewAuthorName,
+  updateNewAuthorSurname: actionsAuthors.updateNewAuthorSurname,
+  addSource:              actionsSources.addSource,
+  updateNewSourceText:    actionsSources.updateNewSourceText,
 })(FormAddQuote);
 
 export default FormAddQuoteContainer;
