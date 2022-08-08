@@ -1,9 +1,5 @@
 import { QuoteObjectType } from '../types/types';
-
-const ADD_QUOTE               = 'ADD_QUOTE';
-const SET_QUOTES              = 'SET_QUOTES';
-const SET_QUOTES_IS_FETCHING  = 'SET_QUOTES_IS_FETCHING';
-const UPDATE_NEW_QUOTE_TEXT   = 'UPDATE_NEW_QUOTE_TEXT';
+import { InferActionsTypes } from './redux-store';
 
 const initialState = {
   isQuotesLoaded: false as boolean,
@@ -20,7 +16,7 @@ export type InitialQuoteStateType = typeof initialState;
 
 const quotesReducer = (state = initialState, action:ActionsTypes):InitialQuoteStateType => {
   switch (action.type) {
-    case SET_QUOTES:
+    case 'SET_QUOTES':
       return {
         ...state,
         quotes: [
@@ -28,7 +24,7 @@ const quotesReducer = (state = initialState, action:ActionsTypes):InitialQuoteSt
         ],
         isQuotesLoaded: true,
       };
-    case ADD_QUOTE:
+    case 'ADD_QUOTE':
       return {
         ...state,
         quotes: [
@@ -41,7 +37,7 @@ const quotesReducer = (state = initialState, action:ActionsTypes):InitialQuoteSt
           quoteText:   '',
         }
       };
-    case UPDATE_NEW_QUOTE_TEXT:
+    case 'UPDATE_NEW_QUOTE_TEXT':
       return {
         ...state,
         newQuote: {
@@ -50,7 +46,7 @@ const quotesReducer = (state = initialState, action:ActionsTypes):InitialQuoteSt
           quoteText:   action.newText
         },
       };
-    case SET_QUOTES_IS_FETCHING:
+    case 'SET_QUOTES_IS_FETCHING':
       return {
         ...state,
         isFetching: action.isFetching,
@@ -60,45 +56,26 @@ const quotesReducer = (state = initialState, action:ActionsTypes):InitialQuoteSt
   }
 };
 
-type ActionsTypes =
-  AddQuoteActionType |
-  SetQuotesActionType |
-  UpdateNewQuoteTextActionType |
-  SetQuotesIsFetchingActionType;
+type ActionsTypes = InferActionsTypes<typeof actionsQuotes>
 
 //ActionCreator's
-type SetQuotesActionType = {
-  type: typeof SET_QUOTES,
-  quotesArray: Array<QuoteObjectType>,
+export const actionsQuotes = {
+  setQuotes: (quotesArray:Array<QuoteObjectType>) => ({
+    type:        'SET_QUOTES',
+    quotesArray: quotesArray,
+  } as const),
+  updateNewQuoteText: (text:string) => ({
+    type:    'UPDATE_NEW_QUOTE_TEXT',
+    newText: text,
+  } as const),
+  addQuote: () => ({
+    type: 'ADD_QUOTE',
+  } as const),
+  setQuotesIsFetching: (isFetching:boolean) => ({
+    type: 'SET_QUOTES_IS_FETCHING',
+    isFetching
+  } as const),
 };
-export const setQuotes = (quotesArray:Array<QuoteObjectType>):SetQuotesActionType => ({
-  type:        SET_QUOTES,
-  quotesArray: quotesArray,
-});
 
-type UpdateNewQuoteTextActionType = {
-  type: typeof UPDATE_NEW_QUOTE_TEXT,
-  newText: string,
-};
-export const updateNewQuoteText = (text:string):UpdateNewQuoteTextActionType => ({
-  type:    UPDATE_NEW_QUOTE_TEXT,
-  newText: text,
-});
-
-type AddQuoteActionType = {
-  type: typeof ADD_QUOTE,
-};
-export const addQuote  = ():AddQuoteActionType => ({
-  type: ADD_QUOTE,
-});
-
-type SetQuotesIsFetchingActionType = {
-  type: typeof SET_QUOTES_IS_FETCHING,
-  isFetching: boolean,
-};
-export const setQuotesIsFetching = (isFetching:boolean):SetQuotesIsFetchingActionType => ({
-  type: SET_QUOTES_IS_FETCHING,
-  isFetching
-});
 
 export default quotesReducer;
