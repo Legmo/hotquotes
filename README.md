@@ -13,7 +13,7 @@ It is planned in the future to allow users to add their own quotes (public or fo
 * [Technology stack](#technology-stack)
 * [Screenshot](#screenshot)
 * [Getting Started](#getting-started)
-* [Application architecture](#application-architcture)
+* [Application architecture](#application-architecture)
 * [Contributing](#contributing)
 * [Contact with developers](#contact-with-developers)
 * [Russian section / По-русски](#по-русски)
@@ -121,7 +121,7 @@ Enter your API key to access the database into `apiKey` variable. If you use [Ai
 <br>
 
 
-## Application arhitecture
+## Application architecture
 This picture on the [miro.com](https://miro.com/app/board/uXjVOg1yJgM=/?share_link_id=425897295546)
 <a href="http://legmo.ru/GitHub/Architecture-big.jpg" title="Application architecture" alt="Application architecture" target="_blank"><img src="http://legmo.ru/GitHub/Architecture-small.jpg" title="Application architecture" alt="Application architecture" /></a>
 <br>
@@ -177,7 +177,7 @@ You can also ask the necessary questions in the [Discussions section](https://gi
 ## Содержание
 * [Технологии](#технологии)
 * [Скриншот](#скриншот)
-* [С чего начать?](#с-чего-начать)
+* [С чего начать?](#с-чего-начать?)
 * [Архитектура приложения](#архитектура-приложения)
 * [Хочу помочь в разработке](#хочу-помочь-в-разработке)
 * [Контакты разработчиков](#контакты-разработчиков)
