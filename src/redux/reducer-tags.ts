@@ -89,6 +89,40 @@ type ActionsTypes =
   SetTagsIsFetchingActionType;
 
 //ActionCreator's
+
+/*
+todo: https://youtu.be/2yJXFMqEbJs
+
+type ActionsTypes = any;
+export const actions = {
+  setTags: (tagsArray:Array<TagObjectType>) => ({
+    type:      SET_TAGS,
+    tagsArray: tagsArray,
+  }),
+  setTagsByPagination: (tagsArray:Array<TagObjectType>, offset: number | string) => ({
+    type:      SET_TAGS_BY_PAGINATION,
+    offset:    offset,
+    tagsArray: tagsArray,
+  }),
+  changePage: (activePage:number) => ({
+    type:       CHANGE_PAGE,
+    activePage: activePage,
+  }),
+  addTag: ()=> ({
+    type: ADD_TAG,
+  }),
+  updateNewTagText: (text:string) => ({
+    type:         UPDATE_NEW_TAG_TEXT,
+    newTitleText: text,
+  }),
+  setTagsIsFetching: (isFetching:boolean) => ({
+    type: SET_TAGS_IS_FETCHING,
+    isFetching
+  }),
+};
+*/
+
+
 type SetTagsActionType = {
   type: typeof SET_TAGS,
   tagsArray: Array<TagObjectType>,
