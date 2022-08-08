@@ -13,6 +13,7 @@ It is planned in the future to allow users to add their own quotes (public or fo
 * [Technology stack](#technology-stack)
 * [Screenshot](#screenshot)
 * [Getting Started](#getting-started)
+* [Application architecture](#application-architcture)
 * [Contributing](#contributing)
 * [Contact with developers](#contact-with-developers)
 * [Russian section / По-русски](#по-русски)
@@ -119,6 +120,12 @@ Enter your API key to access the database into `apiKey` variable. If you use [Ai
 <br>
 <br>
 
+
+## Application arhitecture
+<a href="http://legmo.ru/GitHub/Architecture-big.jpg" title="Application architecture" alt="Application architecture" target="_blank"><img src="http://legmo.ru/GitHub/Architecture-small.jpg" title="Application architecture" alt="Application architecture" /></a>
+<br>
+<br>
+
 <!--## Demo site
 You can test working version of our site here [quotes.legmo.ru](http://quotes.legmo.ru/).
 <br>
@@ -170,6 +177,7 @@ You can also ask the necessary questions in the [Discussions section](https://gi
 * [Технологии](#технологии)
 * [Скриншот](#скриншот)
 * [С чего начать?](#с-чего-начать)
+* [Архитектура приложения](#архитектура-приложения)
 * [Хочу помочь в разработке](#хочу-помочь-в-разработке)
 * [Контакты разработчиков](#контакты-разработчиков)
 <br>
@@ -270,6 +278,11 @@ You can also ask the necessary questions in the [Discussions section](https://gi
 <br>
 **Добавление ключа API**<br>
 Пропишите в переменную `apiKey` ваш API key для доступа к базе данных. Если вы используете [Airtable](https://airtable.com/), то вам надо зарегистрироваться на сайте [Airtable](https://airtable.com/) и зайти на страницу [Account](https://airtable.com/account). API key будет расположен в разделе API.
+<br>
+<br>
+
+## Архитектура приложения
+<a href="http://legmo.ru/GitHub/Architecture-big.jpg" title="Application architecture" alt="Application architecture" target="_blank"><img src="http://legmo.ru/GitHub/Architecture-small.jpg" title="Application architecture" alt="Application architecture" /></a>
 <br>
 <br>
 
