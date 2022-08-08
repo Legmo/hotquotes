@@ -3,18 +3,17 @@ import { connect } from 'react-redux';
 import PageQuote from './PageQuote';
 import {
   InitialQuoteStateType,
-  setQuotes,
-  setQuotesIsFetching
+  actionsQuotes
 } from '../../../redux/reducer-quotes';
-import { setAuthors } from '../../../redux/reducer-authors';
-import { setSources } from '../../../redux/reducer-sources';
-import { setTags } from '../../../redux/reducer-tags';
+import { actionsAuthors } from '../../../redux/reducer-authors';
+import { actionsSources } from '../../../redux/reducer-sources';
+import { actionsTags } from '../../../redux/reducer-tags';
 import { useLocation, useParams } from 'react-router-dom';
 import { AppStateType } from '../../../redux/redux-store';
 import { AuthorObjectType, QuoteObjectType, SourceObjectType, TagObjectType } from '../../../types/types';
 
 type MapStatePropsType = {
-  quotes: InitialQuoteStateType,
+  quotes: InitialQuoteStateType, //todo: test - is it correct?
   tags: Array<TagObjectType>,
   authors: Array<AuthorObjectType>,
   sources: Array<SourceObjectType>,
@@ -51,11 +50,11 @@ const WithUrlDataComponent = withRouter(PageQuote);
 const PageIndexContainer = connect<MapStatePropsType, MapDispatchPropsType, OwnPropsType, AppStateType>(
   mapStateToProps,
   {
-    setQuotes,
-    setAuthors,
-    setTags,
-    setSources,
-    setQuotesIsFetching,
+    setQuotes:           actionsQuotes.setQuotes,
+    setQuotesIsFetching: actionsQuotes.setQuotesIsFetching,
+    setAuthors:          actionsAuthors.setAuthors,
+    setTags:             actionsTags.setTags,
+    setSources:          actionsSources.setSources,
   }
 )(WithUrlDataComponent);
 

@@ -1,10 +1,5 @@
 import { AuthorObjectType } from '../types/types';
-
-const SET_AUTHORS = 'SET_AUTHORS';
-const ADD_AUTHOR = 'ADD_AUTHOR';
-const SET_AUTHORS_IS_FETCHING = 'SET_AUTHORS_IS_FETCHING';
-const UPDATE_NEW_AUTHOR_NAME = 'UPDATE_NEW_AUTHOR_NAME';
-const UPDATE_NEW_AUTHOR_SURNAME = 'UPDATE_NEW_AUTHOR_SURNAME';
+import { InferActionsTypes } from './redux-store';
 
 const initialState = {
   authors:    [] as Array<AuthorObjectType>,
@@ -16,14 +11,14 @@ export type InitialAuthorsStateType = typeof initialState;
 
 const authorsReducer = (state = initialState, action:ActionsTypes):InitialAuthorsStateType => {
   switch (action.type) {
-    case SET_AUTHORS:
+    case 'SET_AUTHORS':
       return {
         ...state,
         authors: [
           ...action.authorsArray,
         ],
       };
-    case UPDATE_NEW_AUTHOR_NAME:
+    case 'UPDATE_NEW_AUTHOR_NAME':
       return {
         ...state,
         newAuthor: {
@@ -31,7 +26,7 @@ const authorsReducer = (state = initialState, action:ActionsTypes):InitialAuthor
           name: action.newAuthorName,
         },
       };
-    case UPDATE_NEW_AUTHOR_SURNAME:
+    case 'UPDATE_NEW_AUTHOR_SURNAME':
       return {
         ...state,
         newAuthor: {
@@ -39,7 +34,7 @@ const authorsReducer = (state = initialState, action:ActionsTypes):InitialAuthor
           surname: action.newAuthorSurname,
         },
       };
-    case ADD_AUTHOR:
+    case 'ADD_AUTHOR':
       return {
         ...state,
         authors: [
@@ -55,7 +50,7 @@ const authorsReducer = (state = initialState, action:ActionsTypes):InitialAuthor
           sourcesId:   [],
         },
       };
-    case SET_AUTHORS_IS_FETCHING:
+    case 'SET_AUTHORS_IS_FETCHING':
       return {
         ...state,
         isFetching: action.isFetching,
@@ -65,55 +60,31 @@ const authorsReducer = (state = initialState, action:ActionsTypes):InitialAuthor
   }
 };
 
-type ActionsTypes =
-  SetAuthorsActionType |
-  UpdateNewAuthorNameActionType |
-  UpdateNewAuthorSurnameActionType |
-  AddNewAuthorActionType |
-  SetAuthorsIsFetchingActionType;
+type ActionsTypes = InferActionsTypes<typeof actionsAuthors>;
 
 //ActionCreator's
-type SetAuthorsActionType = {
-  type: typeof SET_AUTHORS,
-  authorsArray: Array<AuthorObjectType>,
+/* See more: https://youtu.be/2yJXFMqEbJs */
+export const actionsAuthors = {
+  setAuthors: (authorsArray:Array<AuthorObjectType>) => ({
+    type:         'SET_AUTHORS',
+    authorsArray: authorsArray,
+  } as const),
+  updateNewAuthorName: (authorName:string) => ({
+    type:          'UPDATE_NEW_AUTHOR_NAME',
+    newAuthorName: authorName,
+  } as const),
+  updateNewAuthorSurname: (authorSurname:string) => ({
+    type:             'UPDATE_NEW_AUTHOR_SURNAME',
+    newAuthorSurname: authorSurname,
+  } as const),
+  addAuthor: () => ({
+    type: 'ADD_AUTHOR',
+  } as const),
+  setAuthorsIsFetching: (isFetching:boolean) => ({
+    type: 'SET_AUTHORS_IS_FETCHING',
+    isFetching
+  } as const),
 };
-export const setAuthors = (authorsArray:Array<AuthorObjectType>):SetAuthorsActionType => ({
-  type:         SET_AUTHORS,
-  authorsArray: authorsArray,
-});
 
-type UpdateNewAuthorNameActionType = {
-  type: typeof UPDATE_NEW_AUTHOR_NAME,
-  newAuthorName: string,
-};
-export const updateNewAuthorName    = (authorName:string):UpdateNewAuthorNameActionType => ({
-  type:          UPDATE_NEW_AUTHOR_NAME,
-  newAuthorName: authorName,
-});
-
-type UpdateNewAuthorSurnameActionType = {
-  type: typeof UPDATE_NEW_AUTHOR_SURNAME,
-  newAuthorSurname: string,
-};
-export const updateNewAuthorSurname = (authorSurname:string):UpdateNewAuthorSurnameActionType => ({
-  type:             UPDATE_NEW_AUTHOR_SURNAME,
-  newAuthorSurname: authorSurname,
-});
-
-type AddNewAuthorActionType = {
-  type: typeof ADD_AUTHOR,
-};
-export const addAuthor = ():AddNewAuthorActionType => ({
-  type: ADD_AUTHOR,
-});
-
-type SetAuthorsIsFetchingActionType = {
-  type: typeof SET_AUTHORS_IS_FETCHING,
-  isFetching: boolean,
-};
-export const setAuthorsIsFetching = (isFetching:boolean):SetAuthorsIsFetchingActionType => ({
-  type: SET_AUTHORS_IS_FETCHING,
-  isFetching
-});
 
 export default authorsReducer;

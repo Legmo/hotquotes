@@ -1,8 +1,5 @@
 import PageTags from './PageTags';
-import {
-  setTagsByPagination,
-  changePage
-} from '../../../redux/reducer-tags';
+import {actionsTags} from '../../../redux/reducer-tags';
 import {connect} from 'react-redux';
 import { AppStateType } from '../../../redux/redux-store';
 import { TagObjectType } from '../../../types/types';
@@ -31,8 +28,8 @@ const mapStateToProps = (state:AppStateType):MapStatePropsType => {
 const PageTagsContainer = connect<MapStatePropsType, MapDispatchPropsType, OwnPropsType, AppStateType>(
   mapStateToProps,
   {
-    setTagsByPagination,
-    changePage
+    setTagsByPagination: actionsTags.setTagsByPagination,
+    changePage:          actionsTags.changePage
   }
 )(PageTags);
 

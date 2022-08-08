@@ -1,9 +1,5 @@
 import { SourceObjectType } from '../types/types';
-
-const SET_SOURCES = 'SET_SOURCES';
-const ADD_SOURCE = 'ADD_SOURCE';
-const SET_SOURCES_IS_FETCHING = 'SET_SOURCES_IS_FETCHING';
-const UPDATE_NEW_SOURCE_TEXT = 'UPDATE_NEW_SOURCE_TEXT';
+import { InferActionsTypes } from './redux-store';
 
 const initialState = {
   sources:    [] as Array<SourceObjectType>,
@@ -15,14 +11,14 @@ export type InitialSourcesStateType = typeof initialState;
 
 const sourcesReducer = (state = initialState, action:ActionsTypes):InitialSourcesStateType => {
   switch (action.type) {
-    case SET_SOURCES:
+    case 'SET_SOURCES':
       return {
         ...state,
         sources: [
           ...action.sourcesArray,
         ],
       };
-    case UPDATE_NEW_SOURCE_TEXT:
+    case 'UPDATE_NEW_SOURCE_TEXT':
       return {
         ...state,
         newSource: {
@@ -30,7 +26,7 @@ const sourcesReducer = (state = initialState, action:ActionsTypes):InitialSource
           title: action.newText,
         },
       };
-    case ADD_SOURCE:
+    case 'ADD_SOURCE':
       return {
         ...state,
         sources: [
@@ -43,7 +39,7 @@ const sourcesReducer = (state = initialState, action:ActionsTypes):InitialSource
           id:          null,
         },
       };
-    case SET_SOURCES_IS_FETCHING:
+    case 'SET_SOURCES_IS_FETCHING':
       return {
         ...state,
         isFetching: action.isFetching,
@@ -53,45 +49,26 @@ const sourcesReducer = (state = initialState, action:ActionsTypes):InitialSource
   }
 };
 
-type ActionsTypes = 
-  SetSourcesActionType | 
-  UpdateNewSourceTextActionType |
-  AddNewSourceActionType |
-  SetSourcesIsFetchingActionType;
+type ActionsTypes = InferActionsTypes<typeof actionsSources>;
 
 //ActionCreator's
-type SetSourcesActionType = {
-  type: typeof SET_SOURCES,
-  sourcesArray: Array<SourceObjectType>,
+/* See more: https://youtu.be/2yJXFMqEbJs */
+export const actionsSources = {
+  setSources: (sourcesArray:Array<SourceObjectType>) => ({
+    type:         'SET_SOURCES',
+    sourcesArray: sourcesArray,
+  } as const),
+  updateNewSourceText: (text:string) => ({
+    type:    'UPDATE_NEW_SOURCE_TEXT',
+    newText: text,
+  } as const),
+  addSource: () => ({
+    type: 'ADD_SOURCE',
+  } as const),
+  setSourcesIsFetching: (isFetching:boolean) => ({
+    type: 'SET_SOURCES_IS_FETCHING',
+    isFetching
+  } as const),
 };
-export const setSources = (sourcesArray:Array<SourceObjectType>):SetSourcesActionType => ({
-  type:         SET_SOURCES,
-  sourcesArray: sourcesArray,
-});
-
-type UpdateNewSourceTextActionType = {
-  type: typeof UPDATE_NEW_SOURCE_TEXT,
-  newText: string,
-};
-export const updateNewSourceText = (text:string):UpdateNewSourceTextActionType => ({
-  type:    UPDATE_NEW_SOURCE_TEXT,
-  newText: text,
-});
-
-type AddNewSourceActionType = {
-  type: typeof ADD_SOURCE,
-};
-export const addSource = ():AddNewSourceActionType => ({
-  type: ADD_SOURCE,
-});
-
-type SetSourcesIsFetchingActionType = {
-  type: typeof SET_SOURCES_IS_FETCHING,
-  isFetching: boolean,
-};
-export const setSourcesIsFetching = (isFetching:boolean):SetSourcesIsFetchingActionType => ({
-  type: SET_SOURCES_IS_FETCHING,
-  isFetching
-});
 
 export default sourcesReducer;
