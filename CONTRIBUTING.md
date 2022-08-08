@@ -16,6 +16,7 @@ The following is a set of guidelines for contributing to HotQuotes project. Thes
 * [Do you intend to add a new feature or change an existing one?](#do-you-intend-to-add-a-new-feature-or-change-an-existing-one)
 * [Do you have questions about the source code?](#do-you-have-questions-about-the-source-code)
 * [Styleguide](#styleguide)
+* [GIT workflow](#git-workflow)
 * [Issue and Pull Request Labels](#issue-and-pull-request-labels)
 <br>
 
@@ -134,6 +135,11 @@ The following is a set of guidelines for contributing to HotQuotes project. Thes
   * Tab Width = 2 spaces
   * Use single quotes instead of double quotes
 <br>
+
+## GIT workflow ##
+* We use (Issue Branch Workflow)[https://medium.com/flexisaf/git-workflow-for-your-project-3d9dbdc5f8e2]. Branches are created from issues/tasks on the issues in the project’s issue tracker. The branches could have the same name of the issue of its id. There’s only one branch per issue and one issue per branch.
+<br>
+
 
 ## Issue and Pull Request Labels ##
 * You can see the list of labels (here)[https://github.com/Legmo/hotquotes/labels]
