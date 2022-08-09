@@ -3,7 +3,6 @@ import style from './style.module.scss';
 import { isEmpty } from 'lodash';
 import ListSidebar from '../ListSidebar/ListSidebar';
 import FiltersActive from '../FiltersActive/FiltersActive';
-import { getTable } from '../../../DataAccessLayer/api';
 import Preloader from '../Preloader/Preloader';
 import { AuthorObjectType, SidebarListObjectType, TagObjectType } from '../../../types/types';
 import { InitialTagsStateType } from '../../../redux/reducer-tags';
@@ -11,25 +10,20 @@ import { InitialAuthorsStateType } from '../../../redux/reducer-authors';
 
 type PropsType = {
   setAuthorsIsFetching: (isFetching:boolean) => void
-  setAuthors: (authorsArray:Array<AuthorObjectType>) => void
   setTagsIsFetching: (isFetching:boolean) => void
-  setTags: (tagsArray:Array<TagObjectType>) => void
   authors: InitialAuthorsStateType
   tags: InitialTagsStateType
+  getTableAuthorsTC: () => void,
+  getTableTagsTC: () => void,
 };
 
 class Sidebar extends Component<PropsType> {
   componentDidMount() {
     this.props.setAuthorsIsFetching(true);
-    getTable('authors').then((response) => {
-      this.props.setAuthors(response);
-      this.props.setAuthorsIsFetching(false);
-    });
+    this.props.getTableAuthorsTC();
+
     this.props.setTagsIsFetching(true);
-    getTable('tags').then((response:Array<TagObjectType>) => {
-      this.props.setTags(response);
-      this.props.setTagsIsFetching(false);
-    });
+    this.props.getTableTagsTC();
   }
 
   render() {

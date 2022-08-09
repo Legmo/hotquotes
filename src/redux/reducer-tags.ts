@@ -1,5 +1,6 @@
 import { TagObjectType, TagsByPaginationObjectType } from '../types/types';
-import { InferActionsTypes } from './redux-store';
+import { BaseThunkType, InferActionsTypes } from './redux-store';
+import { getTable, getTableByPagination } from '../DataAccessLayer/api';
 
 const initialState = {
   tags:             [] as Array<TagObjectType>,
@@ -103,6 +104,35 @@ export const actionsTags = {
     type: 'SET_TAGS_IS_FETCHING',
     isFetching
   } as const),
+};
+
+
+//Thunk Creator's
+type ThunkType = BaseThunkType<ActionsTypes>;
+
+export const getTableTagsTC = ():ThunkType => {
+  //todo: выдавать сообщение, если цитата с данным ID не найдена
+  return async(dispatch) => {
+    getTable('tags').then((response) => {
+      dispatch(actionsTags.setTags(response));
+      dispatch(actionsTags.setTagsIsFetching(false));
+    });
+  };
+};
+
+export const getTableByPaginationTagsTC = (pageSize:number, offset: number | string):ThunkType => {
+  return async(dispatch) => {
+    getTableByPagination('tags', pageSize, offset)
+      .then((response: void | {data:Array<TagObjectType>, offset: string | number}) => {
+          if(response) {
+            const tagsArray:Array<TagObjectType>  = response.data;
+            const offset: number | string = response.offset;
+            dispatch(actionsTags.setTagsByPagination(tagsArray, offset));
+            dispatch(actionsTags.setTagsIsFetching(false));
+          }
+        }
+      );
+  };
 };
 
 export default tagsReducer;

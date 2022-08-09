@@ -1,6 +1,11 @@
 import React, { FC } from 'react';
 import style from './style.module.scss';
-import { AuthorObjectType, QuoteObjectType, SourceObjectType, TagObjectType } from '../../../types/types';
+import {
+  AuthorObjectType,
+  QuoteObjectType,
+  SourceObjectType,
+  TagObjectType
+} from '../../../types/types';
 
 type PropsType = {
   newTag: TagObjectType,

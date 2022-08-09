@@ -3,14 +3,16 @@ import { connect } from 'react-redux';
 import PageQuote from './PageQuote';
 import {
   InitialQuoteStateType,
-  actionsQuotes
+  actionsQuotes,
+  getTableQuoteTC,
+  getTableQuoteByIdTC,
 } from '../../../redux/reducer-quotes';
-import { actionsAuthors } from '../../../redux/reducer-authors';
-import { actionsSources } from '../../../redux/reducer-sources';
-import { actionsTags } from '../../../redux/reducer-tags';
+import { getTableAuthorsTC } from '../../../redux/reducer-authors';
+import { getTableSourcesTC } from '../../../redux/reducer-sources';
+import { getTableTagsTC } from '../../../redux/reducer-tags';
 import { useLocation, useParams } from 'react-router-dom';
 import { AppStateType } from '../../../redux/redux-store';
-import { AuthorObjectType, QuoteObjectType, SourceObjectType, TagObjectType } from '../../../types/types';
+import { AuthorObjectType, SourceObjectType, TagObjectType } from '../../../types/types';
 
 type MapStatePropsType = {
   quotes: InitialQuoteStateType, //todo: test - is it correct?
@@ -19,11 +21,12 @@ type MapStatePropsType = {
   sources: Array<SourceObjectType>,
 };
 type MapDispatchPropsType = {
-  setQuotes: (quotesArray:Array<QuoteObjectType>) => void,
-  setAuthors: (authorsArray:Array<AuthorObjectType>) => void,
-  setTags: (tagsArray:Array<TagObjectType>) => void,
-  setSources: (sourcesArray:Array<SourceObjectType>) => void,
   setQuotesIsFetching: (isFetching:boolean) => void,
+  getTableAuthorsTC: () => void,
+  getTableTagsTC: () => void,
+  getTableSourcesTC: () => void,
+  getTableQuoteTC: () => void,
+  getTableQuoteByIdTC: (quoteId:string) => void,
 };
 type OwnPropsType = Record<string, never>;
 
@@ -50,11 +53,12 @@ const WithUrlDataComponent = withRouter(PageQuote);
 const PageIndexContainer = connect<MapStatePropsType, MapDispatchPropsType, OwnPropsType, AppStateType>(
   mapStateToProps,
   {
-    setQuotes:           actionsQuotes.setQuotes,
     setQuotesIsFetching: actionsQuotes.setQuotesIsFetching,
-    setAuthors:          actionsAuthors.setAuthors,
-    setTags:             actionsTags.setTags,
-    setSources:          actionsSources.setSources,
+    getTableAuthorsTC:   getTableAuthorsTC,
+    getTableTagsTC:      getTableTagsTC,
+    getTableSourcesTC:   getTableSourcesTC,
+    getTableQuoteTC:     getTableQuoteTC,
+    getTableQuoteByIdTC: getTableQuoteByIdTC,
   }
 )(WithUrlDataComponent);
 

@@ -1,47 +1,27 @@
 import React, { Component } from 'react';
-import style from './style.module.scss';
-import ListFull from '../../Elements/ListFull/ListFull';
-import { getTableByPagination } from '../../../DataAccessLayer/api';
 import lodash from 'lodash';
-import Pager from '../../Elements/Pager/Pager';
+import style from './style.module.scss';
 import { TagObjectType } from '../../../types/types';
+import ListFull from '../../Elements/ListFull/ListFull';
+import Pager from '../../Elements/Pager/Pager';
 
 type PropsType = {
   pageSize: number,
   activePage: number,
   tags: Array<TagObjectType>,
   offset: number | string,
-  getTableByPagination: (tableName:string, pageSize:number, offset: number | string) => Promise<{data:Array<TagObjectType>, offset: string | number}>, // todo: check, is it correct?
-  setTagsByPagination: (tagsArray:Array<TagObjectType>, offset: number | string) => void,
   changePage: (activePage:number) => void,
+  getTableByPaginationTagsTC: (pageSize:number, offset: number | string) => void,
 }
 
-class PageTags extends Component<PropsType> {
+class PageTagsList extends Component<PropsType> {
   componentDidMount() {
-    getTableByPagination('tags', this.props.pageSize, this.props.offset)
-      .then((response: void | {data:Array<TagObjectType>, offset: string | number}) => {
-        if(response) {
-          const tagsArray:Array<TagObjectType>  = response.data;
-          const offset: number | string = response.offset;
-          this.props.setTagsByPagination(tagsArray, offset);
-        }
-      }
-    );
+    this.props.getTableByPaginationTagsTC(this.props.pageSize, this.props.offset);
   }
 
   componentDidUpdate(prevProps:PropsType) {
-    //todo; refactoring this
     if(prevProps.activePage !== this.props.activePage){
-      getTableByPagination('tags', this.props.pageSize, this.props.offset)
-        // todo: исправить дублирование кода
-        .then((response: void | {data:Array<TagObjectType>, offset: string | number}) => {
-          if(response) {
-            const tagsArray:Array<TagObjectType>  = response.data;
-            const offset: number | string = response.offset;
-            this.props.setTagsByPagination(tagsArray, offset);
-          }
-        }
-      );
+      this.props.getTableByPaginationTagsTC(this.props.pageSize, this.props.offset);
     }
   }
 
@@ -80,4 +60,4 @@ class PageTags extends Component<PropsType> {
   }
 }
 
-export default PageTags;
+export default PageTagsList;
