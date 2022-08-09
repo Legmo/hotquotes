@@ -21,32 +21,31 @@ It is planned in the future to allow users to add their own quotes (public or fo
 
 ## Technology stack
 <!-- https://github.com/devicons/devicon/tree/master/icons -->
-- <img src="https://github.com/devicons/devicon/blob/master/icons/nodejs/nodejs-plain.svg" title="Node.js" alt="Node.js" width="20" height="20"/>&nbsp;[Node.js](https://nodejs.org/en)
-- <img src="https://github.com/devicons/devicon/blob/master/icons/react/react-original.svg" title="React JS" alt="React JS" width="20" height="20"/>&nbsp;[React JS](https://reactjs.org)
-- <img src="https://github.com/devicons/devicon/blob/master/icons/redux/redux-original.svg" title="Redux" alt="Redux" width="20" height="20"/>&nbsp;[Redux](https://redux.js.org)
-- <img src="https://github.com/devicons/devicon/blob/master/icons/redux/redux-original.svg" title="Redux" alt="Redux" width="20" height="20"/>&nbsp;[React Redux](https://react-redux.js.org/)
-- <img src="https://create-react-app.dev/img/logo.svg" title="Create React App" alt="Create React App" width="24" height="24"/>&nbsp;[Create React App](https://www.npmjs.com/package/create-react-app)
-- <img src="https://github.com/devicons/devicon/blob/master/icons/npm/npm-original-wordmark.svg" title="React Router" alt="React Router" width="20" height="20"/>&nbsp;[React Router](https://github.com/remix-run/react-router#readme)
-- <img src="https://github.com/devicons/devicon/blob/master/icons/webpack/webpack-original.svg" title="WebPack" alt="WebPack" width="20" height="20"/>&nbsp;[WebPack](https://webpack.js.org/)
-- <img src="https://github.com/devicons/devicon/blob/master/icons/webpack/webpack-original.svg" title="WebPack Dev Server" alt="WebPack Dev Server" width="20" height="20"/>&nbsp;[Webpack Dev Server](https://github.com/webpack/webpack-dev-server)
-- <img src="http://legmo.ru/GitHub/axios_font_icon.svg" title="Axios" alt="Axios" width="20" height="10">&nbsp;[Axios](https://axios-http.com)
-- <img src="http://legmo.ru/GitHub/airtable_font_icon.svg" title="Airtable" alt="Airtable" width="20" height="20">&nbsp;[Airtable](https://airtable.com)
-- <img src="https://lodash.com/assets/img/lodash.svg" title="Lodash" alt="Lodash" width="20" height="20">&nbsp;[Lodash](https://lodash.com)
-- <img src="http://legmo.ru/GitHub/awesome_font_icon.svg" title="Font Awesome" alt="Font Awesome" width="20" height="20"/>&nbsp;[Font Awesome](https://fontawesome.com/)
-- <img src="https://github.com/devicons/devicon/blob/master/icons/eslint/eslint-original.svg" title="ES Lint" alt="ES Lint" width="20" height="20"/>&nbsp;[ES Lint](https://eslint.org/)
-- 🐶&nbsp;[Husky](https://github.com/typicode/husky)
-- <img src="https://github.com/devicons/devicon/blob/master/icons/npm/npm-original-wordmark.svg" title="Lint-staged" alt="Lint-staged" width="20" height="20">&nbsp;[Lint-staged](https://github.com/okonet/lint-staged) 
-- <img src="https://github.com/devicons/devicon/blob/master/icons/javascript/javascript-plain.svg" title="JavaScript" alt="JavaScript" width="20" height="20"/>&nbsp;[JavaScript ES6](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-- <img src="https://github.com/Protectator/jsx-tsx-logos/blob/master/jsx-logo.svg" title="JSX" alt="JSX" width="20" height="20"/>&nbsp;[JSX](https://facebook.github.io/jsx/)
-- <img src="https://github.com/devicons/devicon/blob/master/icons/typescript/typescript-original.svg" title="TypeScript" alt="TypeScript" width="20" height="20"/>&nbsp;[TypeScript](https://www.typescriptlang.org/)
-- <img src="https://github.com/devicons/devicon/blob/master/icons/html5/html5-original.svg" title="HTML" alt="HTML" width="20" height="20"/>&nbsp;[HTML](https://www.w3.org/html/)
-- <img src="https://github.com/devicons/devicon/blob/master/icons/css3/css3-original.svg" title="CSS" alt="CSS" width="20" height="20"/>&nbsp;[CSS](https://www.w3.org/Style/CSS/Overview.en.html)
-- <img src="https://github.com/devicons/devicon/blob/master/icons/sass/sass-original.svg" title="SASS" alt="SASS" width="20" height="20"/>&nbsp;[SASS](https://sass-lang.com/)
+- <img src="https://github.com/devicons/devicon/blob/master/icons/nodejs/nodejs-plain.svg" title="Node.js" alt="Node.js" width="20" height="20"/>&nbsp;<a href="https://nodejs.org/en" target="_blank" title="Node.js">Node.js</a>
+- <img src="https://github.com/devicons/devicon/blob/master/icons/react/react-original.svg" title="React JS" alt="React JS" width="20" height="20"/>&nbsp;<a href="https://reactjs.org" target="_blank" title="React JS">React JS</a>
+- <img src="https://github.com/devicons/devicon/blob/master/icons/redux/redux-original.svg" title="Redux" alt="Redux" width="20" height="20"/>&nbsp;<a href="https://redux.js.org" target="_blank" title="Redux">Redux</a>
+- <img src="https://github.com/devicons/devicon/blob/master/icons/redux/redux-original.svg" title="Redux" alt="Redux" width="20" height="20"/>&nbsp;<a href="https://react-redux.js.org/" target="_blank" title="React Redux">React Redux</a>
+- <img src="https://create-react-app.dev/img/logo.svg" title="Create React App" alt="Create React App" width="24" height="24"/>&nbsp;<a href="https://www.npmjs.com/package/create-react-app" target="_blank" title="Create React App">Create React App</a>
+- <img src="https://github.com/devicons/devicon/blob/master/icons/npm/npm-original-wordmark.svg" title="React Router" alt="React Router" width="20" height="20"/>&nbsp;<a href="(https://github.com/remix-run/react-router#readme" target="_blank" title="React Router">React Router</a>
+- <img src="https://github.com/devicons/devicon/blob/master/icons/webpack/webpack-original.svg" title="WebPack Dev Server" alt="WebPack Dev Server" width="20" height="20"/>&nbsp;<a href="https://github.com/webpack/webpack-dev-server" target="_blank" title="Webpack Dev Server">Webpack Dev Server</a>
+- <img src="http://legmo.ru/GitHub/axios_font_icon.svg" title="Axios" alt="Axios" width="20" height="10">&nbsp;<a href="https://axios-http.com" target="_blank" title="Axios">Axios</a>
+- <img src="http://legmo.ru/GitHub/airtable_font_icon.svg" title="Airtable" alt="Airtable" width="20" height="20">&nbsp;<a href="https://airtable.com" target="_blank" title="Airtable">Airtable</a>
+- <img src="https://lodash.com/assets/img/lodash.svg" title="Lodash" alt="Lodash" width="20" height="20">&nbsp;<a href="https://lodash.com" target="_blank" title="Lodash">Lodash</a>
+- <img src="http://legmo.ru/GitHub/awesome_font_icon.svg" title="Font Awesome" alt="Font Awesome" width="20" height="20"/>&nbsp;<a href="https://fontawesome.com/" target="_blank" title="Font Awesome">Font Awesome</a>
+- <img src="https://github.com/devicons/devicon/blob/master/icons/eslint/eslint-original.svg" title="ES Lint" alt="ES Lint" width="20" height="20"/>&nbsp;<a href="https://eslint.org/" target="_blank" title="ES Lint">ES Lint</a>
+- 🐶&nbsp;<a href="https://github.com/typicode/husky" target="_blank" title="Husky">Husky</a>
+- <img src="https://github.com/devicons/devicon/blob/master/icons/npm/npm-original-wordmark.svg" title="Lint-staged" alt="Lint-staged" width="20" height="20">&nbsp;<a href="https://github.com/okonet/lint-staged" target="_blank" title="Lint-staged">Lint-staged</a> 
+- <img src="https://github.com/devicons/devicon/blob/master/icons/javascript/javascript-plain.svg" title="JavaScript" alt="JavaScript" width="20" height="20"/>&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" title="JavaScript ES6+">JavaScript ES6+</a>
+- <img src="https://github.com/Protectator/jsx-tsx-logos/blob/master/jsx-logo.svg" title="JSX" alt="JSX" width="20" height="20"/>&nbsp;<a href="https://facebook.github.io/jsx/" target="_blank" title="JSX">JSX</a>
+- <img src="https://github.com/devicons/devicon/blob/master/icons/typescript/typescript-original.svg" title="TypeScript" alt="TypeScript" width="20" height="20"/>&nbsp;<a href="https://www.typescriptlang.org/" target="_blank" title="TypeScript">TypeScript</a>
+- <img src="https://github.com/devicons/devicon/blob/master/icons/html5/html5-original.svg" title="HTML" alt="HTML" width="20" height="20"/>&nbsp;<a href="https://www.w3.org/html/" target="_blank" title="HTML">HTML</a>
+- <img src="https://github.com/devicons/devicon/blob/master/icons/css3/css3-original.svg" title="CSS" alt="CSS" width="20" height="20"/>&nbsp;<a href="https://www.w3.org/Style/CSS/Overview.en.html" target="_blank" title="CSS">CSS</a>
+- <img src="https://github.com/devicons/devicon/blob/master/icons/sass/sass-original.svg" title="SASS" alt="SASS" width="20" height="20"/>&nbsp;<a href="https://sass-lang.com/" target="_blank" title="SASS">SASS</a>
 <!-- 
-- <img src="https://github.com/gilbarbara/logos/blob/master/logos/prettier.svg" title="Prettier-miscellaneous" alt="Prettier-miscellaneous" width="20" height="20" />&nbsp;[Prettier-miscellaneous](https://github.com/arijs/prettier-miscellaneous)
+- <img src="https://github.com/gilbarbara/logos/blob/master/logos/prettier.svg" title="Prettier-miscellaneous" alt="Prettier-miscellaneous" width="20" height="20" />&nbsp;<a href="https://github.com/arijs/prettier-miscellaneou" target="_blank" title="Prettier-miscellaneous">Prettier-miscellaneous</a>
 -->
 <!--
-- <img src="https://github.com/devicons/devicon/blob/master/icons/bootstrap/bootstrap-original.svg" title="Bootstrap" alt="Bootstrap" width="20" height="20"/>&nbsp;[Bootstrap](https://getbootstrap.com/)
+- <img src="https://github.com/devicons/devicon/blob/master/icons/bootstrap/bootstrap-original.svg" title="Bootstrap" alt="Bootstrap" width="20" height="20"/>&nbsp;<a href="https://getbootstrap.com/" target="_blank" title="Bootstrap">Bootstrap</a>
 -->
 <br>
 
@@ -190,32 +189,31 @@ You can also ask the necessary questions in the [Discussions section](https://gi
 
 ## Технологии
 <!-- https://github.com/devicons/devicon/tree/master/icons -->
-- <img src="https://github.com/devicons/devicon/blob/master/icons/nodejs/nodejs-plain.svg" title="Node.js" alt="Node.js" width="20" height="20"/>&nbsp;[Node.js](https://nodejs.org/en)
-- <img src="https://github.com/devicons/devicon/blob/master/icons/react/react-original.svg" title="React JS" alt="React JS" width="20" height="20"/>&nbsp;[React JS](https://reactjs.org)
-- <img src="https://github.com/devicons/devicon/blob/master/icons/redux/redux-original.svg" title="Redux" alt="Redux" width="20" height="20"/>&nbsp;[Redux](https://redux.js.org)
-- <img src="https://github.com/devicons/devicon/blob/master/icons/redux/redux-original.svg" title="Redux" alt="Redux" width="20" height="20"/>&nbsp;[React Redux](https://react-redux.js.org/)
-- <img src="https://create-react-app.dev/img/logo.svg" title="Create React App" alt="Create React App" width="24" height="24"/>&nbsp;[Create React App](https://www.npmjs.com/package/create-react-app)
-- <img src="https://github.com/devicons/devicon/blob/master/icons/npm/npm-original-wordmark.svg" title="React Router" alt="React Router" width="20" height="20"/>&nbsp;[React Router](https://github.com/remix-run/react-router#readme)
-- <img src="https://github.com/devicons/devicon/blob/master/icons/webpack/webpack-original.svg" title="WebPack" alt="WebPack" width="20" height="20"/>&nbsp;[WebPack](https://webpack.js.org/)
-- <img src="https://github.com/devicons/devicon/blob/master/icons/webpack/webpack-original.svg" title="WebPack Dev Server" alt="WebPack Dev Server" width="20" height="20"/>&nbsp;[Webpack Dev Server](https://github.com/webpack/webpack-dev-server)
-- <img src="http://legmo.ru/GitHub/axios_font_icon.svg" title="Axios" alt="Axios" width="20" height="20">&nbsp;[Axios](https://axios-http.com)
-- <img src="http://legmo.ru/GitHub/airtable_font_icon.svg" title="Airtable" alt="Airtable" width="20" height="20">&nbsp;[Airtable](https://airtable.com)
-- <img src="https://lodash.com/assets/img/lodash.svg" title="Lodash" alt="Lodash" width="20" height="20">&nbsp;[Lodash](https://lodash.com)
-- <img src="http://legmo.ru/GitHub/awesome_font_icon.svg" title="Font Awesome" alt="Font Awesome" width="20" height="20"/>&nbsp;[Font Awesome](https://fontawesome.com/)
-- <img src="https://github.com/devicons/devicon/blob/master/icons/eslint/eslint-original.svg" title="ES Lint" alt="ES Lint" width="20" height="20"/>&nbsp;[ES Lint](https://eslint.org/)
-- 🐶&nbsp;[Husky](https://github.com/typicode/husky)
-- <img src="https://github.com/devicons/devicon/blob/master/icons/npm/npm-original-wordmark.svg" title="Lint-staged" alt="Lint-staged" width="20" height="20">&nbsp;[Lint-staged](https://github.com/okonet/lint-staged)
-- <img src="https://github.com/devicons/devicon/blob/master/icons/javascript/javascript-plain.svg" title="JavaScript" alt="JavaScript" width="20" height="20"/>&nbsp;[JavaScript ES6](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-- <img src="https://github.com/Protectator/jsx-tsx-logos/blob/master/jsx-logo.svg" title="JSX" alt="JSX" width="20" height="20"/>&nbsp;[JSX](https://facebook.github.io/jsx/)
-- <img src="https://github.com/devicons/devicon/blob/master/icons/typescript/typescript-original.svg" title="TypeScript" alt="TypeScript" width="20" height="20"/>&nbsp;[TypeScript](https://www.typescriptlang.org/)
-- <img src="https://github.com/devicons/devicon/blob/master/icons/html5/html5-original.svg" title="HTML" alt="HTML" width="20" height="20"/>&nbsp;[HTML](https://www.w3.org/html/)
-- <img src="https://github.com/devicons/devicon/blob/master/icons/css3/css3-original.svg" title="CSS" alt="CSS" width="20" height="20"/>&nbsp;[CSS](https://www.w3.org/Style/CSS/Overview.en.html)
-- <img src="https://github.com/devicons/devicon/blob/master/icons/sass/sass-original.svg" title="SASS" alt="SASS" width="20" height="20"/>&nbsp;[SASS](https://sass-lang.com/)
+- <img src="https://github.com/devicons/devicon/blob/master/icons/nodejs/nodejs-plain.svg" title="Node.js" alt="Node.js" width="20" height="20"/>&nbsp;<a href="https://nodejs.org/en" target="_blank" title="Node.js">Node.js</a>
+- <img src="https://github.com/devicons/devicon/blob/master/icons/react/react-original.svg" title="React JS" alt="React JS" width="20" height="20"/>&nbsp;<a href="https://reactjs.org" target="_blank" title="React JS">React JS</a>
+- <img src="https://github.com/devicons/devicon/blob/master/icons/redux/redux-original.svg" title="Redux" alt="Redux" width="20" height="20"/>&nbsp;<a href="https://redux.js.org" target="_blank" title="Redux">Redux</a>
+- <img src="https://github.com/devicons/devicon/blob/master/icons/redux/redux-original.svg" title="Redux" alt="Redux" width="20" height="20"/>&nbsp;<a href="https://react-redux.js.org/" target="_blank" title="React Redux">React Redux</a>
+- <img src="https://create-react-app.dev/img/logo.svg" title="Create React App" alt="Create React App" width="24" height="24"/>&nbsp;<a href="https://www.npmjs.com/package/create-react-app" target="_blank" title="Create React App">Create React App</a>
+- <img src="https://github.com/devicons/devicon/blob/master/icons/npm/npm-original-wordmark.svg" title="React Router" alt="React Router" width="20" height="20"/>&nbsp;<a href="(https://github.com/remix-run/react-router#readme" target="_blank" title="React Router">React Router</a>
+- <img src="https://github.com/devicons/devicon/blob/master/icons/webpack/webpack-original.svg" title="WebPack Dev Server" alt="WebPack Dev Server" width="20" height="20"/>&nbsp;<a href="https://github.com/webpack/webpack-dev-server" target="_blank" title="Webpack Dev Server">Webpack Dev Server</a>
+- <img src="http://legmo.ru/GitHub/axios_font_icon.svg" title="Axios" alt="Axios" width="20" height="10">&nbsp;<a href="https://axios-http.com" target="_blank" title="Axios">Axios</a>
+- <img src="http://legmo.ru/GitHub/airtable_font_icon.svg" title="Airtable" alt="Airtable" width="20" height="20">&nbsp;<a href="https://airtable.com" target="_blank" title="Airtable">Airtable</a>
+- <img src="https://lodash.com/assets/img/lodash.svg" title="Lodash" alt="Lodash" width="20" height="20">&nbsp;<a href="https://lodash.com" target="_blank" title="Lodash">Lodash</a>
+- <img src="http://legmo.ru/GitHub/awesome_font_icon.svg" title="Font Awesome" alt="Font Awesome" width="20" height="20"/>&nbsp;<a href="https://fontawesome.com/" target="_blank" title="Font Awesome">Font Awesome</a>
+- <img src="https://github.com/devicons/devicon/blob/master/icons/eslint/eslint-original.svg" title="ES Lint" alt="ES Lint" width="20" height="20"/>&nbsp;<a href="https://eslint.org/" target="_blank" title="ES Lint">ES Lint</a>
+- 🐶&nbsp;<a href="https://github.com/typicode/husky" target="_blank" title="Husky">Husky</a>
+- <img src="https://github.com/devicons/devicon/blob/master/icons/npm/npm-original-wordmark.svg" title="Lint-staged" alt="Lint-staged" width="20" height="20">&nbsp;<a href="https://github.com/okonet/lint-staged" target="_blank" title="Lint-staged">Lint-staged</a>
+- <img src="https://github.com/devicons/devicon/blob/master/icons/javascript/javascript-plain.svg" title="JavaScript" alt="JavaScript" width="20" height="20"/>&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" title="JavaScript ES6+">JavaScript ES6+</a>
+- <img src="https://github.com/Protectator/jsx-tsx-logos/blob/master/jsx-logo.svg" title="JSX" alt="JSX" width="20" height="20"/>&nbsp;<a href="https://facebook.github.io/jsx/" target="_blank" title="JSX">JSX</a>
+- <img src="https://github.com/devicons/devicon/blob/master/icons/typescript/typescript-original.svg" title="TypeScript" alt="TypeScript" width="20" height="20"/>&nbsp;<a href="https://www.typescriptlang.org/" target="_blank" title="TypeScript">TypeScript</a>
+- <img src="https://github.com/devicons/devicon/blob/master/icons/html5/html5-original.svg" title="HTML" alt="HTML" width="20" height="20"/>&nbsp;<a href="https://www.w3.org/html/" target="_blank" title="HTML">HTML</a>
+- <img src="https://github.com/devicons/devicon/blob/master/icons/css3/css3-original.svg" title="CSS" alt="CSS" width="20" height="20"/>&nbsp;<a href="https://www.w3.org/Style/CSS/Overview.en.html" target="_blank" title="CSS">CSS</a>
+- <img src="https://github.com/devicons/devicon/blob/master/icons/sass/sass-original.svg" title="SASS" alt="SASS" width="20" height="20"/>&nbsp;<a href="https://sass-lang.com/" target="_blank" title="SASS">SASS</a>
 <!-- 
-- <img src="https://github.com/gilbarbara/logos/blob/master/logos/prettier.svg" title="Prettier-miscellaneous" alt="Prettier-miscellaneous" width="20" height="20" />&nbsp;[Prettier-miscellaneous](https://github.com/arijs/prettier-miscellaneous)
+- <img src="https://github.com/gilbarbara/logos/blob/master/logos/prettier.svg" title="Prettier-miscellaneous" alt="Prettier-miscellaneous" width="20" height="20" />&nbsp;<a href="https://github.com/arijs/prettier-miscellaneou" target="_blank" title="Prettier-miscellaneous">Prettier-miscellaneous</a>
 -->
 <!--
-- <img src="https://github.com/devicons/devicon/blob/master/icons/bootstrap/bootstrap-original.svg" title="Bootstrap" alt="Bootstrap" width="20" height="20"/>&nbsp;[Bootstrap](https://getbootstrap.com/)
+- <img src="https://github.com/devicons/devicon/blob/master/icons/bootstrap/bootstrap-original.svg" title="Bootstrap" alt="Bootstrap" width="20" height="20"/>&nbsp;<a href="https://getbootstrap.com/" target="_blank" title="Bootstrap">Bootstrap</a>
 -->
 <br>
 
