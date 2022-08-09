@@ -51,7 +51,7 @@ It is planned in the future to allow users to add their own quotes (public or fo
 <br>
 
 ## Screenshot
-<img src="http://legmo.ru/GitHub/Screenshot.jpg" title="Web page screenshot" alt="Web page screenshot" />
+<img src="http://legmo.ru/GitHub/Screenshot.jpg?" title="Web page screenshot" alt="Web page screenshot" />
 <br>
 
 ## Getting Started
@@ -222,7 +222,7 @@ You can also ask the necessary questions in the [Discussions section](https://gi
 <br>
 
 ## Скриншот
-<img src="http://legmo.ru/GitHub/Screenshot.jpg" title="Скриншот страницы" alt="Скриншот страницы" />
+<img src="http://legmo.ru/GitHub/Screenshot.jpg?" title="Скриншот страницы" alt="Скриншот страницы" />
 <br>
 
 ## С чего начать?
