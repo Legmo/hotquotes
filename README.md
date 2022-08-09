@@ -122,6 +122,11 @@ Enter your API key to access the database into `apiKey` variable. If you use [Ai
 
 
 ## Application architecture
+<!--
+    Don't forget to update the wiki  & Contributing.md
+    https://github.com/Legmo/hotquotes/blob/master/CONTRIBUTING.md#git-workflow
+    https://github.com/Legmo/hotquotes/wiki/Application-architecture
+-->
 Full size picture on the [miro.com](https://miro.com/app/board/uXjVOg1yJgM=/?share_link_id=372911307270)
 <a href="https://miro.com/app/board/uXjVOg1yJgM=/?share_link_id=372911307270" title="Application architecture (full size)" alt="Application architecture (full size)" target="_blank"><img src="http://legmo.ru/GitHub/Architecture-small.jpg" title="Application architecture" alt="Application architecture" /></a>
 <br>
