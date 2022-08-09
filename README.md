@@ -26,7 +26,8 @@ It is planned in the future to allow users to add their own quotes (public or fo
 - <img src="https://github.com/devicons/devicon/blob/master/icons/redux/redux-original.svg" title="Redux" alt="Redux" width="20" height="20"/>&nbsp;<a href="https://redux.js.org" target="_blank" title="Redux">Redux</a>
 - <img src="https://github.com/devicons/devicon/blob/master/icons/redux/redux-original.svg" title="Redux" alt="Redux" width="20" height="20"/>&nbsp;<a href="https://react-redux.js.org/" target="_blank" title="React Redux">React Redux</a>
 - <img src="https://create-react-app.dev/img/logo.svg" title="Create React App" alt="Create React App" width="24" height="24"/>&nbsp;<a href="https://www.npmjs.com/package/create-react-app" target="_blank" title="Create React App">Create React App</a>
-- <img src="https://github.com/devicons/devicon/blob/master/icons/npm/npm-original-wordmark.svg" title="React Router" alt="React Router" width="20" height="20"/>&nbsp;<a href="(https://github.com/remix-run/react-router#readme" target="_blank" title="React Router">React Router</a>
+- <img src="https://github.com/devicons/devicon/blob/master/icons/npm/npm-original-wordmark.svg" title="React Router" alt="React Router" width="20" height="20"/>&nbsp;<a href="https://github.com/remix-run/react-router#readme" target="_blank" title="React Router">React Router</a>
+- <img src="https://github.com/devicons/devicon/raw/master/icons/webpack/webpack-original.svg" title="WebPack" alt="WebPack" style="max-width: 100%;" width="20" height="20">&nbsp;<a href="https://webpack.js.org/" target="_blank" title="Webpack">WebPack</a>
 - <img src="https://github.com/devicons/devicon/blob/master/icons/webpack/webpack-original.svg" title="WebPack Dev Server" alt="WebPack Dev Server" width="20" height="20"/>&nbsp;<a href="https://github.com/webpack/webpack-dev-server" target="_blank" title="Webpack Dev Server">Webpack Dev Server</a>
 - <img src="http://legmo.ru/GitHub/axios_font_icon.svg" title="Axios" alt="Axios" width="20" height="10">&nbsp;<a href="https://axios-http.com" target="_blank" title="Axios">Axios</a>
 - <img src="http://legmo.ru/GitHub/airtable_font_icon.svg" title="Airtable" alt="Airtable" width="20" height="20">&nbsp;<a href="https://airtable.com" target="_blank" title="Airtable">Airtable</a>
@@ -126,8 +127,8 @@ Enter your API key to access the database into `apiKey` variable. If you use [Ai
     https://github.com/Legmo/hotquotes/blob/master/CONTRIBUTING.md#git-workflow
     https://github.com/Legmo/hotquotes/wiki/Application-architecture
 -->
-Full size picture on the [miro.com](https://miro.com/app/board/uXjVOg1yJgM=/?share_link_id=372911307270)
-<a href="https://miro.com/app/board/uXjVOg1yJgM=/?share_link_id=372911307270" title="Application architecture (full size)" alt="Application architecture (full size)" target="_blank"><img src="http://legmo.ru/GitHub/Architecture-small.jpg" title="Application architecture" alt="Application architecture" /></a>
+Full size picture on the <a href="https://miro.com/app/board/uXjVOg1yJgM=/?share_link_id=372911307270" title="Application architecture (full size)" target="_blank">miro.com</a>
+<a href="https://miro.com/app/board/uXjVOg1yJgM=/?share_link_id=372911307270" title="Application architecture (full size)" target="_blank"><img src="http://legmo.ru/GitHub/Architecture-small.jpg" title="Application architecture" alt="Application architecture" /></a>
 <br>
 <br>
 
@@ -194,7 +195,8 @@ You can also ask the necessary questions in the [Discussions section](https://gi
 - <img src="https://github.com/devicons/devicon/blob/master/icons/redux/redux-original.svg" title="Redux" alt="Redux" width="20" height="20"/>&nbsp;<a href="https://redux.js.org" target="_blank" title="Redux">Redux</a>
 - <img src="https://github.com/devicons/devicon/blob/master/icons/redux/redux-original.svg" title="Redux" alt="Redux" width="20" height="20"/>&nbsp;<a href="https://react-redux.js.org/" target="_blank" title="React Redux">React Redux</a>
 - <img src="https://create-react-app.dev/img/logo.svg" title="Create React App" alt="Create React App" width="24" height="24"/>&nbsp;<a href="https://www.npmjs.com/package/create-react-app" target="_blank" title="Create React App">Create React App</a>
-- <img src="https://github.com/devicons/devicon/blob/master/icons/npm/npm-original-wordmark.svg" title="React Router" alt="React Router" width="20" height="20"/>&nbsp;<a href="(https://github.com/remix-run/react-router#readme" target="_blank" title="React Router">React Router</a>
+- <img src="https://github.com/devicons/devicon/blob/master/icons/npm/npm-original-wordmark.svg" title="React Router" alt="React Router" width="20" height="20"/>&nbsp;<a href="https://github.com/remix-run/react-router#readme" target="_blank" title="React Router">React Router</a>
+- <img src="https://github.com/devicons/devicon/raw/master/icons/webpack/webpack-original.svg" title="WebPack" alt="WebPack" style="max-width: 100%;" width="20" height="20">&nbsp;<a href="https://webpack.js.org/" target="_blank" title="Webpack">WebPack</a>
 - <img src="https://github.com/devicons/devicon/blob/master/icons/webpack/webpack-original.svg" title="WebPack Dev Server" alt="WebPack Dev Server" width="20" height="20"/>&nbsp;<a href="https://github.com/webpack/webpack-dev-server" target="_blank" title="Webpack Dev Server">Webpack Dev Server</a>
 - <img src="http://legmo.ru/GitHub/axios_font_icon.svg" title="Axios" alt="Axios" width="20" height="10">&nbsp;<a href="https://axios-http.com" target="_blank" title="Axios">Axios</a>
 - <img src="http://legmo.ru/GitHub/airtable_font_icon.svg" title="Airtable" alt="Airtable" width="20" height="20">&nbsp;<a href="https://airtable.com" target="_blank" title="Airtable">Airtable</a>
@@ -286,8 +288,8 @@ You can also ask the necessary questions in the [Discussions section](https://gi
 <br>
 
 ## Архитектура приложения
-Полноразмерное изображение на [miro.com](https://miro.com/app/board/uXjVOg1yJgM=/?share_link_id=372911307270)
-<a href="https://miro.com/app/board/uXjVOg1yJgM=/?share_link_id=372911307270" title="Application architecture (full size)" alt="Application architecture (full size)" target="_blank"><img src="http://legmo.ru/GitHub/Architecture-small.jpg" title="Application architecture" alt="Application architecture" /></a>
+Полноразмерное изображение на <a href="https://miro.com/app/board/uXjVOg1yJgM=/?share_link_id=372911307270" title="Application architecture (full size)" target="_blank">miro.com</a>
+<a href="https://miro.com/app/board/uXjVOg1yJgM=/?share_link_id=372911307270" title="Application architecture (full size)" target="_blank"><img src="http://legmo.ru/GitHub/Architecture-small.jpg" title="Application architecture" alt="Application architecture" /></a>
 <br>    
 <br>
 
