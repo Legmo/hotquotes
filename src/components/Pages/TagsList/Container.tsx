@@ -1,5 +1,5 @@
-import PageTags from './PageTags';
-import {actionsTags} from '../../../redux/reducer-tags';
+import PageTagsList from './PageTagsList';
+import { actionsTags, getTableByPaginationTagsTC } from '../../../redux/reducer-tags';
 import {connect} from 'react-redux';
 import { AppStateType } from '../../../redux/redux-store';
 import { TagObjectType } from '../../../types/types';
@@ -11,8 +11,8 @@ type MapStatePropsType = {
   pageSize: number,
 };
 type MapDispatchPropsType = {
-  setTagsByPagination: (tagsArray:Array<TagObjectType>, offset: number | string) => void,
   changePage: (activePage:number) => void,
+  getTableByPaginationTagsTC: (pageSize:number, offset: number | string) => void,
 };
 type OwnPropsType = Record<string, never>;
 
@@ -28,9 +28,9 @@ const mapStateToProps = (state:AppStateType):MapStatePropsType => {
 const PageTagsContainer = connect<MapStatePropsType, MapDispatchPropsType, OwnPropsType, AppStateType>(
   mapStateToProps,
   {
-    setTagsByPagination: actionsTags.setTagsByPagination,
-    changePage:          actionsTags.changePage
+    changePage:                 actionsTags.changePage,
+    getTableByPaginationTagsTC: getTableByPaginationTagsTC,
   }
-)(PageTags);
+)(PageTagsList);
 
 export default PageTagsContainer;

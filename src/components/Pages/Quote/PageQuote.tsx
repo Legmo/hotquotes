@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
+import lodash, { isEmpty } from 'lodash';
+import {
+  AuthorObjectType,
+  QuoteObjectType,
+  SourceObjectType,
+  TagObjectType,
+} from '../../../types/types';
 import {
   findElementByValue,
   getRandomArrayElement,
 } from '../../../utils/helpers';
-import {
-  getTable,
-  getTableById,
-  // getTableByPagination
-} from '../../../DataAccessLayer/api';
-import lodash, { isEmpty } from 'lodash';
 import QuoteCard from '../../Elements/QuoteCard/QuoteCard';
 import Preloader from '../../Elements/Preloader/Preloader';
 import QuoteToolbar from '../../Elements/QuoteToolbar/QuoteToolbar';
-import { AuthorObjectType, QuoteObjectType, SourceObjectType, TagObjectType } from '../../../types/types';
 import { InitialQuoteStateType } from '../../../redux/reducer-quotes';
 
 type PropsType = {
@@ -21,54 +21,35 @@ type PropsType = {
   authors: Array<AuthorObjectType>;
   sources: Array<SourceObjectType>;
   params: { id: string };
-  setQuotes: (quotesArray: Array<QuoteObjectType>) => void;
-  setAuthors: (authorsArray: Array<AuthorObjectType>) => void;
-  setTags: (tagsArray: Array<TagObjectType>) => void;
-  setSources: (sourcesArray: Array<SourceObjectType>) => void;
   setQuotesIsFetching: (isFetching: boolean) => void;
+  getTableAuthorsTC: () => void,
+  getTableTagsTC: () => void,
+  getTableSourcesTC: () => void,
+  getTableQuoteTC: () => void,
+  getTableQuoteByIdTC: (quoteId:string) => void,
 };
 
 class PageQuote extends Component<PropsType> {
   componentDidMount() {
-    //todo: this logic for test only
-    //todo: разобраться с получением данных Authors и Tags здесь и в Sidebar. В Sidebar их надо оставить, чтоб отображались для других страниц
-
+    // todo: разобраться с получением данных Authors и Tags здесь и в Sidebar. В Sidebar их надо оставить, чтоб отображались для других страниц
     this.props.setQuotesIsFetching(true);
-    if (!isEmpty(this.props.params) && this.props.params.id) {
-      //todo: выдавать сообщение, если цитата с данным ID не найдена
-      getTableById('quotes', this.props.params.id).then((response) => {
-        this.props.setQuotes(response);
-        this.props.setQuotesIsFetching(false);
-      });
-    } else {
-      getTable('quotes').then((response) => {
-        this.props.setQuotes(response);
-        this.props.setQuotesIsFetching(false);
-      });
-    }
-
-    getTable('sources').then((response) => {
-      this.props.setSources(response);
-    });
-    getTable('authors').then((response) => {
-      this.props.setAuthors(response);
-    });
-    getTable('tags').then((response) => {
-      this.props.setTags(response);
-    });
+    (!isEmpty(this.props.params) && this.props.params.id)
+      ? this.props.getTableQuoteByIdTC(this.props.params.id)
+      : this.props.getTableQuoteTC();
+    this.props.getTableAuthorsTC();
+    this.props.getTableTagsTC();
+    this.props.getTableSourcesTC();
   }
 
   quoteReload() {
     this.props.setQuotesIsFetching(true);
-    getTable('quotes').then((response) => {
-      this.props.setQuotes(response);
-      this.props.setQuotesIsFetching(false);
-    });
+    this.props.getTableQuoteTC();
   }
 
   render() {
     //todo: simplify this logic
     const LoadingPage = () => {
+      // todo: зачем используется isQuotesLoaded? Почему недостаточно isFetching?
       if (this.props.quotes.isQuotesLoaded) {
         const quote:any = getRandomArrayElement(this.props.quotes.quotes); //todo: fix this 'any'!
 
@@ -128,7 +109,9 @@ class PageQuote extends Component<PropsType> {
       }
     };
 
-    return this.props.quotes.isFetching ? <Preloader /> : LoadingPage();
+    return this.props.quotes.isFetching
+      ? <Preloader />
+      : LoadingPage();
   }
 }
 

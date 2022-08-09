@@ -2,14 +2,15 @@ import Sidebar from './Sidebar';
 import {connect} from 'react-redux';
 import {
   InitialAuthorsStateType,
-  actionsAuthors
+  actionsAuthors, 
+  getTableAuthorsTC,
 } from '../../../redux/reducer-authors';
 import {
   InitialTagsStateType,
-  actionsTags
+  actionsTags, 
+  getTableTagsTC,
 } from '../../../redux/reducer-tags';
 import { AppStateType } from '../../../redux/redux-store';
-import { AuthorObjectType, TagObjectType } from '../../../types/types';
 
 type MapStatePropsType = {
   authors: InitialAuthorsStateType, //todo: test - is it correct?
@@ -18,9 +19,9 @@ type MapStatePropsType = {
 
 type MapDispatchPropsType = {
   setAuthorsIsFetching: (isFetching:boolean) => void
-  setAuthors: (authorsArray:Array<AuthorObjectType>) => void
   setTagsIsFetching: (isFetching:boolean) => void
-  setTags: (tagsArray:Array<TagObjectType>) => void
+  getTableAuthorsTC: () => void,
+  getTableTagsTC: () => void,
 };
 
 type OwnPropsType = Record<string, never>;
@@ -34,10 +35,10 @@ const mapStateToProps = (state:AppStateType):MapStatePropsType => {
 
 //<TStateProps = {}, TDispatchProps = {}, TOwnProps = {}, State = DefaultState>
 const SidebarContainer = connect<MapStatePropsType, MapDispatchPropsType, OwnPropsType, AppStateType>(mapStateToProps, {
-  setAuthors:           actionsAuthors.setAuthors,
   setAuthorsIsFetching: actionsAuthors.setAuthorsIsFetching,
-  setTags:              actionsTags.setTags,
   setTagsIsFetching:    actionsTags.setTagsIsFetching,
+  getTableAuthorsTC:    getTableAuthorsTC,
+  getTableTagsTC:       getTableTagsTC,
 })(Sidebar);
 
 export default SidebarContainer;

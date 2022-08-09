@@ -5,7 +5,12 @@ import { actionsAuthors } from '../../../redux/reducer-authors';
 import { actionsSources } from '../../../redux/reducer-sources';
 import { actionsTags } from '../../../redux/reducer-tags';
 import { AppStateType } from '../../../redux/redux-store';
-import { AuthorObjectType, QuoteObjectType, SourceObjectType, TagObjectType } from '../../../types/types';
+import {
+  AuthorObjectType,
+  QuoteObjectType,
+  SourceObjectType,
+  TagObjectType,
+} from '../../../types/types';
 
 type MapStatePropsType = {
   newQuote: QuoteObjectType,
@@ -35,7 +40,6 @@ const mapStateToProps = (state:AppStateType):MapStatePropsType => {
     newSource: state.sources.newSource,
   };
 };
-
 
 //<TStateProps = {}, TDispatchProps = {}, TOwnProps = {}, State = DefaultState>
 const FormAddQuoteContainer = connect<MapStatePropsType, MapDispatchPropsType, OwnPropsType, AppStateType>(mapStateToProps, {
