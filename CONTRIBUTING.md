@@ -16,6 +16,7 @@ The following is a set of guidelines for contributing to HotQuotes project. Thes
 * [Do you intend to add a new feature or change an existing one?](#do-you-intend-to-add-a-new-feature-or-change-an-existing-one)
 * [Do you have questions about the source code?](#do-you-have-questions-about-the-source-code)
 * [Styleguide](#styleguide)
+* [Application architecture](#application-architecture)
 * [GIT workflow](#git-workflow)
 * [Issue and Pull Request Labels](#issue-and-pull-request-labels)
 <br>
@@ -134,6 +135,12 @@ The following is a set of guidelines for contributing to HotQuotes project. Thes
 * Prettier options
   * Tab Width = 2 spaces
   * Use single quotes instead of double quotes
+<br>
+
+## Application architecture ##
+Full size picture on the [miro.com](https://miro.com/app/board/uXjVOg1yJgM=/?share_link_id=372911307270)
+<a href="https://miro.com/app/board/uXjVOg1yJgM=/?share_link_id=372911307270" title="Application architecture (full size)" alt="Application architecture (full size)" target="_blank"><img src="http://legmo.ru/GitHub/Architecture-small.jpg" title="Application architecture" alt="Application architecture" /></a>
+<br>
 <br>
 
 ## GIT workflow ##
