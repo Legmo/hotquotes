@@ -122,8 +122,8 @@ Enter your API key to access the database into `apiKey` variable. If you use [Ai
 
 
 ## Application architecture
-This picture on the [miro.com](https://miro.com/app/board/uXjVOg1yJgM=/?share_link_id=425897295546)
-<a href="http://legmo.ru/GitHub/Architecture-big.jpg" title="Application architecture" alt="Application architecture" target="_blank"><img src="http://legmo.ru/GitHub/Architecture-small.jpg" title="Application architecture" alt="Application architecture" /></a>
+Full size picture on the [miro.com](https://miro.com/app/board/uXjVOg1yJgM=/?share_link_id=372911307270)
+<a href="https://miro.com/app/board/uXjVOg1yJgM=/?share_link_id=372911307270" title="Application architecture (full size)" alt="Application architecture (full size)" target="_blank"><img src="http://legmo.ru/GitHub/Architecture-small.jpg" title="Application architecture" alt="Application architecture" /></a>
 <br>
 <br>
 
@@ -283,9 +283,9 @@ You can also ask the necessary questions in the [Discussions section](https://gi
 <br>
 
 ## Архитектура приложения
-Это изображение можно изучить на [miro.com](https://miro.com/app/board/uXjVOg1yJgM=/?share_link_id=425897295546)
-<a href="http://legmo.ru/GitHub/Architecture-big.jpg" title="Application architecture" alt="Application architecture" target="_blank"><img src="http://legmo.ru/GitHub/Architecture-small.jpg" title="Application architecture" alt="Application architecture" /></a>
-<br>
+Полноразмерное изображение на [miro.com](https://miro.com/app/board/uXjVOg1yJgM=/?share_link_id=372911307270)
+<a href="https://miro.com/app/board/uXjVOg1yJgM=/?share_link_id=372911307270" title="Application architecture (full size)" alt="Application architecture (full size)" target="_blank"><img src="http://legmo.ru/GitHub/Architecture-small.jpg" title="Application architecture" alt="Application architecture" /></a>
+<br>    
 <br>
 
 <!--## Демо-сайт
