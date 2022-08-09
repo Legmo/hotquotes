@@ -138,7 +138,7 @@ The following is a set of guidelines for contributing to HotQuotes project. Thes
 <br>
 
 ## Application architecture ##
-Full size picture on the <a href="https://miro.com/app/board/uXjVOg1yJgM=/?share_link_id=372911307270" title="Application architecture (full size)" target="_blank">miro.com</a>
+<a href="https://miro.com/app/board/uXjVOg1yJgM=/?share_link_id=372911307270" title="Application architecture (full size)" target="_blank">Full size picture</a> on the miro.com
 <br>
 <br>
 <a href="https://miro.com/app/board/uXjVOg1yJgM=/?share_link_id=372911307270" title="Application architecture (full size)" target="_blank"><img src="http://legmo.ru/GitHub/Architecture-small.jpg" title="Application architecture" alt="Application architecture" /></a>
