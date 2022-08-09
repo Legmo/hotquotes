@@ -127,7 +127,7 @@ Enter your API key to access the database into `apiKey` variable. If you use [Ai
     https://github.com/Legmo/hotquotes/blob/master/CONTRIBUTING.md#git-workflow
     https://github.com/Legmo/hotquotes/wiki/Application-architecture
 -->
-Full size picture on the <a href="https://miro.com/app/board/uXjVOg1yJgM=/?share_link_id=372911307270" title="Application architecture (full size)" target="_blank">miro.com</a>
+<a href="https://miro.com/app/board/uXjVOg1yJgM=/?share_link_id=372911307270" title="Application architecture (full size)" target="_blank">Full size picture</a> on the miro.com
 <br>
 <br>
 <a href="https://miro.com/app/board/uXjVOg1yJgM=/?share_link_id=372911307270" title="Application architecture (full size)" target="_blank"><img src="http://legmo.ru/GitHub/Architecture-small.jpg" title="Application architecture" alt="Application architecture" /></a>
@@ -290,7 +290,7 @@ You can also ask the necessary questions in the [Discussions section](https://gi
 <br>
 
 ## Архитектура приложения
-Полноразмерное изображение на <a href="https://miro.com/app/board/uXjVOg1yJgM=/?share_link_id=372911307270" title="Application architecture (full size)" target="_blank">miro.com</a>
+<a href="https://miro.com/app/board/uXjVOg1yJgM=/?share_link_id=372911307270" title="Application architecture (full size)" target="_blank">Полноразмерное изображение</a> на miro.com
 <br>
 <br>
 <a href="https://miro.com/app/board/uXjVOg1yJgM=/?share_link_id=372911307270" title="Application architecture (full size)" target="_blank"><img src="http://legmo.ru/GitHub/Architecture-small.jpg" title="Application architecture" alt="Application architecture" /></a>
