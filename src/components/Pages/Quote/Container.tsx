@@ -13,6 +13,7 @@ import { getTableTagsTC } from '../../../redux/reducer-tags';
 import { useLocation, useParams } from 'react-router-dom';
 import { AppStateType } from '../../../redux/redux-store';
 import { AuthorObjectType, SourceObjectType, TagObjectType } from '../../../types/types';
+import { compose } from 'redux';
 
 type MapStatePropsType = {
   quotes: InitialQuoteStateType, //todo: test - is it correct?
@@ -48,18 +49,17 @@ const withRouter = (WrappedComponent:any) => function addRouterData(props:any){ 
   );
 };
 
-const WithUrlDataComponent = withRouter(PageQuote);
-
-const PageIndexContainer = connect<MapStatePropsType, MapDispatchPropsType, OwnPropsType, AppStateType>(
-  mapStateToProps,
-  {
-    setQuotesIsFetching: actionsQuotes.setQuotesIsFetching,
-    getTableAuthorsTC:   getTableAuthorsTC,
-    getTableTagsTC:      getTableTagsTC,
-    getTableSourcesTC:   getTableSourcesTC,
-    getTableQuoteTC:     getTableQuoteTC,
-    getTableQuoteByIdTC: getTableQuoteByIdTC,
-  }
-)(WithUrlDataComponent);
-
-export default PageIndexContainer;
+export default compose(
+  connect<MapStatePropsType, MapDispatchPropsType, OwnPropsType, AppStateType>(
+    mapStateToProps,
+    {
+      setQuotesIsFetching: actionsQuotes.setQuotesIsFetching,
+      getTableAuthorsTC:   getTableAuthorsTC,
+      getTableTagsTC:      getTableTagsTC,
+      getTableSourcesTC:   getTableSourcesTC,
+      getTableQuoteTC:     getTableQuoteTC,
+      getTableQuoteByIdTC: getTableQuoteByIdTC,
+    }
+  ),
+  withRouter,
+)(PageQuote);
