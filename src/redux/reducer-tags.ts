@@ -1,6 +1,6 @@
 import { TagObjectType, TagsByPaginationObjectType } from '../types/types';
 import { BaseThunkType, InferActionsTypes } from './redux-store';
-import { getTable, getTableByPagination } from '../DataAccessLayer/api';
+import { tagsAPI } from '../api/api';
 
 const initialState = {
   tags:             [] as Array<TagObjectType>,
@@ -110,29 +110,25 @@ export const actionsTags = {
 //Thunk Creator's
 type ThunkType = BaseThunkType<ActionsTypes>;
 
-export const getTableTagsTC = ():ThunkType => {
+export const getTableTagsTC = ():ThunkType => async(dispatch) => {
   //todo: выдавать сообщение, если цитата с данным ID не найдена
-  return async(dispatch) => {
-    getTable('tags').then((response) => {
-      dispatch(actionsTags.setTags(response));
-      dispatch(actionsTags.setTagsIsFetching(false));
-    });
-  };
+  tagsAPI.getAll().then((response) => {
+    dispatch(actionsTags.setTags(response));
+    dispatch(actionsTags.setTagsIsFetching(false));
+  });
 };
 
-export const getTableByPaginationTagsTC = (pageSize:number, offset: number | string):ThunkType => {
-  return async(dispatch) => {
-    getTableByPagination('tags', pageSize, offset)
-      .then((response: void | {data:Array<TagObjectType>, offset: string | number}) => {
-          if(response) {
-            const tagsArray:Array<TagObjectType>  = response.data;
-            const offset: number | string = response.offset;
-            dispatch(actionsTags.setTagsByPagination(tagsArray, offset));
-            dispatch(actionsTags.setTagsIsFetching(false));
-          }
+export const getTableByPaginationTagsTC = (pageSize:number, offset: number | string):ThunkType => async(dispatch) => {
+  tagsAPI.getByPagination(pageSize, offset)
+    .then((response: void | {data:Array<TagObjectType>, offset: string | number}) => {
+        if(response) {
+          const tagsArray:Array<TagObjectType>  = response.data;
+          const offset: number | string = response.offset;
+          dispatch(actionsTags.setTagsByPagination(tagsArray, offset));
+          dispatch(actionsTags.setTagsIsFetching(false));
         }
-      );
-  };
+      }
+    );
 };
 
 export default tagsReducer;

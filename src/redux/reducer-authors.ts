@@ -1,6 +1,6 @@
 import { AuthorObjectType } from '../types/types';
 import { BaseThunkType, InferActionsTypes } from './redux-store';
-import { getTable } from '../DataAccessLayer/api';
+import { authorsAPI } from '../api/api';
 
 const initialState = {
   authors:    [] as Array<AuthorObjectType>,
@@ -90,14 +90,12 @@ export const actionsAuthors = {
 //Thunk Creator's
 type ThunkType = BaseThunkType<ActionsTypes>;
 
-export const getTableAuthorsTC = ():ThunkType => {
+export const getTableAuthorsTC = ():ThunkType => async(dispatch) => {
   //todo: выдавать сообщение, если цитата с данным ID не найдена
-  return async(dispatch) => {
-    getTable('authors').then((response) => {
-      dispatch(actionsAuthors.setAuthors(response));
-      dispatch(actionsAuthors.setAuthorsIsFetching(false));
-    });
-  };
+  authorsAPI.getAll().then((response) => {
+    dispatch(actionsAuthors.setAuthors(response));
+    dispatch(actionsAuthors.setAuthorsIsFetching(false));
+  });
 };
 
 export default authorsReducer;

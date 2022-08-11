@@ -1,6 +1,6 @@
 import { SourceObjectType } from '../types/types';
 import { BaseThunkType, InferActionsTypes } from './redux-store';
-import { getTable } from '../DataAccessLayer/api';
+import { sourcesAPI } from '../api/api';
 
 const initialState = {
   sources:    [] as Array<SourceObjectType>,
@@ -75,14 +75,12 @@ export const actionsSources = {
 //Thunk Creator's
 type ThunkType = BaseThunkType<ActionsTypes>;
 
-export const getTableSourcesTC = ():ThunkType => {
+export const getTableSourcesTC = ():ThunkType => async(dispatch) => {
   //todo: выдавать сообщение, если цитата с данным ID не найдена
-  return async(dispatch) => {
-    getTable('sources').then((response) => {
-      dispatch(actionsSources.setSources(response));
-      dispatch(actionsSources.setSourcesIsFetching(false));
-    });
-  };
+  sourcesAPI.getAll().then((response) => {
+    dispatch(actionsSources.setSources(response));
+    dispatch(actionsSources.setSourcesIsFetching(false));
+  });
 };
 
 export default sourcesReducer;

@@ -2,10 +2,10 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg "License: GPL v3")](https://www.gnu.org/licenses/gpl-3.0)
 
 Single page application based on React JS & Redux.<br> 
-Displays randomly quotes from a pre-prepared storage. Each quote can be assigned the following data: author, source, tag (or several tags).<br>
+Displays randomly quotes from a pre-prepared storage. Each quote can be assigned the following data: author (one or several), tag (one or several), source.<br>
 [Airtable](https://airtable.com/) database is currently used as storage, special server is planned in the future.<br>
 <br>
-It is planned in the future to allow users to add their own quotes (public or for private use), create personal quotes collections, share quotes etc. More detailed plans for the development of the project can be found in our [Wiki](https://github.com/Legmo/hotquotes/wiki).
+It is planned in the future to allow users to add their own quotes (public or for private use), create personal quotes collections, share quotes etc. More detailed development roadmap of the project can be found in our [Wiki](https://github.com/Legmo/hotquotes/wiki).
 <br>
 <br>
 
@@ -43,12 +43,6 @@ It is planned in the future to allow users to add their own quotes (public or fo
 - <img src="https://github.com/devicons/devicon/blob/master/icons/html5/html5-original.svg" title="HTML" alt="HTML" width="20" height="20"/>&nbsp;<a href="https://www.w3.org/html/" target="_blank" title="HTML">HTML</a>
 - <img src="https://github.com/devicons/devicon/blob/master/icons/css3/css3-original.svg" title="CSS" alt="CSS" width="20" height="20"/>&nbsp;<a href="https://www.w3.org/Style/CSS/Overview.en.html" target="_blank" title="CSS">CSS</a>
 - <img src="https://github.com/devicons/devicon/blob/master/icons/sass/sass-original.svg" title="SASS" alt="SASS" width="20" height="20"/>&nbsp;<a href="https://sass-lang.com/" target="_blank" title="SASS">SASS</a>
-<!-- 
-- <img src="https://github.com/gilbarbara/logos/blob/master/logos/prettier.svg" title="Prettier-miscellaneous" alt="Prettier-miscellaneous" width="20" height="20" />&nbsp;<a href="https://github.com/arijs/prettier-miscellaneou" target="_blank" title="Prettier-miscellaneous">Prettier-miscellaneous</a>
--->
-<!--
-- <img src="https://github.com/devicons/devicon/blob/master/icons/bootstrap/bootstrap-original.svg" title="Bootstrap" alt="Bootstrap" width="20" height="20"/>&nbsp;<a href="https://getbootstrap.com/" target="_blank" title="Bootstrap">Bootstrap</a>
--->
 <br>
 
 ## Screenshot
@@ -67,8 +61,13 @@ Download the project and run the following console commands in the local project
 <br>
 
 **Create Database**<br>
-You will also need a backend-server with a database. Now I use the free zero-code service [Airtable](https://airtable.com/) to work with the database. You can choose the solution you like. <br>
-The database is named `HotQuotes` and consists of 4 tables:
+You will also need a backend-server with a database. Now I use the free zero-code service [Airtable](https://airtable.com/) to work with the database. You can choose the solution you like.<br>
+<!--
+The database is named `HotQuotes` and consists of 4 tables: 
+- `quotes`
+- `authors`
+- `tags`
+- `sources`
   ```javascript
     quotes: [
       {
@@ -115,12 +114,17 @@ The database is named `HotQuotes` and consists of 4 tables:
   ```
 &nbsp;
 <br>
+-->
+
+<!--**API**<br>
+We use the following <a href="#" title="API documentation" target="_blank">API</a>.<br>
+If your backend is configured differently, you will need to make the appropriate fixes to the `api/api.ts` file.<br>
+-->
 
 **Enter API key**<br>
 Enter your API key to access the database into `apiKey` variable. If you use [Airtable](https://airtable.com/), then you need to register on the site [Airtable](https://airtable.com/) and go to the [Account](https://airtable.com/account) page. The API key will be located in the API section.
 <br>
 <br>
-
 
 ## Application architecture
 <!--
@@ -131,7 +135,7 @@ Enter your API key to access the database into `apiKey` variable. If you use [Ai
 <a href="https://miro.com/app/board/uXjVOg1yJgM=/?share_link_id=372911307270" title="Application architecture (full size)" target="_blank">Full size picture</a> on the miro.com
 <br>
 <br>
-<a href="https://miro.com/app/board/uXjVOg1yJgM=/?share_link_id=372911307270" title="Application architecture (full size)" target="_blank"><img src="http://legmo.ru/GitHub/Architecture-small.jpg" title="Application architecture" alt="Application architecture" /></a>
+<a href="https://miro.com/app/board/uXjVOg1yJgM=/?share_link_id=372911307270" title="Application architecture (full size)" target="_blank"><img src="http://legmo.ru/GitHub/Architecture-small.jpg?" title="Application architecture" alt="Application architecture" /></a>
 <br>
 <br>
 
@@ -140,8 +144,7 @@ You can test working version of our site here [quotes.legmo.ru](http://quotes.le
 <br>
 -->
 
-<!-- 
-## Developers
+<!--## Developers
 - [Name](link to GitHub profile)
 - [Name](link to GitHub profile)
 <br>
@@ -175,10 +178,10 @@ You can also ask the necessary questions in the [Discussions section](https://gi
 ## По-русски
 
 Одностраничное веб-приложение на основе React JS & Redux.<br> 
-Отображает случайную цитату из заранее подготовленного файла-хранилища. Каждая цитата может сопровождаться следующими данными: автор, источник, один или несколько тэгов.<br>
+Отображает случайную цитату из заранее подготовленного хранилища. Каждая цитата может сопровождаться следующими данными: один или несколько авторов, один или несколько тэгов, источник.<br>
 В качестве хранилища цитат используется база данных [Airtable](https://airtable.com/). В будущем планируется использование полноценного бэкенд-сервера.<br>
 <br>
-Также планируются: разрешение пользователям на добавление собственных цитат (публичных или только для личного просмотра), создание персональных подборок цитат, возможность делиться цитатами и многое другое. Более подробные планы развития проекта можно найти в разделе [Wiki](https://github.com/Legmo/hotquotes/wiki).
+Также планируются: разрешение пользователям на добавление собственных цитат (публичных или только для личного просмотра), создание персональных подборок цитат, возможность делиться цитатами и многое другое. Более подробный план развития проекта можно найти в [Wiki](https://github.com/Legmo/hotquotes/wiki).
 <br>
 <br>
 
@@ -214,12 +217,6 @@ You can also ask the necessary questions in the [Discussions section](https://gi
 - <img src="https://github.com/devicons/devicon/blob/master/icons/html5/html5-original.svg" title="HTML" alt="HTML" width="20" height="20"/>&nbsp;<a href="https://www.w3.org/html/" target="_blank" title="HTML">HTML</a>
 - <img src="https://github.com/devicons/devicon/blob/master/icons/css3/css3-original.svg" title="CSS" alt="CSS" width="20" height="20"/>&nbsp;<a href="https://www.w3.org/Style/CSS/Overview.en.html" target="_blank" title="CSS">CSS</a>
 - <img src="https://github.com/devicons/devicon/blob/master/icons/sass/sass-original.svg" title="SASS" alt="SASS" width="20" height="20"/>&nbsp;<a href="https://sass-lang.com/" target="_blank" title="SASS">SASS</a>
-<!-- 
-- <img src="https://github.com/gilbarbara/logos/blob/master/logos/prettier.svg" title="Prettier-miscellaneous" alt="Prettier-miscellaneous" width="20" height="20" />&nbsp;<a href="https://github.com/arijs/prettier-miscellaneou" target="_blank" title="Prettier-miscellaneous">Prettier-miscellaneous</a>
--->
-<!--
-- <img src="https://github.com/devicons/devicon/blob/master/icons/bootstrap/bootstrap-original.svg" title="Bootstrap" alt="Bootstrap" width="20" height="20"/>&nbsp;<a href="https://getbootstrap.com/" target="_blank" title="Bootstrap">Bootstrap</a>
--->
 <br>
 
 ## Скриншот
@@ -237,8 +234,14 @@ You can also ask the necessary questions in the [Discussions section](https://gi
 <br>
 
 **Создание базы данных** <br>
-Также вам понадобится backend-server с базой данных вашего приложения. Я использую бесплатный zero-code сервис [Airtable](https://airtable.com/). Вы можете выбрать решение которое вам нравится. <br>
+Также вам понадобится backend-server с базой данных вашего приложения. Я использую бесплатный zero-code сервис [Airtable](https://airtable.com/). Вы можете выбрать решение которое вам нравится.<br>
+<!--
 База данных имеет имя `HotQuotes` и состоит из 4 таблиц:
+- `quotes`
+- `authors`
+- `tags`
+- `sources`
+
   ```javascript
     quotesBase: [
       {
@@ -285,6 +288,13 @@ You can also ask the necessary questions in the [Discussions section](https://gi
   ```
 &nbsp;
 <br>
+-->
+
+<!--**API**<br>
+Мы используем следующий <a href="#" title="API документация" target="_blank">API</a>.<br>
+Если ваш backend настроен иначе — вам потребуется внести соответствующие коррективы в файл `api/api.ts`.<br>
+-->
+
 **Добавление ключа API**<br>
 Пропишите в переменную `apiKey` ваш API key для доступа к базе данных. Если вы используете [Airtable](https://airtable.com/), то вам надо зарегистрироваться на сайте [Airtable](https://airtable.com/) и зайти на страницу [Account](https://airtable.com/account). API key будет расположен в разделе API.
 <br>
@@ -294,7 +304,7 @@ You can also ask the necessary questions in the [Discussions section](https://gi
 <a href="https://miro.com/app/board/uXjVOg1yJgM=/?share_link_id=372911307270" title="Application architecture (full size)" target="_blank">Полноразмерное изображение</a> на miro.com
 <br>
 <br>
-<a href="https://miro.com/app/board/uXjVOg1yJgM=/?share_link_id=372911307270" title="Application architecture (full size)" target="_blank"><img src="http://legmo.ru/GitHub/Architecture-small.jpg" title="Application architecture" alt="Application architecture" /></a>
+<a href="https://miro.com/app/board/uXjVOg1yJgM=/?share_link_id=372911307270" title="Application architecture (full size)" target="_blank"><img src="http://legmo.ru/GitHub/Architecture-small.jpg?" title="Application architecture" alt="Application architecture" /></a>
 <br>    
 <br>
 
@@ -303,8 +313,7 @@ You can also ask the necessary questions in the [Discussions section](https://gi
 <br>
 -->
 
-<!-- 
-## Разработчики
+<!--## Разработчики
 - [Name](link to GitHub profile)
 - [Name](link to GitHub profile)
 <br>
