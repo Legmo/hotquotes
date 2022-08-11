@@ -1,6 +1,6 @@
 import { QuoteObjectType } from '../types/types';
 import { BaseThunkType, InferActionsTypes } from './redux-store';
-import { getTable, getTableById } from '../DataAccessLayer/api';
+import { quotesAPI } from '../api/api';
 
 const initialState = {
   isQuotesLoaded: false as boolean,
@@ -81,23 +81,19 @@ export const actionsQuotes = {
 //Thunk Creator's
 type ThunkType = BaseThunkType<ActionsTypes>;
 
-export const getTableQuoteTC = ():ThunkType => {
+export const getTableQuoteTC = ():ThunkType => async(dispatch) => {
   //todo: выдавать сообщение, если цитата с данным ID не найдена
-  return async(dispatch) => {
-    getTable('quotes').then((response) => {
-      dispatch(actionsQuotes.setQuotes(response));
-      dispatch(actionsQuotes.setQuotesIsFetching(false));
-    });
-  };
+  quotesAPI.getAll().then((response) => {
+    dispatch(actionsQuotes.setQuotes(response));
+    dispatch(actionsQuotes.setQuotesIsFetching(false));
+  });
 };
 
-export const getTableQuoteByIdTC = (quoteId:string):ThunkType => {
-  return async(dispatch) => {
-    getTableById('quotes', quoteId).then((response) => {
+export const getTableQuoteByIdTC = (quoteId:string):ThunkType => async(dispatch) => {
+  quotesAPI.getById(quoteId).then((response) => {
       dispatch(actionsQuotes.setQuotes(response));
       dispatch(actionsQuotes.setQuotesIsFetching(false));
     });
-  };
 };
 
 export default quotesReducer;
