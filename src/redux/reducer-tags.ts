@@ -110,7 +110,7 @@ export const actionsTags = {
 //Thunk Creator's
 type ThunkType = BaseThunkType<ActionsTypes>;
 
-export const getTableTagsTC = ():ThunkType => async(dispatch) => {
+export const getTagsTC = ():ThunkType => async(dispatch) => {
   //todo: выдавать сообщение, если цитата с данным ID не найдена
   tagsAPI.getAll().then((response) => {
     dispatch(actionsTags.setTags(response));
@@ -118,7 +118,7 @@ export const getTableTagsTC = ():ThunkType => async(dispatch) => {
   });
 };
 
-export const getTableByPaginationTagsTC = (pageSize:number, offset: number | string):ThunkType => async(dispatch) => {
+export const getTagsByPaginationTC = (pageSize:number, offset: number | string):ThunkType => async(dispatch) => {
   tagsAPI.getByPagination(pageSize, offset)
     .then((response: void | {data:Array<TagObjectType>, offset: string | number}) => {
         if(response) {

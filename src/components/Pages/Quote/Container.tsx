@@ -4,12 +4,12 @@ import PageQuote from './PageQuote';
 import {
   InitialQuoteStateType,
   actionsQuotes,
-  getTableQuoteTC,
-  getTableQuoteByIdTC,
+  getQuoteTC,
+  getQuoteByIdTC,
 } from '../../../redux/reducer-quotes';
-import { getTableAuthorsTC } from '../../../redux/reducer-authors';
-import { getTableSourcesTC } from '../../../redux/reducer-sources';
-import { getTableTagsTC } from '../../../redux/reducer-tags';
+import { getAuthorsTC } from '../../../redux/reducer-authors';
+import { getSourcesTC } from '../../../redux/reducer-sources';
+import { getTagsTC } from '../../../redux/reducer-tags';
 import { useLocation, useParams } from 'react-router-dom';
 import { AppStateType } from '../../../redux/redux-store';
 import { AuthorObjectType, SourceObjectType, TagObjectType } from '../../../types/types';
@@ -23,11 +23,11 @@ type MapStatePropsType = {
 };
 type MapDispatchPropsType = {
   setQuotesIsFetching: (isFetching:boolean) => void,
-  getTableAuthorsTC: () => void,
-  getTableTagsTC: () => void,
-  getTableSourcesTC: () => void,
-  getTableQuoteTC: () => void,
-  getTableQuoteByIdTC: (quoteId:string) => void,
+  getAuthorsTC: () => void,
+  getTagsTC: () => void,
+  getSourcesTC: () => void,
+  getQuoteTC: () => void,
+  getQuoteByIdTC: (quoteId:string) => void,
 };
 type OwnPropsType = Record<string, never>;
 
@@ -54,11 +54,11 @@ export default compose(
     mapStateToProps,
     {
       setQuotesIsFetching: actionsQuotes.setQuotesIsFetching,
-      getTableAuthorsTC:   getTableAuthorsTC,
-      getTableTagsTC:      getTableTagsTC,
-      getTableSourcesTC:   getTableSourcesTC,
-      getTableQuoteTC:     getTableQuoteTC,
-      getTableQuoteByIdTC: getTableQuoteByIdTC,
+      getAuthorsTC:   getAuthorsTC,
+      getTagsTC:           getTagsTC,
+      getSourcesTC:        getSourcesTC,
+      getQuoteTC:          getQuoteTC,
+      getQuoteByIdTC:      getQuoteByIdTC,
     }
   ),
   withRouter,

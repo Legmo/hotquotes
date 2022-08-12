@@ -13,6 +13,9 @@ import {
 } from '../../../types/types';
 
 type MapStatePropsType = {
+  tags: Array<TagObjectType>,
+  authors: Array<AuthorObjectType>,
+  sources: Array<SourceObjectType>,
   newQuote: QuoteObjectType,
   newAuthor: AuthorObjectType,
   newSource: SourceObjectType,
@@ -34,6 +37,9 @@ type OwnPropsType = Record<string, never>;
 
 const mapStateToProps = (state:AppStateType):MapStatePropsType => {
   return {
+    tags:      state.tags.tags,
+    authors:   state.authors.authors,
+    sources:   state.sources.sources,
     newTag:    state.tags.newTag,
     newQuote:  state.quotes.newQuote,
     newAuthor: state.authors.newAuthor,

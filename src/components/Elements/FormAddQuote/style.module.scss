@@ -19,6 +19,18 @@
 }
 .inputTags {
 }
+.fieldLine {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: auto auto 20px;
+  grid-column-gap: 10px;
+  &.fieldLineTwo {
+    grid-template-columns: auto 20px;
+  }
+}
+.subtitle {
+  margin-bottom: 0;
+}
 .paragraphLabel {
   font-weight: bold;
 }

@@ -22,11 +22,11 @@ type PropsType = {
   sources: Array<SourceObjectType>;
   params: { id: string };
   setQuotesIsFetching: (isFetching: boolean) => void;
-  getTableAuthorsTC: () => void,
-  getTableTagsTC: () => void,
-  getTableSourcesTC: () => void,
-  getTableQuoteTC: () => void,
-  getTableQuoteByIdTC: (quoteId:string) => void,
+  getAuthorsTC: () => void,
+  getTagsTC: () => void,
+  getSourcesTC: () => void,
+  getQuoteTC: () => void,
+  getQuoteByIdTC: (quoteId:string) => void,
 };
 
 class PageQuote extends Component<PropsType> {
@@ -34,16 +34,16 @@ class PageQuote extends Component<PropsType> {
     // todo: разобраться с получением данных Authors и Tags здесь и в Sidebar. В Sidebar их надо оставить, чтоб отображались для других страниц
     this.props.setQuotesIsFetching(true);
     (!isEmpty(this.props.params) && this.props.params.id)
-      ? this.props.getTableQuoteByIdTC(this.props.params.id)
-      : this.props.getTableQuoteTC();
-    this.props.getTableAuthorsTC();
-    this.props.getTableTagsTC();
-    this.props.getTableSourcesTC();
+      ? this.props.getQuoteByIdTC(this.props.params.id)
+      : this.props.getQuoteTC();
+    this.props.getAuthorsTC();
+    this.props.getTagsTC();
+    this.props.getSourcesTC();
   }
 
   quoteReload() {
     this.props.setQuotesIsFetching(true);
-    this.props.getTableQuoteTC();
+    this.props.getQuoteTC();
   }
 
   render() {

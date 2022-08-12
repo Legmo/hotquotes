@@ -90,7 +90,7 @@ export const actionsAuthors = {
 //Thunk Creator's
 type ThunkType = BaseThunkType<ActionsTypes>;
 
-export const getTableAuthorsTC = ():ThunkType => async(dispatch) => {
+export const getAuthorsTC = ():ThunkType => async(dispatch) => {
   //todo: выдавать сообщение, если цитата с данным ID не найдена
   authorsAPI.getAll().then((response) => {
     dispatch(actionsAuthors.setAuthors(response));

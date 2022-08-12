@@ -81,7 +81,7 @@ export const actionsQuotes = {
 //Thunk Creator's
 type ThunkType = BaseThunkType<ActionsTypes>;
 
-export const getTableQuoteTC = ():ThunkType => async(dispatch) => {
+export const getQuoteTC = ():ThunkType => async(dispatch) => {
   //todo: выдавать сообщение, если цитата с данным ID не найдена
   quotesAPI.getAll().then((response) => {
     dispatch(actionsQuotes.setQuotes(response));
@@ -89,7 +89,7 @@ export const getTableQuoteTC = ():ThunkType => async(dispatch) => {
   });
 };
 
-export const getTableQuoteByIdTC = (quoteId:string):ThunkType => async(dispatch) => {
+export const getQuoteByIdTC = (quoteId:string):ThunkType => async(dispatch) => {
   quotesAPI.getById(quoteId).then((response) => {
       dispatch(actionsQuotes.setQuotes(response));
       dispatch(actionsQuotes.setQuotesIsFetching(false));
