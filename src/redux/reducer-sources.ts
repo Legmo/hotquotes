@@ -19,14 +19,14 @@ const sourcesReducer = (state = initialState, action:ActionsTypes):InitialSource
           ...action.sourcesArray,
         ],
       };
-    case 'UPDATE_NEW_SOURCE_TEXT':
+/*    case 'UPDATE_NEW_SOURCE_TEXT':
       return {
         ...state,
         newSource: {
           ...state.newSource,
           title: action.newText,
         },
-      };
+      };*/
     case 'ADD_SOURCE':
       return {
         ...state,
@@ -59,10 +59,10 @@ export const actionsSources = {
     type:         'SET_SOURCES',
     sourcesArray: sourcesArray,
   } as const),
-  updateNewSourceText: (text:string) => ({
+/*  updateNewSourceText: (text:string) => ({
     type:    'UPDATE_NEW_SOURCE_TEXT',
     newText: text,
-  } as const),
+  } as const),*/
   addSource: () => ({
     type: 'ADD_SOURCE',
   } as const),
