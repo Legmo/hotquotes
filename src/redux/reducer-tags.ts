@@ -44,14 +44,14 @@ const tagsReducer = (state = initialState, action:ActionsTypes):InitialTagsState
           activePage: action.activePage,
         },
       };
-    case 'UPDATE_NEW_TAG_TEXT':
+/*    case 'UPDATE_NEW_TAG_TEXT':
       return {
         ...state,
         newTag: {
           ...state.newTag,
           title: action.newTitleText,
         },
-      };
+      };*/
     case 'ADD_TAG':
       return {
         ...state,
@@ -96,10 +96,10 @@ export const actionsTags = {
   addTag: () => ({
     type: 'ADD_TAG',
   } as const),
-  updateNewTagText: (text:string) => ({
+/*  updateNewTagText: (text:string) => ({
     type:         'UPDATE_NEW_TAG_TEXT',
     newTitleText: text,
-  } as const),
+  } as const),*/
   setTagsIsFetching: (isFetching:boolean) => ({
     type: 'SET_TAGS_IS_FETCHING',
     isFetching

@@ -38,7 +38,7 @@ const quotesReducer = (state = initialState, action:ActionsTypes):InitialQuoteSt
           quoteText:   '',
         }
       };
-    case 'UPDATE_NEW_QUOTE_TEXT':
+/*    case 'UPDATE_NEW_QUOTE_TEXT':
       return {
         ...state,
         newQuote: {
@@ -46,7 +46,7 @@ const quotesReducer = (state = initialState, action:ActionsTypes):InitialQuoteSt
           id:          state.newQuote.id,
           quoteText:   action.newText
         },
-      };
+      };*/
     case 'SET_QUOTES_IS_FETCHING':
       return {
         ...state,
@@ -65,10 +65,10 @@ export const actionsQuotes = {
     type:        'SET_QUOTES',
     quotesArray: quotesArray,
   } as const),
-  updateNewQuoteText: (text:string) => ({
+/*  updateNewQuoteText: (text:string) => ({
     type:    'UPDATE_NEW_QUOTE_TEXT',
     newText: text,
-  } as const),
+  } as const),*/
   addQuote: () => ({
     type: 'ADD_QUOTE',
   } as const),
