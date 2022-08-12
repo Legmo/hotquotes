@@ -1,4 +1,4 @@
-# <img src="http://legmo.ru/GitHub/HotQuotesLogo.svg" title="Hot Quotes logo" width="25" height="25"/>&nbsp;<span color="#fe0036">Hot</span> <span color="#0079fe">Quotes</span>
+# <img src="http://legmo.ru/GitHub/HotQuotesLogo.svg" title="Hot Quotes logo" width="30" height="30"/>&nbsp;<span color="#fe0036">Hot</span> <span color="#0079fe">Quotes</span>
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg "License: GPL v3")](https://www.gnu.org/licenses/gpl-3.0)
 
 Single page application based on React JS & Redux.<br> 
