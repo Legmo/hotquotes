@@ -11,17 +11,17 @@ type PropsType = {
   tags: Array<TagObjectType>,
   offset: number | string,
   changePage: (activePage:number) => void,
-  getTableByPaginationTagsTC: (pageSize:number, offset: number | string) => void,
+  getTagsByPaginationTC: (pageSize:number, offset: number | string) => void,
 }
 
 class PageTagsList extends Component<PropsType> {
   componentDidMount() {
-    this.props.getTableByPaginationTagsTC(this.props.pageSize, this.props.offset);
+    this.props.getTagsByPaginationTC(this.props.pageSize, this.props.offset);
   }
 
   componentDidUpdate(prevProps:PropsType) {
     if(prevProps.activePage !== this.props.activePage){
-      this.props.getTableByPaginationTagsTC(this.props.pageSize, this.props.offset);
+      this.props.getTagsByPaginationTC(this.props.pageSize, this.props.offset);
     }
   }
 
