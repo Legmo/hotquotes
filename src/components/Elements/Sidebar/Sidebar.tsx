@@ -4,31 +4,43 @@ import { isEmpty } from 'lodash';
 import ListSidebar from '../ListSidebar/ListSidebar';
 import FiltersActive from '../FiltersActive/FiltersActive';
 import Preloader from '../Preloader/Preloader';
-import { AuthorObjectType, SidebarListObjectType, TagObjectType } from '../../../types/types';
+import {
+  AuthorObjectType,
+  SidebarListObjectType, SourceObjectType,
+  TagObjectType
+} from '../../../types/types';
 import { InitialTagsStateType } from '../../../redux/reducer-tags';
 import { InitialAuthorsStateType } from '../../../redux/reducer-authors';
+import { InitialSourcesStateType } from '../../../redux/reducer-sources';
 
 type PropsType = {
-  setAuthorsIsFetching: (isFetching:boolean) => void
-  setTagsIsFetching: (isFetching:boolean) => void
-  authors: InitialAuthorsStateType
-  tags: InitialTagsStateType
-  getTableAuthorsTC: () => void,
-  getTableTagsTC: () => void,
+  setAuthorsIsFetching: (isFetching:boolean) => void,
+  setTagsIsFetching: (isFetching:boolean) => void,
+  setSourcesIsFetching: (isFetching:boolean) => void,
+  authors: InitialAuthorsStateType,
+  tags: InitialTagsStateType,
+  sources: InitialSourcesStateType,
+  getAuthorsTC: () => void,
+  getSourcesTC: () => void,
+  getTagsTC: () => void,
 };
 
 class Sidebar extends Component<PropsType> {
   componentDidMount() {
     this.props.setAuthorsIsFetching(true);
-    this.props.getTableAuthorsTC();
+    this.props.getAuthorsTC();
 
     this.props.setTagsIsFetching(true);
-    this.props.getTableTagsTC();
+    this.props.getTagsTC();
+
+    this.props.setSourcesIsFetching(true);
+    this.props.getSourcesTC();
   }
 
   render() {
     let listAuthors = [] as Array<SidebarListObjectType>;
     let listTags = [] as Array<SidebarListObjectType>;
+    let listSources = [] as Array<SidebarListObjectType>;
     if(!isEmpty(this.props.authors.authors)){
       listAuthors = this.props.authors.authors.map((authorObject:AuthorObjectType) => {
         return {
@@ -43,6 +55,15 @@ class Sidebar extends Component<PropsType> {
         return {
           id:        tagObject.id,
           title:     tagObject.title,
+          linkTitle: 'Добавить в «Активные фильтры»',
+        };
+      });
+    }
+    if(!isEmpty(this.props.sources.sources)){
+      listSources = this.props.sources.sources.map((sourceObject:SourceObjectType) => {
+        return {
+          id:        sourceObject.id,
+          title:     sourceObject.title,
           linkTitle: 'Добавить в «Активные фильтры»',
         };
       });
@@ -73,6 +94,19 @@ class Sidebar extends Component<PropsType> {
                 filter = 'none'
                 listItems = {listAuthors}
                 listName = 'Authors'
+                title = 'Добавить в фильтры'
+              />
+          }
+        </section>
+        <section className = {style.sectionSidebar + ' ' + style.sectionAuthors}>
+          <h2 className = {style.titleSidebar}>Источники</h2>
+          {
+            this.props.authors.isFetching
+              ? <Preloader width = {24} height = {24}/>
+              : < ListSidebar
+                filter = 'none'
+                listItems = {listSources}
+                listName = 'Sources'
                 title = 'Добавить в фильтры'
               />
           }

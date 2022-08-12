@@ -75,7 +75,7 @@ export const actionsSources = {
 //Thunk Creator's
 type ThunkType = BaseThunkType<ActionsTypes>;
 
-export const getTableSourcesTC = ():ThunkType => async(dispatch) => {
+export const getSourcesTC = ():ThunkType => async(dispatch) => {
   //todo: выдавать сообщение, если цитата с данным ID не найдена
   sourcesAPI.getAll().then((response) => {
     dispatch(actionsSources.setSources(response));
@@ -84,3 +84,4 @@ export const getTableSourcesTC = ():ThunkType => async(dispatch) => {
 };
 
 export default sourcesReducer;
+
