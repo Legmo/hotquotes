@@ -21,14 +21,14 @@ type MapStatePropsType = {
 
 type MapDispatchPropsType = {
   addTag: () => void,
-  updateNewTagText: (newText: string) => void,
   addQuote: () => void,
   addAuthor: () => void,
   addSource: () => void,
-  updateNewQuoteText: (newText: string) => void,
-  updateNewAuthorName: (newText: string) => void,
-  updateNewAuthorSurname: (newText: string) => void,
-  updateNewSourceText: (newText: string) => void,
+  // updateNewTagText: (newText: string) => void,
+  // updateNewQuoteText: (newText: string) => void,
+  // updateNewAuthorName: (newText: string) => void,
+  // updateNewAuthorSurname: (newText: string) => void,
+  // updateNewSourceText: (newText: string) => void,
 };
 type OwnPropsType = Record<string, never>;
 
@@ -43,15 +43,15 @@ const mapStateToProps = (state:AppStateType):MapStatePropsType => {
 
 //<TStateProps = {}, TDispatchProps = {}, TOwnProps = {}, State = DefaultState>
 const FormAddQuoteContainer = connect<MapStatePropsType, MapDispatchPropsType, OwnPropsType, AppStateType>(mapStateToProps, {
-  addTag:                 actionsTags.addTag,
-  updateNewTagText:       actionsTags.updateNewTagText,
-  addQuote:               actionsQuotes.addQuote,
-  updateNewQuoteText:     actionsQuotes.updateNewQuoteText,
-  addAuthor:              actionsAuthors.addAuthor,
-  updateNewAuthorName:    actionsAuthors.updateNewAuthorName,
-  updateNewAuthorSurname: actionsAuthors.updateNewAuthorSurname,
-  addSource:              actionsSources.addSource,
-  updateNewSourceText:    actionsSources.updateNewSourceText,
+  addTag:    actionsTags.addTag,
+  addQuote:  actionsQuotes.addQuote,
+  addAuthor: actionsAuthors.addAuthor,
+  addSource: actionsSources.addSource,
+  // updateNewQuoteText:     actionsQuotes.updateNewQuoteText,
+  // updateNewTagText:       actionsTags.updateNewTagText,
+  // updateNewAuthorName:    actionsAuthors.updateNewAuthorName,
+  // updateNewAuthorSurname: actionsAuthors.updateNewAuthorSurname,
+  // updateNewSourceText:    actionsSources.updateNewSourceText,
 })(FormAddQuote);
 
 export default FormAddQuoteContainer;

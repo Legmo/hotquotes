@@ -19,7 +19,7 @@ const authorsReducer = (state = initialState, action:ActionsTypes):InitialAuthor
           ...action.authorsArray,
         ],
       };
-    case 'UPDATE_NEW_AUTHOR_NAME':
+/*    case 'UPDATE_NEW_AUTHOR_NAME':
       return {
         ...state,
         newAuthor: {
@@ -34,7 +34,7 @@ const authorsReducer = (state = initialState, action:ActionsTypes):InitialAuthor
           ...state.newAuthor,
           surname: action.newAuthorSurname,
         },
-      };
+      };*/
     case 'ADD_AUTHOR':
       return {
         ...state,
@@ -70,14 +70,14 @@ export const actionsAuthors = {
     type:         'SET_AUTHORS',
     authorsArray: authorsArray,
   } as const),
-  updateNewAuthorName: (authorName:string) => ({
+/*  updateNewAuthorName: (authorName:string) => ({
     type:          'UPDATE_NEW_AUTHOR_NAME',
     newAuthorName: authorName,
   } as const),
   updateNewAuthorSurname: (authorSurname:string) => ({
     type:             'UPDATE_NEW_AUTHOR_SURNAME',
     newAuthorSurname: authorSurname,
-  } as const),
+  } as const),*/
   addAuthor: () => ({
     type: 'ADD_AUTHOR',
   } as const),
