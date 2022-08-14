@@ -11,7 +11,7 @@ const App = () => {
   return (
     <>
       <main className = {style.main}>
-        <section>
+        <section className = {style.leftColumn}>
           <Routes>
             <Route path = '/' element = {<PageIndexContainer />} />
             <Route path = '/quote/:id' element = {<PageIndexContainer />} />

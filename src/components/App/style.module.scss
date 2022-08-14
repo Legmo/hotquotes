@@ -19,3 +19,6 @@ body {
   gap: 20px;
   grid-template-columns: auto $sidebar-width;
 }
+.leftColumn {
+  position: relative; //for position <Preloader> on src/components/Pages/AddQuote/PageAddQuote.tsx
+}

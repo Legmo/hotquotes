@@ -1,17 +1,9 @@
 import Sidebar from './Sidebar';
-import {connect} from 'react-redux';
-import {
-  InitialAuthorsStateType,
-  actionsAuthors, 
-  getAuthorsTC,
-} from '../../../redux/reducer-authors';
-import {
-  InitialTagsStateType,
-  actionsTags, 
-  getTagsTC,
-} from '../../../redux/reducer-tags';
+import { connect } from 'react-redux';
+import { actionsAuthors, getAuthorsTC, InitialAuthorsStateType } from '../../../redux/reducer-authors';
+import { actionsTags, getTagsTC, InitialTagsStateType } from '../../../redux/reducer-tags';
 import { AppStateType } from '../../../redux/redux-store';
-import { getSourcesTC, InitialSourcesStateType } from '../../../redux/reducer-sources';
+import { actionsSources, getSourcesTC, InitialSourcesStateType } from '../../../redux/reducer-sources';
 
 type MapStatePropsType = {
   authors: InitialAuthorsStateType, //todo: test - is it correct?
@@ -20,9 +12,9 @@ type MapStatePropsType = {
 };
 
 type MapDispatchPropsType = {
-  setAuthorsIsFetching: (isFetching:boolean) => void
-  setTagsIsFetching: (isFetching:boolean) => void
-  setSourcesIsFetching: (isFetching:boolean) => void
+  authorsIsUpdating: (isUpdating:boolean) => void
+  tagsIsUpdating: (isUpdating:boolean) => void
+  sourcesIsUpdating: (isUpdating:boolean) => void
   getAuthorsTC: () => void,
   getSourcesTC: () => void,
   getTagsTC: () => void,
@@ -40,12 +32,12 @@ const mapStateToProps = (state:AppStateType):MapStatePropsType => {
 
 //<TStateProps = {}, TDispatchProps = {}, TOwnProps = {}, State = DefaultState>
 const SidebarContainer = connect<MapStatePropsType, MapDispatchPropsType, OwnPropsType, AppStateType>(mapStateToProps, {
-  setAuthorsIsFetching: actionsAuthors.setAuthorsIsFetching,
-  setTagsIsFetching:    actionsTags.setTagsIsFetching,
-  setSourcesIsFetching: actionsTags.setTagsIsFetching,
-  getAuthorsTC:         getAuthorsTC,
-  getSourcesTC:         getSourcesTC,
-  getTagsTC:            getTagsTC,
+  authorsIsUpdating: actionsAuthors.authorsIsUpdating,
+  sourcesIsUpdating: actionsSources.sourcesIsUpdating,
+  tagsIsUpdating:    actionsTags.tagsIsUpdating,
+  getAuthorsTC:      getAuthorsTC,
+  getSourcesTC:      getSourcesTC,
+  getTagsTC:         getTagsTC,
 })(Sidebar);
 
 export default SidebarContainer;

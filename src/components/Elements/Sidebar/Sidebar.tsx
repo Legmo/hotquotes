@@ -4,19 +4,15 @@ import { isEmpty } from 'lodash';
 import ListSidebar from '../ListSidebar/ListSidebar';
 import FiltersActive from '../FiltersActive/FiltersActive';
 import Preloader from '../Preloader/Preloader';
-import {
-  AuthorObjectType,
-  SidebarListObjectType, SourceObjectType,
-  TagObjectType
-} from '../../../types/types';
+import { AuthorObjectType, SidebarListObjectType, SourceObjectType, TagObjectType } from '../../../types/types';
 import { InitialTagsStateType } from '../../../redux/reducer-tags';
 import { InitialAuthorsStateType } from '../../../redux/reducer-authors';
 import { InitialSourcesStateType } from '../../../redux/reducer-sources';
 
 type PropsType = {
-  setAuthorsIsFetching: (isFetching:boolean) => void,
-  setTagsIsFetching: (isFetching:boolean) => void,
-  setSourcesIsFetching: (isFetching:boolean) => void,
+  authorsIsUpdating: (isUpdating:boolean) => void,
+  tagsIsUpdating: (isUpdating:boolean) => void,
+  sourcesIsUpdating: (isUpdating:boolean) => void,
   authors: InitialAuthorsStateType,
   tags: InitialTagsStateType,
   sources: InitialSourcesStateType,
@@ -27,13 +23,13 @@ type PropsType = {
 
 class Sidebar extends Component<PropsType> {
   componentDidMount() {
-    this.props.setAuthorsIsFetching(true);
+    this.props.authorsIsUpdating(true);
     this.props.getAuthorsTC();
 
-    this.props.setTagsIsFetching(true);
+    this.props.tagsIsUpdating(true);
     this.props.getTagsTC();
 
-    this.props.setSourcesIsFetching(true);
+    this.props.sourcesIsUpdating(true);
     this.props.getSourcesTC();
   }
 
@@ -75,7 +71,7 @@ class Sidebar extends Component<PropsType> {
         <section className = {style.sectionSidebar + ' ' + style.sectionTags}>
           <h2 className = {style.titleSidebar}>Категории</h2>
           {
-            this.props.tags.isFetching
+            this.props.tags.isUpdating
               ? <Preloader width = {24} height = {24}/>
               : < ListSidebar
                   filter = {null}
@@ -88,7 +84,7 @@ class Sidebar extends Component<PropsType> {
         <section className = {style.sectionSidebar + ' ' + style.sectionAuthors}>
           <h2 className = {style.titleSidebar}>Авторы</h2>
           {
-            this.props.authors.isFetching
+            this.props.authors.isUpdating
               ? <Preloader width = {24} height = {24}/>
               : < ListSidebar
                 filter = 'none'
@@ -101,7 +97,7 @@ class Sidebar extends Component<PropsType> {
         <section className = {style.sectionSidebar + ' ' + style.sectionAuthors}>
           <h2 className = {style.titleSidebar}>Источники</h2>
           {
-            this.props.authors.isFetching
+            this.props.authors.isUpdating
               ? <Preloader width = {24} height = {24}/>
               : < ListSidebar
                 filter = 'none'
