@@ -21,7 +21,7 @@ type PropsType = {
   authors: Array<AuthorObjectType>;
   sources: Array<SourceObjectType>;
   params: { id: string };
-  setQuotesIsFetching: (isFetching: boolean) => void;
+  quotesIsUpdating: (isUpdating: boolean) => void;
   getAuthorsTC: () => void,
   getTagsTC: () => void,
   getSourcesTC: () => void,
@@ -32,7 +32,7 @@ type PropsType = {
 class PageQuote extends Component<PropsType> {
   componentDidMount() {
     // todo: разобраться с получением данных Authors и Tags здесь и в Sidebar. В Sidebar их надо оставить, чтоб отображались для других страниц
-    this.props.setQuotesIsFetching(true);
+    this.props.quotesIsUpdating(true);
     (!isEmpty(this.props.params) && this.props.params.id)
       ? this.props.getQuoteByIdTC(this.props.params.id)
       : this.props.getQuoteTC();
@@ -42,14 +42,14 @@ class PageQuote extends Component<PropsType> {
   }
 
   quoteReload() {
-    this.props.setQuotesIsFetching(true);
+    this.props.quotesIsUpdating(true);
     this.props.getQuoteTC();
   }
 
   render() {
     //todo: simplify this logic
     const LoadingPage = () => {
-      // todo: зачем используется isQuotesLoaded? Почему недостаточно isFetching?
+      // todo: зачем используется isQuotesLoaded? Почему недостаточно isUpdating?
       if (this.props.quotes.isQuotesLoaded) {
         const quote:any = getRandomArrayElement(this.props.quotes.quotes); //todo: fix this 'any'!
 
@@ -109,7 +109,7 @@ class PageQuote extends Component<PropsType> {
       }
     };
 
-    return this.props.quotes.isFetching
+    return this.props.quotes.isUpdating
       ? <Preloader />
       : LoadingPage();
   }

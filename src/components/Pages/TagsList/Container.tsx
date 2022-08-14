@@ -31,7 +31,7 @@ const mapStateToProps = (state:AppStateType):MapStatePropsType => {
 const PageTagsContainer = connect<MapStatePropsType, MapDispatchPropsType, OwnPropsType, AppStateType>(
   mapStateToProps,
   {
-    changePage:            actionsTags.changePage,
+    changePage:            actionsTags.changePaginationPage,
     getTagsByPaginationTC: getTagsByPaginationTC,
   }
 )(PageTagsList);

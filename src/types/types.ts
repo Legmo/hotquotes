@@ -31,7 +31,7 @@ export type TagsByPaginationObjectType = {
 };
 
 export type SourceObjectType = {
-  id: string | null,
+  id: string | undefined,
   createdTime: string | null,
   title: string,
   quotesId?: Array<string>,

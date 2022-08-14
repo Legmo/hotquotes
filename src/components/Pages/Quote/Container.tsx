@@ -1,12 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PageQuote from './PageQuote';
-import {
-  InitialQuoteStateType,
-  actionsQuotes,
-  getQuoteTC,
-  getQuoteByIdTC,
-} from '../../../redux/reducer-quotes';
+import { actionsQuotes, getQuoteByIdTC, getQuoteTC, InitialQuoteStateType } from '../../../redux/reducer-quotes';
 import { getAuthorsTC } from '../../../redux/reducer-authors';
 import { getSourcesTC } from '../../../redux/reducer-sources';
 import { getTagsTC } from '../../../redux/reducer-tags';
@@ -22,7 +17,7 @@ type MapStatePropsType = {
   sources: Array<SourceObjectType>,
 };
 type MapDispatchPropsType = {
-  setQuotesIsFetching: (isFetching:boolean) => void,
+  quotesIsUpdating: (isUpdating:boolean) => void,
   getAuthorsTC: () => void,
   getTagsTC: () => void,
   getSourcesTC: () => void,
@@ -53,12 +48,12 @@ export default compose(
   connect<MapStatePropsType, MapDispatchPropsType, OwnPropsType, AppStateType>(
     mapStateToProps,
     {
-      setQuotesIsFetching: actionsQuotes.setQuotesIsFetching,
-      getAuthorsTC:   getAuthorsTC,
-      getTagsTC:           getTagsTC,
-      getSourcesTC:        getSourcesTC,
-      getQuoteTC:          getQuoteTC,
-      getQuoteByIdTC:      getQuoteByIdTC,
+      quotesIsUpdating: actionsQuotes.quotesIsUpdating,
+      getAuthorsTC:     getAuthorsTC,
+      getTagsTC:        getTagsTC,
+      getSourcesTC:     getSourcesTC,
+      getQuoteTC:       getQuoteTC,
+      getQuoteByIdTC:   getQuoteByIdTC,
     }
   ),
   withRouter,

@@ -76,6 +76,19 @@ interface sourceFromServer {
     authorsId: Array<string> | null,
   }
 }
+export enum ResultCodes {
+  Success = 200,
+  ErrorBadRequest = 400,
+  ErrorUnauthorized = 401,
+  ErrorPaymentRequired = 402,
+  ErrorForbidden = 403,
+  ErrorNotFound = 404,
+  ErrorRequestEntityTooLarge = 413,
+  ErrorInvalidRequest = 422,
+  ErrorInternalServer = 500,
+  ErrorBadGateway = 502,
+  ErrorServiceUnavailable = 503,
+}
 
 const apiKey = process.env.REACT_APP_HOTQOUTES_AIRTABLE_API_KEY; // Insert your api key, for example 'keyABCDEFGHIJKLMN'
 const instance = axios.create({
@@ -145,6 +158,19 @@ const tableDataPreparationSwitch = (tableName:string, originalArray:any) => { //
   return finalArray;
 };
 
+const errorMessagesGenerator = (requestType: 'get' | 'getPagination' | 'post', tableName:string) => {
+  switch (requestType) {
+    case 'get':
+      return `GET ${tableName} table request error: `;
+    case 'getPagination':
+      return `GET ${tableName} table with pagination request error: `;
+    case 'post':
+      return `POST ${tableName} table request error: `;
+    default:
+      return [];
+  }
+};
+
 //todo: типизировать все методы https://youtu.be/sjra9F2ZS1E
 export const quotesAPI = {
   _tableName: 'quotes' as string,
@@ -154,7 +180,34 @@ export const quotesAPI = {
         return tableDataPreparationSwitch(this._tableName, resolve.data.records);
       },
       (error) => {
-        console.log(`Get ${this._tableName} table request error: `, error);
+        console.log(errorMessagesGenerator('get', this._tableName), error);
+      }
+    );
+  },
+  set(quoteText:string, authorsId:(string)[], tagsId:(string)[], sourcesId:(string)[]){
+    const authorsIdTest = ['recX3chQDyevfulxA'];
+    const tagsIdTest = ['recl8gY6wzlflESWg'];
+    const sourcesIdTest = ['recxGv4vlUq0lmvJT'];
+    const data = {
+      'records': [{
+        'fields': {
+          'quoteText': quoteText,
+          'authorsId': authorsIdTest,
+          'tagsId':    tagsIdTest,
+          'sourceId':  sourcesIdTest
+        },
+      }],
+    };
+    console.log('API data before POST', data);
+    return instance.post<quoteFromServer[]>(this._tableName, data).then(
+      (resolve: AxiosResponse) => {
+        console.log('API POST resolve', resolve);
+        if(resolve.status === ResultCodes.Success) {
+          return resolve.data.records[0].id as string;
+        }
+      },
+      (error) => {
+        console.log(errorMessagesGenerator('get', this._tableName), error);
       }
     );
   },
@@ -165,7 +218,7 @@ export const quotesAPI = {
         return tableDataPreparationSwitch(this._tableName, [resolve.data]);
       },
       (error) => {
-        console.log(`Get ${this._tableName} table by ID request error: `, error);
+        console.log(errorMessagesGenerator('get', this._tableName), error);
       }
     );
   },
@@ -178,7 +231,7 @@ export const tagsAPI = {
         return tableDataPreparationSwitch(this._tableName, resolve.data.records);
       },
       (error) => {
-        console.log(`Get ${this._tableName} table request error: `, error);
+        console.log(errorMessagesGenerator('get', this._tableName), error);
       }
     );
   },
@@ -192,7 +245,7 @@ export const tagsAPI = {
         };
       },
       (error) => {
-        console.log(`Get ${this._tableName} table with pagination request error: `, error);
+        console.log(errorMessagesGenerator('getPagination', this._tableName), error);
       }
     );
   },
@@ -205,7 +258,24 @@ export const authorsAPI = {
         return tableDataPreparationSwitch(this._tableName, resolve.data.records);
       },
       (error) => {
-        console.log(`Get ${this._tableName} table request error: `, error);
+        console.log(errorMessagesGenerator('get', this._tableName), error);
+      }
+    );
+  },
+  set(name:string, surname:string){
+    return instance.post<quoteFromServer[]>(this._tableName, {
+      'records': [{
+        'fields': {
+          'name':    name,
+          'surname': surname,
+        },
+      }],
+    }).then(
+      (resolve: AxiosResponse) => {
+        console.log('POST resolve', resolve);
+      },
+      (error) => {
+        console.log(errorMessagesGenerator('get', this._tableName), error);
       }
     );
   },
@@ -218,7 +288,7 @@ export const sourcesAPI = {
         return tableDataPreparationSwitch(this._tableName, resolve.data.records);
       },
       (error) => {
-        console.log(`Get ${this._tableName} table request error: `, error);
+        console.log(errorMessagesGenerator('get', this._tableName), error);
       }
     );
   },

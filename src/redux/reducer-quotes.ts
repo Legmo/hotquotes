@@ -4,13 +4,8 @@ import { quotesAPI } from '../api/api';
 
 const initialState = {
   isQuotesLoaded: false as boolean,
-  isFetching:     false as boolean,
+  isUpdating:     false as boolean,
   quotes:         [] as Array<QuoteObjectType>,
-  newQuote:       {
-    createdTime: null as string | null,
-    id:          '' as string,
-    quoteText:   '' as string,
-  } as QuoteObjectType,
 };
 
 export type InitialQuoteStateType = typeof initialState;
@@ -25,32 +20,10 @@ const quotesReducer = (state = initialState, action:ActionsTypes):InitialQuoteSt
         ],
         isQuotesLoaded: true,
       };
-    case 'ADD_QUOTE':
+    case 'QUOTES_IS_UPDATING':
       return {
         ...state,
-        quotes: [
-          ...state.quotes,
-          state.newQuote
-        ],
-        newQuote: {
-          createdTime: null,
-          id:          '',
-          quoteText:   '',
-        }
-      };
-/*    case 'UPDATE_NEW_QUOTE_TEXT':
-      return {
-        ...state,
-        newQuote: {
-          createdTime: state.newQuote.createdTime,
-          id:          state.newQuote.id,
-          quoteText:   action.newText
-        },
-      };*/
-    case 'SET_QUOTES_IS_FETCHING':
-      return {
-        ...state,
-        isFetching: action.isFetching,
+        isUpdating: action.isUpdating,
       };
     default:
       return state;
@@ -65,16 +38,9 @@ export const actionsQuotes = {
     type:        'SET_QUOTES',
     quotesArray: quotesArray,
   } as const),
-/*  updateNewQuoteText: (text:string) => ({
-    type:    'UPDATE_NEW_QUOTE_TEXT',
-    newText: text,
-  } as const),*/
-  addQuote: () => ({
-    type: 'ADD_QUOTE',
-  } as const),
-  setQuotesIsFetching: (isFetching:boolean) => ({
-    type: 'SET_QUOTES_IS_FETCHING',
-    isFetching
+  quotesIsUpdating: (isUpdating:boolean) => ({
+    type: 'QUOTES_IS_UPDATING',
+    isUpdating
   } as const),
 };
 
@@ -85,14 +51,21 @@ export const getQuoteTC = ():ThunkType => async(dispatch) => {
   //todo: выдавать сообщение, если цитата с данным ID не найдена
   quotesAPI.getAll().then((response) => {
     dispatch(actionsQuotes.setQuotes(response));
-    dispatch(actionsQuotes.setQuotesIsFetching(false));
+    dispatch(actionsQuotes.quotesIsUpdating(false));
+  });
+};
+
+export const setQuoteTC = (quoteText:string, authorsId:(string)[], tagsId:(string)[], sourcesId:(string)[]):ThunkType => async(dispatch) => {
+  quotesAPI.set(quoteText, authorsId, tagsId, sourcesId).then((response) => {
+    console.log('REDUCER response', response);
+    dispatch(actionsQuotes.quotesIsUpdating(false));
   });
 };
 
 export const getQuoteByIdTC = (quoteId:string):ThunkType => async(dispatch) => {
   quotesAPI.getById(quoteId).then((response) => {
       dispatch(actionsQuotes.setQuotes(response));
-      dispatch(actionsQuotes.setQuotesIsFetching(false));
+      dispatch(actionsQuotes.quotesIsUpdating(false));
     });
 };
 
