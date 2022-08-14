@@ -11,16 +11,10 @@ type MapStatePropsType = {
   sources: InitialSourcesStateType, //todo: test - is it correct?
 };
 
-type MapDispatchPropsType = {
-  authorsIsUpdating: (isUpdating:boolean) => void
-  tagsIsUpdating: (isUpdating:boolean) => void
-  sourcesIsUpdating: (isUpdating:boolean) => void
-  getAuthorsTC: () => void,
-  getSourcesTC: () => void,
-  getTagsTC: () => void,
-};
+type MapDispatchPropsType = Record<string, never>;
 
-type OwnPropsType = Record<string, never>;
+//sources={undefined} tags={undefined} authors={undefined}
+type OwnPropsType = any; // todo: fix any. See at App.tsx
 
 const mapStateToProps = (state:AppStateType):MapStatePropsType => {
   return {
@@ -31,13 +25,6 @@ const mapStateToProps = (state:AppStateType):MapStatePropsType => {
 };
 
 //<TStateProps = {}, TDispatchProps = {}, TOwnProps = {}, State = DefaultState>
-const SidebarContainer = connect<MapStatePropsType, MapDispatchPropsType, OwnPropsType, AppStateType>(mapStateToProps, {
-  authorsIsUpdating: actionsAuthors.authorsIsUpdating,
-  sourcesIsUpdating: actionsSources.sourcesIsUpdating,
-  tagsIsUpdating:    actionsTags.tagsIsUpdating,
-  getAuthorsTC:      getAuthorsTC,
-  getSourcesTC:      getSourcesTC,
-  getTagsTC:         getTagsTC,
-})(Sidebar);
+const SidebarContainer = connect<MapStatePropsType, MapDispatchPropsType, OwnPropsType, AppStateType>(mapStateToProps, {})(Sidebar);
 
 export default SidebarContainer;

@@ -49,7 +49,7 @@ type ThunkType = BaseThunkType<ActionsTypes>;
 
 export const getQuoteTC = ():ThunkType => async(dispatch) => {
   //todo: выдавать сообщение, если цитата с данным ID не найдена
-  quotesAPI.getAll().then((response) => {
+  return quotesAPI.getAll().then((response) => {
     dispatch(actionsQuotes.setQuotes(response));
     dispatch(actionsQuotes.quotesIsUpdating(false));
   });

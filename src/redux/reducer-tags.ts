@@ -83,8 +83,7 @@ export const actionsTags = {
 type ThunkType = BaseThunkType<ActionsTypes>;
 
 export const getTagsTC = ():ThunkType => async(dispatch) => {
-  //todo: выдавать сообщение, если цитата с данным ID не найдена
-  tagsAPI.getAll().then((response) => {
+  return tagsAPI.getAll().then((response) => {
     dispatch(actionsTags.setTags(response));
     dispatch(actionsTags.tagsIsUpdating(false));
   });

@@ -7,7 +7,7 @@ type MapStatePropsType = {
   quotes: InitialQuoteStateType, //todo: test - is it correct?
 };
 type MapDispatchPropsType = Record<string, never>;
-type OwnPropsType = Record<string, never>;
+type OwnPropsType = any; // todo: fix any. See at App.tsx
 
 const mapStateToProps = (state:AppStateType):MapStatePropsType => {
   return {

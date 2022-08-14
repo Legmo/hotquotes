@@ -3,8 +3,10 @@ import quotesReducer from './reducer-quotes';
 import authorsReducer from './reducer-authors';
 import tagsReducer from './reducer-tags';
 import sourcesReducer from './reducer-sources';
+import appReducer from './reducer-app';
 
 const RootReducer = {
+  app:     appReducer,
   sources: sourcesReducer,
   quotes:  quotesReducer,
   tags:    tagsReducer,
