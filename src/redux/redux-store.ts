@@ -3,16 +3,19 @@ import quotesReducer from './reducer-quotes';
 import authorsReducer from './reducer-authors';
 import tagsReducer from './reducer-tags';
 import sourcesReducer from './reducer-sources';
+import appReducer from './reducer-app';
 
 const RootReducer = {
+  app:     appReducer,
+  sources: sourcesReducer,
   quotes:  quotesReducer,
-  authors: authorsReducer,
   tags:    tagsReducer,
-  sources: sourcesReducer
+  authors: authorsReducer
 };
 
 /* See more: https://youtu.be/2yJXFMqEbJs */
-type PropertiesTypes<T> = T extends {[key:string]: infer U} ? U : never;
+// type PropertiesTypes<T> = T extends {[key:string]: infer U} ? U : never;
+type PropertiesTypes<T> = T extends {[key:string]: infer U} ? any : never; //todo: fix this any!!!
 export type InferActionsTypes<T extends {[key:string]: (...args: any[]) => any}> = ReturnType<PropertiesTypes<T>>;
 
 //See more: https://youtu.be/-vf5BJO3SCc?t=1485

@@ -11,7 +11,7 @@ const initialState = {
     activePage: 1,
     pageSize:   10,
   } as TagsByPaginationObjectType,
-  isFetching: false as boolean,
+  isUpdating: false as boolean,
 };
 
 export type InitialTagsStateType = typeof initialState;
@@ -36,7 +36,7 @@ const tagsReducer = (state = initialState, action:ActionsTypes):InitialTagsState
           offset: action.offset,
         },
       };
-    case 'CHANGE_PAGE':
+    case 'CHANGE_PAGINATION_PAGE':
       return {
         ...state,
         tagsByPagination: {
@@ -44,31 +44,10 @@ const tagsReducer = (state = initialState, action:ActionsTypes):InitialTagsState
           activePage: action.activePage,
         },
       };
-/*    case 'UPDATE_NEW_TAG_TEXT':
+    case 'TAGS_IS_UPDATING':
       return {
         ...state,
-        newTag: {
-          ...state.newTag,
-          title: action.newTitleText,
-        },
-      };*/
-    case 'ADD_TAG':
-      return {
-        ...state,
-        tags: [
-          ...state.tags,
-          state.newTag,
-        ],
-        newTag: {
-          title:       '',
-          createdTime: null,
-          id:          null,
-        }
-      };
-    case 'SET_TAGS_IS_FETCHING':
-      return {
-        ...state,
-        isFetching: action.isFetching,
+        isUpdating: action.isUpdating,
       };
     default:
       return state;
@@ -89,20 +68,13 @@ export const actionsTags = {
     offset:    offset,
     tagsArray: tagsArray,
   } as const),
-  changePage: (activePage:number) => ({
-    type:       'CHANGE_PAGE',
+  changePaginationPage: (activePage:number) => ({
+    type:       'CHANGE_PAGINATION_PAGE',
     activePage: activePage,
   } as const),
-  addTag: () => ({
-    type: 'ADD_TAG',
-  } as const),
-/*  updateNewTagText: (text:string) => ({
-    type:         'UPDATE_NEW_TAG_TEXT',
-    newTitleText: text,
-  } as const),*/
-  setTagsIsFetching: (isFetching:boolean) => ({
-    type: 'SET_TAGS_IS_FETCHING',
-    isFetching
+  tagsIsUpdating: (isUpdating:boolean) => ({
+    type: 'TAGS_IS_UPDATING',
+    isUpdating
   } as const),
 };
 
@@ -111,10 +83,9 @@ export const actionsTags = {
 type ThunkType = BaseThunkType<ActionsTypes>;
 
 export const getTagsTC = ():ThunkType => async(dispatch) => {
-  //todo: выдавать сообщение, если цитата с данным ID не найдена
-  tagsAPI.getAll().then((response) => {
+  return tagsAPI.getAll().then((response) => {
     dispatch(actionsTags.setTags(response));
-    dispatch(actionsTags.setTagsIsFetching(false));
+    dispatch(actionsTags.tagsIsUpdating(false));
   });
 };
 
@@ -125,7 +96,7 @@ export const getTagsByPaginationTC = (pageSize:number, offset: number | string):
           const tagsArray:Array<TagObjectType>  = response.data;
           const offset: number | string = response.offset;
           dispatch(actionsTags.setTagsByPagination(tagsArray, offset));
-          dispatch(actionsTags.setTagsIsFetching(false));
+          dispatch(actionsTags.tagsIsUpdating(false));
         }
       }
     );

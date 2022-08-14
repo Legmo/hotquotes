@@ -1,11 +1,10 @@
 import { AuthorObjectType } from '../types/types';
 import { BaseThunkType, InferActionsTypes } from './redux-store';
-import { authorsAPI } from '../api/api';
+import { authorsAPI, quotesAPI } from '../api/api';
 
 const initialState = {
   authors:    [] as Array<AuthorObjectType>,
-  newAuthor:  {} as AuthorObjectType,
-  isFetching: false as boolean,
+  isUpdating: false as boolean,
 };
 
 export type InitialAuthorsStateType = typeof initialState;
@@ -19,42 +18,10 @@ const authorsReducer = (state = initialState, action:ActionsTypes):InitialAuthor
           ...action.authorsArray,
         ],
       };
-/*    case 'UPDATE_NEW_AUTHOR_NAME':
+    case 'AUTHORS_IS_UPDATING':
       return {
         ...state,
-        newAuthor: {
-          ...state.newAuthor,
-          name: action.newAuthorName,
-        },
-      };
-    case 'UPDATE_NEW_AUTHOR_SURNAME':
-      return {
-        ...state,
-        newAuthor: {
-          ...state.newAuthor,
-          surname: action.newAuthorSurname,
-        },
-      };*/
-    case 'ADD_AUTHOR':
-      return {
-        ...state,
-        authors: [
-          ...state.authors,
-          state.newAuthor,
-        ],
-        newAuthor: {
-          id:          null,
-          createdTime: null,
-          name:        '',
-          surname:     '',
-          quotesId:    [],
-          sourcesId:   [],
-        },
-      };
-    case 'SET_AUTHORS_IS_FETCHING':
-      return {
-        ...state,
-        isFetching: action.isFetching,
+        isUpdating: action.isUpdating,
       };
     default:
       return state;
@@ -70,20 +37,9 @@ export const actionsAuthors = {
     type:         'SET_AUTHORS',
     authorsArray: authorsArray,
   } as const),
-/*  updateNewAuthorName: (authorName:string) => ({
-    type:          'UPDATE_NEW_AUTHOR_NAME',
-    newAuthorName: authorName,
-  } as const),
-  updateNewAuthorSurname: (authorSurname:string) => ({
-    type:             'UPDATE_NEW_AUTHOR_SURNAME',
-    newAuthorSurname: authorSurname,
-  } as const),*/
-  addAuthor: () => ({
-    type: 'ADD_AUTHOR',
-  } as const),
-  setAuthorsIsFetching: (isFetching:boolean) => ({
-    type: 'SET_AUTHORS_IS_FETCHING',
-    isFetching
+  authorsIsUpdating: (isUpdating:boolean) => ({
+    type: 'AUTHORS_IS_UPDATING',
+    isUpdating
   } as const),
 };
 
@@ -91,10 +47,16 @@ export const actionsAuthors = {
 type ThunkType = BaseThunkType<ActionsTypes>;
 
 export const getAuthorsTC = ():ThunkType => async(dispatch) => {
-  //todo: выдавать сообщение, если цитата с данным ID не найдена
-  authorsAPI.getAll().then((response) => {
+  return authorsAPI.getAll().then((response) => {
     dispatch(actionsAuthors.setAuthors(response));
-    dispatch(actionsAuthors.setAuthorsIsFetching(false));
+    dispatch(actionsAuthors.authorsIsUpdating(false));
+  });
+};
+
+export const setAuthorTC = (name:string, surname:string):ThunkType => async(dispatch) => {
+  authorsAPI.set(name, surname).then((response) => {
+    // dispatch(actionsQuotes.setQuotes(response));
+    // dispatch(actionsQuotes.quotesIsUpdating(false));
   });
 };
 

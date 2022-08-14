@@ -1,48 +1,27 @@
 import React, { FC } from 'react';
-import {
-  Formik,
-  Form,
-  Field,
-  ErrorMessage,
-  FormikHelpers,
-  FormikErrors
-} from 'formik';
+import { ErrorMessage, Field, Form, Formik, FormikErrors, FormikHelpers } from 'formik';
 import style from './style.module.scss';
-import {
-  AuthorObjectType,
-  QuoteObjectType,
-  SourceObjectType,
-  TagObjectType
-} from '../../../types/types';
+import { AuthorObjectType, SourceObjectType, TagObjectType } from '../../../types/types';
+import { isEmpty } from 'lodash';
 
 type PropsType = {
   tags: Array<TagObjectType>,
   authors: Array<AuthorObjectType>,
   sources: Array<SourceObjectType>,
-  newTag: TagObjectType,
-  newQuote: QuoteObjectType,
-  newAuthor: AuthorObjectType,
-  newSource: SourceObjectType,
-  addTag: () => void,
-  addQuote: () => void,
-  addAuthor: () => void,
-  addSource: () => void,
-  // updateNewQuoteText: (newText: string) => void,
-  // updateNewAuthorName: (newText: string) => void,
-  // updateNewAuthorSurname: (newText: string) => void,
-  // updateNewSourceText: (newText: string) => void,
-  // updateNewTagText: (newText: string) => void,
+  addQuote: (quoteText:string, authorsId:(string)[], tagsId:(string)[], sourcesId:(string)[]) => void,
+  addAuthor: (name:string, surname:string) => void,
+  quotesIsUpdating: (isUpdating: boolean) => void;
 };
 
 interface FormikValues {
-  tags: Array<TagObjectType>,
-  author: Array<AuthorObjectType>,
-  sources: Array<SourceObjectType>,
   quoteText: string,
+  tags: (string)[],
+  authors: (string)[],
+  sources: (string)[],
+  newTag: string,
   newAuthorName: string,
   newAuthorSurname: string,
   newSource: string,
-  newTags: Array<string>,
 }
 
 const FormAddQuote:FC<PropsType> = (props) => {
@@ -53,14 +32,15 @@ const FormAddQuote:FC<PropsType> = (props) => {
   return (
       <Formik
         initialValues = {{
-          quoteText:        '',
-          tags:             props.tags as Array<TagObjectType>,
-          author:           props.authors as Array<AuthorObjectType>,
-          sources:          props.sources as Array<SourceObjectType>,
-          newAuthorName:    '',
-          newAuthorSurname: '',
-          newSource:        '',
-          newTags:          [''],
+          quoteText:        '' as string,
+          tags:             [] as (string)[],
+          // authors:          [] as (string|null)[],
+          authors:          [] as (string)[],
+          sources:          [] as (string)[],
+          newTag:           '' as string,
+          newAuthorName:    '' as string,
+          newAuthorSurname: '' as string,
+          newSource:        '' as string,
         }}
         validate = {(values: FormikValues) => {
           const errors: FormikErrors<FormikValues> = {};
@@ -78,10 +58,59 @@ const FormAddQuote:FC<PropsType> = (props) => {
             values: FormikValues,
             { setSubmitting }: FormikHelpers<FormikValues>
           ) => {
-            setTimeout(() => {
+            /*setTimeout(() => {
               alert(JSON.stringify(values, null, 2));
               setSubmitting(false);
-            }, 400);
+            }, 400);*/
+            console.log('FormikValues:', values);
+            let authors = [] as (string)[];
+            if(!isEmpty(values.authors)) {
+              authors = [
+                ...authors,
+                ...values.authors
+              ];
+            }
+            if(values.newAuthorSurname) {
+              //todo: новых авторов может быть много
+
+              // const newAuthor = {
+              //  surname: values.newAuthorSurname,
+              //  name:    values.newAuthorName ? values.newAuthorName : null,
+              // };
+              // authors = [
+              //   ...authors,
+              //   newAuthor
+              // ];
+              authors.push(values.newAuthorSurname);
+            }
+            let source = [] as (string)[];
+            if(!isEmpty(values.sources)) {
+              source = values.sources;
+            } else if(values.newSource) {
+              source.push(values.newSource);
+            }
+
+            let tags = [] as (string)[];
+            if(!isEmpty(values.tags)) {
+              tags = [
+                ...tags,
+                ...values.tags
+              ];
+            }
+            if(!isEmpty(values.newTag)) {
+              //todo: новых тэгов может быть много
+              tags.push(values.newTag);
+            }
+              
+            if(values.quoteText) {
+              props.quotesIsUpdating(true);
+              props.addQuote(
+                values.quoteText,
+                authors,
+                tags,
+                source);
+            }
+
           }
         }
       >
@@ -100,7 +129,7 @@ const FormAddQuote:FC<PropsType> = (props) => {
               {/*todo: Авторы: строка с автодополнением*/}
               {/*todo: Авторы: возможность ввести нескольких авторов*/}
               <Field
-                name = 'authors'
+                name = 'authorsA'
                 as = 'select'
                 multiple
                 className = {style.input + ' ' + style.select + ' ' + style.inputTags}
@@ -112,10 +141,11 @@ const FormAddQuote:FC<PropsType> = (props) => {
                   </option>;
                 })}
               </Field>
-              <ErrorMessage name = 'authors' component = 'div' />
+              <ErrorMessage name = 'authorsA' component = 'div' />
               {/*todo: добавить возможность добавлять несколько авторов. Поля «Имя» и «Фамилия» в одну строку, справа кнопка «+» - добавляет ещё один ряд таких же полей...*/}
               <div className = {style.fieldLine}>
                 <div className = {style.fieldWrapper}>
+                  {/*todo: newAuthorSurname - обязательное поле*/}
                   <Field
                     name = 'newAuthorSurname'
                     placeholder = 'Фамилия автора'
@@ -137,7 +167,7 @@ const FormAddQuote:FC<PropsType> = (props) => {
               </div>
 
               <Field
-                name = 'sources'
+                name = 'sourcesA'
                 as = 'select'
                 multiple
                 className = {style.input + ' ' + style.select + ' ' + style.inputTags}
@@ -145,12 +175,13 @@ const FormAddQuote:FC<PropsType> = (props) => {
                 {/*todo: разрешить множественный выбор (чекбоксы)*/}
                 <option disabled>Источник (название произведения)</option>
                 {props.sources.map((source:SourceObjectType) => {
-                  return <option key = {source.id} value = {source.title}>
+                  return <option key = {source.id} value = {source.id}>
                     {source.title}
                   </option>;
                 })}
               </Field>
-              <ErrorMessage name = 'sources' component = 'div' />
+              <ErrorMessage name = 'sourcesA' component = 'div' />
+              {/*todo: источник только один - либо из списка, либо новый. Блокировать одно полеЮ если заполнено другое*/}
               <Field
                 name = 'newSource'
                 placeholder = 'Добавить новый источник (название произведение)'
@@ -161,7 +192,7 @@ const FormAddQuote:FC<PropsType> = (props) => {
 
               {/*todo: объединить виджеты новые тэги и существующие тэги. Поле множественное ввода с автодополнением*/}
               <Field
-                name = 'tags'
+                name = 'tagsA'
                 as = 'select'
                 multiple
                 className = {style.input + ' ' + style.select + ' ' + style.inputTags}
@@ -172,7 +203,7 @@ const FormAddQuote:FC<PropsType> = (props) => {
                   return <option key = {tag.id} value = {tag.title}>{tag.title}</option>;
                 })}
               </Field>
-              <ErrorMessage name = 'tags' component = 'div' />
+              <ErrorMessage name = 'tagsA' component = 'div' />
               <div className = {style.fieldLine + ' ' + style.fieldLineTwo}>
                 <div className = {style.fieldWrapper}>
                   <Field

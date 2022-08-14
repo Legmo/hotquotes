@@ -4,8 +4,7 @@ import { sourcesAPI } from '../api/api';
 
 const initialState = {
   sources:    [] as Array<SourceObjectType>,
-  newSource:  {} as SourceObjectType,
-  isFetching: false as boolean,
+  isUpdating: false as boolean,
 };
 
 export type InitialSourcesStateType = typeof initialState;
@@ -19,31 +18,10 @@ const sourcesReducer = (state = initialState, action:ActionsTypes):InitialSource
           ...action.sourcesArray,
         ],
       };
-/*    case 'UPDATE_NEW_SOURCE_TEXT':
+    case 'SOURCES_IS_UPDATING':
       return {
         ...state,
-        newSource: {
-          ...state.newSource,
-          title: action.newText,
-        },
-      };*/
-    case 'ADD_SOURCE':
-      return {
-        ...state,
-        sources: [
-          ...state.sources,
-          state.newSource,
-        ],
-        newSource: {  
-          title:       '',
-          createdTime: null,
-          id:          null,
-        },
-      };
-    case 'SET_SOURCES_IS_FETCHING':
-      return {
-        ...state,
-        isFetching: action.isFetching,
+        isUpdating: action.isUpdating,
       };
     default:
       return state;
@@ -59,27 +37,19 @@ export const actionsSources = {
     type:         'SET_SOURCES',
     sourcesArray: sourcesArray,
   } as const),
-/*  updateNewSourceText: (text:string) => ({
-    type:    'UPDATE_NEW_SOURCE_TEXT',
-    newText: text,
-  } as const),*/
-  addSource: () => ({
-    type: 'ADD_SOURCE',
-  } as const),
-  setSourcesIsFetching: (isFetching:boolean) => ({
-    type: 'SET_SOURCES_IS_FETCHING',
-    isFetching
-  } as const),
+  sourcesIsUpdating: (isUpdating:boolean) => ({
+    type:       'SOURCES_IS_UPDATING',
+    isUpdating: isUpdating
+  } as const)
 };
 
 //Thunk Creator's
 type ThunkType = BaseThunkType<ActionsTypes>;
 
 export const getSourcesTC = ():ThunkType => async(dispatch) => {
-  //todo: выдавать сообщение, если цитата с данным ID не найдена
-  sourcesAPI.getAll().then((response) => {
+  return sourcesAPI.getAll().then((response) => {
     dispatch(actionsSources.setSources(response));
-    dispatch(actionsSources.setSourcesIsFetching(false));
+    dispatch(actionsSources.sourcesIsUpdating(false));
   });
 };
 
