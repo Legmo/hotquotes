@@ -10,29 +10,12 @@ import { InitialAuthorsStateType } from '../../../redux/reducer-authors';
 import { InitialSourcesStateType } from '../../../redux/reducer-sources';
 
 type PropsType = {
-  authorsIsUpdating: (isUpdating:boolean) => void,
-  tagsIsUpdating: (isUpdating:boolean) => void,
-  sourcesIsUpdating: (isUpdating:boolean) => void,
   authors: InitialAuthorsStateType,
   tags: InitialTagsStateType,
   sources: InitialSourcesStateType,
-  getAuthorsTC: () => void,
-  getSourcesTC: () => void,
-  getTagsTC: () => void,
 };
 
 class Sidebar extends Component<PropsType> {
-  componentDidMount() {
-    this.props.authorsIsUpdating(true);
-    this.props.getAuthorsTC();
-
-    this.props.tagsIsUpdating(true);
-    this.props.getTagsTC();
-
-    this.props.sourcesIsUpdating(true);
-    this.props.getSourcesTC();
-  }
-
   render() {
     let listAuthors = [] as Array<SidebarListObjectType>;
     let listTags = [] as Array<SidebarListObjectType>;

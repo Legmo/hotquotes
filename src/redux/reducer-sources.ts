@@ -47,8 +47,7 @@ export const actionsSources = {
 type ThunkType = BaseThunkType<ActionsTypes>;
 
 export const getSourcesTC = ():ThunkType => async(dispatch) => {
-  //todo: выдавать сообщение, если цитата с данным ID не найдена
-  sourcesAPI.getAll().then((response) => {
+  return sourcesAPI.getAll().then((response) => {
     dispatch(actionsSources.setSources(response));
     dispatch(actionsSources.sourcesIsUpdating(false));
   });

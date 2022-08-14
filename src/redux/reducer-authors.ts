@@ -47,8 +47,7 @@ export const actionsAuthors = {
 type ThunkType = BaseThunkType<ActionsTypes>;
 
 export const getAuthorsTC = ():ThunkType => async(dispatch) => {
-  //todo: выдавать сообщение, если цитата с данным ID не найдена
-  authorsAPI.getAll().then((response) => {
+  return authorsAPI.getAll().then((response) => {
     dispatch(actionsAuthors.setAuthors(response));
     dispatch(actionsAuthors.authorsIsUpdating(false));
   });
@@ -56,7 +55,6 @@ export const getAuthorsTC = ():ThunkType => async(dispatch) => {
 
 export const setAuthorTC = (name:string, surname:string):ThunkType => async(dispatch) => {
   authorsAPI.set(name, surname).then((response) => {
-    console.log('REDUCER response', response);
     // dispatch(actionsQuotes.setQuotes(response));
     // dispatch(actionsQuotes.quotesIsUpdating(false));
   });

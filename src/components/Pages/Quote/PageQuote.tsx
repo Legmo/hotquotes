@@ -1,46 +1,25 @@
 import React, { Component } from 'react';
-import lodash, { isEmpty } from 'lodash';
-import {
-  AuthorObjectType,
-  QuoteObjectType,
-  SourceObjectType,
-  TagObjectType,
-} from '../../../types/types';
-import {
-  findElementByValue,
-  getRandomArrayElement,
-} from '../../../utils/helpers';
+import lodash from 'lodash';
+import { AuthorObjectType, SourceObjectType, TagObjectType } from '../../../types/types';
+import { findElementByValue, getRandomArrayElement } from '../../../utils/helpers';
 import QuoteCard from '../../Elements/QuoteCard/QuoteCard';
 import Preloader from '../../Elements/Preloader/Preloader';
 import QuoteToolbar from '../../Elements/QuoteToolbar/QuoteToolbar';
 import { InitialQuoteStateType } from '../../../redux/reducer-quotes';
+import { InitialAppStateType } from '../../../redux/reducer-app';
 
 type PropsType = {
+  app: InitialAppStateType;
   quotes: InitialQuoteStateType;
   tags: Array<TagObjectType>;
   authors: Array<AuthorObjectType>;
   sources: Array<SourceObjectType>;
-  params: { id: string };
-  quotesIsUpdating: (isUpdating: boolean) => void;
-  getAuthorsTC: () => void,
-  getTagsTC: () => void,
-  getSourcesTC: () => void,
   getQuoteTC: () => void,
   getQuoteByIdTC: (quoteId:string) => void,
+  quotesIsUpdating: (isUpdating: boolean) => void;
 };
 
 class PageQuote extends Component<PropsType> {
-  componentDidMount() {
-    // todo: разобраться с получением данных Authors и Tags здесь и в Sidebar. В Sidebar их надо оставить, чтоб отображались для других страниц
-    this.props.quotesIsUpdating(true);
-    (!isEmpty(this.props.params) && this.props.params.id)
-      ? this.props.getQuoteByIdTC(this.props.params.id)
-      : this.props.getQuoteTC();
-    this.props.getAuthorsTC();
-    this.props.getTagsTC();
-    this.props.getSourcesTC();
-  }
-
   quoteReload() {
     this.props.quotesIsUpdating(true);
     this.props.getQuoteTC();
