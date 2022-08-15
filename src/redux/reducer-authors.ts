@@ -1,5 +1,5 @@
 import { AuthorObjectType } from '../types/types';
-import { BaseThunkType, InferActionsTypes } from './redux-store';
+import { BaseThunkType, InferActionsTypes } from './store';
 import { authorsAPI, quotesAPI } from '../api/api';
 
 const initialState = {

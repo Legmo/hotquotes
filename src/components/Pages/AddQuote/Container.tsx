@@ -1,6 +1,6 @@
 import PageAddQuote from './PageAddQuote';
 import {connect} from 'react-redux';
-import { AppStateType } from '../../../redux/redux-store';
+import { AppStateType } from '../../../redux/store';
 import { InitialQuoteStateType } from '../../../redux/reducer-quotes';
 
 type MapStatePropsType = {

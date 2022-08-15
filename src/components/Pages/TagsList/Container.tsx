@@ -1,8 +1,14 @@
 import PageTagsList from './PageTagsList';
 import { connect } from 'react-redux';
 import { actionsTags, getTagsByPaginationTC } from '../../../redux/reducer-tags';
-import { AppStateType } from '../../../redux/redux-store';
+import { AppStateType } from '../../../redux/store';
 import { TagObjectType } from '../../../types/types';
+import {
+  getTagsByPaginationActivePage,
+  getTagsByPaginationOffset,
+  getTagsByPaginationPageSize,
+  getTagsByPaginationTags
+} from '../../../redux/selectors';
 
 type MapStatePropsType = {
   tags: Array<TagObjectType> ,
@@ -18,10 +24,10 @@ type OwnPropsType = Record<string, never>;
 
 const mapStateToProps = (state:AppStateType):MapStatePropsType => {
   return {
-    tags:       state.tags.tagsByPagination.tags,
-    offset:     state.tags.tagsByPagination.offset,
-    activePage: state.tags.tagsByPagination.activePage,
-    pageSize:   state.tags.tagsByPagination.pageSize,
+    tags:       getTagsByPaginationTags(state),
+    offset:     getTagsByPaginationOffset(state),
+    activePage: getTagsByPaginationActivePage(state),
+    pageSize:   getTagsByPaginationPageSize (state),
   };
 };
 
