@@ -34,6 +34,7 @@ It is planned in the future to allow users to add their own quotes (public or fo
 - <img src="http://legmo.ru/GitHub/formik_icon.svg" title="Formik" alt="Formik" width="20" height="20">&nbsp;<a href="https://formik.org/" target="_blank" title="Formik">Formik</a>
 - <img src="http://legmo.ru/GitHub/axios_font_icon.svg" title="Axios" alt="Axios" width="20" height="10">&nbsp;<a href="https://axios-http.com" target="_blank" title="Axios">Axios</a>
 - <img src="http://legmo.ru/GitHub/airtable_font_icon.svg" title="Airtable" alt="Airtable" width="20" height="20">&nbsp;<a href="https://airtable.com" target="_blank" title="Airtable">Airtable</a>
+- <img src="https://github.com/devicons/devicon/blob/master/icons/jest/jest-plain.svg" title="Jest" alt="Jest" width="20" height="20">&nbsp;<a href="https://jestjs.io" target="_blank" title="Jest">Jest</a>
 - <img src="https://lodash.com/assets/img/lodash.svg" title="Lodash" alt="Lodash" width="20" height="20">&nbsp;<a href="https://lodash.com" target="_blank" title="Lodash">Lodash</a>
 - <img src="http://legmo.ru/GitHub/awesome_font_icon.svg" title="Font Awesome" alt="Font Awesome" width="20" height="20"/>&nbsp;<a href="https://fontawesome.com/" target="_blank" title="Font Awesome">Font Awesome</a>
 - <img src="https://github.com/devicons/devicon/blob/master/icons/eslint/eslint-original.svg" title="ES Lint" alt="ES Lint" width="20" height="20"/>&nbsp;<a href="https://eslint.org/" target="_blank" title="ES Lint">ES Lint</a>
@@ -211,18 +212,19 @@ You can also ask the necessary questions in the [Discussions section](https://gi
 - <img src="http://legmo.ru/GitHub/formik_icon.svg" title="Formik" alt="Formik" width="20" height="20">&nbsp;<a href="https://formik.org/" target="_blank" title="Formik">Formik</a>
 - <img src="http://legmo.ru/GitHub/axios_font_icon.svg" title="Axios" alt="Axios" width="20" height="10">&nbsp;<a href="https://axios-http.com" target="_blank" title="Axios">Axios</a>
 - <img src="http://legmo.ru/GitHub/airtable_font_icon.svg" title="Airtable" alt="Airtable" width="20" height="20">&nbsp;<a href="https://airtable.com" target="_blank" title="Airtable">Airtable</a>
+- <img src="https://github.com/devicons/devicon/blob/master/icons/jest/jest-plain.svg" title="Jest" alt="Jest" width="20" height="20">&nbsp;<a href="https://jestjs.io" target="_blank" title="Jest">Jest</a>
 - <img src="https://lodash.com/assets/img/lodash.svg" title="Lodash" alt="Lodash" width="20" height="20">&nbsp;<a href="https://lodash.com" target="_blank" title="Lodash">Lodash</a>
 - <img src="http://legmo.ru/GitHub/awesome_font_icon.svg" title="Font Awesome" alt="Font Awesome" width="20" height="20"/>&nbsp;<a href="https://fontawesome.com/" target="_blank" title="Font Awesome">Font Awesome</a>
 - <img src="https://github.com/devicons/devicon/blob/master/icons/eslint/eslint-original.svg" title="ES Lint" alt="ES Lint" width="20" height="20"/>&nbsp;<a href="https://eslint.org/" target="_blank" title="ES Lint">ES Lint</a>
 - 🐶&nbsp;<a href="https://github.com/typicode/husky" target="_blank" title="Husky">Husky</a>
-- <img src="https://github.com/devicons/devicon/blob/master/icons/npm/npm-original-wordmark.svg" title="Lint-staged" alt="Lint-staged" width="20" height="20">&nbsp;<a href="https://github.com/okonet/lint-staged" target="_blank" title="Lint-staged">Lint-staged</a> 
+- <img src="https://github.com/devicons/devicon/blob/master/icons/npm/npm-original-wordmark.svg" title="Lint-staged" alt="Lint-staged" width="20" height="20">&nbsp;<a href="https://github.com/okonet/lint-staged" target="_blank" title="Lint-staged">Lint-staged</a>
 - <img src="https://github.com/devicons/devicon/blob/master/icons/javascript/javascript-plain.svg" title="JavaScript" alt="JavaScript" width="20" height="20"/>&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" title="JavaScript ES6+">JavaScript ES6+</a>
 - <img src="https://github.com/Protectator/jsx-tsx-logos/blob/master/jsx-logo.svg" title="JSX" alt="JSX" width="20" height="20"/>&nbsp;<a href="https://facebook.github.io/jsx/" target="_blank" title="JSX">JSX</a>
 - <img src="https://github.com/devicons/devicon/blob/master/icons/typescript/typescript-original.svg" title="TypeScript" alt="TypeScript" width="20" height="20"/>&nbsp;<a href="https://www.typescriptlang.org/" target="_blank" title="TypeScript">TypeScript</a>
 - <img src="https://github.com/devicons/devicon/blob/master/icons/html5/html5-original.svg" title="HTML" alt="HTML" width="20" height="20"/>&nbsp;<a href="https://www.w3.org/html/" target="_blank" title="HTML">HTML</a>
 - <img src="https://github.com/devicons/devicon/blob/master/icons/css3/css3-original.svg" title="CSS" alt="CSS" width="20" height="20"/>&nbsp;<a href="https://www.w3.org/Style/CSS/Overview.en.html" target="_blank" title="CSS">CSS</a>
 - <img src="https://github.com/devicons/devicon/blob/master/icons/sass/sass-original.svg" title="SASS" alt="SASS" width="20" height="20"/>&nbsp;<a href="https://sass-lang.com/" target="_blank" title="SASS">SASS</a>
-<br>
+  <br>
 
 ## Скриншот
 <img src="http://legmo.ru/GitHub/Screenshot.jpg?" title="Скриншот страницы" alt="Скриншот страницы" />
