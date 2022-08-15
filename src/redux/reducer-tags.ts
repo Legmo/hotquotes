@@ -1,5 +1,5 @@
 import { TagObjectType, TagsByPaginationObjectType } from '../types/types';
-import { BaseThunkType, InferActionsTypes } from './redux-store';
+import { BaseThunkType, InferActionsTypes } from './store';
 import { tagsAPI } from '../api/api';
 
 const initialState = {

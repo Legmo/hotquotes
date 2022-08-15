@@ -7,10 +7,11 @@ import PageIndexContainer from '../Pages/Quote/Container';
 import PageTagsContainer from '../Pages/TagsList/Container';
 import PageAddQuoteContainer from '../Pages/AddQuote/Container';
 import { connect } from 'react-redux';
-import { AppStateType } from '../../redux/redux-store';
+import { AppStateType } from '../../redux/store';
 import { compose } from 'redux';
 import { withRouter } from '../../utils/withRouter';
 import { getAllTC, getAllWitQuoteIdTC } from '../../redux/reducer-app';
+import { getAppIsInitialized } from '../../redux/selectors';
 
 type PropsType = {
   quoteId: string;
@@ -26,15 +27,16 @@ type MapStatePropsType = {
   appIsInitialized: boolean,
 };
 type OwnPropsType = Record<string, never>;
-const mapStateToProps = (state:AppStateType):MapStatePropsType => {return{
-  appIsInitialized: state.app.isInitialized
-};};
+const mapStateToProps = (state:AppStateType):MapStatePropsType => {
+  return{
+    appIsInitialized: getAppIsInitialized(state),
+} ;
+};
 
 class App extends Component<PropsType> {
   componentDidMount() {
     //http://localhost:3000/quote/recDtXFMllCBs7ex2
     if (this.props.quoteId) {
-      console.log('quoteId from App', this.props.quoteId);
       this.props.getAllWitQuoteIdTC(this.props.quoteId);
     } else {
       this.props.getAllTC();

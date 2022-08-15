@@ -1,9 +1,10 @@
 import Sidebar from './Sidebar';
 import { connect } from 'react-redux';
-import { actionsAuthors, getAuthorsTC, InitialAuthorsStateType } from '../../../redux/reducer-authors';
-import { actionsTags, getTagsTC, InitialTagsStateType } from '../../../redux/reducer-tags';
-import { AppStateType } from '../../../redux/redux-store';
-import { actionsSources, getSourcesTC, InitialSourcesStateType } from '../../../redux/reducer-sources';
+import { InitialAuthorsStateType } from '../../../redux/reducer-authors';
+import { InitialTagsStateType } from '../../../redux/reducer-tags';
+import { AppStateType } from '../../../redux/store';
+import { InitialSourcesStateType } from '../../../redux/reducer-sources';
+import { getAuthors, getSources, getTags } from '../../../redux/selectors';
 
 type MapStatePropsType = {
   authors: InitialAuthorsStateType, //todo: test - is it correct?
@@ -18,9 +19,9 @@ type OwnPropsType = any; // todo: fix any. See at App.tsx
 
 const mapStateToProps = (state:AppStateType):MapStatePropsType => {
   return {
-    authors: state.authors,
-    tags:    state.tags,
-    sources: state.sources,
+    authors: getAuthors(state),
+    tags:    getTags(state),
+    sources: getSources(state),
   };
 };
 
