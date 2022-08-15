@@ -1,4 +1,4 @@
-import { BaseThunkType, InferActionsTypes } from './redux-store';
+import { BaseThunkType, InferActionsTypes } from './store';
 import { actionsQuotes, getQuoteByIdTC, getQuoteTC } from './reducer-quotes';
 import { actionsAuthors, getAuthorsTC } from './reducer-authors';
 import { actionsSources, getSourcesTC } from './reducer-sources';

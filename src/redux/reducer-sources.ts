@@ -1,5 +1,5 @@
 import { SourceObjectType } from '../types/types';
-import { BaseThunkType, InferActionsTypes } from './redux-store';
+import { BaseThunkType, InferActionsTypes } from './store';
 import { sourcesAPI } from '../api/api';
 
 const initialState = {

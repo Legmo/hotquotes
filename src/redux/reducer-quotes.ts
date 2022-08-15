@@ -1,5 +1,5 @@
 import { QuoteObjectType } from '../types/types';
-import { BaseThunkType, InferActionsTypes } from './redux-store';
+import { BaseThunkType, InferActionsTypes } from './store';
 import { quotesAPI } from '../api/api';
 
 const initialState = {

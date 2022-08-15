@@ -2,8 +2,9 @@ import FormAddQuote from './FormAddQuote';
 import { connect } from 'react-redux';
 import { actionsQuotes, setQuoteTC } from '../../../redux/reducer-quotes';
 import { setAuthorTC } from '../../../redux/reducer-authors';
-import { AppStateType } from '../../../redux/redux-store';
+import { AppStateType } from '../../../redux/store';
 import { AuthorObjectType, SourceObjectType, TagObjectType } from '../../../types/types';
+import { getAuthorsAuthors, getSourcesSources, getTagsTags } from '../../../redux/selectors';
 
 type MapStatePropsType = {
   tags: Array<TagObjectType>,
@@ -20,9 +21,9 @@ type OwnPropsType = Record<string, never>;
 
 const mapStateToProps = (state:AppStateType):MapStatePropsType => {
   return {
-    tags:    state.tags.tags,
-    authors: state.authors.authors,
-    sources: state.sources.sources,
+    tags:    getTagsTags(state),
+    authors: getAuthorsAuthors(state),
+    sources: getSourcesSources(state),
   };
 };
 

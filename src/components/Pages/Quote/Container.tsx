@@ -1,10 +1,11 @@
 import { connect } from 'react-redux';
 import PageQuote from './PageQuote';
 import { actionsQuotes, getQuoteByIdTC, getQuoteTC, InitialQuoteStateType } from '../../../redux/reducer-quotes';
-import { AppStateType } from '../../../redux/redux-store';
+import { AppStateType } from '../../../redux/store';
 import { AuthorObjectType, SourceObjectType, TagObjectType } from '../../../types/types';
 import { compose } from 'redux';
 import { InitialAppStateType } from '../../../redux/reducer-app';
+import { getApp, getAuthorsAuthors, getQuotes, getSourcesSources, getTagsTags } from '../../../redux/selectors';
 
 type MapStatePropsType = {
   app: InitialAppStateType, //todo: test - is it correct?
@@ -22,11 +23,11 @@ type OwnPropsType = any;
 
 const mapStateToProps = (state:AppStateType):MapStatePropsType => {
   return {
-    app:     state.app,
-    quotes:  state.quotes,
-    tags:    state.tags.tags,
-    authors: state.authors.authors,
-    sources: state.sources.sources,
+    app:     getApp(state),
+    quotes:  getQuotes(state),
+    tags:    getTagsTags(state),
+    authors: getAuthorsAuthors(state),
+    sources: getSourcesSources(state),
   };
 };
 
