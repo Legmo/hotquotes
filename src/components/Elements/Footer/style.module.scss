@@ -1,19 +1,31 @@
 @import '../../variables';
 
 .footer {
+  padding-top: 18px; //todo: fix it
   display: grid;
-  gap: 20px;
-  grid-template-columns: auto $sidebar-width;
+  gap: 12px;
+  grid-template-columns: 18px auto $sidebar-width;
   height: 70px;
 }
 .addressBlock {
-  padding-top: 18px; //todo: fix it
+  text-align: right;
+  padding-right: $sidebar-padding-right;
 }
 .linkIcon {
   cursor: default;
   color: $color-gray-light;
   &:hover {
     color: $color-blue;
+    transition: $transition-basic;
+  }
+}
+.logoWrapper {
+  display: block;
+  padding-top: 2px;
+  filter: grayscale(100%);
+  transition: $transition-basic;
+  &:hover {
+    filter: grayscale(0);
     transition: $transition-basic;
   }
 }

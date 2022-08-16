@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import style from './style.module.scss';
-import PreloaderImg from '../../../assets/svgJsx/preloader';
+import PreloaderImg from '../../../assets/svgJsx/Preloader';
 
 type PropsType = {
   height?: number | null

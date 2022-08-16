@@ -3,9 +3,8 @@ import { BaseThunkType, InferActionsTypes } from './store';
 import { quotesAPI } from '../api/api';
 
 const initialState = {
-  isQuotesLoaded: false as boolean,
-  isUpdating:     false as boolean,
-  quotes:         [] as Array<QuoteObjectType>,
+  isUpdating: false as boolean,
+  quotes:     [] as Array<QuoteObjectType>,
 };
 
 export type InitialQuoteStateType = typeof initialState;
@@ -18,7 +17,6 @@ const quotesReducer = (state = initialState, action:ActionsTypes):InitialQuoteSt
         quotes: [
           ...action.quotesArray,
         ],
-        isQuotesLoaded: true,
       };
     case 'QUOTES_IS_UPDATING':
       return {

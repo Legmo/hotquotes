@@ -6,14 +6,33 @@
   align-self: baseline;
 }
 .sectionSidebar {
-  max-height: 30vh;
-  overflow-y: auto;
+  //max-height: 30vh;
+  //overflow-y: auto;
 }
 .sectionTags {
 }
 .sectionAuthors {
 }
+.sidebarNavigation {
+  display: block;
+  text-align: right;
+  margin-right: $sidebar-padding-right;
+  color: $color-gray;
+  transition: $transition-basic;
+  &:hover {
+    color: $color-blue;
+    transition: $transition-basic;
+  }
+  &.active {
+    color: $color-black-text;
+    cursor: default;
+    text-decoration: none;
+  }
+}
+
 .titleSidebar {
   margin: 0 0 6px;
   font-size: $font-size-xl;
+  text-align: right;
+  padding-right: $sidebar-padding-right;
 }
