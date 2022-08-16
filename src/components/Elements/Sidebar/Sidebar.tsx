@@ -8,6 +8,7 @@ import { AuthorObjectType, SidebarListObjectType, SourceObjectType, TagObjectTyp
 import { InitialTagsStateType } from '../../../redux/reducer-tags';
 import { InitialAuthorsStateType } from '../../../redux/reducer-authors';
 import { InitialSourcesStateType } from '../../../redux/reducer-sources';
+import { NavLink } from 'react-router-dom';
 
 type PropsType = {
   authors: InitialAuthorsStateType,
@@ -65,6 +66,16 @@ const Sidebar:FC<PropsType>  = (props) => {
                 title = 'Добавить в фильтры'
               />
         }
+        <NavLink
+          to = '/tags'
+          className = {
+            ({ isActive }) => isActive
+              ? (style.sidebarNavigation + ' ' + style.active)
+              : style.sidebarNavigation
+          }
+        >
+          Все категории
+        </NavLink>
       </section>
       <section className = {style.sectionSidebar + ' ' + style.sectionAuthors}>
         <h2 className = {style.titleSidebar}>Авторы</h2>

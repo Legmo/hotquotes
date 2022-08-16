@@ -22,12 +22,7 @@ const Navigation:FC<PropsType> = () => {
       >
         Добавить цитату
       </NavLink>
-      <NavLink
-        to = '/tags'
-        className = {({ isActive }) => isActive ? style.active : style.navItem}
-      >
-        Все категории
-      </NavLink>
+
     </ul>
   );
 };
