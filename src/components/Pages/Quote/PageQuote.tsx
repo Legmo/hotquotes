@@ -20,6 +20,8 @@ type PropsType = {
 };
 
 class PageQuote extends Component<PropsType> {
+
+  //test
   quoteReload() {
     this.props.quotesIsUpdating(true);
     this.props.getQuoteTC();
