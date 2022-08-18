@@ -1,4 +1,5 @@
 {
+  "homepage": "http://legmo.github.io/hotquotes/",
   "name": "hotquotes",
   "version": "0.1.0",
   "private": true,
@@ -28,7 +29,9 @@
     "eject": "react-scripts eject",
     "lint": "eslint --debug src/",
     "lint-fix": "eslint --debug src/ --fix",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,css,scss,html}": [
@@ -66,6 +69,7 @@
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.30.0",
+    "gh-pages": "^4.0.0",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.2",
     "lodash": "^4.17.21",

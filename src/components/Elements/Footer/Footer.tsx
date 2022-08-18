@@ -4,15 +4,20 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import Navigation from '../Navigation/Navigation';
 import HotQuotesLogo from '../../../assets/svgJsx/HotQuotesLogo';
+import { NavLink } from 'react-router-dom';
 
 const iconMail = <FontAwesomeIcon icon = {faEnvelope} size = '1x' />;
 
 const Footer = () => {
   return (
     <footer className = {style.footer}>
-      <a href = '/' className = {style.logoWrapper} title = 'На Главную' >
+      <NavLink
+        to = '/'
+        title = 'На Главную'
+        className = {style.logoWrapper}
+      >
         <HotQuotesLogo />
-      </a>
+      </NavLink>
       <Navigation />
       <address className = {style.addressBlock}>
         <a

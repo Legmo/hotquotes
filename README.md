@@ -10,6 +10,7 @@ It is planned in the future to allow users to add their own quotes (public or fo
 <br>
 
 ## Table of content
+* [Demo site](#demo-site)
 * [Technology stack](#technology-stack)
 * [Screenshot](#screenshot)
 * [Getting Started](#getting-started)
@@ -17,6 +18,11 @@ It is planned in the future to allow users to add their own quotes (public or fo
 * [Contributing](#contributing)
 * [Contact with developers](#contact-with-developers)
 * [Russian section / По-русски](#по-русски)
+<br>
+
+## Demo site
+<!--[quotes.legmo.ru](http://quotes.legmo.ru/)-->
+You can test working version of our site here [https://legmo.github.io/hotquotes](https://legmo.github.io/hotquotes).
 <br>
 
 ## Technology stack
@@ -142,11 +148,6 @@ Enter your API key to access the database into `apiKey` variable. If you use [Ai
 <br>
 <br>
 
-<!--## Demo site
-You can test working version of our site here [quotes.legmo.ru](http://quotes.legmo.ru/).
-<br>
--->
-
 <!--## Developers
 - [Name](link to GitHub profile)
 - [Name](link to GitHub profile)
@@ -189,12 +190,18 @@ You can also ask the necessary questions in the [Discussions section](https://gi
 <br>
 
 ## Содержание
+* [Демо-сайт](#демо-сайт)
 * [Технологии](#технологии)
 * [Скриншот](#скриншот)
 * [С чего начать?](#с-чего-начать)
 * [Архитектура приложения](#архитектура-приложения)
 * [Хочу помочь в разработке](#хочу-помочь-в-разработке)
 * [Контакты разработчиков](#контакты-разработчиков)
+<br>
+
+## Демо-сайт
+<!--[quotes.legmo.ru](http://quotes.legmo.ru/)-->
+Вы можете протестировать рабочую версию сайта здесь [https://legmo.github.io/hotquotes](https://legmo.github.io/hotquotes).
 <br>
 
 ## Технологии
