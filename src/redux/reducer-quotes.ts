@@ -55,7 +55,6 @@ export const getQuoteTC = ():ThunkType => async(dispatch) => {
 
 export const setQuoteTC = (quoteText:string, authorsId:(string)[], tagsId:(string)[], sourcesId:(string)[]):ThunkType => async(dispatch) => {
   quotesAPI.set(quoteText, authorsId, tagsId, sourcesId).then((response) => {
-    console.log('REDUCER response', response);
     dispatch(actionsQuotes.quotesIsUpdating(false));
   });
 };
