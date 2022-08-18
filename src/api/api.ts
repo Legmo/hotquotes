@@ -199,17 +199,18 @@ export const quotesAPI = {
       }],
     };
     console.log('API data before POST', data);
-    return instance.post<quoteFromServer[]>(this._tableName, data).then(
-      (resolve: AxiosResponse) => {
-        console.log('API POST resolve', resolve);
-        if(resolve.status === ResultCodes.Success) {
-          return resolve.data.records[0].id as string;
+    return instance.post<quoteFromServer[]>(this._tableName, data)
+      .then(
+        (resolve: AxiosResponse) => {
+          console.log('API POST resolve', resolve);
+          if(resolve.status === ResultCodes.Success) {
+            return resolve.data.records[0].id as string;
+          }
+        },
+        (error) => {
+          console.log(errorMessagesGenerator('get', this._tableName), error);
         }
-      },
-      (error) => {
-        console.log(errorMessagesGenerator('get', this._tableName), error);
-      }
-    );
+      );
   },
   getById(id:string) {
     // todo: check <quoteFromServer> type - is it corrected use?

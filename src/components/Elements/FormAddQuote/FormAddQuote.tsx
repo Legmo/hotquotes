@@ -58,10 +58,14 @@ const FormAddQuote:FC<PropsType> = (props) => {
             values: FormikValues,
             { setSubmitting }: FormikHelpers<FormikValues>
           ) => {
-            /*setTimeout(() => {
+            setTimeout(() => {
               alert(JSON.stringify(values, null, 2));
               setSubmitting(false);
-            }, 400);*/
+            }, 400);
+
+            /*
+            todo: comment for GitHub pages
+
             console.log('FormikValues:', values);
             let authors = [] as (string)[];
             if(!isEmpty(values.authors)) {
@@ -83,6 +87,7 @@ const FormAddQuote:FC<PropsType> = (props) => {
               // ];
               authors.push(values.newAuthorSurname);
             }
+
             let source = [] as (string)[];
             if(!isEmpty(values.sources)) {
               source = values.sources;
@@ -111,6 +116,7 @@ const FormAddQuote:FC<PropsType> = (props) => {
                 source);
             }
 
+            */
           }
         }
       >

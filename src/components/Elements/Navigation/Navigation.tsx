@@ -11,6 +11,7 @@ const Navigation:FC<PropsType> = () => {
     <ul className = {style.navList}>
       <NavLink
         to = '/'
+        title = 'На Главную'
         // className = {props => props.isActive ? style.active : style.navItem}
         className = {({ isActive }) => isActive ? style.active : style.navItem}
       >
@@ -18,6 +19,7 @@ const Navigation:FC<PropsType> = () => {
       </NavLink>
       <NavLink
         to = '/add_quote'
+        title = 'Форма добавления цитаты'
         className = {({ isActive }) => isActive ? style.active : style.navItem}
       >
         Добавить цитату

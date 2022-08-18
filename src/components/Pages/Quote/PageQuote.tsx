@@ -73,7 +73,6 @@ const PageQuote:FC<PropsType>  = (props) => {
         return tagObject.title;
       });
     }
-
     return (
       <>
         <QuoteCard quote = {quote} author = {author} tags = {tags} source = {quoteSource}/>

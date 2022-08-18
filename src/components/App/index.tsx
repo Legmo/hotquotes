@@ -35,7 +35,6 @@ const mapStateToProps = (state:AppStateType):MapStatePropsType => {
 
 class App extends Component<PropsType> {
   componentDidMount() {
-    //http://localhost:3000/quote/recDtXFMllCBs7ex2
     if (this.props.quoteId) {
       this.props.getAllWitQuoteIdTC(this.props.quoteId);
     } else {

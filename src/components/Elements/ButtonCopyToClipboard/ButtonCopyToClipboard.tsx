@@ -10,7 +10,9 @@ type PropsType = {
 };
 
 const ButtonCopyToClipboard:FC<PropsType> = (props) => {
-  const basicUrl = 'http://localhost:3000'; //todo: получать из браузера! Возможно - прокидывать из Quote
+  // todo: Подумать как получать актуальный вариант для localhost. Из адресной строки? Из переменных окружения?
+  // const basicUrl = 'http://localhost:3000';
+  const basicUrl = 'https://legmo.github.io/hotquotes/#';
 
   return (
     <div className = {style.refreshBlock}>

@@ -68,6 +68,7 @@ const Sidebar:FC<PropsType>  = (props) => {
         }
         <NavLink
           to = '/tags'
+          title = 'Список всех категорий'
           className = {
             ({ isActive }) => isActive
               ? (style.sidebarNavigation + ' ' + style.active)
