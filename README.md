@@ -24,6 +24,7 @@ It is planned in the future to allow users to add their own quotes (public or fo
 <!--[quotes.legmo.ru](http://quotes.legmo.ru/)-->
 You can test working version of our site here [https://legmo.github.io/hotquotes](https://legmo.github.io/hotquotes).
 <br>
+<br>
 
 ## Technology stack
 <!-- https://github.com/devicons/devicon/tree/master/icons -->
@@ -202,6 +203,7 @@ You can also ask the necessary questions in the [Discussions section](https://gi
 ## Демо-сайт
 <!--[quotes.legmo.ru](http://quotes.legmo.ru/)-->
 Вы можете протестировать рабочую версию сайта здесь [https://legmo.github.io/hotquotes](https://legmo.github.io/hotquotes).
+<br>
 <br>
 
 ## Технологии

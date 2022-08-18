@@ -198,11 +198,9 @@ export const quotesAPI = {
         },
       }],
     };
-    console.log('API data before POST', data);
     return instance.post<quoteFromServer[]>(this._tableName, data)
       .then(
         (resolve: AxiosResponse) => {
-          console.log('API POST resolve', resolve);
           if(resolve.status === ResultCodes.Success) {
             return resolve.data.records[0].id as string;
           }

@@ -59,9 +59,13 @@ const FormAddQuote:FC<PropsType> = (props) => {
             { setSubmitting }: FormikHelpers<FormikValues>
           ) => {
             setTimeout(() => {
+              alert('Adding quotes to the database is temporarily disabled.\nContact developer.\n\nДобавление цитат в базу данных временно отключено.\nСвяжитесь с разработчиком.\n\nmail@legmo.ru');
+              // todo: можно ли как-то адекватно закодировать email от spam-бота в данном случае?
+            }, 400);
+            /*setTimeout(() => {
               alert(JSON.stringify(values, null, 2));
               setSubmitting(false);
-            }, 400);
+            }, 400);*/
 
             /*
             todo: comment for GitHub pages
