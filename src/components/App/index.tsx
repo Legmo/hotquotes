@@ -12,6 +12,7 @@ import { compose } from 'redux';
 import { withRouter } from '../../utils/withRouter';
 import { getAllTC, getAllWitQuoteIdTC } from '../../redux/reducer-app';
 import { getAppIsInitialized } from '../../redux/selectors';
+import PageError404 from '../Pages/Error404/PageAddQuote';
 
 type PropsType = {
   quoteId: string;
@@ -48,10 +49,12 @@ class App extends Component<PropsType> {
         <main className = {style.main}>
           <section className = {style.leftColumn}>
             <Routes>
+              {/*We can use redirect <Route path="/" element={<Navigate to="/quote" />} /> here*/}
               <Route path = '/' element = {<PageIndexContainer />} />
               <Route path = '/quote/:id' element = {<PageIndexContainer />} />
               <Route path = '/add_quote' element = {<PageAddQuoteContainer />} />
               <Route path = '/tags' element = {<PageTagsContainer />} />
+              <Route path = '*' element = {<PageError404 />} />
             </Routes>
           </section>
           <SidebarContainer />
