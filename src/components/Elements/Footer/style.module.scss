@@ -20,7 +20,7 @@
   }
 }
 .logoWrapper {
-  display: block;
+  display: inline-block;
   padding-top: 2px;
   filter: grayscale(100%);
   transition: $transition-basic;

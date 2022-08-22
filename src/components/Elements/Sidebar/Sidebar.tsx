@@ -9,12 +9,15 @@ import { InitialTagsStateType } from '../../../redux/reducer-tags';
 import { InitialAuthorsStateType } from '../../../redux/reducer-authors';
 import { InitialSourcesStateType } from '../../../redux/reducer-sources';
 import { NavLink } from 'react-router-dom';
+import { Box } from '@mui/material';
+import { theme } from '../../../config/muiTheme';
 
 type PropsType = {
   authors: InitialAuthorsStateType,
   tags: InitialTagsStateType,
   sources: InitialSourcesStateType,
 };
+
 
 const Sidebar:FC<PropsType>  = (props) => {
 
@@ -53,7 +56,27 @@ const Sidebar:FC<PropsType>  = (props) => {
 
   // todo: возможно стоит сделать функцию/компонент для генерации sections. Наследование? Подумать.
   return (
-    <aside className = {style.sidebar}>
+
+    <Box
+      component = 'aside'
+      sx = {{
+        display:   'grid',
+        rowGap:    4,
+        alignSelf: 'baseline',
+        textAlign: {
+          xs: 'left',
+          sm: 'right',
+        },
+        paddingTop: {
+          xs: 2,
+          sm: 0,
+        },
+        paddingRight: {
+          xs: 8,
+          sm: 0,
+        },
+      }}
+      >
       <section className = {style.sectionSidebar + ' ' + style.sectionTags}>
         <h2 className = {style.titleSidebar}>Категории</h2>
         {
@@ -110,7 +133,7 @@ const Sidebar:FC<PropsType>  = (props) => {
           <FiltersActive filtersList = {[]} />
         </section>
       </div>
-    </aside>
+    </Box>
   );
 };
 

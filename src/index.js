@@ -6,6 +6,8 @@ import store from './redux/store';
 import App from './components/App';
 import registerServiceWorker from './registerServiceWorker';
 import reportWebVitals from './reportWebVitals';
+import { ThemeProvider } from '@mui/material/styles';
+import { theme } from './config/muiTheme';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root')
@@ -15,7 +17,9 @@ root.render(
   // We use HashRouter for correct work with GitHub Pages hosting
   <HashRouter>
     <Provider store = {store}>
-      <App />
+      <ThemeProvider theme = {theme}>
+        <App />
+      </ThemeProvider>
     </Provider>
   </HashRouter>
 );
