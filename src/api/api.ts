@@ -1,6 +1,7 @@
 import axios, { AxiosResponse } from 'axios';
 import { isEmpty } from 'lodash';
 import { AuthorObjectType, QuoteObjectType, SourceObjectType, TagObjectType } from '../types/types';
+import { APIKEY } from '../config/const';
 
 type quotesFromServerObjectType = {
   id: string,
@@ -90,11 +91,10 @@ export enum ResultCodes {
   ErrorServiceUnavailable = 503,
 }
 
-const apiKey = process.env.REACT_APP_HOTQOUTES_AIRTABLE_API_KEY; // Insert your api key, for example 'keyABCDEFGHIJKLMN'
 const instance = axios.create({
   baseURL: 'https://api.airtable.com/v0/appf6c9WBCs4A4Uq6/',
   headers: {
-    'Authorization': `Bearer ${apiKey}`
+    'Authorization': `Bearer ${APIKEY}`
   }
 });
 
