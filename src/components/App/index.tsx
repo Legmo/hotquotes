@@ -13,6 +13,8 @@ import { withRouter } from '../../utils/withRouter';
 import { getAllTC, getAllWitQuoteIdTC } from '../../redux/reducer-app';
 import { getAppIsInitialized } from '../../redux/selectors';
 import PageError404 from '../Pages/Error404/PageAddQuote';
+import { Box, Container } from '@mui/material';
+import Grid from '@mui/material/Unstable_Grid2';
 
 type PropsType = {
   quoteId: string;
@@ -46,20 +48,40 @@ class App extends Component<PropsType> {
   render() {
     return (
       <>
-        <main className = {style.main}>
-          <section className = {style.leftColumn}>
-            <Routes>
-              {/*We can use redirect <Route path="/" element={<Navigate to="/quote" />} /> here*/}
-              <Route path = '/' element = {<PageIndexContainer />} />
-              <Route path = '/quote/:id' element = {<PageIndexContainer />} />
-              <Route path = '/add_quote' element = {<PageAddQuoteContainer />} />
-              <Route path = '/tags' element = {<PageTagsContainer />} />
-              <Route path = '*' element = {<PageError404 />} />
-            </Routes>
-          </section>
-          <SidebarContainer />
-        </main>
-        <Footer />
+        <Box
+          component = 'main'
+          sx = {{
+            paddingTop: 6,
+            paddingBottom: 5,
+          }}
+        >
+          <Container maxWidth = 'lg'>
+            <Grid container spacing = {2}>
+              <Grid xs = {12} sm = {8}>
+                <section className = {style.leftColumn}>
+                  <Routes>
+                    {/*We can use redirect <Route path="/" element={<Navigate to="/quote" />} /> here*/}
+                    <Route path = '/' element = {<PageIndexContainer />} />
+                    <Route path = '/quote/:id' element = {<PageIndexContainer />} />
+                    <Route path = '/add_quote' element = {<PageAddQuoteContainer />} />
+                    <Route path = '/tags' element = {<PageTagsContainer />} />
+                    <Route path = '*' element = {<PageError404 />} />
+                  </Routes>
+                </section>
+              </Grid>
+              <Grid xs = {12} sm = {4}>
+                <SidebarContainer />
+              </Grid>
+            </Grid>
+          </Container>
+        </Box>
+        <Box
+          sx = {{
+            minHeight: 8,
+          }}
+        >
+            <Footer />
+        </Box>
       </>
     );
   }
