@@ -75,6 +75,7 @@ const PageQuote:FC<PropsType>  = (props) => {
     }
     return (
       <>
+
         <QuoteCard quote = {quote} author = {author} tags = {tags} source = {quoteSource}/>
         { //<RefreshBlock callback = {() => this.quoteReload()} />
           // todo: переделать bind. Использование стрелочной функции в render() создаёт новую функцию при каждой отрисовке компонента, что может нарушать оптимизации, использующие строгое сравнение для определения идентичности.
