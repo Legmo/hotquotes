@@ -128,11 +128,11 @@ The database is named `HotQuotes` and consists of 4 tables:
 
 <!--**API**<br>
 We use the following <a href="#" title="API documentation" target="_blank">API</a>.<br>
-If your backend is configured differently, you will need to make the appropriate fixes to the `api/api.ts` file.<br>
+If your backend is configured differently, you will need to make the appropriate fixes to the `api/api.ts` and `config/const.ts` files.<br>
 -->
 
 **Enter API key**<br>
-Enter your API key to access the database into `apiKey` variable. If you use [Airtable](https://airtable.com/), then you need to register on the site [Airtable](https://airtable.com/) and go to the [Account](https://airtable.com/account) page. The API key will be located in the API section.
+Enter your API key to access the database into `apiKey` variable. If you use [Airtable](https://airtable.com/), then you need to register on the site [Airtable](https://airtable.com/) and go to the [Account](https://airtable.com/account) page. The API key will be located in the `config/const.ts` file.
 <br>
 <br>
 
@@ -308,11 +308,11 @@ You can also ask the necessary questions in the [Discussions section](https://gi
 
 <!--**API**<br>
 Мы используем следующий <a href="#" title="API документация" target="_blank">API</a>.<br>
-Если ваш backend настроен иначе — вам потребуется внести соответствующие коррективы в файл `api/api.ts`.<br>
+Если ваш backend настроен иначе — вам потребуется внести соответствующие коррективы в файлы `api/api.ts` и `config/const.ts`.<br>
 -->
 
 **Добавление ключа API**<br>
-Пропишите в переменную `apiKey` ваш API key для доступа к базе данных. Если вы используете [Airtable](https://airtable.com/), то вам надо зарегистрироваться на сайте [Airtable](https://airtable.com/) и зайти на страницу [Account](https://airtable.com/account). API key будет расположен в разделе API.
+Пропишите в переменную `apiKey` ваш API key для доступа к базе данных. Если вы используете [Airtable](https://airtable.com/), то вам надо зарегистрироваться на сайте [Airtable](https://airtable.com/) и зайти на страницу [Account](https://airtable.com/account). API key будет расположен в файле `config/const.ts`.
 <br>
 <br>
 
