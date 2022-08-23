@@ -8,46 +8,48 @@ import Pager from '../../Elements/Pager/Pager';
 type PropsType = {
   pageSize: number,
   activePage: number,
-  tags: Array<TagObjectType>,
-  offset: number | string,
+  offset: number | string, // todo: clarify it — number or string?
+  tagsByPagination: Array<TagObjectType>,
   changePage: (activePage:number) => void,
   getTagsByPaginationTC: (pageSize:number, offset: number | string) => void,
 }
 
-const PageTagsList:FC<PropsType>  = (props) => {
+const PageTagsList:FC<PropsType>  = ({
+   pageSize,
+   offset ,
+   activePage,
+   tagsByPagination,
+   changePage,
+   getTagsByPaginationTC,
+}) => {
 
   // todo: test this hooks
   useEffect(() => {
-    //componentDidMount() {
-    props.getTagsByPaginationTC(props.pageSize, props.offset);
-  },[props.activePage]);
+    //componentDidMount
+    getTagsByPaginationTC(pageSize, offset);
+  },[activePage]);
 
   useEffect(() => {
     //componentDidUpdate
-    /*
-    if(prevProps.activePage !== props.activePage){
-    */
-      props.getTagsByPaginationTC(props.pageSize, props.offset);
-    /*
-    }
-    */
-  }, [props.activePage]);
+    // if(prevProps.activePage !== props.activePage){...}
+      getTagsByPaginationTC(pageSize, offset);
+  }, [activePage]);
 
-  const tagsList = props.tags.map((tagObject) => tagObject.title);
+  const tagsList = tagsByPagination.map(tagObject => tagObject.title);
   let Result;
 
   !lodash.isEmpty(tagsList)
     ? Result = <>
       <ListFull
-        filter = {null}
+        // filter = {null}
         listItems = {tagsList}
         listName = 'Tags'
-        title = 'Добавить в фильтры'
+        // title = 'Добавить в фильтры'
       />
       <Pager
-        pageSize = {props.pageSize}
-        activePage = {props.activePage}
-        changePage = {props.changePage}
+        pageSize = {pageSize}
+        activePage = {activePage}
+        changePage = {changePage}
       />
     </>
     : Result = <p>

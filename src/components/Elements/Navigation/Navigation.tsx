@@ -1,12 +1,9 @@
-import React, { FC } from 'react';
+import React from 'react';
 import style from './style.module.scss';
 import {NavLink} from 'react-router-dom';
 
-type PropsType = {
-  isActive?: boolean
-};
 
-const Navigation:FC<PropsType> = () => {
+const Navigation = () => {
   return (
     <ul className = {style.navList}>
       <NavLink

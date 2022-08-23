@@ -1,6 +1,5 @@
 import React, { FC } from 'react';
 
-
 const PageError404:FC = () => {
   return (
     <>

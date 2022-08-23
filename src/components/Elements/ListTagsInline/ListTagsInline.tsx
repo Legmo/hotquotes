@@ -5,13 +5,14 @@ type PropsType = {
   listItems: Array<string>,
 };
 
-const TagsListInline:FC<PropsType> = (props) => {
-  const listTagsInline = props.listItems.map((props) => (
-/*    <li key = {props.id} className = {style.listItem} title = 'Добавить в фильтры'>
-      {props.name}
+const TagsListInline:FC<PropsType> = ({listItems}:PropsType) => {
+  const listTagsInline = listItems.map(item => (
+/*    <li key = {item.id} className = {style.listItem} title = 'Добавить в фильтры'>
+      {item.name}
     </li>*/
-    <li key = {props} className = {style.listItem} title = 'Добавить в фильтры'>
-      {props}
+    // todo: can we get item.id here?
+    <li key = {item} className = {style.listItem} title = 'Добавить в фильтры'>
+      {item}
     </li>
   ));
 

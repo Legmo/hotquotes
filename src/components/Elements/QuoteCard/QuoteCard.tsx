@@ -10,12 +10,7 @@ type PropsType = {
   source: string,
 };
 
-const QuoteCard:FC<PropsType> = (props) => {
-  const quote = props.quote;
-  const author = props.author;
-  const source = props.source;
-  const tags = props.tags;
-
+const QuoteCard:FC<PropsType> = ({quote, author, source, tags}) => {
   return (
     <>
       <figure className = {style.blockquoteContainer}>

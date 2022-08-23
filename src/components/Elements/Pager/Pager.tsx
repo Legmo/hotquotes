@@ -6,10 +6,10 @@ type PropsType = {
   activePage: number,
   changePage: (activePage:number) => void,
 };
-const Pager:FC<PropsType> = (props) => {
+const Pager:FC<PropsType> = ({pageSize, activePage, changePage}) => {
 
   const totalTagsCount = 26; //todo: получать totalTagsCount каким-то образом с сервера! Видимо делать обычный запрос без пагинации и высчитывать. Обычный запрос выдаёт не более 100 за раз, учесть
-  const pagesCount = Math.ceil(totalTagsCount / props.pageSize);
+  const pagesCount = Math.ceil(totalTagsCount / pageSize);
   const pagesNumbersArray:Array<number> = [];
   for(let i = 1; i <= pagesCount; i++) {
     pagesNumbersArray.push(i);
@@ -25,11 +25,7 @@ const Pager:FC<PropsType> = (props) => {
         <input
           type = 'button'
           className = {style.pagerButton}
-          onClick = {()=> props.changePage(
-            (props.activePage > 1)
-              ? props.activePage - 1
-              : props.activePage
-          )}
+          onClick = {()=> changePage((activePage > 1) ? activePage - 1 : activePage)}
           value = '<'
         />
       </li>
@@ -37,7 +33,7 @@ const Pager:FC<PropsType> = (props) => {
         {/*todo: key fix*/}
         return <li
           key = {number}
-          className = {style.pagerElement + ' ' + ((props.activePage === number) && style.selected)}
+          className = {style.pagerElement + ' ' + ((activePage === number) && style.selected)}
         >
           {number}
         </li>;
@@ -47,11 +43,7 @@ const Pager:FC<PropsType> = (props) => {
         <input
           type = 'button'
           className = {style.pagerButton}
-          onClick = {()=> props.changePage(
-            (props.activePage < pagesCount)
-              ? props.activePage + 1
-              : props.activePage
-          )}
+          onClick = {()=> changePage((activePage < pagesCount) ? activePage + 1 : activePage)}
           value = '>'
         />
       </li>

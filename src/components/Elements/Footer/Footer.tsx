@@ -20,7 +20,7 @@ const Footer = () => {
             sx = {{
               display:       'flex',
               flexDirection: 'row',
-              columnGap:         2,
+              columnGap:     2,
             }}
           >
             <NavLink

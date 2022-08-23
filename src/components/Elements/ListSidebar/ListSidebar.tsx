@@ -6,12 +6,10 @@ import { SidebarListObjectType } from '../../../types/types';
 type PropTypes = {
   listItems: Array<SidebarListObjectType>
   listName: string
-  title: string
-  filter: string | null
 }
 
-const ListSidebar:FC<PropTypes> = (props) => {
-  const Items = props.listItems.map((listItem) => {
+const ListSidebar:FC<PropTypes> = ({listItems, listName}:PropTypes) => {
+  const Items = listItems.map((listItem) => {
 
     return (
       <li key = {listItem.id} className = {style.listItem} title = {listItem.linkTitle}>
@@ -20,7 +18,7 @@ const ListSidebar:FC<PropTypes> = (props) => {
     );
   }
 );
-  const listClassName = 'list' + props.listName;
+  const listClassName = 'list' + listName;
 
   return (
     //todo: добавить внизу ссылку "Показать все". При клике открывается блок-аккордеон, с вертикальной прокруткой и буквами-заголовками, как в адресной книге

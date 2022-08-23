@@ -10,24 +10,32 @@ import { InitialAuthorsStateType } from '../../../redux/reducer-authors';
 import { InitialSourcesStateType } from '../../../redux/reducer-sources';
 import { NavLink } from 'react-router-dom';
 import { Box } from '@mui/material';
-import { theme } from '../../../config/muiTheme';
 
 type PropsType = {
   authors: InitialAuthorsStateType,
   tags: InitialTagsStateType,
   sources: InitialSourcesStateType,
+  isAuthorsUpdated: boolean,
+  isSourcesUpdated: boolean,
+  isTagsUpdated: boolean,
 };
 
-
-const Sidebar:FC<PropsType>  = (props) => {
+const Sidebar:FC<PropsType>  = ({
+  authors,
+  tags,
+  sources,
+  isAuthorsUpdated,
+  isSourcesUpdated,
+  isTagsUpdated,
+}) => {
 
   // todo: возможно надо вынести функции подготовки данных для ListSidebar
   // todo: точно надо сделать одну функцию-генератор: (массив, [ключи для внесения в title], 'linkTitle') => ({})
   let listAuthors = [] as Array<SidebarListObjectType>;
   let listTags = [] as Array<SidebarListObjectType>;
   let listSources = [] as Array<SidebarListObjectType>;
-  if(!isEmpty(props.authors.authors)){
-    listAuthors = props.authors.authors.map((authorObject:AuthorObjectType) => {
+  if(!isEmpty(authors.authors)){
+    listAuthors = authors.authors.map((authorObject:AuthorObjectType) => {
       return {
         id:        authorObject.id,
         title:     authorObject.name + ' ' + authorObject.surname,
@@ -35,8 +43,8 @@ const Sidebar:FC<PropsType>  = (props) => {
       };
     });
   }
-  if(!isEmpty(props.tags.tags)){
-    listTags = props.tags.tags.map((tagObject:TagObjectType) => {
+  if(!isEmpty(tags.tags)){
+    listTags = tags.tags.map((tagObject:TagObjectType) => {
       return {
         id:        tagObject.id,
         title:     tagObject.title,
@@ -44,8 +52,8 @@ const Sidebar:FC<PropsType>  = (props) => {
       };
     });
   }
-  if(!isEmpty(props.sources.sources)){
-    listSources = props.sources.sources.map((sourceObject:SourceObjectType) => {
+  if(!isEmpty(sources.sources)){
+    listSources = sources.sources.map((sourceObject:SourceObjectType) => {
       return {
         id:        sourceObject.id,
         title:     sourceObject.title,
@@ -80,13 +88,12 @@ const Sidebar:FC<PropsType>  = (props) => {
       <section className = {style.sectionSidebar + ' ' + style.sectionTags}>
         <h2 className = {style.titleSidebar}>Категории</h2>
         {
-          props.tags.isUpdating
+          isTagsUpdated
             ? <Preloader width = {24} height = {24}/>
             : < ListSidebar
-                filter = {null}
                 listItems = {listTags}
                 listName = 'Tags'
-                title = 'Добавить в фильтры'
+                // title = 'Добавить в фильтры'
               />
         }
         <NavLink
@@ -104,26 +111,24 @@ const Sidebar:FC<PropsType>  = (props) => {
       <section className = {style.sectionSidebar + ' ' + style.sectionAuthors}>
         <h2 className = {style.titleSidebar}>Авторы</h2>
         {
-          props.authors.isUpdating
+          isAuthorsUpdated
             ? <Preloader width = {24} height = {24}/>
             : < ListSidebar
-              filter = 'none'
               listItems = {listAuthors}
               listName = 'Authors'
-              title = 'Добавить в фильтры'
+              // title = 'Добавить в фильтры'
             />
         }
       </section>
       <section className = {style.sectionSidebar + ' ' + style.sectionAuthors}>
         <h2 className = {style.titleSidebar}>Источники</h2>
         {
-          props.authors.isUpdating
+          isSourcesUpdated
             ? <Preloader width = {24} height = {24}/>
             : < ListSidebar
-              filter = 'none'
               listItems = {listSources}
               listName = 'Sources'
-              title = 'Добавить в фильтры'
+              // title = 'Добавить в фильтры'
             />
         }
       </section>

@@ -1,16 +1,13 @@
 import React from 'react';
 
 type PropsType = {
-  height?: number | null
-  width?: number | null
-  color?: string | null
+  height?: number | undefined
+  width?: number | undefined
+  color?: string | undefined
 }
 
-function PreloaderImg(props:PropsType) {
-  const height = props.height ? props.height : 48;
-  const width = props.width ? props.width : 48;
-  const color = props.color ? props.color : '#8ec4fe'; //todo: make import from $color-blue-light-x
-
+//todo: make import color value from $color-blue-light-x
+function PreloaderImg({height = 48, width = 48, color = '#8ec4fe'}:PropsType) {
   return (
     <svg
       xmlns = 'http://www.w3.org/2000/svg'

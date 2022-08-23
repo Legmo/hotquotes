@@ -15,7 +15,7 @@ type MapStatePropsType = {
 type MapDispatchPropsType = {
   addQuote: (quoteText:string, authorsId:(string)[], tagsId:(string)[], sourcesId:(string)[]) => void,
   addAuthor: (name:string, surname:string) => void,
-  quotesIsUpdating: (isUpdating:boolean) => void,
+  quotesUpdating: (isUpdating:boolean) => void,
 };
 type OwnPropsType = Record<string, never>;
 
@@ -29,9 +29,9 @@ const mapStateToProps = (state:AppStateType):MapStatePropsType => {
 
 //<TStateProps = {}, TDispatchProps = {}, TOwnProps = {}, State = DefaultState>
 const FormAddQuoteContainer = connect<MapStatePropsType, MapDispatchPropsType, OwnPropsType, AppStateType>(mapStateToProps, {
-  addQuote:         setQuoteTC,
-  addAuthor:        setAuthorTC,
-  quotesIsUpdating: actionsQuotes.quotesIsUpdating,
+  addQuote:       setQuoteTC,
+  addAuthor:      setAuthorTC,
+  quotesUpdating: actionsQuotes.quotesUpdating,
 })(FormAddQuote);
 
 export default FormAddQuoteContainer;
