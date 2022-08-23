@@ -11,10 +11,10 @@ import {
 } from '../../../redux/selectors';
 
 type MapStatePropsType = {
-  tags: Array<TagObjectType> ,
   offset: number | string,
   activePage: number,
   pageSize: number,
+  tagsByPagination: Array<TagObjectType>,
 };
 type MapDispatchPropsType = {
   changePage: (activePage:number) => void,
@@ -24,10 +24,10 @@ type OwnPropsType = Record<string, never>;
 
 const mapStateToProps = (state:AppStateType):MapStatePropsType => {
   return {
-    tags:       getTagsByPaginationTags(state),
-    offset:     getTagsByPaginationOffset(state),
-    activePage: getTagsByPaginationActivePage(state),
-    pageSize:   getTagsByPaginationPageSize (state),
+    offset:           getTagsByPaginationOffset(state),
+    activePage:       getTagsByPaginationActivePage(state),
+    pageSize:         getTagsByPaginationPageSize (state),
+    tagsByPagination: getTagsByPaginationTags(state),
   };
 };
 

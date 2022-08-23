@@ -36,7 +36,7 @@ export const actionsQuotes = {
     type:        'SET_QUOTES',
     quotesArray: quotesArray,
   } as const),
-  quotesIsUpdating: (isUpdating:boolean) => ({
+  quotesUpdating: (isUpdating:boolean) => ({
     type: 'QUOTES_IS_UPDATING',
     isUpdating
   } as const),
@@ -49,20 +49,20 @@ export const getQuoteTC = ():ThunkType => async(dispatch) => {
   //todo: выдавать сообщение, если цитата с данным ID не найдена
   return quotesAPI.getAll().then((response) => {
     dispatch(actionsQuotes.setQuotes(response));
-    dispatch(actionsQuotes.quotesIsUpdating(false));
+    dispatch(actionsQuotes.quotesUpdating(false));
   });
 };
 
 export const setQuoteTC = (quoteText:string, authorsId:(string)[], tagsId:(string)[], sourcesId:(string)[]):ThunkType => async(dispatch) => {
   quotesAPI.set(quoteText, authorsId, tagsId, sourcesId).then((response) => {
-    dispatch(actionsQuotes.quotesIsUpdating(false));
+    dispatch(actionsQuotes.quotesUpdating(false));
   });
 };
 
 export const getQuoteByIdTC = (quoteId:string):ThunkType => async(dispatch) => {
   quotesAPI.getById(quoteId).then((response) => {
       dispatch(actionsQuotes.setQuotes(response));
-      dispatch(actionsQuotes.quotesIsUpdating(false));
+      dispatch(actionsQuotes.quotesUpdating(false));
     });
 };
 

@@ -10,7 +10,7 @@ type PropsType = {
   sources: Array<SourceObjectType>,
   addQuote: (quoteText:string, authorsId:(string)[], tagsId:(string)[], sourcesId:(string)[]) => void,
   addAuthor: (name:string, surname:string) => void,
-  quotesIsUpdating: (isUpdating: boolean) => void;
+  quotesUpdating: (isUpdating: boolean) => void;
 };
 
 interface FormikValues {
@@ -112,7 +112,7 @@ const FormAddQuote:FC<PropsType> = (props) => {
             }
               
             if(values.quoteText) {
-              props.quotesIsUpdating(true);
+              props.quotesUpdating(true);
               props.addQuote(
                 values.quoteText,
                 authors,

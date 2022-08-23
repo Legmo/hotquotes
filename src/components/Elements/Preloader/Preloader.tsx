@@ -3,15 +3,15 @@ import style from './style.module.scss';
 import PreloaderImg from '../../../assets/svgJsx/Preloader';
 
 type PropsType = {
-  height?: number | null
-  width?: number | null
-  color?: string | null
+  height?: number,
+  width?: number,
+  color?: string,
 }
 
-const Preloader:FC<PropsType>  = (props) => {
+const Preloader:FC<PropsType>  = ({height, width, color}:PropsType) => {
   return (
     <div className = {style.preloaderWrapper}>
-       <PreloaderImg {...props}/>
+       <PreloaderImg height = {height} width = {width} color = {color}/>
     </div>
   );
 };

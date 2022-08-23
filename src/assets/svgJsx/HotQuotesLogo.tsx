@@ -1,13 +1,11 @@
 import React from 'react';
 
 type PropsType = {
-  height?: number | null
-  width?: number | null
+  height?: number | undefined
+  width?: number | undefined
 }
 
-function HotQuotesLogo(props:PropsType) {
-  const height = props.height ? props.height : 18;
-  const width = props.width ? props.width : 18;
+function HotQuotesLogo({height = 18, width = 18}:PropsType) {
 
   return (
     <svg

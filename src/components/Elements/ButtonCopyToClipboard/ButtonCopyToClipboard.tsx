@@ -9,7 +9,7 @@ type PropsType = {
   quoteId: string
 };
 
-const ButtonCopyToClipboard:FC<PropsType> = (props) => {
+const ButtonCopyToClipboard:FC<PropsType> = ({quoteId}:PropsType) => {
   // todo: Подумать как получать актуальный вариант для localhost. Из адресной строки? Из переменных окружения?
   // const basicUrl = 'http://localhost:3000';
   const basicUrl = 'https://legmo.github.io/hotquotes/#';
@@ -19,7 +19,7 @@ const ButtonCopyToClipboard:FC<PropsType> = (props) => {
       <button
         className = {style.buttonIcon}
         title = 'Скопировать ссылку на эту цитату'
-        onClick = {() => navigator.clipboard.writeText(`${basicUrl}/quote/${props.quoteId}`)}
+        onClick = {() => navigator.clipboard.writeText(`${basicUrl}/quote/${quoteId}`)}
       >
         {iconCopy}
       </button>

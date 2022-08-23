@@ -38,10 +38,11 @@ const mapStateToProps = (state:AppStateType):MapStatePropsType => {
 
 class App extends Component<PropsType> {
   componentDidMount() {
-    if (this.props.quoteId) {
-      this.props.getAllWitQuoteIdTC(this.props.quoteId);
+    const {quoteId, getAllWitQuoteIdTC, getAllTC} = this.props;
+    if (quoteId) {
+      getAllWitQuoteIdTC(quoteId);
     } else {
-      this.props.getAllTC();
+      getAllTC();
     }
   }
 
@@ -51,7 +52,7 @@ class App extends Component<PropsType> {
         <Box
           component = 'main'
           sx = {{
-            paddingTop: 6,
+            paddingTop:    6,
             paddingBottom: 5,
           }}
         >

@@ -49,7 +49,7 @@ type ThunkType = BaseThunkType<ActionsTypes>;
 export const getAllTC = ():ThunkType => async(dispatch) => {
   dispatch(actionsApp.appIsUpdating(true));
   Promise.all([
-    dispatch(actionsQuotes.quotesIsUpdating(true)),
+    dispatch(actionsQuotes.quotesUpdating(true)),
     dispatch(getQuoteTC()),
     dispatch(actionsSources.sourcesIsUpdating(true)),
     dispatch(getSourcesTC()),
@@ -66,7 +66,7 @@ export const getAllTC = ():ThunkType => async(dispatch) => {
 export const getAllWitQuoteIdTC = (quoteId:string):ThunkType => async(dispatch) => {
   dispatch(actionsApp.appIsUpdating(true));
   Promise.all([
-    dispatch(actionsQuotes.quotesIsUpdating(true)),
+    dispatch(actionsQuotes.quotesUpdating(true)),
     dispatch(getQuoteByIdTC(quoteId)),
     dispatch(actionsSources.sourcesIsUpdating(true)),
     dispatch(getSourcesTC()),

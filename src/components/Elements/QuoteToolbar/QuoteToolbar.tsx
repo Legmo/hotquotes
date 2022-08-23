@@ -8,11 +8,14 @@ type PropsType = {
   refreshCallback: () => void,
 };
 
-const QuoteToolbar:FC<PropsType> = (props) => {
+const QuoteToolbar:FC<PropsType> = ({quoteId, refreshCallback}:PropsType) => {
+// todo: перенести в нижнюю четверть экрана по центру страницы. Чтоб при изменении цитаты кнопка почти всегда оставалась на месте (удобнее кликать)
+// todo: кроме иконок написать текст?
+// todo: навесить горячие клавиши + написать подсказки о клавише возле кнопок?
   return (
     <div className = {style.toolbarWrapper}>
-      <ButtonCopyToClipboard quoteId = {props.quoteId}/>
-      <RefreshBlock callback = {props.refreshCallback} />
+      <ButtonCopyToClipboard quoteId = {quoteId}/>
+      <RefreshBlock callback = {refreshCallback} />
     </div>
   );
 };
