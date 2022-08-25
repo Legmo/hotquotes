@@ -15,18 +15,18 @@ type PropsType = {
   authors: InitialAuthorsStateType,
   tags: InitialTagsStateType,
   sources: InitialSourcesStateType,
-  isAuthorsUpdated: boolean,
-  isSourcesUpdated: boolean,
-  isTagsUpdated: boolean,
+  isAuthorsUpdating: boolean,
+  isSourcesUpdating: boolean,
+  isTagsUpdating: boolean,
 };
 
 const Sidebar:FC<PropsType>  = ({
   authors,
   tags,
   sources,
-  isAuthorsUpdated,
-  isSourcesUpdated,
-  isTagsUpdated,
+  isAuthorsUpdating,
+  isSourcesUpdating,
+  isTagsUpdating,
 }) => {
 
   // todo: возможно надо вынести функции подготовки данных для ListSidebar
@@ -88,7 +88,7 @@ const Sidebar:FC<PropsType>  = ({
       <section className = {style.sectionSidebar + ' ' + style.sectionTags}>
         <h2 className = {style.titleSidebar}>Категории</h2>
         {
-          isTagsUpdated
+          isTagsUpdating
             ? <Preloader width = {24} height = {24}/>
             : < ListSidebar
                 listItems = {listTags}
@@ -111,7 +111,7 @@ const Sidebar:FC<PropsType>  = ({
       <section className = {style.sectionSidebar + ' ' + style.sectionAuthors}>
         <h2 className = {style.titleSidebar}>Авторы</h2>
         {
-          isAuthorsUpdated
+          isAuthorsUpdating
             ? <Preloader width = {24} height = {24}/>
             : < ListSidebar
               listItems = {listAuthors}
@@ -123,7 +123,7 @@ const Sidebar:FC<PropsType>  = ({
       <section className = {style.sectionSidebar + ' ' + style.sectionAuthors}>
         <h2 className = {style.titleSidebar}>Источники</h2>
         {
-          isSourcesUpdated
+          isSourcesUpdating
             ? <Preloader width = {24} height = {24}/>
             : < ListSidebar
               listItems = {listSources}

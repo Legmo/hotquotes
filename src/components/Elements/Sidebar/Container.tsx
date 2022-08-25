@@ -17,9 +17,9 @@ type MapStatePropsType = {//todo: test - is it correct?
   authors: InitialAuthorsStateType, 
   tags: InitialTagsStateType, 
   sources: InitialSourcesStateType,
-  isAuthorsUpdated: boolean,
-  isSourcesUpdated: boolean,
-  isTagsUpdated: boolean,
+  isAuthorsUpdating: boolean,
+  isSourcesUpdating: boolean,
+  isTagsUpdating: boolean,
 };
 
 type MapDispatchPropsType = Record<string, never>;
@@ -33,9 +33,9 @@ const mapStateToProps = (state:AppStateType):MapStatePropsType => {
     authors:           getAuthors(state),
     tags:              getTags(state),
     sources:           getSources(state),
-    isAuthorsUpdated: getAuthorsIsUpdating(state),
-    isSourcesUpdated: getSourcesIsUpdating(state),
-    isTagsUpdated:    getTagsIsUpdating(state),
+    isAuthorsUpdating: getAuthorsIsUpdating(state),
+    isSourcesUpdating: getSourcesIsUpdating(state),
+    isTagsUpdating:    getTagsIsUpdating(state),
   };
 };
 

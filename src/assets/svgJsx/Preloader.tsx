@@ -6,7 +6,7 @@ type PropsType = {
   color?: string | undefined
 }
 
-//todo: make import color value from $color-blue-light-x
+// todo: make import color value from $color-blue-light-x
 function PreloaderImg({height = 48, width = 48, color = '#8ec4fe'}:PropsType) {
   return (
     <svg

@@ -1,4 +1,4 @@
-import axios, { AxiosResponse } from 'axios';
+import axios, { AxiosError, AxiosResponse } from 'axios';
 import { isEmpty } from 'lodash';
 import { AuthorObjectType, QuoteObjectType, SourceObjectType, TagObjectType } from '../types/types';
 import { APIKEY } from '../config/const';
@@ -40,43 +40,7 @@ type sourcesFromServerObjectType = {
     quotesId: Array<string>,
   }
 }
-interface quoteFromServer {
-  id : string,
-  createdTime : string,
-  fields: {
-    quoteText : string,
-    tagsId: Array<string> | null,
-    sourceId: string | null,
-    authorsId: string | null,
-  }
-}
-interface tagFromServer {
-  id : string,
-  createdTime : string,
-  fields: {
-    title : string,
-    quotesId?: Array<string> | null,
-  }
-}
-interface authorFromServer {
-  id : string,
-  createdTime : string,
-  fields: {
-    title : string,
-    quotesId: Array<string> | null,
-    sourceId: Array<string> | null,
-  }
-}
-interface sourceFromServer {
-  id : string,
-  createdTime : string,
-  fields: {
-    name : string,
-    surname : string | null,
-    quotesId: Array<string> | null,
-    authorsId: Array<string> | null,
-  }
-}
+
 export enum ResultCodes {
   Success = 200,
   ErrorBadRequest = 400,
@@ -137,158 +101,143 @@ const sourcesObjPreparation = (object:sourcesFromServerObjectType) => {
   } as SourceObjectType;
 };
 
-const tableDataPreparationSwitch = (tableName:string, originalArray:any) => { //todo: fix this 'any'!
-  let finalArray = [];
-  switch (tableName) {
-    case 'quotes':
-      finalArray = originalArray.map((object:quotesFromServerObjectType) => quotesObjPreparation(object));
-      break;
-    case 'authors':
-      finalArray = originalArray.map((object:authorsFromServerObjectType) => authorsObjPreparation(object));
-      break;
-    case 'tags':
-      finalArray = originalArray.map((object:tagsFromServerObjectType) => tagsObjPreparation(object));
-      break;
-    case 'sources':
-      finalArray = originalArray.map((object:sourcesFromServerObjectType) => sourcesObjPreparation(object));
-      break;
-    default:
-      return [];
-  }
-  return finalArray;
-};
-
-const errorMessagesGenerator = (requestType: 'get' | 'getPagination' | 'post', tableName:string) => {
+const showError = (requestType: 'get'| 'getPagination' | 'post', tableName:string, error:string) => {
+  let errorMessage;
   switch (requestType) {
     case 'get':
-      return `GET ${tableName} table request error: `;
+      errorMessage = `GET ${tableName} table request error: `;
+      break;
     case 'getPagination':
-      return `GET ${tableName} table with pagination request error: `;
+      errorMessage = `GET ${tableName} table with pagination request error: `;
+      break;
     case 'post':
-      return `POST ${tableName} table request error: `;
+      errorMessage = `POST ${tableName} table request error: `;
+      break;
     default:
-      return [];
+      errorMessage = 'Request error';
   }
+  // todo: we need to show this error via modal window too. Use something like «react-modal», «reactjs-popup» or Material UI Modal
+  console.log(errorMessage, error);
 };
 
-//todo: типизировать все методы https://youtu.be/sjra9F2ZS1E
+// todo: типизировать все методы https://youtu.be/sjra9F2ZS1E
 export const quotesAPI = {
   _tableName: 'quotes' as string,
-  getAll() {
-    return instance.get<quoteFromServer[]>(`${this._tableName}`).then(
-      (resolve: AxiosResponse) => {
-        return tableDataPreparationSwitch(this._tableName, resolve.data.records);
-      },
-      (error) => {
-        console.log(errorMessagesGenerator('get', this._tableName), error);
-      }
-    );
+  async getAll() {
+    try {
+      const resolve: AxiosResponse = await instance.get(this._tableName);
+      return resolve.data.records.map((object:quotesFromServerObjectType) => quotesObjPreparation(object));
+    }
+    catch(err) {
+      const error = err as Error | AxiosError;
+      showError('get', this._tableName, error.message);
+    }
   },
-  set(quoteText:string, authorsId:(string)[], tagsId:(string)[], sourcesId:(string)[]){
-    const authorsIdTest = ['recX3chQDyevfulxA'];
-    const tagsIdTest = ['recl8gY6wzlflESWg'];
-    const sourcesIdTest = ['recxGv4vlUq0lmvJT'];
-    const data = {
-      'records': [{
-        'fields': {
-          'quoteText': quoteText,
-          'authorsId': authorsIdTest,
-          'tagsId':    tagsIdTest,
-          'sourceId':  sourcesIdTest
-        },
-      }],
-    };
-    return instance.post<quoteFromServer[]>(this._tableName, data)
-      .then(
-        (resolve: AxiosResponse) => {
-          if(resolve.status === ResultCodes.Success) {
-            return resolve.data.records[0].id as string;
-          }
-        },
-        (error) => {
-          console.log(errorMessagesGenerator('get', this._tableName), error);
-        }
-      );
-  },
-  getById(id:string) {
+  async getById(id:string) {
     // todo: check <quoteFromServer> type - is it corrected use?
-    return instance.get<quoteFromServer>(`${this._tableName}/${id}`).then(
-      (resolve:AxiosResponse) => {
-        return tableDataPreparationSwitch(this._tableName, [resolve.data]);
-      },
-      (error) => {
-        console.log(errorMessagesGenerator('get', this._tableName), error);
+    try {
+      const resolve: AxiosResponse = await instance.get(`${this._tableName}/${id}`);
+      return [quotesObjPreparation(resolve.data)];
+    }
+    catch(err) {
+      const error = err as Error | AxiosError;
+      showError('get', this._tableName, error.message);
+    }
+  },
+  async set(quoteText:string, authorsId:string[], tagsId:string[], sourcesId:string[]){
+    try {
+      const authorsIdTest = ['recX3chQDyevfulxA'];
+      const tagsIdTest = ['recl8gY6wzlflESWg'];
+      const sourcesIdTest = ['recxGv4vlUq0lmvJT'];
+      const data = {
+        'records': [{
+          'fields': {
+            'quoteText': quoteText,
+            'authorsId': authorsIdTest,
+            'tagsId':    tagsIdTest,
+            'sourceId':  sourcesIdTest
+          },
+        }],
+      };
+      const resolve: AxiosResponse = await instance.post(this._tableName, data);
+      if(resolve.status === ResultCodes.Success) {
+        return resolve.data.records[0].id as string;
       }
-    );
+    }
+    catch(err) {
+      const error = err as Error | AxiosError;
+      showError('get', this._tableName, error.message);
+    }
   },
 };
 export const tagsAPI = {
   _tableName: 'tags' as string,
-  getAll() {
-    return instance.get<tagFromServer[]>(`${this._tableName}`).then(
-      (resolve:AxiosResponse) => {
-        return tableDataPreparationSwitch(this._tableName, resolve.data.records);
-      },
-      (error) => {
-        console.log(errorMessagesGenerator('get', this._tableName), error);
-      }
-    );
+  async getAll() {
+    try {
+      const resolve:AxiosResponse = await instance.get(`${this._tableName}`);
+      return resolve.data.records.map((object:tagsFromServerObjectType) => tagsObjPreparation(object));
+    }
+    catch(err) {
+      const error = err as Error | AxiosError;
+      showError('get', this._tableName, error.message);
+    }
   },
-  getByPagination(pageSize = 10, offset: number | string = 0 ) {
+  async getByPagination(pageSize = 10, offset: number | string = 0 ) {
     // todo: check <tagFromServer[]> type - is it corrected use?
-    return instance.get<tagFromServer[]>(`${this._tableName}?pageSize=${pageSize}&offset=${offset}`).then (
-      (resolve:AxiosResponse) => {
-        return {
-          data:   tableDataPreparationSwitch(this._tableName, resolve.data.records),
-          offset: resolve.data.offset
-        };
-      },
-      (error) => {
-        console.log(errorMessagesGenerator('getPagination', this._tableName), error);
-      }
-    );
+    try {
+      const resolve:AxiosResponse = await instance.get(`${this._tableName}?pageSize=${pageSize}&offset=${offset}`);
+      return {
+        data:   resolve.data.records.map((object:tagsFromServerObjectType) => tagsObjPreparation(object)),
+        offset: resolve.data.offset
+      };
+    }
+    catch(err) {
+      const error = err as Error | AxiosError;
+      showError('getPagination', this._tableName, error.message);
+    }
   },
 };
 export const authorsAPI = {
   _tableName: 'authors' as string,
-  getAll() {
-    return instance.get<authorFromServer[]>(`${this._tableName}`).then(
-      (resolve:AxiosResponse) => {
-        return tableDataPreparationSwitch(this._tableName, resolve.data.records);
-      },
-      (error) => {
-        console.log(errorMessagesGenerator('get', this._tableName), error);
-      }
-    );
+  async getAll() {
+    try {
+      const resolve: AxiosResponse = await instance.get(this._tableName);
+      return resolve.data.records.map((object:authorsFromServerObjectType) => authorsObjPreparation(object));
+    }
+    catch(err) {
+      const error = err as Error | AxiosError;
+      showError('get', this._tableName, error.message);
+    }
   },
-  set(name:string, surname:string){
-    return instance.post<quoteFromServer[]>(this._tableName, {
-      'records': [{
-        'fields': {
-          'name':    name,
-          'surname': surname,
-        },
-      }],
-    }).then(
-      (resolve: AxiosResponse) => {
-        console.log('POST resolve', resolve);
-      },
-      (error) => {
-        console.log(errorMessagesGenerator('get', this._tableName), error);
-      }
-    );
+  async set(name:string, surname:string){
+    try {
+      const data = {
+        'records': [{
+          'fields': {
+            'name':    name,
+            'surname': surname,
+          },
+        }],
+      };
+      const resolve: AxiosResponse = await instance.post(this._tableName, data);
+      // console.log('POST resolve', resolve);
+    }
+    catch(err) {
+      const error = err as Error | AxiosError;
+      showError('post', this._tableName, error.message);
+    }
   },
 };
 export const sourcesAPI = {
   _tableName: 'sources' as string,
-  getAll() {
-    return instance.get<sourceFromServer[]>(`${this._tableName}`).then(
-      (resolve:AxiosResponse) => {
-        return tableDataPreparationSwitch(this._tableName, resolve.data.records);
-      },
-      (error) => {
-        console.log(errorMessagesGenerator('get', this._tableName), error);
-      }
-    );
+  async getAll() {
+    try {
+      const resolve: AxiosResponse = await instance.get(this._tableName);
+      return resolve.data.records.map((object:sourcesFromServerObjectType) => sourcesObjPreparation(object));
+    }
+    catch(err) {
+      const error = err as Error | AxiosError;
+      showError('get', this._tableName, error.message);
+    }
   },
 };

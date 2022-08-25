@@ -18,14 +18,14 @@ export type InitialTagsStateType = typeof initialState;
 
 const tagsReducer = (state = initialState, action:ActionsTypes):InitialTagsStateType => {
   switch (action.type) {
-    case 'SET_TAGS':
+    case 'tags/SET_TAGS':
       return {
         ...state,
         tags: [
           ...action.tagsArray,
         ],
       };
-    case 'SET_TAGS_BY_PAGINATION':
+    case 'tags/SET_TAGS_BY_PAGINATION':
       return {
         ...state,
         tagsByPagination: {
@@ -36,7 +36,7 @@ const tagsReducer = (state = initialState, action:ActionsTypes):InitialTagsState
           offset: action.offset,
         },
       };
-    case 'CHANGE_PAGINATION_PAGE':
+    case 'tags/CHANGE_PAGINATION_PAGE':
       return {
         ...state,
         tagsByPagination: {
@@ -44,7 +44,7 @@ const tagsReducer = (state = initialState, action:ActionsTypes):InitialTagsState
           activePage: action.activePage,
         },
       };
-    case 'TAGS_IS_UPDATING':
+    case 'tags/IS_UPDATING':
       return {
         ...state,
         isUpdating: action.isUpdating,
@@ -56,50 +56,46 @@ const tagsReducer = (state = initialState, action:ActionsTypes):InitialTagsState
 
 type ActionsTypes = InferActionsTypes<typeof actionsTags>;
 
-//ActionCreator's
+// ActionCreator's
 /* See more: https://youtu.be/2yJXFMqEbJs */
 export const actionsTags = {
   setTags: (tagsArray:Array<TagObjectType>) => ({
-    type:      'SET_TAGS',
+    type:      'tags/SET_TAGS',
     tagsArray: tagsArray,
   } as const),
   setTagsByPagination: (tagsArray:Array<TagObjectType>, offset: number | string) => ({
-    type:      'SET_TAGS_BY_PAGINATION',
+    type:      'tags/SET_TAGS_BY_PAGINATION',
     offset:    offset,
     tagsArray: tagsArray,
   } as const),
   changePaginationPage: (activePage:number) => ({
-    type:       'CHANGE_PAGINATION_PAGE',
+    type:       'tags/CHANGE_PAGINATION_PAGE',
     activePage: activePage,
   } as const),
   tagsIsUpdating: (isUpdating:boolean) => ({
-    type: 'TAGS_IS_UPDATING',
+    type: 'tags/IS_UPDATING',
     isUpdating
   } as const),
 };
 
-
-//Thunk Creator's
+// Thunk Creator's
 type ThunkType = BaseThunkType<ActionsTypes>;
 
 export const getTagsTC = ():ThunkType => async(dispatch) => {
-  return tagsAPI.getAll().then((response) => {
-    dispatch(actionsTags.setTags(response));
-    dispatch(actionsTags.tagsIsUpdating(false));
-  });
+  const response = await tagsAPI.getAll();
+  dispatch(actionsTags.setTags(response));
+  dispatch(actionsTags.tagsIsUpdating(false));
 };
 
 export const getTagsByPaginationTC = (pageSize:number, offset: number | string):ThunkType => async(dispatch) => {
-  tagsAPI.getByPagination(pageSize, offset)
-    .then((response: void | {data:Array<TagObjectType>, offset: string | number}) => {
-        if(response) {
-          const tagsArray:Array<TagObjectType>  = response.data;
-          const offset: number | string = response.offset;
-          dispatch(actionsTags.setTagsByPagination(tagsArray, offset));
-          dispatch(actionsTags.tagsIsUpdating(false));
-        }
-      }
-    );
+  const response: void | {data:Array<TagObjectType>, offset: string | number} = await tagsAPI.getByPagination(pageSize, offset);
+  if(response) {
+    const tagsArray:Array<TagObjectType>  = response.data;
+    const offset: number | string = response.offset;
+    dispatch(actionsTags.setTagsByPagination(tagsArray, offset));
+    dispatch(actionsTags.tagsIsUpdating(false));
+  }
+  // todo: обработать ошибки
 };
 
 export default tagsReducer;

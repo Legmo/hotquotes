@@ -11,14 +11,14 @@ export type InitialSourcesStateType = typeof initialState;
 
 const sourcesReducer = (state = initialState, action:ActionsTypes):InitialSourcesStateType => {
   switch (action.type) {
-    case 'SET_SOURCES':
+    case 'sources/SET_SOURCES':
       return {
         ...state,
         sources: [
           ...action.sourcesArray,
         ],
       };
-    case 'SOURCES_IS_UPDATING':
+    case 'sources/IS_UPDATING':
       return {
         ...state,
         isUpdating: action.isUpdating,
@@ -30,27 +30,26 @@ const sourcesReducer = (state = initialState, action:ActionsTypes):InitialSource
 
 type ActionsTypes = InferActionsTypes<typeof actionsSources>;
 
-//ActionCreator's
+// ActionCreator's
 /* See more: https://youtu.be/2yJXFMqEbJs */
 export const actionsSources = {
   setSources: (sourcesArray:Array<SourceObjectType>) => ({
-    type:         'SET_SOURCES',
+    type:         'sources/SET_SOURCES',
     sourcesArray: sourcesArray,
   } as const),
   sourcesIsUpdating: (isUpdating:boolean) => ({
-    type:       'SOURCES_IS_UPDATING',
+    type:       'sources/IS_UPDATING',
     isUpdating: isUpdating
   } as const)
 };
 
-//Thunk Creator's
+// Thunk Creator's
 type ThunkType = BaseThunkType<ActionsTypes>;
 
 export const getSourcesTC = ():ThunkType => async(dispatch) => {
-  return sourcesAPI.getAll().then((response) => {
-    dispatch(actionsSources.setSources(response));
-    dispatch(actionsSources.sourcesIsUpdating(false));
-  });
+  const response = await sourcesAPI.getAll();
+  dispatch(actionsSources.setSources(response));
+  dispatch(actionsSources.sourcesIsUpdating(false));
 };
 
 export default sourcesReducer;

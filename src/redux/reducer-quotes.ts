@@ -11,14 +11,14 @@ export type InitialQuoteStateType = typeof initialState;
 
 const quotesReducer = (state = initialState, action:ActionsTypes):InitialQuoteStateType => {
   switch (action.type) {
-    case 'SET_QUOTES':
+    case 'quotes/SET_QUOTES':
       return {
         ...state,
         quotes: [
           ...action.quotesArray,
         ],
       };
-    case 'QUOTES_IS_UPDATING':
+    case 'quotes/IS_UPDATING':
       return {
         ...state,
         isUpdating: action.isUpdating,
@@ -30,40 +30,41 @@ const quotesReducer = (state = initialState, action:ActionsTypes):InitialQuoteSt
 
 type ActionsTypes = InferActionsTypes<typeof actionsQuotes>
 
-//Action Creator's
+// Action Creator's
 export const actionsQuotes = {
-  setQuotes: (quotesArray:Array<QuoteObjectType>) => ({
-    type:        'SET_QUOTES',
+  setQuotes: (quotesArray:Array<QuoteObjectType> | undefined) => ({ // todo: fix undefined
+    type:        'quotes/SET_QUOTES',
     quotesArray: quotesArray,
   } as const),
   quotesUpdating: (isUpdating:boolean) => ({
-    type: 'QUOTES_IS_UPDATING',
+    type: 'quotes/IS_UPDATING',
     isUpdating
   } as const),
 };
 
-//Thunk Creator's
+// Thunk Creator's
 type ThunkType = BaseThunkType<ActionsTypes>;
 
 export const getQuoteTC = ():ThunkType => async(dispatch) => {
-  //todo: выдавать сообщение, если цитата с данным ID не найдена
-  return quotesAPI.getAll().then((response) => {
-    dispatch(actionsQuotes.setQuotes(response));
-    dispatch(actionsQuotes.quotesUpdating(false));
-  });
-};
-
-export const setQuoteTC = (quoteText:string, authorsId:(string)[], tagsId:(string)[], sourcesId:(string)[]):ThunkType => async(dispatch) => {
-  quotesAPI.set(quoteText, authorsId, tagsId, sourcesId).then((response) => {
-    dispatch(actionsQuotes.quotesUpdating(false));
-  });
+  // todo: выдавать сообщение, если цитата с данным ID не найдена
+  const response = await quotesAPI.getAll();
+  dispatch(actionsQuotes.setQuotes(response));
+  dispatch(actionsQuotes.quotesUpdating(false));
 };
 
 export const getQuoteByIdTC = (quoteId:string):ThunkType => async(dispatch) => {
-  quotesAPI.getById(quoteId).then((response) => {
-      dispatch(actionsQuotes.setQuotes(response));
-      dispatch(actionsQuotes.quotesUpdating(false));
-    });
+  const response = await quotesAPI.getById(quoteId);
+  dispatch(actionsQuotes.setQuotes(response));
+  dispatch(actionsQuotes.quotesUpdating(false));
+};
+
+export const setQuoteTC = (quoteText:string, authorsId:(string)[], tagsId:(string)[], sourcesId:(string)[]):ThunkType => async(dispatch) => {
+  const response = await quotesAPI.set(quoteText, authorsId, tagsId, sourcesId);
+  // work in progress
+  if (response) {
+    dispatch(actionsQuotes.quotesUpdating(false));
+  }
+  // todo: обработать ошибки
 };
 
 export default quotesReducer;

@@ -63,7 +63,7 @@ const PageQuote:FC<PropsType>  = ({
       <>
 
         <QuoteCard quote = {quote} author = {thisQuoteAuthor} tags = {thisQuoteTags} source = {thisQuoteSource}/>
-        { //<RefreshBlock callback = {() => this.quoteReload()} />
+        { // <RefreshBlock callback = {() => this.quoteReload()} />
           // todo: переделать bind. Использование стрелочной функции в render() создаёт новую функцию при каждой отрисовке компонента, что может нарушать оптимизации, использующие строгое сравнение для определения идентичности.
            // https://reactdev.ru/handbook/faq-functions/#bind-in-render
         }

@@ -12,7 +12,7 @@ import {
   getTagsTags
 } from '../../../redux/selectors';
 
-type MapStatePropsType = { //todo: test - is it correct?
+type MapStatePropsType = { // todo: test - is it correct?
   appIsInitialized: boolean,
   quotes: InitialQuoteStateType,
   tags: Array<TagObjectType>,
