@@ -13,12 +13,12 @@ export type InitialAppStateType = typeof initialState;
 
 const appReducer = (state = initialState, action:ActionsTypes):InitialAppStateType => {
   switch (action.type) {
-    case 'APP_IS_INITIALIZED':
+    case 'app/IS_INITIALIZED':
       return {
         ...state,
         isInitialized: action.isInitialized,
       };
-    case 'APP_IS_UPDATING':
+    case 'app/IS_UPDATING':
       return {
         ...state,
         isUpdating: action.isUpdating,
@@ -30,25 +30,25 @@ const appReducer = (state = initialState, action:ActionsTypes):InitialAppStateTy
 
 type ActionsTypes = InferActionsTypes<typeof actionsApp>;
 
-//ActionCreator's
+// ActionCreator's
 /* See more: https://youtu.be/2yJXFMqEbJs */
 export const actionsApp = {
   appInitialized: (isInitialized:boolean) => ({
-    type:          'APP_IS_INITIALIZED',
+    type:          'app/IS_INITIALIZED',
     isInitialized: isInitialized
   } as const),
   appIsUpdating: (isUpdating:boolean) => ({
-    type:       'APP_IS_UPDATING',
+    type:       'app/IS_UPDATING',
     isUpdating: isUpdating
   } as const)
 };
 
-//Thunk Creator's
+// Thunk Creator's
 type ThunkType = BaseThunkType<ActionsTypes>;
 
 export const getAllTC = ():ThunkType => async(dispatch) => {
   dispatch(actionsApp.appIsUpdating(true));
-  Promise.all([
+  const response = await Promise.all([
     dispatch(actionsQuotes.quotesUpdating(true)),
     dispatch(getQuoteTC()),
     dispatch(actionsSources.sourcesIsUpdating(true)),
@@ -57,15 +57,17 @@ export const getAllTC = ():ThunkType => async(dispatch) => {
     dispatch(getTagsTC()),
     dispatch(actionsAuthors.authorsIsUpdating(true)),
     dispatch(getAuthorsTC()),
-  ]).then(() => {
+  ]);
+  if(response) {
     dispatch(actionsApp.appInitialized(true));
     dispatch(actionsApp.appIsUpdating(false));
-  });
+  }
+  // todo: обработать ошибки
 };
 
 export const getAllWitQuoteIdTC = (quoteId:string):ThunkType => async(dispatch) => {
   dispatch(actionsApp.appIsUpdating(true));
-  Promise.all([
+  const response = await Promise.all([
     dispatch(actionsQuotes.quotesUpdating(true)),
     dispatch(getQuoteByIdTC(quoteId)),
     dispatch(actionsSources.sourcesIsUpdating(true)),
@@ -74,10 +76,12 @@ export const getAllWitQuoteIdTC = (quoteId:string):ThunkType => async(dispatch) 
     dispatch(getTagsTC()),
     dispatch(actionsAuthors.authorsIsUpdating(true)),
     dispatch(getAuthorsTC()),
-  ]).then(() => {
+  ]);
+  if(response) {
     dispatch(actionsApp.appInitialized(true));
     dispatch(actionsApp.appIsUpdating(false));
-  });
+  }
+  // todo: обработать ошибки
 };
 
 export default appReducer;
