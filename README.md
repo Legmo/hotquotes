@@ -32,8 +32,6 @@ You can test working version of our site here [https://legmo.github.io/hotquotes
 - <img src="https://github.com/devicons/devicon/blob/master/icons/react/react-original.svg" title="React JS" alt="React JS" width="20" height="20"/>&nbsp;<a href="https://reactjs.org" target="_blank" title="React JS">React JS</a>
 - <img src="https://github.com/devicons/devicon/blob/master/icons/redux/redux-original.svg" title="Redux" alt="Redux" width="20" height="20"/>&nbsp;<a href="https://redux.js.org" target="_blank" title="Redux">Redux</a>
 - <img src="https://github.com/devicons/devicon/blob/master/icons/redux/redux-original.svg" title="React Redux" alt="React Redux" width="20" height="20"/>&nbsp;<a href="https://react-redux.js.org/" target="_blank" title="React Redux">React Redux</a>
-
-[//]: # (- <img src="https://github.com/devicons/devicon/blob/master/icons/redux/redux-original.svg" title="Redux Toolkit" alt="Redux Toolkit" width="20" height="20"/>&nbsp;<a href="https://redux-toolkit.js.org/" target="_blank" title="Redux Toolkit">Redux Toolkit</a>)
 - <img src="https://create-react-app.dev/img/logo.svg" title="Create React App" alt="Create React App" width="24" height="24"/>&nbsp;<a href="https://www.npmjs.com/package/create-react-app" target="_blank" title="Create React App">Create React App</a>
 - <img src="https://github.com/devicons/devicon/blob/master/icons/npm/npm-original-wordmark.svg" title="React Router" alt="React Router" width="20" height="20"/>&nbsp;<a href="https://github.com/remix-run/react-router#readme" target="_blank" title="React Router">React Router</a>
 - <img src="https://github.com/devicons/devicon/blob/master/icons/npm/npm-original-wordmark.svg" title="Redux Thunk" alt="Redux Thunk" width="20" height="20"/>&nbsp;<a href="https://github.com/reduxjs/redux-thunk" target="_blank" title="Redux Thunk">Redux Thunk</a>
@@ -55,6 +53,8 @@ You can test working version of our site here [https://legmo.github.io/hotquotes
 - <img src="https://github.com/devicons/devicon/blob/master/icons/html5/html5-original.svg" title="HTML" alt="HTML" width="20" height="20"/>&nbsp;<a href="https://www.w3.org/html/" target="_blank" title="HTML">HTML</a>
 - <img src="https://github.com/devicons/devicon/blob/master/icons/css3/css3-original.svg" title="CSS" alt="CSS" width="20" height="20"/>&nbsp;<a href="https://www.w3.org/Style/CSS/Overview.en.html" target="_blank" title="CSS">CSS</a>
 - <img src="https://github.com/devicons/devicon/blob/master/icons/sass/sass-original.svg" title="SASS" alt="SASS" width="20" height="20"/>&nbsp;<a href="https://sass-lang.com/" target="_blank" title="SASS">SASS</a>
+
+[//]: # (- <img src="https://github.com/devicons/devicon/blob/master/icons/redux/redux-original.svg" title="Redux Toolkit" alt="Redux Toolkit" width="20" height="20"/>&nbsp;<a href="https://redux-toolkit.js.org/" target="_blank" title="Redux Toolkit">Redux Toolkit</a>)
 <br>
 
 ## Screenshot
@@ -214,8 +214,6 @@ You can also ask the necessary questions in the [Discussions section](https://gi
 - <img src="https://github.com/devicons/devicon/blob/master/icons/react/react-original.svg" title="React JS" alt="React JS" width="20" height="20"/>&nbsp;<a href="https://reactjs.org" target="_blank" title="React JS">React JS</a>
 - <img src="https://github.com/devicons/devicon/blob/master/icons/redux/redux-original.svg" title="Redux" alt="Redux" width="20" height="20"/>&nbsp;<a href="https://redux.js.org" target="_blank" title="Redux">Redux</a>
 - <img src="https://github.com/devicons/devicon/blob/master/icons/redux/redux-original.svg" title="React Redux" alt="React Redux" width="20" height="20"/>&nbsp;<a href="https://react-redux.js.org/" target="_blank" title="React Redux">React Redux</a>
-
-[//]: # (- <img src="https://github.com/devicons/devicon/blob/master/icons/redux/redux-original.svg" title="Redux Toolkit" alt="Redux Toolkit" width="20" height="20"/>&nbsp;<a href="https://redux-toolkit.js.org/" target="_blank" title="Redux Toolkit">Redux Toolkit</a>)
 - <img src="https://create-react-app.dev/img/logo.svg" title="Create React App" alt="Create React App" width="24" height="24"/>&nbsp;<a href="https://www.npmjs.com/package/create-react-app" target="_blank" title="Create React App">Create React App</a>
 - <img src="https://github.com/devicons/devicon/blob/master/icons/npm/npm-original-wordmark.svg" title="React Router" alt="React Router" width="20" height="20"/>&nbsp;<a href="https://github.com/remix-run/react-router#readme" target="_blank" title="React Router">React Router</a>
 - <img src="https://github.com/devicons/devicon/blob/master/icons/npm/npm-original-wordmark.svg" title="Redux Thunk" alt="Redux Thunk" width="20" height="20"/>&nbsp;<a href="https://github.com/reduxjs/redux-thunk" target="_blank" title="Redux Thunk">Redux Thunk</a>
@@ -237,6 +235,8 @@ You can also ask the necessary questions in the [Discussions section](https://gi
 - <img src="https://github.com/devicons/devicon/blob/master/icons/html5/html5-original.svg" title="HTML" alt="HTML" width="20" height="20"/>&nbsp;<a href="https://www.w3.org/html/" target="_blank" title="HTML">HTML</a>
 - <img src="https://github.com/devicons/devicon/blob/master/icons/css3/css3-original.svg" title="CSS" alt="CSS" width="20" height="20"/>&nbsp;<a href="https://www.w3.org/Style/CSS/Overview.en.html" target="_blank" title="CSS">CSS</a>
 - <img src="https://github.com/devicons/devicon/blob/master/icons/sass/sass-original.svg" title="SASS" alt="SASS" width="20" height="20"/>&nbsp;<a href="https://sass-lang.com/" target="_blank" title="SASS">SASS</a>
+
+[//]: # (- <img src="https://github.com/devicons/devicon/blob/master/icons/redux/redux-original.svg" title="Redux Toolkit" alt="Redux Toolkit" width="20" height="20"/>&nbsp;<a href="https://redux-toolkit.js.org/" target="_blank" title="Redux Toolkit">Redux Toolkit</a>)
 <br>
 
 ## Скриншот
