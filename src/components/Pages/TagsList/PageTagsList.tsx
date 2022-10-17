@@ -1,4 +1,4 @@
-import React, { Component, FC, useEffect } from 'react';
+import React, { FC, useEffect } from 'react';
 import lodash from 'lodash';
 import style from './style.module.scss';
 import { TagObjectType } from '../../../types/types';
@@ -23,17 +23,23 @@ const PageTagsList:FC<PropsType>  = ({
    getTagsByPaginationTC,
 }) => {
 
-  // todo: test this hooks
+  // todo: test this hook
   useEffect(() => {
-    //componentDidMount
     getTagsByPaginationTC(pageSize, offset);
   },[activePage]);
 
-  useEffect(() => {
-    //componentDidUpdate
-    // if(prevProps.activePage !== props.activePage){...}
-      getTagsByPaginationTC(pageSize, offset);
-  }, [activePage]);
+  /*
+  componentDidMount() {
+    this.props.getTagsByPaginationTC(this.props.pageSize, this.props.offset);
+  }
+
+  componentDidUpdate(prevProps:PropsType) {
+    if(prevProps.activePage !== this.props.activePage){
+      this.props.getTagsByPaginationTC(this.props.pageSize, this.props.offset);
+    }
+  }
+ */
+
 
   const tagsList = tagsByPagination.map(tagObject => tagObject.title);
   let Result;

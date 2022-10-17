@@ -59,6 +59,7 @@ const PageQuote:FC<PropsType>  = ({
         return tagObject.title;
       });
     }
+
     return (
       <>
 
