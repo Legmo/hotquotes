@@ -1,16 +1,22 @@
 @import '../../config/variables';
 
 html {
+  height: 100%;
   position: relative;
   color: $color-black-text;
   font-size: $font-size-basic;
   line-height: $line-height-basic;
 }
 body {
+  height: 100%;
   margin: 0;
   //padding: 0 40px;
 }
 // Don't forget about #root in public/default.css
+#root {
+  border: 1px solid red;
+}
+
 .main {
   padding-top: 50px;
   margin: 0 auto;

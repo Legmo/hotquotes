@@ -12,7 +12,7 @@ const iconMail = <FontAwesomeIcon icon = {faEnvelope} size = '1x' />;
 
 const Footer = () => {
   return (
-    <Container maxWidth = 'lg' component = 'footer'>
+    <Container maxWidth = 'lg' component = 'footer' sx = {{overflowX: 'hidden'}}>
       <Grid container spacing = {2}>
         <Grid xs = {10} sm = {8}>
           {/*todo: fix it*/}
@@ -33,7 +33,6 @@ const Footer = () => {
             <Navigation />
           </Box>
         </Grid>
-
         <Grid xs = {2} sm = {4}>
           <address className = {style.addressBlock}>
             <a

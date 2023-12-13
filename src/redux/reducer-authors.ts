@@ -11,7 +11,7 @@ export type InitialAuthorsStateType = typeof initialState;
 
 const authorsReducer = (state = initialState, action:ActionsTypes):InitialAuthorsStateType => {
   switch (action.type) {
-    case 'authors/authors/SET_AUTHORS':
+    case 'authors/SET_AUTHORS':
       return {
         ...state,
         authors: [
@@ -54,8 +54,8 @@ export const getAuthorsTC = ():ThunkType => async(dispatch) => {
 
 export const setAuthorTC = (name:string, surname:string):ThunkType => async(dispatch) => {
   const response = await authorsAPI.set(name, surname);
-  // dispatch(actionsQuotes.setQuotes(response));
-  // dispatch(actionsQuotes.quotesIsUpdating(false));
+  // dispatch(actionsAuthors.setAuthors(response));
+  // dispatch(actionsAuthors.authorsIsUpdating(false));
 };
 
 export default authorsReducer;
