@@ -1,12 +1,12 @@
 @import '../../../config/variables';
 
-.footer {
+/*.footer {
   padding-top: 18px; //todo: fix it
   display: grid;
   gap: 12px;
   grid-template-columns: 18px auto $sidebar-width;
   height: 70px;
-}
+}*/
 .addressBlock {
   text-align: right;
   padding-right: $sidebar-padding-right;
