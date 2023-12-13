@@ -1,8 +1,10 @@
-import React, { FC } from 'react';
+import React, { FC, ReactElement } from 'react';
 import { ErrorMessage, Field, Form, Formik, FormikErrors, FormikHelpers } from 'formik';
 import style from './style.module.scss';
 import { AuthorObjectType, SourceObjectType, TagObjectType } from '../../../types/types';
 import { isEmpty } from 'lodash';
+import AutocompleteList from '../FormItem_AutocompleteList/FormSelectList';
+import { TextField, Button } from '@mui/material';
 
 type PropsType = {
   tags: Array<TagObjectType>,
@@ -29,13 +31,13 @@ const FormAddQuote:FC<PropsType> = (props) => {
   // todo: запрос данные для select независимо от Sidebar? Надо единый делать, при инициализации страницы
   {/*todo: все select: разрешить множественный выбор (чекбоксы)*/}
 
+  console.log("props.tags", props.authors);
   return (
       <Formik
         initialValues = {{
           quoteText:        '' as string,
           tags:             [] as (string)[],
-          // authors:          [] as (string|null)[],
-          authors:          [] as (string)[],
+          authors:          props.authors as any,
           sources:          [] as (string)[],
           newTag:           '' as string,
           newAuthorName:    '' as string,
@@ -53,8 +55,7 @@ const FormAddQuote:FC<PropsType> = (props) => {
           }*/
           return errors;
         }}
-        onSubmit = {
-          (
+        onSubmit = {(
             values: FormikValues,
             { setSubmitting }: FormikHelpers<FormikValues>
           ) => {
@@ -121,122 +122,82 @@ const FormAddQuote:FC<PropsType> = (props) => {
             }
 
             */
-          }
-        }
+          }}
       >
         {({ isSubmitting }) => (
           <Form>
             <div className = {style.formWrapper}>
-              <Field
+
+              <TextField
+                required
                 name = 'quoteText'
-                component = 'textarea'
                 placeholder = {'Цитата'}
                 className = {style.input + ' ' + style.inputText}
-                rows = {10}
+                multiline
+                rows = {3}
+                maxRows = {10}
               />
               <ErrorMessage name = 'quoteText' component = 'div' />
 
-              {/*todo: Авторы: строка с автодополнением*/}
-              {/*todo: Авторы: возможность ввести нескольких авторов*/}
-              <Field
-                name = 'authorsA'
-                as = 'select'
-                multiple
-                className = {style.input + ' ' + style.select + ' ' + style.inputTags}
-              >
-                <option disabled>Авторы</option>
-                {props.authors.map((author:AuthorObjectType) => {
-                  return <option key = {author.id} value = {author.surname + ' ' + author.name}>
-                    {author.surname} {author.name}
-                  </option>;
+              <AutocompleteList
+                required
+                label = 'Авторы'
+                options = {props.authors.map((author:AuthorObjectType) => {
+                  return {
+                    id:    author.id,
+                    value: `${author.surname} ${author.name}`
+                  };
                 })}
-              </Field>
-              <ErrorMessage name = 'authorsA' component = 'div' />
-              {/*todo: добавить возможность добавлять несколько авторов. Поля «Имя» и «Фамилия» в одну строку, справа кнопка «+» - добавляет ещё один ряд таких же полей...*/}
-              <div className = {style.fieldLine}>
-                <div className = {style.fieldWrapper}>
-                  {/*todo: newAuthorSurname - обязательное поле*/}
-                  <Field
-                    name = 'newAuthorSurname'
-                    placeholder = 'Фамилия автора'
-                    className = {style.input + ' ' + style.inputAuthor}
-                  />
-                  <ErrorMessage name = 'newAuthorSurname' component = 'div' />
-                </div>
-                <div className = {style.fieldWrapper}>
-                  <Field
-                  name = 'newAuthorName'
-                  placeholder = {'Имя автора'}
-                  className = {style.input + ' ' + style.inputAuthor}
-                />
-                  <ErrorMessage name = 'newAuthorName' component = 'div' />
-                </div>
-                <div className = {style.fieldWrapper}>
-                  <button title = {'Добавить ещё одного автора'}>+</button>
-                </div>
-              </div>
-
-              <Field
-                name = 'sourcesA'
-                as = 'select'
-                multiple
-                className = {style.input + ' ' + style.select + ' ' + style.inputTags}
-              >
-                {/*todo: разрешить множественный выбор (чекбоксы)*/}
-                <option disabled>Источник (название произведения)</option>
-                {props.sources.map((source:SourceObjectType) => {
-                  return <option key = {source.id} value = {source.id}>
-                    {source.title}
-                  </option>;
-                })}
-              </Field>
-              <ErrorMessage name = 'sourcesA' component = 'div' />
-              {/*todo: источник только один - либо из списка, либо новый. Блокировать одно полеЮ если заполнено другое*/}
-              <Field
-                name = 'newSource'
-                placeholder = 'Добавить новый источник (название произведение)'
-                className = {style.input + ' ' + style.inputTitle}
+                /*onChange={(value) => {
+                  console.log(value);
+                }}*/
               />
-              <ErrorMessage name = 'newSource' component = 'div' />
+              <ErrorMessage name = 'authorsA' component = 'div' />
 
 
-              {/*todo: объединить виджеты новые тэги и существующие тэги. Поле множественное ввода с автодополнением*/}
-              <Field
-                name = 'tagsA'
-                as = 'select'
-                multiple
-                className = {style.input + ' ' + style.select + ' ' + style.inputTags}
-              >
-                {/*todo: разрешить множественный выбор (чекбоксы)*/}
-                <option disabled>Категории</option>
-                {props.tags.map((tag:TagObjectType) => {
-                  return <option key = {tag.id} value = {tag.title}>{tag.title}</option>;
+              <AutocompleteList
+                required
+                label = 'Источник'
+                options = {props.sources.map((source:SourceObjectType) => {
+                  return {
+                    id:    source.id,
+                    value: source.title
+                  };
                 })}
-              </Field>
+              />
+              <ErrorMessage name = 'sourcesA' component = 'div' />
+              {/*todo: источник только один! ограничить количество значений*/}
+
+              <AutocompleteList
+                required
+                label = 'Категории'
+                options = {props.tags.map((tag:TagObjectType) => {
+                  return {
+                    id:    tag.id,
+                    value: tag.title
+                  };
+                })}
+              />
               <ErrorMessage name = 'tagsA' component = 'div' />
-              <div className = {style.fieldLine + ' ' + style.fieldLineTwo}>
-                <div className = {style.fieldWrapper}>
-                  <Field
-                    name = 'newTag'
-                    placeholder = 'Добавить новую категорию'
-                    className = { style.input + ' ' + style.inputNewTag }
-                  />
-                  <ErrorMessage name = 'newTag' component = 'div' />
-                </div>
-                <div className = {style.fieldWrapper}>
-                  <button title = {'Добавить ещё одну категорию'}>+</button>
-                </div>
-              </div>
-              <button
+
+
+              <Button
+                className = {style.buttonSubmit}
+                sx = {{
+                    marginTop: 3,
+                    marginBottom: 3,
+                }}
+                variant = 'outlined'
                 type = 'submit'
                 disabled = {isSubmitting}
-                className = { style.buttonSubmit }
               >
                 Добавить цитату
-              </button>
-              <p>После отправки меняется на кнопку <span className = {style.paragraphLabel}>«Добавить ещё одну цитату»</span></p>
+              </Button>
 
-              <p><span className = {style.paragraphLabel}>Кнопка «Поделиться цитатой»</span> (нужен ID цитаты, придёт с сервера, до тех пор - disable)</p>
+              <div className={style.info}>
+                <span>После отправки появляется сообщение «Цитата добавлена. Страница цитаты находится [здесь]». Плюс ссылка на страницу цитаты. </span><br/>
+                <span>На странице цитаты есть кнопка «Поделиться цитатой» (нужен ID цитаты, придёт с сервера).</span>
+              </div>
             </div>
           </Form>
         )}

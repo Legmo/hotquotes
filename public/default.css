@@ -1,7 +1,8 @@
 #root {
   min-height: 100vh;
   display: grid;
-  grid-template-rows: 1fr auto;
+  /*grid-template-rows: 1fr auto;*/
+  /*border: 1px solid red;*/
 }
 
 /*Default styles from Create-react-app*/

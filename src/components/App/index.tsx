@@ -79,6 +79,11 @@ class App extends Component<PropsType> {
         <Box
           sx = {{
             minHeight: 8,
+            display: 'flex',
+            flexFlow: 'column',
+            justifyContent: 'end',
+            overflowX: 'hidden',
+            paddingBottom: '8px',
           }}
         >
             <Footer />

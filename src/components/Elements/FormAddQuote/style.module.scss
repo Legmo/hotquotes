@@ -36,7 +36,9 @@
   font-weight: bold;
 }
 .buttonSubmit {
-  min-width: 150px;
-  max-width: 200px;
-  margin-top: 10px; //todo: переделать на grid
+  //min-width: 150px;
+  //max-width: 200px;
+}
+.info {
+  color: $color-gray;
 }
